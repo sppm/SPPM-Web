@@ -1,6 +1,5 @@
 [% META title=" Projetos " %]
 
-
 <div id="container_top">
 	<div id="container_bottom">
 		<div class="top">
@@ -12,11 +11,41 @@
                 <table width="100%" align="center" cellspacing="0" style="">
                     <tr>
                         <td width="30%" valign="top">
+                            <p><input type="text" name="search" value="Buscar por..." style="border:solid 1px #666;background-color:#eaeaea;"/></p>
                             <p><strong>Lista de Projetos</strong></p>
-                            <ul id="project-list"></ul>
+                            <ul id="project-list">
+                                <li><a class="project-item" href="#">Equin&oacute;cio</a></li>
+                                <li><a class="project-item" href="#">Site da São Paulo Perl Mongers</a></li>
+                                <li><a class="project-item" href="#">Para onde foi o meu dinheiro ?</a></li>
+                                <li><a class="project-item" href="#">Perl, Perguntas e Respostas ?</a></li>
+                            </ul>
                         </td>
                         <td width="70%" valign="top">
                             <div id="projects">
+                                <div style="font-size:12px;border:solid 1px #ccc;padding:10px;background-color:#eaeaea;">
+                                    <h4><strong>Equin&oacute;cio</strong></h4>
+                                    <p>Evento virtual realizado em todos os meses do equin&#243;cio, com o objetivo de gerar conte&#250;do na lingua portuguesa sobre a linguagem Perl. Em 2 anos foram produzidos quase 100 artigos, e para que ele se desenvolva e tenha uma maior publicidade, &eacute; interessante que a plataforma onde &eacute; disponibilizada os artigos, seja cada vez melhor.</p>
+                                    Mantido por:&nbsp;Colaboradores Sao Paulo Perl Mongers<br>
+                                    Endere&ccedil;o:&nbsp;<a href="http://sao-paulo.pm.org">http://sao-paulo.pm.org</a>
+                                </div><br>
+                                <div style="font-size:12px;border:solid 1px #ccc;padding:10px;background-color:#eaeaea;">
+                                    <h4><strong>Site da São Paulo Perl Mongers</strong></h4>
+                                    <p>&#201; o nosso site e &eacute; necess&#225;ria uma atualiza&ccedil;&#227;o constante, e tamb&eacute;m de manuten&ccedil;&#227;o dele.</p>
+                                    Mantido por:&nbsp;Daniel Mantovani<br>
+                                    Endere&ccedil;o:&nbsp;<a href="http://github.com/mantovani/SPPM-Web">http://github.com/mantovani/SPPM-Web</a>
+                                </div><br>
+                                <div style="font-size:12px;border:solid 1px #ccc;padding:10px;background-color:#eaeaea;">
+                                    <h4><strong>Para onde foi o meu dinheiro ?</strong></h4>
+                                    <p>Site com o objetivo de visualizar as informações sobre orçamento público, que são disponibilizadas pelo próprio governo em infografia.</p>
+                                    Mantido por:&nbsp;Thiago Rondon<br>
+                                    Endere&ccedil;o:&nbsp;<a href="http://github.com/maluco/CMD">http://github.com/maluco/CMD</a>
+                                </div><br>
+                                <div style="font-size:12px;border:solid 1px #ccc;padding:10px;background-color:#eaeaea;">
+                                    <h4><strong>Perl, Perguntas e Respostas ?</strong></h4>
+                                    <p>Documento que tem como objetivo oferecer perguntas e respostas frequentes para programadores e curiosos na linguagem Perl.</p>
+                                    Mantido por:&nbsp;Thiago Rondon<br>
+                                    Endere&ccedil;o:&nbsp;<a href="http://github.com/maluco">http://github.com/maluco</a>
+                                </div><br>
                             </div>
                         <td>
                     </tr>
@@ -29,32 +58,6 @@
 		</div>
 	</div>
 </div>
-
-<script type="text/javascript">
-    $(function(){
-        $.ajax({
-            method:'GET',
-            url:'/static/files/projeto/list.json',
-            contentType:'application/json',
-            success: function(json) {
-                var list = json.projetos;
-                for(var item in list) {
-                    $('#project-list').append('<li><a class="project-item" href="#">' + list[item].name + '</a></li>');
-                    $('#projects').append('<div style="font-size:12px;border:solid 1px #ccc;padding:10px;background-color:#eaeaea;"><h4><strong>'+list[item].name+'</strong></h4><p>'+list[item].description+'</p>Mantido por:&nbsp;'+list[item].maintainer+'<br>Endere&ccedil;o:&nbsp;<a href="'+list[item].url+'">'+list[item].url+'</a></div><br>');
-                }
-            }
-        });
-
-        /**
-        * Getting project informations action
-        */
-        $('.project-item').click(function(){
-            alert('teste');
-        });
-
-    });
-</script>
-
 <style type="text/css">
 
     #projects ul { color:#333333;list-style:none; }
