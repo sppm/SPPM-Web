@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run( 'SPPM::Web', 'FastCGI' );
+Catalyst::ScriptRunner->run('SPPM::Web', 'FastCGI');
 
 1;
 
@@ -30,6 +30,7 @@ sppm_web_fastcgi.pl [options]
                  or empty string to disable
    -e --keeperr  send error messages to STDOUT, not
                  to the webserver
+   --proc_title  Set the process title (is possible)
 
 =head1 DESCRIPTION
 

@@ -27,12 +27,10 @@ requires 'Catalyst::View::TT';
 
 requires 'Moose';
 requires 'namespace::autoclean';
-
+requires 'Plack::Handler::Starman';
 requires 'Cache::File';
 requires 'Cache::Memcached';
 requires 'JSON';
-
-requires 'REST::Google';
 
 requires 'parent';
 requires 'Config::General'
