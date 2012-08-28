@@ -3,7 +3,7 @@ package SPPM::Web::Model::Artigo;
 use Moose;
 extends 'SPPM::Web::Model::FS';
 
-use Cache::File;
+use Cache::Memcached;
 use File::stat;
 use POSIX qw(strftime);
 use DateTime;
