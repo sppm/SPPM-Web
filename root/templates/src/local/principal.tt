@@ -6,9 +6,6 @@
     <div id="container_bottom">
 
         <div class="top">
-
-	[% PROCESS equinocio/index.tt %]
-
             <div class="top_left">
                 <div class="widget-sobre-o-que-e-tudo-isso-afinal widget">
 
