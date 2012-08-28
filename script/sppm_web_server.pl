@@ -5,17 +5,17 @@ BEGIN {
 }
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('SPPM::Web', 'Server');
+Catalyst::ScriptRunner->run('www', 'Server');
 
 1;
 
 =head1 NAME
 
-sppm_web_server.pl - Catalyst Test Server
+www_server.pl - Catalyst Test Server
 
 =head1 SYNOPSIS
 
-sppm_web_server.pl [options]
+www_server.pl [options]
 
    -d --debug           force debug mode
    -f --fork            handle each request in a new process

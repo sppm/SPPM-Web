@@ -1,24 +1,24 @@
 #!/usr/bin/env perl
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('SPPM::Web', 'Test');
+Catalyst::ScriptRunner->run('www', 'Test');
 
 1;
 
 =head1 NAME
 
-sppm_web_test.pl - Catalyst Test
+www_test.pl - Catalyst Test
 
 =head1 SYNOPSIS
 
-sppm_web_test.pl [options] uri
+www_test.pl [options] uri
 
  Options:
    --help    display this help and exits
 
  Examples:
-   sppm_web_test.pl http://localhost/some_action
-   sppm_web_test.pl /some_action
+   www_test.pl http://localhost/some_action
+   www_test.pl /some_action
 
  See also:
    perldoc Catalyst::Manual

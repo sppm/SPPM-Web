@@ -1,6 +1,6 @@
 [% META title = 'Equin&oacute;cio' %]
 
-<h1>Equinócio de Primavera 2011</h1>
+<h1>Equinócio ed Outono de 2012</h1>
 <p>O Equinócio é o momento exato em que o eixo de rotação da Terra se alinha perfeitamente ao seu eixo de 
                          translação ao redor do Sol, ou seja, é o momento em que ambos os hemisférios norte e sul são iluminados igualmente pelo Sol.</p>
  <p>A palavra Equinócio tem sua origem no Latim <i>aequus</i> (igual) e <i>nox</i> (noite), porque durante o 
@@ -8,33 +8,24 @@
 <p>Por isso, celebrando essa época de igualdade, duas vezes por ano a comunidade Perl do Brasil ( e em especial a 
                          de São Paulo ) se reúne e convida todos os seres humanos a compartilhar, trocar experiências e aprender, lembrando sempre que 
                          apesar de diferentes, somos todos humanos, todos<i>aeuus</i>.</p>
-<p>Como de costume, a partir de hoje publicaremos um post por dia até o dia do Equinócio, dia 20 de Setembro. 
-                         =D</p>
-<p>Bem vindos ao Equinócio de Primavera 2011!</p>
+<p>Como de costume, a partir de hoje publicaremos um post por dia até o dia do Equinócio, dia 20 d marco.
+               </p>
 
 
 <ul class="decimal">
- <li><a href="/equinocio/2011/set/1">Boas vindas (por: Blabos de Blebe)</a></li>
- <li><a href="/equinocio/2011/set/2">Truques com Dist::Zilla (por: Alexei "Russo" Znamensky)</a></li>
- <li><a href="/equinocio/2011/set/3">perlbrew - instale quantas versões do perl quiser, sem precisar de root! (por: Breno Oliveira)</a></li>
- <li><a href="/equinocio/2011/set/4">Como montar um servidor web com, perl, catalyst, varnish, nginx, mysql e postgres no ubuntu (por: Hernan Lopes)</a></li>
- <li><a href="/equinocio/2011/set/5">Scheme para programadores perl (por: Nelson Ferraz)</a></li>
- <li><a href="/equinocio/2011/set/6">Construindo uma aplicação desktop usando os módulos tk e moose (por: Daniel Vinciguerra)</a></li>
- <li><a href="/equinocio/2011/set/7">Tutorial Perl Catalyst - Como Criar um Blog/CRUD Básico (por: Hernan Lopes)</a></li>
- <li><a href="/equinocio/2011/set/8">Boas práticas para agentes do nagios (por: Solli M. Honório )</a></li>
- <li><a href="/equinocio/2011/set/9">elasticsearch com catalyst (por: Renato CRON)</a></li>
- <li><a href="/equinocio/2011/set/10">Data::Printer - o pretty-printer do perl (por: Breno Oliveira)</a></li>
- <li><a href="/equinocio/2011/set/11">plack - super-cola para a web (por: Eden Cardim)</a></li>
- <li><a href="/equinocio/2011/set/12">Efetuando testes com o Test::TCP (por: Thiago Rondon)</a></li>
- <li><a href="/equinocio/2011/set/13">Perl assíncrono (por: Stanislaw Pusep)</a></li>
- <li><a href="/equinocio/2011/set/14">Grid com dhtmlx, catalyst e dbix::class (por: Lucas Tiago de Moraes)</a></li>
- <li><a href="/equinocio/2011/set/15">Redis::Dump (por: Thiago Rondon)</a></li>
- <li><a href="/equinocio/2011/set/16">Como criar e publicar módulos para o cpan (por: Hernan Lopes)</a></li>
- <li><a href="/equinocio/2011/set/17">Deploy / instalação de aplicações perl catalyst (por: Hernan Lopes)</a></li>
- <li><a href="/equinocio/2011/set/18">emma - simples discador para efetuar chamadas via um proxy sip com um arquivo de audio (por: Thiago Rondon)</a></li>
- <li><a href="/equinocio/2011/set/19">statim (por: Thiago Rondon)</a></li>
- <li><a href="/equinocio/2011/set/20">Encriptação de senhas - uma abordagem com bcrypt (por: Blabos de Blebe)</a></li>
- <li><a href="/equinocio/2011/set/21">Eu não quero mais usar "perl -mmodule\ 999" (por: Thiago Rondon)</a></li>
- <li><a href="/equinocio/2011/set/22">Catalyst: dicas e truques (por: Wallace Reis)</a></li>
- <li><a href="/equinocio/2011/set/23">Perl, arduino e sdl (por: Daniel Mantovani)</a></li>
+ <li><a href="/equinocio/2012/mar/1">Introducao ao BioPerl</a> por Felipe da Veiga Leprevost</li>
+ <li><a href="/equinocio/2012/mar/2">Buscar, Descompactar, Construir e Instalar modulos do CPAN</a> por Thiago Rondon</li>
+ <li><a href="/equinocio/2012/mar/3">Dancer Framework, criando os routes</a> por Lucas Moraes</li>
+ <li><a href="/equinocio/2012/mar/4">Mantenha suas bibliotecas organizadas</a> por Vivien Hayazaki</li>
+ <li><a href="/equinocio/2012/mar/5">Downloads em lote com YADA</a> por Stanislaw Pusep</li>
+ <li><a href="/equinocio/2012/mar/12">Naive Bayes usando Perl e MongoDB</a> por Stanislaw Pusep</li>
+ <li><a href="/equinocio/2012/mar/13">Starman</a> por Daniel Vinciguerra</li>
+ <li><a href="/equinocio/2012/mar/14">Sincronizando arquivos na nuvem utilizando programacao orientada a eventos, orientacao a objetos e muito mais por</a> por Tiago Peczenyj</li>
+ <li><a href="/equinocio/2012/mar/15">O que esperar da proxima versao de Catalyst</a> por Andre Walker.</li>
+ <li><a href="/equinocio/2012/mar/16">Uma arquitetura de alta disponibilidade usando Starman</a> por Lindolfo "Lorn" Rodrigues.</li>
+<li><a href="/equinocio/2012/mar/17">Usando CatalystX::Syntax::Action para criar Controllers menores e mais "claros"</a> por John Napiorkowski (traduzido por Renato Cron).</li>
+<li><a href="/equinocio/2012/mar/18">Construindo um buscador com Mysql Myisam fulltext</a> por Lucas Mateus</li>
+ <li><a href="/equinocio/2012/mar/19">Geo localizacao - aproximando o usuario do seu sistema</a> por Lucas Mateus</li>
+ <li><a href="/equinocio/2012/mar/20">Receitas de soluções diversas para o AWS utilizando a linguagem Perl</a> por Thiago Rondon</li>
+
 </ul>

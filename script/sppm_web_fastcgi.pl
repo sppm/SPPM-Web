@@ -1,17 +1,17 @@
 #!/usr/bin/env perl
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('SPPM::Web', 'FastCGI');
+Catalyst::ScriptRunner->run('www', 'FastCGI');
 
 1;
 
 =head1 NAME
 
-sppm_web_fastcgi.pl - Catalyst FastCGI
+www_fastcgi.pl - Catalyst FastCGI
 
 =head1 SYNOPSIS
 
-sppm_web_fastcgi.pl [options]
+www_fastcgi.pl [options]
 
  Options:
    -? -help      display this help and exits
