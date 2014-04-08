@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="author" content="Sao Paulo Perl Mongers" />
-	
+
 	[% IF template.current_page == 'home' %]
 	<meta name="description" content="Grupo de programadores Perl do estado de São Paulo." />
 	[% END %]
@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="/static/print.css" type="text/css" media="print"  />
 
     <title>S&atilde;o Paulo Perl Mongers :: [% template.title %]</title>
-    <meta name="google-site-verification" content="B6Qa53hLtW0qem5IuI8QHE6IhruXMMrRnL2iwnMIdHE" /> 
+    <meta name="google-site-verification" content="B6Qa53hLtW0qem5IuI8QHE6IhruXMMrRnL2iwnMIdHE" />
  </head>
  <body>
 
@@ -28,22 +28,6 @@
 			[% PROCESS site/site_base/header.tt %]
 		</div>
         <div id="container" class="png_bg">
-
-            <div id="container_top">
-            <div align="center">
-            <div style="font-family:TexGyreAdventor,Trebuchet MS,Verdana;color: #666;-webkit-font-smoothing: antialiased;font-size:10pt;margin:10px;padding:10px;border-radius:5px;height:100px;width:480px;background-color:#e6e6e6;overflow:hidden;-moz-border-radius: 5px;-webkit-border-radius: 5px;">
-                <div style="text-align: center;vertical-align:middle;float: left; margin: 0px; padding: 0px; height: 90px; width: 120px">
-                    <img style="margin: 20px;" src="http://yapcbrasil.org.br/2012/images/logo_footer.png">
-                </div>
-                <div style="float: right; margin: 0px; padding: 0px; height: 90px; width: 360px; text-align: left">
-                    <strong><a style="text-color: #8f0000;font-size:10pt;text-decoration:none;" href="http://www.yapcbrasil.org.br">YAPC::Brasil 2012 — A revolução dos dados</a></strong><br>
-                    São Paulo, 19 e 20 de outubro — Jornalismo de Dados e Dados Abertos; Bioinformática; Empreendedorismo e Políticas Públicas; e Perl Hacking<br>
-                    <a style="text-color: #8f0000;font-size:10pt;text-decoration: none;" href="http://www.yapcbrasil.org.br">http://www.yapcbrasil.org.br</a>
-                </div>
-            </div>
-            </div>
-            </div>
-
 			[% content %]
             <center><br /><br />
             <div>
