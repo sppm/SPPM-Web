@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 
 use Catalyst::ScriptRunner;
-Catalyst::ScriptRunner->run('www', 'CGI');
+Catalyst::ScriptRunner->run('SPPM::Web', 'CGI');
 
 1;
 
