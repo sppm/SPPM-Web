@@ -12,11 +12,17 @@
     <script src="/static/js/html5shiv.js"></script>
 <![endif]-->
 
+[% CALL assets.include("css/bootstrap.min.css") %]
+[% CALL assets.include("css/bootstrap-theme.min.css") %]
+
+[% assets.export("css") | mark_raw %]
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
 [% INCLUDE $content_template  %]
 
+[% assets.export("js") | mark_raw %]
 </body>
 </html>

@@ -19,6 +19,7 @@ use Catalyst::Runtime 5.80;
 use Catalyst qw/
   ConfigLoader
   Static::Simple
+  Assets
 /;
 
 extends 'Catalyst';
@@ -36,6 +37,13 @@ our $VERSION = '0.01';
 
 __PACKAGE__->config(
     name => 'SPPM::Web',
+
+    'Plugin::Assets' => {
+        path => "/static",
+        output_path => "built/",
+        minify => 1,
+    },
+
 
     # Disable deprecated behavior needed by old applications
     disable_component_resolution_regex_fallback => 1,
