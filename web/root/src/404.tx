@@ -1,6 +1,6 @@
 <h1>Página não encontrada!</h1>
 
-<img src="/static/img/404.jpg" alt="conteúdo não encontrado..." height="351" width="640"/>
+<img src="/static/img/404.jpg" class="img-responsive" alt="conteúdo não encontrado..." height="351" width="640"/>
 <p>
 TODO: colocar links úteis aqui
 </p>

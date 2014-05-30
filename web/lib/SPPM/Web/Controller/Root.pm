@@ -29,8 +29,9 @@ The root page (/)
 
 =cut
 
-sub base: Private {
-    my ($self, $c) = @_;
+
+sub root : Chained('/') PathPart('') CaptureArgs(0) {
+    my ( $self, $c ) = @_;
 
     # funciona mais como wrapper do que template, mas blz.
     $c->stash->{template} = 'html5_template.tx';
@@ -39,17 +40,18 @@ sub base: Private {
 sub index : Path : Args(0) {
     my ( $self, $c ) = @_;
 
-    $self->base($c);
+    # nao tente fazer chain. serio. nao no index
+    $self->root($c);
 
     # nome do include.
     $c->stash->{content_template} = 'index.tx';
 }
 
-
 sub default : Path {
     my ( $self, $c ) = @_;
 
-    $self->base($c);
+    # nao tente fazer chain. serio. nao no default
+    $self->root($c);
 
     $c->response->status(404);
     $c->stash->{content_template} = '404.tx';

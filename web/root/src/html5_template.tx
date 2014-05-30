@@ -14,6 +14,7 @@
 
 [% CALL assets.include("css/bootstrap.min.css") %]
 [% CALL assets.include("css/bootstrap-theme.min.css") %]
+[% CALL assets.include("css/site.css") %]
 
 [% assets.export("css") | mark_raw %]
 
@@ -21,8 +22,32 @@
 </head>
 <body>
 
-[% INCLUDE $content_template  %]
+<div id="site-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <img class="img-responsive" src="/static/img/logo-sao-paulo-pm.png" title="Logo do site do Sao Paulo Perl Mongers" alt="São Paulo Perl Mongers" width="460" height="64">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <nav>
+                    <ul>
+                    <li class="col-md-1"><a href="[% c.uri_for('/')%]">Home</a></li>
+                    <li class="col-md-2"><a href="[% c.uri_for('/pages/quem-somos')%]">Quem somos</a></li>
+                    <li class="col-md-1"><a href="[% c.uri_for('/pages/contato')%]">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div id="site-content">
+    <div class="container">
+    [% INCLUDE $content_template  %]
+    </div>
+</div>
 [% assets.export("js") | mark_raw %]
 </body>
 </html>

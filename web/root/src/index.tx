@@ -1,7 +1,3 @@
 
-Home page!
-
-"[%c.req.params.fo%]"
-<form method="get">
-<input name="fo"/>
-</form>
+<h1>Afinal, quem ou o que é a São Paulo Perl Mongers?</h1>
+<p>Somos um grupo de pessoas dedicadas ao encorajamento de tudo o que estiver relacionado com o Perl em São Paulo e no mundo. Isto envolve ajudar uns aos outros, discutir qualquer assunto que pareça interessante para algum dos membros, <strong>partilhar informaçães sobre o Perl</strong>, sobre assuntos técnicos, políticos, culinários, empregos e tudo o mais que parecer partilhável, e <strong><s>ocasionalmente</s> algumas tulipas de boa cerveja</strong>.</p>
