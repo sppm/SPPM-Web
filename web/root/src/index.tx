@@ -1,0 +1,7 @@
+
+Home page!
+
+"[%c.req.params.fo%]"
+<form method="get">
+<input name="fo"/>
+</form>
