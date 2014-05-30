@@ -29,37 +29,32 @@ The root page (/)
 
 =cut
 
-sub index : Path : Args(0) {
-    my ( $self, $c ) = @_;
+sub base: Private {
+    my ($self, $c) = @_;
 
     # funciona mais como wrapper do que template, mas blz.
     $c->stash->{template} = 'html5_template.tx';
+}
+
+sub index : Path : Args(0) {
+    my ( $self, $c ) = @_;
+
+    $self->base($c);
 
     # nome do include.
     $c->stash->{content_template} = 'index.tx';
-
-
-    # Hello World
-#    $c->response->body( $c->welcome_message );
 }
 
-=head2 default
-
-Standard 404 error page
-
-=cut
 
 sub default : Path {
     my ( $self, $c ) = @_;
-    $c->response->body('Page not found');
+
+    $self->base($c);
+
     $c->response->status(404);
+    $c->stash->{content_template} = '404.tx';
+
 }
-
-=head2 end
-
-Attempt to render a view, if needed.
-
-=cut
 
 sub end : ActionClass('RenderView') { }
 

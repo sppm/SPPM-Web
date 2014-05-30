@@ -15,16 +15,24 @@ requires 'Catalyst::Plugin::Static::Simple';
 requires 'Catalyst::Action::RenderView';
 requires 'Moose';
 requires 'namespace::autoclean';
-requires 'Config::General'; # This should reflect the config file format you've chosen
-                 # See Catalyst::Plugin::ConfigLoader for supported formats
+requires 'Config::General';
 
 
+
+# view
 requires 'Catalyst::View::Xslate';
 requires 'Text::Xslate::Bridge::TT2Like';
 
+# minify css/js
+requires 'Catalyst::Plugin::Assets';
+requires 'JavaScript::Minifier::XS';
+requires 'CSS::Minifier::XS';
 
+# uma hora ou outra aparece um modulo falando que falta estes dois caras aqui:
+requires 'MooseX::MarkAsMethods';
+requires 'MooseX::NonMoose';
 
-
+# tests
 test_requires 'Test::More' => '0.88';
 catalyst;
 
