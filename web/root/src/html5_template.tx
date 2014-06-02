@@ -14,7 +14,7 @@
 
 [% CALL assets.include("css/bootstrap.min.css") %]
 [% CALL assets.include("css/bootstrap-theme.min.css") %]
-[% CALL assets.include("css/site.css") %]
+[% CALL assets.include("css/site-green.css") %]
 
 [% assets.export("css") | mark_raw %]
 
@@ -33,9 +33,9 @@
             <div class="col-xs-12">
                 <nav>
                     <ul>
-                    <li class="col-md-1"><a href="[% c.uri_for('/')%]">Home</a></li>
-                    <li class="col-md-2"><a href="[% c.uri_for('/pages/quem-somos')%]">Quem somos</a></li>
-                    <li class="col-md-1"><a href="[% c.uri_for('/pages/contato')%]">Contato</a></li>
+                    <li><a href="[% c.uri_for('/')%]">Página inicial</a></li>
+                    <li><a href="[% c.uri_for('/pages/quem-somos')%]">Quem somos</a></li>
+                    <li><a href="[% c.uri_for('/pages/contato')%]">Contato</a></li>
                     </ul>
                 </nav>
             </div>

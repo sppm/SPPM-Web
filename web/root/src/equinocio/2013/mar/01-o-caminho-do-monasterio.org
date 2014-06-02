@@ -1,0 +1,98 @@
+* O Caminho do Monastério - Cultivando e Promovendo o uso de Perl
+
+Sejam bem-vindos ao primeiro equinócio de 2013. Este ano temos uma
+nova estrutura para a realização e publicação de artigos. Esperamos
+que esse novo formato incentive mais pessoas a contribuir e consumir
+conteúdo relacionado a perl.
+
+** Como funciona o equinócio?
+
+Um equinócio é um fenômeno astronômico que ocorre quando o sol está em
+zênite sobre a linha do equador. É um período que dura cerca de 20 dias, 
+onde os dias e as noites tem aproximadamente a mesma
+duração. A cada meia-noite desse período publicamos um artigo
+relacionado a perl no site do São Paulo PM.
+
+Apesar de parecer simples, publicar 20 artigos por 20 dias não é algo
+trivial de se fazer, existem vários problemas pra se resolver:
+
+1. Alguém precisa encontrar pessoas para escrever, revisar os
+   artigos, e coordenar a publicação no horário correto.
+2. As vezes as pessoas que gostam de contribuir com artigos, mas muitas não
+   conseguem pensar em temas a tempo.
+3. Poucas pessoas sabem como funciona a tecnologia de publicação dos
+   artigos.
+
+Por isso esse ano adotamos uma nova estrutura de publicação que
+deverá facilitar o processo.
+
+** Como posso contribuir?
+*** Organizando
+
+A melhor contribuição que pode acontecer é alguém se voluntariar para
+a posição de organizador do evento. Essa pessoa precisa pensar em como
+captar colaboradores e fazer eles escreverem e entregar artigos de
+qualidade a tempo de serem publicados. É importante que essa pessoa
+esteja bem familiarizada com a forma como o equinócio acontece e onde
+se encontram as ferramentas necessárias pra assumir a posicão de
+organizador.
+
+Os artigos ficam hospedados num [[https://github.com/sppm/equinocio/][repositório do github]] para que todos
+consigam contribuir com facilidade. Basta clonar o repositório,
+acrescentar/modificar o conteúdo e depois criar um pull request.
+
+Para cada equinócio, é criado um "milestone" no github, onde são
+alocadas as sugestões e os artigos. Também existem 4 tags para
+facilitar a organização:
+
+- oferecido :: quando alguém aceita escrever o artigo
+- sugestão :: quando o ticket é uma sugestão de artigo
+- entregue :: quando o artigo foi escrito e "mergeado" através de um
+              pull request
+- publicado :: quando o artigo foi pro ar
+
+*** Contribuindo
+
+Apesar de tudo, ainda precisamos de artigos escritos com conteúdo novo
+e interessante. Artigos voltados para novatos tem sido um tema de
+grande interesse nos últimos equinócios, então esses tem sido nossa
+preferência de publicação. Porém, qualquer artigo é bem-vindo.
+
+Para publicar um artigo, crie um ticket oferecendo o artigo na [[https://github.com/sppm/equinocio/issues?labels=oferecido&state=open][lista
+de sugestões]]. Um organizador irá marcar o ticket com a tag apropriada.
+É importante que o artigo seja sugerido na lista porque assim, mais
+pessoas poderão contribuir na sugestão do tema e o artigo tende a ter
+mais qualidade. Você também pode buscar inspiração na lista de
+artigos sugeridos, olhando na lista de tickets com a tag "sugestão".
+Quem sabe alguém não sugeriu aquele tema que você gosta e agora te
+deu uma desculpa pra trabalhar com isso de novo?
+
+Você também pode sugerir um artigo, criando um ticket contendo a
+palavra-chave "sugestão" no título do ticket. Com um pouco de sorte,
+alguém que conhece o assunto vai se dispor a escrever um artigo sobre
+o tema e assim todos ficamos felizes.
+
+** Não sei ou não quero escrever artigos, o que mais posso fazer?
+*** Divulgando
+
+Se você leu um artigo no equinócio e gostou, "twite", "facebookeie" e
+"googlemaiseie". Quem sabe esse artigo pode ser útil para um amigo
+seu? Quem sabe o seu chefe lê o artigo e resolve adotar a linguagem
+no seu trabalho?
+
+*** Hackeando
+
+Sempre acontecem maratonas de desenvolvimento e a turma que desenvolve
+perl costuma fazer bonito, além de ser uma boa oportunidade de
+aprendizado. A São Paulo PM ganhou prêmios em dois eventos em 2012:
+
+- [[http://oglobo.globo.com/pais/hackers-do-bem-divulgam-informacoes-para-sociedade-3721290][Desenvolvendo América Latina]] :: Onde Acontece
+- [[http://www.premiomariocovas.sp.gov.br/2011/desc.asp?v=30][Prêmio Mário Covas]] :: Para Onde foi o Meu Dinheiro
+
+*** Bebendo
+
+Como todos usamos perl, o trabalho fica pronto rapidamente e sempre
+sobra tempo pra tomar uma boa cerveja durante os encontros sociais.
+Nesses encontros surgem muitas idéias de inovação tecnológica,
+empreendedorismo e módulos de CPAN, além de sempre ser divertido,
+compareça!

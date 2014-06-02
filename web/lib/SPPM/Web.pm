@@ -12,7 +12,7 @@ use Catalyst::Runtime 5.80;
 #
 #         -Debug: activates the debug mode for very useful log messages
 #   ConfigLoader: will load the configuration from a Config::General file in the
-#                 application's home directory
+#                 application's index.t directory
 # Static::Simple: will serve static files from the application's root
 #                 directory
 

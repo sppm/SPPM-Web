@@ -1,0 +1,122 @@
+* Testando APIs com Plack
+
+Uma das grandes dificuldades de testar uma API remota é reproduzir as
+requisições HTTP de maneira confiável e estável. Um dos problemas é
+que as respostas dos serviços mudam, impedindo que os testes contenham
+valores pré-definidos para a conferência dos resultados da requisição.
+
+Suponha, por exemplo, um cliente mínimo de API da wikipedia:
+
+#+begin_src perl :exports both :eval no-export
+  package Wikipedia::API;
+  use Moose;
+  use JSON;
+  use LWP::UserAgent;
+  has ua => (
+    is      => 'rw',
+    handles => [qw(get)],
+    default => sub { LWP::UserAgent->new; }
+  );
+  has json => (
+    is      => 'rw',
+    handles => [qw(decode)],
+    default => sub { JSON->new->utf8 }
+  );
+  
+  around get => sub {
+    my $orig = shift;
+    my $self = shift;
+    my $res = $self->$orig(@_);
+    return $self->decode( $res->content );
+  };
+  
+  sub query {
+    my ( $self, $page, $prop ) = @_;
+    my $url =
+        q{http://br.wikipedia.org/w/api.php?format=json&action=query}
+      . qq{&titles=$page}
+      . qq{&prop=$prop};
+    return $self->get($url);
+  }
+#+end_src
+
+Para testar esse código, precisamos averiguar se o conteúdo da
+requisição realmente contém os valores esperados:
+
+#+begin_src perl :noweb yes :eval no-export :results output
+  use Test::More;
+  use Data::Dump;
+  my $expected = {
+    query => {
+      pages => {
+        39 => {
+          ns        => 0,
+          pageid    => 39,
+          revisions => [
+            { anon      => "",
+              comment   => "",
+              parentid  => 69,
+              revid     => 4916,
+              timestamp => "2004-06-27T17:34:56Z",
+              user      => "81.220.117.157",
+            },
+          ],
+          title => "Main Page",
+        },
+      },
+    },
+  };
+  my $wapi = Wikipedia::API->new;
+  is_deeply( $wapi->query( 'Main Page', 'revisions' ), $expected );
+  done_testing();
+#+end_src
+
+Porém o sucesso do teste depende de uma série de fatores externos que
+não necessariamente envolvem a corretude do código como ter acesso ao
+servidor remoto que está sendo testado e depender que serviço retorne
+sempre os mesmos valores, nesse exato momento em que você lê isso,
+provavelmente o valor retornado pelo código será diferente. Além
+disso, numa suite de testes grande, executar requisições remotas pode
+ser demorado e tedioso.
+
+** Plack::Test::Agent ao resgate
+
+Para contornar esses problemas, existe o =Plack::Test::Agent=, que
+possui a mesma interface do =LWP::UserAgent= porém ele simula
+requisições contra uma aplicação escrita usando =Plack=.
+
+O problema é resolvido com o middleware de Cache e um Proxy para o
+serviço original.
+
+#+begin_src perl
+my $ua = Plack::Test::Agent->new(
+  app => builder {
+    enable 'Cache',
+      match_url => '/.*',
+      cache_dir => q{/tmp/api-cache};
+    mount '/' => Plack::App::Proxy->new(
+      remote  => 'http://api.discogs.com',
+      backend => 'LWP'
+    )->to_app;
+  }
+);
+
+my $wapi = Wikipedia::API->new(ua => $ua);
+#+end_src
+
+Observe como "enganamos" a biblioteca para que ela passe pelo nosso
+proxy recém-montado, que irá responder exatamente da mesma forma que o
+serviço original, exceto que o middleware de cache irá armazenar cada
+resposta do servidor localmente, para que num segundo acesso, não seja
+necessário entrar em contato com o servidor de fato.
+
+Nesse caso, as requisições ficam cacheadas num diretório temporário,
+mas os arquivos gerados pelo cache podem ser armazenados no
+repositório, junto com o código. Se houver necessidade de atualizar os
+dados do serviço, basta remover os arquivos de cache e corrigir os
+valores esperados pelo código.
+** Autor
+Eden Cardim
+http://edencardim.me
+** Licensa
+Beerware

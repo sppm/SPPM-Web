@@ -1,0 +1,190 @@
+=pod
+
+=encoding utf8
+
+=head1 (R)?ex, Orquestração de servidores.
+
+(R)?ex é uma ferramenta para execução remota, que com ela é possível realizar a orquestração de servidores e gerenciar a configuração de forma centralizada por um arquivo "Rexfile", assim como há o Makefile para o Make, onde você pode definir quais tarefas você deseja executar escrevendo o arquivo de configuração em Perl.
+
+Para facilitar esta execução remota, há divesos módulos e receitas já prontas para você poder contemplar em suas necessidades para automação da configuração dos seus servidores. E a ideia deste artigo, é apresentar a estrutura básica do arquivo Rexfile e como ele funciona, e então oferecer alguns casos de uso para exemplificar melhor o uso na prática.
+
+=head2 Estrutura do arquivo Rexfile
+
+	user "my-user";
+	password "my-password";
+	pass_auth;
+
+	group myservers => "10.0.0.1", "10.0.0.2", "deploy.domain";
+
+	desc "Get the uptime of all server";
+	task "uptime", group => "myserver", sub {
+		say run "uptime";
+	}
+
+A estrutura simples, é com este arquivo você já tem:
+
+=over 4
+
+=item Definição de como irá se conectar no servidor via o esquema de usuário e senha, você também pode se utilizar de chaves, através dos parâmetros "user" e "password". Você poderia utilizar também "private_key" e "public_key" para utilização da autenticação baseado em chaves.
+
+=item Definição de um grupo de servidores chamado "myserver", que contém como alvos os servidores listados respectivamente.
+
+=item Descrição e uma tarefa chamada "uptime", referente ao grupo de servidores "myserver" que irá executar o comando "uptime" remotamente e te mostrar na tela.
+
+=back
+
+Para você verificar quais tarefas são disponível pelo arquivo do Rex, basta executar:
+
+	bash$ rex -T
+	Tasks
+		uptime                         Get the uptime of all server
+
+Para executar a tarefa, basta fazer:
+
+	bash$ rex uptime
+	14:35  up 35 days,  3:29, 4 users, load averages: 0.84 0.85 0.93
+
+=head2 Simples deploy 
+
+Um exemplo para sincronizar um diretório local, com o diretório do servidor remoto, basta escrever a seguinte tarefa:
+
+	desc "Upload website";
+	task "upload", "rexify.org", sub {
+	   sync "html/*", "/var/www/rexify.org/html";
+	};
+
+=head2 Mantenha sua configuração sincronizada.
+
+Neste exemplo, vamos verificar como checar se a configuração do servidor web Nginx, esta devidamente configurada e com o arquivo de configuração que gostariamos no servidor.
+
+	user "joe";
+	sudo_password "foo";
+	sudo TRUE;
+
+	group "frontend" => "frontend[01..05]";
+
+	desc "Prepare Frontend Server";
+	task "prepare", group => "frontend", sub {
+		install "nginx";
+   	};
+
+	desc "Keep Configuration in sync";
+	task "configure", group => "frontend", sub {
+	   prepare();
+
+	   file "/etc/nginx/nginx.conf",
+		source    => "files/etc/nginx/nginx.conf",
+		on_change => sub { service nginx => "reload"; };
+
+	};
+
+Veja que neste exemplo, eu digo que é necessário instalar o pacote nginx da distribuição. É interessante notar que o R(?)ex oferece o suporte para diversos sistemas operacionais, tais eles como Linux (Debian, Gentoo, Red Hat, SuSe, Ubuntu), FreeBSD e SunOS até a data deste artigo, mas procure saber mais na documentação oficial da ferramenta.
+
+Outro detalhe interessante deste exemplo, é a utilização do sudo para execução dos comandos.
+
+=head2 Como criar instancias no cloud da amazon (AWS) ?
+
+	use Rex::Commands::Cloud;
+	use Data::Dumper;
+
+	user "root";
+	public_key "/path/to/your/just/created/amazon-public.key";
+	private_key "/path/to/your/just/downloaded/amazon-private-key.pem";
+
+	my $access_key = "your-access-key";
+	my $secret_access_key = "your-secret-key";
+
+	cloud_service "Amazon";
+	cloud_auth "$access_key", "$secret_access_key";
+	cloud_region "ec2.eu-west-1.amazonaws.com";
+
+	task "create", sub {
+
+   		my $info = cloud_instance create => { 
+			image_id => "ami-02103876",
+	     		name     => "static01",
+			key      => "dev-test",
+			zone => 'us-west-1b',
+		};
+
+		warn Dumper(\$info);
+	};
+
+Com este exemplo, você esta criando uma instancia na sua conta do AWS, utilizando suas chaves, e escolhendo a imagem e o nome da instancia. 
+
+=head2 Suporte para Transaction e Rollback.
+
+Isto é muito interessante quando você tem cenários de integração continua por exemplo, onde você pode definir o que deve ser feito caso alguma coisa na sua transação falhe via rollback.
+
+	task "do-something", "server01", sub {
+		on_rollback {
+			rmdir "/tmp/mydata";
+		};
+	    	
+		transaction {
+			mkdir "/tmp/mydata";
+			upload "files/myapp.tar.gz", "/tmp/mydata";
+			run "cd /tmp/mydata; tar xzf myapp.tar.gz";
+			if($? != 0) { die("Error extracting myapp.tar.gz"); }
+		};
+	};
+
+=head2 Como se utilizar de um SCM ?
+
+Os cenários podem ser diversos para utilização de um SCM para gerenciamento dos seus servidores, para isto há um módulo pronto para lidar com isto. Veja os eexmplos com git e o svn:
+
+	use Rex::Commands::SCM;
+     
+	set repository => "myrepo",
+	      	url => "git@foo.bar:myrepo.git";
+	          
+	set repository => "myrepo2",
+		url => "https://foo.bar/myrepo",
+    		type => "subversion",
+		username => "myuser",
+		password => "mypass";
+				                 
+	task "checkout", sub {
+		checkout "myrepo";
+				
+		checkout "myrepo",
+			path => "webapp";
+								                
+		checkout "myrepo",
+			path => "webapp",
+			branch => 1.6;      # branch only for git
+											                  
+
+		checkout "myrepo2";
+	};
+
+
+=head2 Veja também
+
+=over 4 
+
+=item L<http://rexify.org/>
+
+=item L<https://metacpan.org/release/Rex>
+
+=item irc.freenode.net / #rex
+
+=back
+
+=head2 Conclusão
+
+Para quem busca uma solução simples, que você possa escrever em Perl por conta de flexibilidade, o R(?)ex é uma excelente alternativa.
+
+=head2 Autor
+
+Thiago Rondon, L<https://metacpan.org/author/TBR>, L<http://github.com/thiagorondon>.
+
+=head2 Licença
+
+BEER-WARE
+
+
+
+
+
+

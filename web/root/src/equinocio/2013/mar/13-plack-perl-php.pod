@@ -1,0 +1,246 @@
+=head1 Executando scripts PHP com PSGI/Plack Perl
+
+=encoding utf8
+
+Nesse artigo vou mostrar como rodar seus scripts PHP com PSGI/Plack e vou mostrar como configurar os Frameworks CodeIgniter e CakePHP para serem executado com PSGI/Plack. Requisito para acompanhar o artigo é ter o Perl e PHP instalado em sua maquina, não vou abordar a instalação dos mesmo porque já existe excelentes artigos na internet.
+
+=head2 Sobre PSGI/Plack
+
+PSGI é uma interface de aplicações web entre Perl e servidores web. O Plack é um módulo Perl e um kit de ferramentas que contém PSGI middleware. PSGI e Plack foi inspirados no WSGI do Python e Rack do Ruby.
+O PSGI/Plack já é usado pelos principais Frameworks em Perl e também por pequenas aplicações em Perl. PSGI/Plack aumenta o desempenho e segurança de nossas aplicações.
+
+=head2 Instalação dos módulos Perl
+
+Primeiro vamos instalar o módulo App::cpanminus(cpanm) para instalar os módulos mais rápido. Acesse o terminal e digite:
+
+    cpan App::cpanminus
+
+Instalar o módulo Plack::App::PHPCGI digite:
+
+    cpanm Plack::App::PHPCGI
+
+Instalar o módulo Starman, para execução da aplicação:
+
+    cpanm Starman
+
+=head2 Configurando nosso arquivo PSGI/Plack para executar nosso primeiro exemplo
+
+Crie um arquivo chamado suaapp.psgi e coloque esse código:
+
+    use Plack::App::PHPCGI;
+    
+    my $app = Plack::App::PHPCGI->new(
+        script => '/caminho_do_diretorio/exemplo.php'
+    );
+
+Crie um arquivo PHP chamado 'exemplo.php' e coloque qualquer código, exemplo:
+
+    <?php
+    echo "Amo Perl :)";
+    ?>
+
+Agora vamos rodar nosso primeiro exemplo, abra o terminal e digite:
+
+    starman /caminho_do_diretorio/suaapp.psgi
+
+Agora para ver seu primeiro exemplo rodando, acesso o navegador de sua preferencia e digite o endereço:
+
+    http://localhost:5000
+
+Se tudo ocorreu certo, sera imprimido no navegador 'Amo Perl :)'.
+
+=head2 Configurando nosso arquivo PSGI/Plack para executar script PHP, imagens, css e javascript.
+
+Altere o arquivo suaapp.psgi e coloque esse código:
+
+    use Plack::App::PHPCGIFile;
+
+    my $app = Plack::App::PHPCGIFile->new(
+        root => '/caminho_do_diretorio'
+    );
+
+Execute novamente o comando no terminal:
+
+    starman /caminho_do_diretorio/suaapp.psgi
+
+Agora abra seu navegador e digite:
+
+    http://localhost:5000/nome_do_arquivo
+    
+Exemplos:
+
+    http://localhost:5000/script.php
+    http://localhost:5000/imagem.jpg
+    http://localhost:5000/style.css
+    http://localhost:5000/javascript.js
+
+=head2 Configurando o Framework CodeIgniter para ser executado com PSGI/Plack
+
+1 - Acesse o site L<http://ellislab.com/codeigniter> e faça download da ultima versão do CodeIgniter.
+
+2 - Depois de fazer o download, extrair os arquivos no diretório desejado.
+
+3 - Abra o arquivo 'URI.php' que esta no diretório 'system/core' do CodeIgniter, comente as linhas 186 a 193, assim:
+
+    /*
+    if (strpos($uri, $_SERVER['SCRIPT_NAME']) === 0)
+    {
+ 	    $uri = substr($uri, strlen($_SERVER['SCRIPT_NAME']));
+    }
+    elseif (strpos($uri, dirname($_SERVER['SCRIPT_NAME'])) === 0)
+    {
+ 	    $uri = substr($uri, strlen(dirname($_SERVER['SCRIPT_NAME'])));
+    }
+    */
+
+4 - Crie uma pasta chamada 'public' no diretório 'application' do CodeIgniter, esta pasta onde você colocara os arquivos de imagens, css e javascript
+
+5 - Vou mostrar duas formas de configurar o arquivo suaapp.psgi, usando os módulos Plack::Builder e Plack::App::URLMap:
+
+Primeiro usando Plack::Builder
+
+    use Plack::Builder;
+    use Plack::App::PHPCGI;
+    use Plack::App::PHPCGIFile;
+
+    builder {
+        mount "/" => Plack::App::PHPCGI->new(
+            script => '/caminho_do_diretorio/codeigniter/index.php'
+        );
+ 
+        mount "/public" => Plack::App::PHPCGIFile->new(
+            root => '/caminho_do_diretorio/codeigniter/application/public'
+        );
+    };
+
+Segundo usando Plack::App::URLMap
+
+    use Plack::App::URLMap;
+    use Plack::App::PHPCGI;
+    use Plack::App::PHPCGIFile;
+
+    my $app1 = Plack::App::PHPCGI->new(
+        script => '/caminho_do_diretorio/codeigniter/index.php'
+    );
+
+    my $app2 = Plack::App::PHPCGIFile->new(
+        root => '/caminho_do_diretorio/codeigniter/application/public'
+    );
+
+    my $urlmap = Plack::App::URLMap->new;
+
+    $urlmap->map("/" => $app1);
+    $urlmap->map("/public" => $app2);
+
+    my $app = $urlmap->to_app;
+
+6 - Acessando arquivos de public, exemplos:
+
+    <img src="/public/nome_do_arquivo" />
+    <img src="/public/imagens/nome_do_arquivo" />
+    <link href="/public/css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/public/js/arquivo.js"></script>
+
+7 - Agora só executar o comando no seu terminal:
+
+    starman /caminho_do_diretorio/suaapp.psgi
+
+8 - Demais configurações do CodeIgniter, leia o manual no endereço L<http://ellislab.com/codeigniter/user-guide/>
+
+Pronto! O Framework CodeIgniter esta rodando com PSGI/Plack
+
+=head2 Configurando o Framework CakePHP para ser executado com PSGI/Plack
+
+1 - Acesse o site L<http://cakephp.org> e faça download da versão 2.2.7
+
+2 - Depois de fazer o download, extrair os arquivos no diretório desejado.
+
+3 - Abra o arquivo 'core.php' que esta no diretório 'app/Config' do CakePHP, altere os valores das chaves de 'Security.salt' e 'Security.cipherSeed', assim:
+
+    Configure::write('Security.salt', 'Coloque um outro valor aqui');
+
+    Configure::write('Security.cipherSeed', 'Coloque um outro valor aqui');
+
+4 - Abra o arquivo 'bootstrap.php' que esta no diretório 'lib/Cake' do CakePHP, altere os valores dos caminhos publico: 'img/' para 'public/img/', 'css/' para 'public/css/' e 'js/' para 'public/js/'. Assim:
+
+
+    /**
+     * Web path to the public images directory.
+     */
+    if (!defined('IMAGES_URL')) {
+	    define('IMAGES_URL', 'public/img/');
+    }
+
+    /**
+     * Web path to the CSS files directory.
+     */
+    if (!defined('CSS_URL')) {
+	    define('CSS_URL', 'public/css/');
+    }
+
+    /**
+     * Web path to the js files directory.
+     */
+    if (!defined('JS_URL')) {
+	    define('JS_URL', 'public/js/');
+    }
+
+5 - Configurar o arquivo suaapp.psgi:
+
+Com módulo Plack::Builder
+
+    use Plack::Builder;
+    use Plack::App::PHPCGI;
+    use Plack::App::PHPCGIFile;
+
+    builder {
+        mount "/" => Plack::App::PHPCGI->new(
+            script => '/caminho_do_diretorio/cakephp/app/webroot/index.php'
+        );
+ 
+        mount "/public" => Plack::App::PHPCGIFile->new(
+            root => '/caminho_do_diretorio/cakephp/app/webroot'
+        );
+    };
+
+Com módulo Plack::App::URLMap
+
+    use Plack::App::URLMap;
+    use Plack::App::PHPCGI;
+    use Plack::App::PHPCGIFile;
+
+    my $app1 = Plack::App::PHPCGI->new(
+        script => '/caminho_do_diretorio/cakephp/app/webroot/index.php'
+    );
+
+    my $app2 = Plack::App::PHPCGIFile->new(
+        root => '/caminho_do_diretorio/cakephp/app/webroot'
+    );
+
+    my $urlmap = Plack::App::URLMap->new;
+
+    $urlmap->map("/" => $app1);
+    $urlmap->map("/public" => $app2);
+
+    my $app = $urlmap->to_app;
+
+6 - Agora só executar o comando no seu terminal:
+
+    starman /caminho_do_diretorio/suaapp.psgi
+
+7 - Se aparecer uma mensagem 'URL rewriting is not properly configured on your server.' dizendo que mod_rewrite não esta configurado, pode ignorar essa mensagem. Ira aparecer uma mensagem dizendo que o banco de dados não esta configurado, leia no manual CakePHP para conseguir configurar o mesmo. Se não quiser que apareça as mensagens, Abra o arquivo 'home.ctp' que esta no diretório 'app/View/Pages' do CakePHP, e apague o código que nele esta. 
+
+8 - Demais configurações do CakePHP, leia o manual no endereço L<http://book.cakephp.org/2.0/pt/index.html>
+
+Pronto! O Framework CakePHP esta rodando com PSGI/Plack
+
+=head2 Conclusão
+
+Este artigo foi criado para mostrar como executar scripts e alguns Frameworks PHP, demais configurações devem ser consultado nos manuais dos mesmo.
+
+=head2 Autor
+
+B<Lucas Tiago de Moraes> (Lucas1)
+
+B<lucastiagodemoraes@gmail.com>
+

@@ -1,0 +1,121 @@
+* Junctions em Perl: uma variável com vários valores ao mesmo tempo
+
+Este módulo se inspira nas superposições da mecânica quântica para fazer com que uma única varíavel possa, num mesmo momento, assumir diferentes valores.
+
+Torna-se possível fazer superposições conjuntivas (fazer com que $x seja ao mesmo tempo 1, 2, 3 e 4) e superposições disjuntivas (fazer com que $x seja ao mesmo tempo 1, 2, 3 ou 4). Note a importância do “E” e do “OU”.
+
+Nota: todos os exemplos abaixo assumem o cabeçalho
+
+#+BEGIN_EXAMPLE
+use Perl6::Junction qw/any all one none/;
+#+END_EXAMPLE
+
+Podemos fazer
+
+#+BEGIN_EXAMPLE
+$x = all(1, 2, 3, 4); # "all" produz uma superposição conjuntiva
+$y = 0;
+print "y é menor que cada um dos valores de x" if $y < $x;
+#+END_EXAMPLE
+
+e, no caso, a string será impressa porque a condição é verdadeira. O valor de $y é menor que todos (“all”) os valores de $x.
+
+Se fizéssemos
+
+#+BEGIN_EXAMPLE
+$x = all(1, 2, 3, 4); # "all" produz uma superposição conjuntiva
+$y = 1;
+print "mensagem" if $y == $x;
+#+END_EXAMPLE
+
+a mensagem não seria impressa, pois é falso afirmar que cada um dos números que compõem $x é igual a $y.
+
+Usando agora uma superposição disjuntiva, podemos fazer
+
+#+BEGIN_EXAMPLE
+$x = any(1, 2, 3, 4); # "any" produz uma superposição disjuntiva
+$y = 2;
+print "mensagem" if $y > $x;
+#+END_EXAMPLE
+
+e a mensagem será impressa, já que 2 ($y) é maior que um dos números (“qualquer” dos números, “any”) que compõem $x (no caso, 2 é maior que 1).
+
+Há também a possibilidade de usar “one” e “none”.
+
+#+BEGIN_EXAMPLE
+$x = one(1, 2, 3, 4);
+$y = 2;
+print "mensagem" if $y == $x;
+#+END_EXAMPLE
+
+A mensagem é impressa porque o número 2 aparece apenas uma vez (“one”) na lista.
+
+No caso
+
+#+BEGIN_EXAMPLE
+$x = none(2, 2, 2, 2);
+$y = 1;
+print "mensagem" if $y == $x;
+#+END_EXAMPLE
+
+a mensagem é impressa porque o número 1 não aparece nenhuma vez (“none”) na lista.
+
+Parece mais divertido que útil, mas esses recursos podem ajudar muitas vezes em situações reais. Uma situação muito comum é aquela em que temos muitas condições “OR” ou “AND” concatenadas.
+
+Por exemplo, quando queremos saber se uma variável $y é maior que dois valores diferentes, 1 ou 2, podemos fazer:
+
+#+BEGIN_EXAMPLE
+if ($x > 1 or $x > 2) {}
+#+END_EXAMPLE
+
+e não temos muitos problemas. Mas e quando a quantidade de comparações é alta (por exemplo, uma lista com 50 números)? Não podemos (ou seria terrível) fazer 50 comparações ligadas por partículas “or”.
+
+No entanto, poderíamos facilmente fazer:
+
+#+BEGIN_EXAMPLE
+$x = any(@lista); # $x agora equivale a qualquer elemento da lista
+if ($y > $x) {}
+#+END_EXAMPLE
+
+e a condição será verdadeira se $y for maior que qualquer um dos elementos que compõem $x.
+
+No caso de querermos saber se $y é maior que todos os (ou cada um dos) elementos da lista, basta trocar o “any” por “all”.
+
+#+BEGIN_EXAMPLE
+$x = all(@lista); # $x agora equivale a todos os elementos da lista
+if ($y > $x) {}
+#+END_EXAMPLE
+
+A condição será verdadeira se $y for maior que cada um dos elementos que compõem $x.
+
+Também é possível comparar superposições entre si, como no exemplo:
+
+#+BEGIN_EXAMPLE
+@numeros = (1, 2, 3, 4);
+@limites = (10, 15, 5);
+
+if ( all(@numeros) < all(@limites) ) {
+    # todos os (cada um dos) números são menores que
+    # todos os (cada um dos) limites
+}
+else {
+    # alerta
+}
+#+END_EXAMPLE
+
+No caso acima, todos os número são menores que todos os limites, então o código dentro do =if= será executado. Se =@numeros= contivesse o número 6, o =if= seria falso, porque 6 não é menor que 5.
+
+Fizemos exemplos com números apenas por conveniência, mas strings também podem ser normalmente usadas.
+
+#+BEGIN_EXAMPLE
+$endereco = any('brasildefato.com.br',
+                'rebelion.org',
+                'onebigtorrent.org,
+                'thepiratebay.se');
+print "há um bom endereço aqui"
+  if 'brasildefato.com.br' eq $endereco;
+#+END_EXAMPLE
+
+É um módulo muito útil. Mais documentação pode ser encontrada na página do [[https://metacpan.org/module/Perl6::Junction][Perl6::Junction]] no CPAN. E, para mais curiosidades, pode-se checar o módulo Quantum::Superpositions. O  [[https://metacpan.org/module/Perl6::Junction][Perl6::Junction]] é uma versão que contém apenas um subconjunto das funcionalidades do [[https://metacpan.org/module/Quantum::Superpositions][Quantum::Superpositions]], porém é um módulo mais rápido.
+
+Gil Magno <gilmagno@gmail.com>

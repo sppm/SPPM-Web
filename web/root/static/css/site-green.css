@@ -1,0 +1,46 @@
+body {
+    background-color: #001300;
+    color: green;
+
+}
+
+#site-header {
+    color: #EEE;
+    background-color: #00031C;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    border-bottom: 2px solid #999;
+}
+
+#site-header a {
+    color: #eee;
+    display: block;
+}
+#site-header a:hover {
+    color: white;
+}
+
+#site-header nav ul {
+    overflow: auto;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#site-header nav li{
+    float: left;
+    display: inline;
+    border-left: 2px solid #eee;
+}
+#site-header nav li:first-child
+{
+    border-left: 2px solid transparent;
+}
+
+#site-header nav li a {
+    display: block;
+    padding: 0 12px;
+}

@@ -1,0 +1,415 @@
+=head1 Conhecendo e Trabalhando com o Modulo ObjectDB
+
+=encoding utf8
+
+O modulo ObjectDB é um framework de ORM (Object-Relational Mapper) que implementa o conceito chamado
+Active Record. Este framework foi escrito pelo Viacheslav Tykhanovskyi(vti) e segundo sua própria 
+descrição: é um framework "mapeador" objeto-relacional leve, livre de dependências (exceto o DBI) e 
+flexível.
+
+Neste artigo pretendo abordar o uso deste framework, assim como a minha opinião pessoal sobre o uso e
+cenários onde podemos aplicar o uso deste ao invés de outros módulos muito mais conhecidos pela
+comunidade como o DBIC e Class::DBI, por exemplo.
+
+
+=head2 Breve Explicação
+
+O ObjectDB é um modulo muito simples de se usar e não possui (ainda) ferramentas para geração das classes
+(modelos) automaticamente o faz com que você tenha que fazer a criação de classe a classe na unha. Mas 
+isso não é um problema, uma vez que a sintaxe é muito simples e segue sempre a mesma conhecida e simples
+receita.
+
+Infelizmente o modulo ainda não possui nenhum cookbook, documentação ou uma documentação muito bem 
+detalhada sobre como trabalhar com ele, então, estou escrevendo este documento como forma de apoio a
+alguns desenvolvedores que possam se interessar pelo uso desse modulo em algum projeto.
+
+
+=head2 As Classes de Modelo
+
+Bom neste passo vou abordar como iniciar a criação do mapeamento das tabelas propriamente ditas e para 
+tanto vamos iniciar com uma classe base que manterá nossa conexão e que será herdada por todas as outras.
+
+Base.pm
+    
+    package Model::Base;
+
+    use strict;
+    use warnings;
+
+    use base 'ObjectDB';
+
+    use DBI;
+
+    our $dbh;
+
+    sub init_db {
+        my $self = shift;
+
+        return $dbh if $dbh;
+
+        $dbh = DBI->connect('DBI:SQLite:dbname=database.db', undef, undef);
+        die $DBI::errorstr unless $dbh;
+
+        return $dbh;
+    }
+
+    1;
+
+Note que o database handler é uma instancia DBI mesmo, então não ha nenhuma novidade até aqui se você esta 
+habituado ou já efetuou a conexão com o banco via DBI. 
+
+Podemos dizer que isso resume nossa classe que servirá como "a classe de base".
+
+
+Agora, vamos começar o mapeamento das tabelas...
+Imaginemos a necessidade do mapeamento de uma tabela de usuários, vamos ver como ficaria nossa classe.
+
+User.pm
+
+    package Model::User;
+    use base 'Model::Base';
+     
+    __PACKAGE__->schema(
+        table          => 'user',
+        columns        => [qw/id name email password created/],
+        primary_keys   => ['id'],
+        auto_increment => 'id',
+    );
+     
+    1;
+
+Agora vamos comentar um pouco o que vimos acima.
+
+Note que logo no topo já usamos o C<use base> para herdar a nossa classe Base.pm criada acima que detém o
+nosso database handler.
+
+Abaixo nos especificamos o nome da nossa tabela, o nome das colunas que serão utilizadas, a definição da 
+coluna que é chave primária e declaramos que a mesma é um campo auto incrementado.
+
+Fazendo isso e se os parâmetros de conexão na classe base estiverem corretos, já podemos começar a utilizar
+nossa classe de modelo para trabalhar com a tabela.
+
+
+=head2 Create
+
+O método create permite que as informações inseridas nas propriedades da classe sejam persistidas no banco de 
+dados.
+
+    use Model::User;
+
+    my $user = Model::User->new(
+        name      => 'Daniel Vinciguerra',
+        email     => 'dvinci@cpan.org',
+        password  => 'some hashed',
+    );
+
+    $user->create;
+
+... ou também
+
+    my $user = Model::User->new;
+    $user->column('name',     'Daniel Vinciguerra');
+    $user->column('email',    'dvinci@cpan.org');
+    $user->column('password', 'some hashed');
+
+    $user->create;
+
+Isso fará com que os registros sejam inseridos no banco de dados e retorna o "id" do registro inserido, por 
+exemplo, para ser usado em algum outro cenário.
+
+O create fazendo uma analogia com o SQL corresponde exclusivamente ao INSERT e neste framework não faz o 
+papel multiplo de criar ou atualizar um registro caso ele já exista, como acontece em alguns outros frameworks.
+
+
+=head2 Load
+
+Este método carrega um registro no banco de dados retornando um único registro.
+
+    my $user = Model::User->new( id => 1 );
+    $user->load;
+
+    say $user->column('name');
+
+O trecho acima carregará o registro cujo id seja igual a 1.
+
+
+=head2 Update
+
+O método update é o responsável por persistir um registro, que já existe no banco de dados.
+
+    use Model::User;
+    
+    my $user = Model::User->new( id => 1 );
+    $user->load;
+
+    $user->column('name', 'Joe Doe');
+    ...
+
+    $user->update;
+    
+Note que no exemplo acima nos tínhamos um objeto existente no banco de dados, alteramos o registro de nome e então
+executamos o método update que persiste as alterações realizada no banco de dados.
+
+
+=head2 Delete
+
+	Neste caso vamos imaginar uma necessidade de excluir um registro.
+
+    my $user = Model::User->new( id => 1 );
+    $user->delete;
+
+e isso remove o registro com o id igual a 1 mas, e se eu quiser remover algum registro através de um outro ou outros 
+campos?
+
+    my $user = Model::User->new;
+    $user->delete( where => [name => 'Joe Doe'] );
+
+
+=head2 Find
+
+Agora teremos o retorno de uma lista com ou sem parâmetros.
+
+    my $user = Model::User->new;
+    my $list = $user->find();
+
+    say $_->column('name') for @$list;
+
+
+Isso deve retornar a lista de users mas e agora, quando precisarmos inserir uma condição na busca por exemplo.
+
+    my $user = Model::User->new;
+    my $list = $user->find( where => [id => 1, name => 'Joe Doe']);
+
+    say $_->column('name') for @$list;
+
+... como pode ver acima, usamos um parâmetro "where" para buscar resultados específicos.
+
+
+=head2 Executando Queries SQL
+
+A execução de queries SQL também pode ser beneficiada com o uso do framework, uma vez que todas as classes que usam
+o framework em nossa camada de modelo herdaram o DBI...
+
+	my $dbh = Model::User->init_db;
+	my $sth = $dbh->prepare("SELECT * FROM user");
+	$sth->execute;
+
+Como a configuração já esta definida na classe base, tudo que temos de fazer é chamar o método estático C<init_db>
+e ganhamos como retorno o database handler.
+
+
+=head2 Iterador
+
+Mas a execução da query também pode ser ainda mais beneficiada com a possibilidade de uso de Iteradores.
+
+	my $i = ObjectDB::Iterator->new(
+		object => Model::User->new, sth => $sth
+	);
+
+... agora temos um iterador de L<Model::User> e podemos percorrer o resultado da seguinte forma:
+
+	while (my $value = $i->next) {
+		...
+	}
+
+
+=head2 Relacionanemtos
+
+O relacionamento entre entidades de uma camada de modelo deve ser algo natural para um framework ORM já que isso
+é uma característica deverás comum se tratando de bancos de dados relacionais.
+
+Pensando nisso o ObjectDB implementa isso de forma simples para que possamos descrever esses relacionamentos em
+nossas entidade.
+	
+A declaração de relacionamento segue em geral esta base:
+
+	__PACKAGE__->schema(
+		...
+
+		relationships => {
+			[alias_relacionamento] => {
+				type => '[tipo_de_relacionamento]',
+				class => '[classe]',
+				map => { [coluna_referencia] => '[campo_extrangeiro]'}
+			}
+		}
+	)
+
+
+=head3 alias
+
+Este item define o nome da entidade que será associada pelo relacionamento e este alias será utilizado nas operações
+com a entidade relacionada.
+	
+	package Model::Album;
+	...
+	
+	__PACKAGE__->schema(
+		...
+		relationships => {
+			music => {
+				...
+			}
+		}
+	);
+
+E usando nosso alias definido neste exemplo como C<music>, podemos efetuar as operações a entidade relacionada.
+
+=head3 tipo de relacionamento
+
+O tipo de relacionamento define qual a modalidade de "interação" que as entidades terão. Esses tipo de relacionamento
+se dividem em 'one to one', 'one to many', 'many to one' e 'many to many'.
+
+	__PACKAGE__->schema(
+		...
+
+		relationships => {
+			music => {
+				type => 'one to many',
+				...
+			}
+		}
+	)
+
+
+=head3 classe
+
+É a classe da entidade que será relacionada com a classe corrente.
+
+	__PACKAGE__->schema(
+		...
+		relationships => {
+			music => {
+				...
+				class 	=> 'Model::Music',
+				...
+			}
+		}
+	);
+
+
+=head3 mapeamento
+
+É onde definimos através de quais colunas as entidades se relacionarão.
+
+	__PACKAGE__->schema(
+		...
+		relationships => {
+			music => {
+				...
+				map => { id => 'album_id' }
+			}
+		}
+	);
+
+
+
+Agora que já vimos como podemos declarar os relacionamentos entre as entidades, podemos manipular
+essas entidades relacionadas para criar, atualizar, excluir, contar, etc...
+
+	# criando novo
+	my $album = Model::Album->new(
+		name 	=> 'The Dark Side of the Moon',
+		music 	=> [
+			{ name => 'Speak to Me', time => '01:30' },
+			{ name => 'Breathe', time => '02:43' },
+			...
+		]
+	)->create;
+
+	# contando
+	$album->count_related('music');
+
+	# excluindo
+	$album->delete_related('music');
+	$_->delete for @{$album->related('music')};
+
+	# pesquisando
+	my $album = Model::Album->new( id => 1)->load;
+	say $_->column('name') for @{$album->related('music')};
+
+
+=head2 Extras
+
+Aqui vamos abordar algumas features que achei interessante o módulo possuir, apesar de não ser uma implementação
+tão grande e difundida.
+
+
+=head3 to_hash
+
+Retorna o seu objeto como um hash para, por exemplo, converte-lo em um objeto JSON mais facilmente
+
+	my $user = Model::User->new( ... )->load;
+	$user->to_hash;
+
+
+=head3 transactions
+
+tem a possibilidade de tratar transações
+
+	Model::User->begin_work;
+	
+	... # do what the fucker you want
+
+	if( ... ) {
+		Model::User->commit;
+	} else {
+		Model::User->rollback;
+	}
+
+
+=head3 error
+
+Os erros são "guardados" em uma propriedade da classe para facilitar a analise e exibição para o usuário
+
+	my $user = Model::User->new(
+		...
+	)->create;
+
+	if ($user->error){
+		...
+	}
+
+
+=head2 Porque Devo Usar o ObjectDB?
+
+Sou adepto da analise e de uso da melhor solução no determinado cenário e como este é um framework que não necessita
+de dependências, vejo que o melhor cenário para uso deste é, por exemplo, em um ambiente onde nós desenvolvedores não
+tenhamos controle dos módulos que podem ou não ser instalados.
+
+Um exemplo disso é quando estamos atuando em um projeto que fará uso de uma hospedagem compartilhada e nós, 
+fatalmente, não conseguimos usar o CPAN para instalar módulos e/ou fica muito trabalhoso o deploy de módulos com 
+muitas dependências. Vejo que nesse caso o uso de um framework sem dependências e em Pure Perl pode ajudar no
+desenvolvimento.
+
+
+=head2 Considerações Finais
+
+Infelizmente o ObjectDB ainda é um modulo novo mas muito promissor. O autor deste modulo vem desenvolvendo um grande
+trabalho na comunidade Perl e oferecendo módulos muito uteis, o que me leva a crer que este será igualmente benéfico
+e muito promissor.
+
+Como o trabalho ainda esta "no inicio" o modulo não possui nenhuma documentação rica, manual, cookbook, material de
+apoio, etc... mas como todo bom Perl Monk isso pode ser facilmente sanado através de uma boa olhada e estudo dos 
+testes do módulo que são bem esclarecedores e se acaso a curiosidade sobre uma feature bater basta dar uma olhada no
+source da implementação.
+
+
+=head2 Links e Referências
+
+ObjectDB at CPAN
+L<http://search.cpan.org/~vti/ObjectDB-0.990103/lib/ObjectDB.pm>
+
+ObjectDB at Github (current version)
+L<https://github.com/vti/object-db>
+
+
+=head2 Autor
+
+Daniel Vinciguerra, daniel.vinciguerra@bivee.com.br
+
+Github: L<https://github.com/dvinciguerra>
+
+=cut
+
+

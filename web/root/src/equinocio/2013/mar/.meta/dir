@@ -1,0 +1,3 @@
+[% FOR entry IN tree.directory_entries %]
+  <a href="[% link_for(entry) %]">[% link_for(entry) %]</a>
+[% END %]
