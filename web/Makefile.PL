@@ -17,6 +17,22 @@ requires 'Moose';
 requires 'namespace::autoclean';
 requires 'Config::General';
 
+# basic deps:
+requires 'DateTime';
+requires 'FindBin';
+requires 'File::Basename';
+requires 'JSON::XS';
+
+# Database related
+requires 'DBD::Pg';
+requires 'DBIx::Class::PassphraseColumn';
+requires 'DBIx::Class::TimeStamp';
+requires 'DateTime::Format::Pg';
+requires 'App::Sqitch';
+
+# parsing de artigos
+requires 'HTML::TreeBuilder::XPath';
+requires 'Pod::Xhtml';
 
 
 # not really dep, but good

@@ -1,0 +1,5 @@
+%syntax-version=1.0.0-b2
+%project=sppm
+%uri=https://github.com/sppm/SPPM-Web/
+
+appschema 2014-06-02T07:21:33Z cron <renato.cron@gmail.com> # tabela para os artigos
