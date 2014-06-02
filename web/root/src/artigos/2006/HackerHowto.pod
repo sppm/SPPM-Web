@@ -303,10 +303,10 @@ Isso nE<atilde>o significa apenas aprender a mexer em um browser
 (qualquer um faz isso), mas aprender a programar em HTML, a linguagem
 de markup da Web. Se vocE<ecirc> nE<atilde>o sabe programar, escrever
 em HTML lhe ensinarE<aacute> alguns hE<aacute>bitos mentais que o
-ajudarE<atilde>o. EntE<atilde>o faE<ccedil>a uma home page.
+ajudarE<atilde>o. EntE<atilde>o faE<ccedil>a uma index.t page.
 
-Mas apenas ter uma home page nE<atilde>o chega nem perto de
-tornE<aacute>-lo um hacker. A Web estE<aacute> repleta de home pages. A
+Mas apenas ter uma index.t page nE<atilde>o chega nem perto de
+tornE<aacute>-lo um hacker. A Web estE<aacute> repleta de index.t pages. A
 maioria delas E<eacute> inE<uacute>til, porcaria sem conteE<uacute>do
 -- porcaria muito bem apresentada, note bem, mas porcaria mesmo assim
 (mais sobre esse assunto em The HTML Hell Page).

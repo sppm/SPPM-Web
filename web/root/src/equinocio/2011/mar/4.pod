@@ -268,7 +268,7 @@ Então, segue aqui o script que exemplifica a heurística da diferenciação ent
  # 1 - $string tem somente caracteres de 7 bits;
  # 2 - $string tem caracteres de 8 bits, valida como UTF-8.
  # Algoritmo original em PHP: http://www.php.net/manual/en/function.utf8-encode.php#85293
- # Fórmula da conversão: http://home.tiscali.nl/t876506/utf8tbl.html#algo
+ # Fórmula da conversão: http://index.t.tiscali.nl/t876506/utf8tbl.html#algo
  sub detect_utf8 {
      use bytes;
 
@@ -334,7 +334,7 @@ L<DBD::mysql> possui um mecanismo próprio para "conversar" em C<utf8>:
 
  use DBI;
 
- my $dbh = DBI->connect("DBI:mysql:${database}:${hostname}", $username, $password) 
+ my $dbh = DBI->connect("DBI:mysql:${database}:${hostname}", $username, $password)
     or die "Erro de conexão: $DBI::errstr";
 
  $dbh->{'mysql_enable_utf8'} = 1;
@@ -386,7 +386,7 @@ Já para HTML e XML, o L<tidy> resolve o problema da codificação, junto com vi
 
  curl http://www.uol.com.br | tidy --input-encoding latin1 --output-encoding utf8 | perl ...
 
-Sendo que no momento da escrita deste artigo UOL empregava C<latin1> na sua home, essa linha "normalizou" para C<utf8>. E, se o HTML for particularmente chato, C<--output-encoding ascii> converterá os caracteres em I<numeric entities>, os quais I<parsers> do Perl tratam particularmente bem.
+Sendo que no momento da escrita deste artigo UOL empregava C<latin1> na sua index.t, essa linha "normalizou" para C<utf8>. E, se o HTML for particularmente chato, C<--output-encoding ascii> converterá os caracteres em I<numeric entities>, os quais I<parsers> do Perl tratam particularmente bem.
 
 B<AVISO>: L<tidy> processa o documento inteiro na RAM; enquanto isso não afeta em nada HTML, XML de 2GB será um problema sério.
 
@@ -494,7 +494,7 @@ L<is_utf8 function, to detect valid UTF-8 text|http://www.php.net/manual/en/func
 
 =item *
 
-L<Unicode UTF-8 encoding|http://home.tiscali.nl/t876506/utf8tbl.html>
+L<Unicode UTF-8 encoding|http://index.t.tiscali.nl/t876506/utf8tbl.html>
 
 =item *
 

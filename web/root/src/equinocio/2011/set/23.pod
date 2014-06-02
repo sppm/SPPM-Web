@@ -3,8 +3,8 @@
 
 =head2 Introdução
 
-O objetivo desse artigo não é explicar como funciona o Arduino, é mostrar como Perl, Arduino e SDL podem trabalhar juntos. 
-Se você quer saber mais sobre como o Arduino funciona, L<http://arduino.cc/en/Tutorial/HomePage>.
+O objetivo desse artigo não é explicar como funciona o Arduino, é mostrar como Perl, Arduino e SDL podem trabalhar juntos.
+Se você quer saber mais sobre como o Arduino funciona, L<http://arduino.cc/en/Tutorial/index.tPage>.
 
 Os exemplos desse artigo podem ser repetidos usando esse kit, L<http://robocore.net/modules.php?name=GR_LojaVirtual&prod=105>
 
@@ -78,7 +78,7 @@ Caso você não tenha os headers da lib escrita em C o próprio software vai bai
 
 Escolha a opção 2:
 
-	What way do you wanna go? [ 2 ] 
+	What way do you wanna go? [ 2 ]
 
 =head2 O Projeto
 
@@ -100,9 +100,9 @@ fazer o que eu vou fazer sem o nível de interface que o SDL oferece.
 
 Como eu disse acima todo o material pode ser encontrado no kit, mas aqui eu vou descrever item por item do que é necessário:
 
-=over 
+=over
 
-=item 1 - Placa Arduino 
+=item 1 - Placa Arduino
 
 =item 3 - / Leds Verdes / Leds Amarelos / Leds Vermelhos
 
@@ -332,7 +332,7 @@ apertar multiplas teclas simultaneamente, só precisamos pegar a "flag" no Ardui
 
 =head2 Referências
 
-L<http://arduino.cc/en/Tutorial/HomePage>
+L<http://arduino.cc/en/Tutorial/index.tPage>
 
 L<http://en.wikipedia.org/wiki/Arduino>
 

@@ -28,7 +28,7 @@ Instalar o módulo Starman, para execução da aplicação:
 Crie um arquivo chamado suaapp.psgi e coloque esse código:
 
     use Plack::App::PHPCGI;
-    
+
     my $app = Plack::App::PHPCGI->new(
         script => '/caminho_do_diretorio/exemplo.php'
     );
@@ -66,7 +66,7 @@ Execute novamente o comando no terminal:
 Agora abra seu navegador e digite:
 
     http://localhost:5000/nome_do_arquivo
-    
+
 Exemplos:
 
     http://localhost:5000/script.php
@@ -107,7 +107,7 @@ Primeiro usando Plack::Builder
         mount "/" => Plack::App::PHPCGI->new(
             script => '/caminho_do_diretorio/codeigniter/index.php'
         );
- 
+
         mount "/public" => Plack::App::PHPCGIFile->new(
             root => '/caminho_do_diretorio/codeigniter/application/public'
         );
@@ -197,7 +197,7 @@ Com módulo Plack::Builder
         mount "/" => Plack::App::PHPCGI->new(
             script => '/caminho_do_diretorio/cakephp/app/webroot/index.php'
         );
- 
+
         mount "/public" => Plack::App::PHPCGIFile->new(
             root => '/caminho_do_diretorio/cakephp/app/webroot'
         );
@@ -228,7 +228,7 @@ Com módulo Plack::App::URLMap
 
     starman /caminho_do_diretorio/suaapp.psgi
 
-7 - Se aparecer uma mensagem 'URL rewriting is not properly configured on your server.' dizendo que mod_rewrite não esta configurado, pode ignorar essa mensagem. Ira aparecer uma mensagem dizendo que o banco de dados não esta configurado, leia no manual CakePHP para conseguir configurar o mesmo. Se não quiser que apareça as mensagens, Abra o arquivo 'home.ctp' que esta no diretório 'app/View/Pages' do CakePHP, e apague o código que nele esta. 
+7 - Se aparecer uma mensagem 'URL rewriting is not properly configured on your server.' dizendo que mod_rewrite não esta configurado, pode ignorar essa mensagem. Ira aparecer uma mensagem dizendo que o banco de dados não esta configurado, leia no manual CakePHP para conseguir configurar o mesmo. Se não quiser que apareça as mensagens, Abra o arquivo 'index.t.ctp' que esta no diretório 'app/View/Pages' do CakePHP, e apague o código que nele esta.
 
 8 - Demais configurações do CakePHP, leia o manual no endereço L<http://book.cakephp.org/2.0/pt/index.html>
 

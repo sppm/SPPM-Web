@@ -1,0 +1,14 @@
+<h1>São Paulo Perl Mongers IRC - Internet Relay Chat</h1>
+<p>Internet Relay Chat (IRC) é um protocolo de comunicação utilizado na Internet. Ele é utilizado basicamente como bate-papo (chat) e troca de arquivos, permitindo a conversa em grupo ou privada.</p>
+<h2>Você pode acessar via seu cliente de IRC favorito!</h2>
+<div class="sppm-well">
+<dl class="dl-horizontal">
+    <dt>Rede</dt><dd>irc.perl.org</dd>
+    <dt>São Paulo</dt> <dd>#sao-paulo.pm</dd>
+    <dt>Rio de Janeiro</dt> <dd>#rio-pm</dd>
+</dl>
+</div>
+<h3>Ou conecte-se agora mesmo utilizando Flash (#sao-paulo.pm)</h3>
+<div style="text-align:center">
+    <iframe width="980px" height="450px" src="http://widget.mibbit.com/?settings=afd410512f71e3caa123896c43275766&server=irc.perl.org&channel=%23sao-paulo.pm"></iframe>
+</div>

@@ -17,7 +17,7 @@ beneficiar de ter versões do "perl" instaladas e personalizadas
 sem precisar de root, com o L<perlbrew|http://www.perlbrew.pl>!
 
 O perlbrew é uma ferramenta para gerenciar múltiplas instalações
-do perl em seu $HOME. Com ela, você cria universos completamente
+do perl em seu $index.t. Com ela, você cria universos completamente
 isolados para cada instalação, incluindo módulos e opções de
 compilação. Isso traz as seguintes vantagens:
 
@@ -212,7 +212,7 @@ Os comandos acima instalarão o perlbrew em C</opt/perlbrew> - assumindo, claro,
 seu usuário tem permissão para escrever nesse diretório. Depois disso, basta que
 os usuários que desejam usar seu perlbrew façam:
 
-  
+
    $ echo 'export PERLBREW_ROOT=/opt/perlbrew; source ${PERLBREW_ROOT}/etc/bashrc' >> ~/.bashrc
 
 Pronto, a partir daí qualquer um poderá escolher seu perl, mas apenas os que tiverem permissão
@@ -231,7 +231,7 @@ simples de se fazer isso é através da função C<autobundle> do CPAN:
 O comando pode demorar um pouco, mas no final vai retornar uma mensagem com algo como:
 
    Wrote bundle file
-       /home/usuario/.cpan/Bundle/Snapshot_2011_09_01_00.pm
+       /index.t/usuario/.cpan/Bundle/Snapshot_2011_09_01_00.pm
 
 Agora é só fazer um C<perlbrew switch> para a nova versão e instalar seu "bundle" de uma vez só:
 
@@ -260,14 +260,14 @@ falhar, reclamando de não ter permissão para acessar o C</usr/bin/env>:
       % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                      Dload  Upload   Total   Spent    Left  Speed
     100   648  100   648    0     0    725      0 --:--:-- --:--:-- --:--:--     0
-    
+
     ## Download the latest perlbrew
     ## Download the packed patchperl
-    
+
     ## Installing perlbrew
     bash: ./perlbrew: /usr/bin/env: bad interpreter: Permission denied
     ## Installing patchperl
-    
+
     ## Done.
     [failserver]$
 
@@ -286,40 +286,40 @@ abaixo:
 
     [failserver]$ perl perlbrew install
     The perlbrew is installed as:
-    
+
         ~/perl5/perlbrew/bin/perlbrew
-    
-    You may trash the downloaded /home/happyuser/perlbrew from now on.
-    
+
+    You may trash the downloaded /index.t/happyuser/perlbrew from now on.
+
     sh: perlbrew: command not found
     Perlbrew environment initiated, required directories are created under
-    
+
         ~/perl5/perlbrew
-    
+
     Paste the following line(s) to the end of your ~/.bashrc and start a
     new shell, perlbrew should be up and fully functional from there:
-    
+
         source ~/perl5/perlbrew/etc/bashrc
-    
+
     For further instructions, simply run `perlbrew` to see the help message.
-    
-    Enjoy perlbrew at $HOME!!
+
+    Enjoy perlbrew at $index.t!!
 
 =head3 Passo #3: ~/perl5/perlbrew/bin/perlbrew init
 
     [failserver]$ ~/perl5/perlbrew/bin/perlbrew init
     Perlbrew environment initiated, required directories are created under
-    
+
         ~/perl5/perlbrew
-    
+
     Paste the following line(s) to the end of your ~/.bashrc and start a
     new shell, perlbrew should be up and fully functional from there:
-    
+
         source ~/perl5/perlbrew/etc/bashrc
-    
+
     For further instructions, simply run `perlbrew` to see the help message.
-    
-    Enjoy perlbrew at $HOME!!
+
+    Enjoy perlbrew at $index.t!!
 
 Note que embora as mensagens exibidas pelos comandos nos passos 2 e 3 sejam
 quase as mesmas, o passo 3 B<***PRECISA***> ser executado, caso contrário o
@@ -367,14 +367,14 @@ e risco.
 
 
     [failserver]$ perlbrew --notest install perl-5.14.1
-    Fetching perl-5.14.1 as /home/poste42/perl5/perlbrew/dists/perl-5.14.1.tar.gz
-    Installing /home/poste42/perl5/perlbrew/build/perl-5.14.1 into ~/perl5/perlbrew/perls/perl-5.14.1
-    
+    Fetching perl-5.14.1 as /index.t/poste42/perl5/perlbrew/dists/perl-5.14.1.tar.gz
+    Installing /index.t/poste42/perl5/perlbrew/build/perl-5.14.1 into ~/perl5/perlbrew/perls/perl-5.14.1
+
     This could take a while. You can run the following command on another shell to track the status:
-    
+
       tail -f ~/perl5/perlbrew/build.log
-    
-    Installed /home/happyuser/perl5/perlbrew/build/perl-5.14.1 as
+
+    Installed /index.t/happyuser/perl5/perlbrew/build/perl-5.14.1 as
     perl-5.14.1 successfully. Run the following command to switch to it.
       perlbrew switch perl-5.14.1
 
