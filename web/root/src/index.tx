@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row sppm-well bottom-separator">
     <div class="col-md-6">
         <h2>Bem vindo à São Paulo Perl Mongers!</h2>
         <p>Neste site, você encontra informaçães sobre como se conectar aos Perl Mongers que estão em São Paulo e também os simpatizantes da nossa comunidade.</p>
@@ -12,11 +12,7 @@
     </div>
 </div>
 
-<hr/>
-
-
-
-<div class="row">
+<div class="row sppm-well bottom-separator">
     <div class="col-md-6">
         <h2>Comunidade</h2>
         <p>Temos uma <a href="[%c.uri_for_action('/pages/show', ['lista'])%]">lista de discurssão</a> e ficamos online no <a href="[%c.uri_for_action('/pages/show', ['irc'])%]">IRC, no canal #sao-paulo.pm</a>.</p>
@@ -28,5 +24,15 @@
     </div>
 </div>
 
+<div class="row sppm-well bottom-separator">
+    <div class="col-xs-12 text-center">
+        <h4>Apoio</h4>
+        <div style="background-color: white; display:inline-block; width: 402px; padding: 15px">
+            <a href="http://www.pm.org"><img src="/static/img/pm.jpg"></a>
+            <a href="http://www.perl.org"><img src="/static/img/perl.org.png"></a>
+            <a href="http://creativecommons.org/licenses/by/3.0/"><img src="/static/img/cc.png"></a>
+        </div>
+    </div>
+</div>
 
 

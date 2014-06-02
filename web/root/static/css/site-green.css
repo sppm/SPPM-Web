@@ -49,3 +49,7 @@ body {
     padding: 15px;
     background-color: rgba(0,50,0,0.4);
 }
+
+.bottom-separator {
+    margin-bottom: 15px;
+}
