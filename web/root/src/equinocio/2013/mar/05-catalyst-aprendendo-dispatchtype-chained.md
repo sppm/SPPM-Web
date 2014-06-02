@@ -106,7 +106,7 @@ Agora se você acessar, por exemplo, [http://0:3000/caminho/que-nao-existe](http
 
 Perceba que, o path continua sendo o `/`, porem, `caminho/que-nao-existe` virou argumento para o metodo. Isso porque, na definição do `default`não foi dito quantos argumentos ele recebia `sub default :Path {`. Veja, não existe `Args`, portanto, tudo que não satisfazer nenhuma action, vai acabar virando argumento este action. Ou seja, é um bom jeito de fazer 404.
 
-> Observação: o nome dos metodos não influenciam no comportamento deles. Portanto se você alterar de `sub index`, para `sub home_page :Path('/') :Args(0) {` e `sub not_found_page :Path {` o código vai continuar funcionando perfeitamente.
+> Observação: o nome dos metodos não influenciam no comportamento deles. Portanto se você alterar de `sub index`, para `sub index.t_page :Path('/') :Args(0) {` e `sub not_found_page :Path {` o código vai continuar funcionando perfeitamente.
 
 
 ### Porque usar Chained

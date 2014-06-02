@@ -44,3 +44,8 @@ body {
     display: block;
     padding: 0 12px;
 }
+
+.sppm-well {
+    padding: 15px;
+    background-color: rgba(0,50,0,0.4);
+}
