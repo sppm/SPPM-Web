@@ -35,6 +35,7 @@
                     <ul>
                     <li><a href="[% c.uri_for('/')%]">Página inicial</a></li>
                     <li><a href="[%c.uri_for_action('/pages/show', ['quem-somos'])%]">Quem somos</a></li>
+                    <li><a href="[%c.uri_for_action('/pages/show', ['encontros-sociais'])%]">Encontros sociais</a></li>
                     <li><a href="[%c.uri_for_action('/pages/show', ['contato'])%]">Contato</a></li>
                     <li><a href="[%c.uri_for_action('/pages/show', ['treinamento'])%]">Treinamento</a></li>
                     <li><a href="[%c.uri_for_action('/pages/show', ['irc'])%]">IRC</a></li>
