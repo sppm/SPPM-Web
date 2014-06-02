@@ -34,8 +34,8 @@
                 <nav>
                     <ul>
                     <li><a href="[% c.uri_for('/')%]">Página inicial</a></li>
-                    <li><a href="[% c.uri_for('/pages/quem-somos')%]">Quem somos</a></li>
-                    <li><a href="[% c.uri_for('/pages/contato')%]">Contato</a></li>
+                    <li><a href="[%c.uri_for_action('/pages/show', ['quem-somos'])%]">Quem somos</a></li>
+                    <li><a href="[%c.uri_for_action('/pages/show', ['contato'])%]">Contato</a></li>
                     </ul>
                 </nav>
             </div>

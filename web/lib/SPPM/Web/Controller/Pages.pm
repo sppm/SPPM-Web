@@ -6,7 +6,7 @@ use utf8;
 BEGIN { extends 'Catalyst::Controller' }
 
 
-sub base: Chained('/root') PathPart('pages') CaptureArgs(0) {
+sub base: Chained('/root') PathPart('pagina') CaptureArgs(0) {
     my ( $self, $c ) = @_;
 
 }
@@ -29,7 +29,7 @@ sub object: Chained('base') PathPart('') CaptureArgs(1) {
 
 }
 
-sub render: Chained('object') PathPart('') Args(0) {
+sub show: Chained('object') PathPart('') Args(0) {
 
 }
 
