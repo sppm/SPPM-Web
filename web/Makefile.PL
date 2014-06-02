@@ -19,6 +19,9 @@ requires 'Config::General';
 
 
 
+# not really dep, but good
+requires 'Data::Printer';
+
 # view
 requires 'Catalyst::View::Xslate';
 requires 'Text::Xslate::Bridge::TT2Like';
