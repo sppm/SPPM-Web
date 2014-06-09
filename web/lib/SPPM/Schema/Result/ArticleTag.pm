@@ -49,17 +49,17 @@ __PACKAGE__->table("article_tag");
   is_nullable: 0
   sequence: 'article_tag_id_seq'
 
-=head2 article_uid
-
-  data_type: 'integer'
-  is_foreign_key: 1
-  is_nullable: 0
-
 =head2 tag_name
 
   data_type: 'varchar'
   is_nullable: 0
   size: 20
+
+=head2 article_id
+
+  data_type: 'integer'
+  is_foreign_key: 1
+  is_nullable: 0
 
 =cut
 
@@ -71,10 +71,10 @@ __PACKAGE__->add_columns(
     is_nullable       => 0,
     sequence          => "article_tag_id_seq",
   },
-  "article_uid",
-  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "tag_name",
   { data_type => "varchar", is_nullable => 0, size => 20 },
+  "article_id",
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
 );
 
 =head1 PRIMARY KEY
@@ -91,11 +91,11 @@ __PACKAGE__->set_primary_key("id");
 
 =head1 UNIQUE CONSTRAINTS
 
-=head2 C<article_tag_article_uid_tag_name_key>
+=head2 C<article_tag_article_id_tag_name_key>
 
 =over 4
 
-=item * L</article_uid>
+=item * L</article_id>
 
 =item * L</tag_name>
 
@@ -104,13 +104,13 @@ __PACKAGE__->set_primary_key("id");
 =cut
 
 __PACKAGE__->add_unique_constraint(
-  "article_tag_article_uid_tag_name_key",
-  ["article_uid", "tag_name"],
+  "article_tag_article_id_tag_name_key",
+  ["article_id", "tag_name"],
 );
 
 =head1 RELATIONS
 
-=head2 article_uid
+=head2 article
 
 Type: belongs_to
 
@@ -119,15 +119,15 @@ Related object: L<SPPM::Schema::Result::Article>
 =cut
 
 __PACKAGE__->belongs_to(
-  "article_uid",
+  "article",
   "SPPM::Schema::Result::Article",
-  { article_uid => "article_uid" },
+  { id => "article_id" },
   { is_deferrable => 0, on_delete => "NO ACTION", on_update => "NO ACTION" },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07036 @ 2014-06-08 23:20:20
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:vm4A1gWoL8O0yWuN+9kcXQ
+# Created by DBIx::Class::Schema::Loader v0.07036 @ 2014-06-09 01:18:47
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:bA86UIo9gDfs5PRAwzNvVQ
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

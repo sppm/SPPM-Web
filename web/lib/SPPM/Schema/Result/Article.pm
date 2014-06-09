@@ -55,11 +55,6 @@ __PACKAGE__->table("article");
   is_nullable: 0
   size: 72
 
-=head2 article_uid
-
-  data_type: 'integer'
-  is_nullable: 0
-
 =head2 uri_path
 
   data_type: 'text'
@@ -143,6 +138,13 @@ __PACKAGE__->table("article");
   default_value: infinity
   is_nullable: 0
 
+=head2 file_type
+
+  data_type: 'varchar'
+  default_value: 'txt'
+  is_nullable: 0
+  size: 4
+
 =cut
 
 __PACKAGE__->add_columns(
@@ -155,8 +157,6 @@ __PACKAGE__->add_columns(
   },
   "title",
   { data_type => "varchar", is_nullable => 0, size => 72 },
-  "article_uid",
-  { data_type => "integer", is_nullable => 0 },
   "uri_path",
   {
     data_type   => "text",
@@ -222,6 +222,8 @@ __PACKAGE__->add_columns(
   },
   "end_ts",
   { data_type => "timestamp", default_value => "infinity", is_nullable => 0 },
+  "file_type",
+  { data_type => "varchar", default_value => "txt", is_nullable => 0, size => 4 },
 );
 
 =head1 PRIMARY KEY
@@ -236,20 +238,6 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key("id");
 
-=head1 UNIQUE CONSTRAINTS
-
-=head2 C<article_article_uid_key>
-
-=over 4
-
-=item * L</article_uid>
-
-=back
-
-=cut
-
-__PACKAGE__->add_unique_constraint("article_article_uid_key", ["article_uid"]);
-
 =head1 RELATIONS
 
 =head2 article_collaborations
@@ -263,7 +251,7 @@ Related object: L<SPPM::Schema::Result::ArticleCollaboration>
 __PACKAGE__->has_many(
   "article_collaborations",
   "SPPM::Schema::Result::ArticleCollaboration",
-  { "foreign.article_uid" => "self.article_uid" },
+  { "foreign.article_id" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
@@ -278,13 +266,13 @@ Related object: L<SPPM::Schema::Result::ArticleTag>
 __PACKAGE__->has_many(
   "article_tags",
   "SPPM::Schema::Result::ArticleTag",
-  { "foreign.article_uid" => "self.article_uid" },
+  { "foreign.article_id" => "self.id" },
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
 
-# Created by DBIx::Class::Schema::Loader v0.07036 @ 2014-06-08 23:20:20
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:baXxnXgnsmb02jK4PHDRcQ
+# Created by DBIx::Class::Schema::Loader v0.07036 @ 2014-06-09 01:18:47
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:GE5dzYXIeVA5mVnIoOOafA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
