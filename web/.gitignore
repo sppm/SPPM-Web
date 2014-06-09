@@ -19,6 +19,3 @@ root/static/built/
 .tidyall.d/
 perltidy.LOG
 MYMETA*
-script/schema.dump.sh
-sqitch.conf
-

@@ -1,3 +1,27 @@
 Site BETA da http://sao-paulo.pm.org/principal
 
 é uma tentativa do RenatoCRON de colocar todos os artigos/equinocios no ar, num site novo e rápido.
+
+
+------
+
+
+Iniciando o banco:
+
+$ cd web;
+$ vim sqitch.conf # configure e salve a conexao com o seu postgres, usuario e host.
+$ git update-index --assume-unchanged sqitch.conf # nao commite suas configurações!
+$ createdb sppm_dev # se foi esse que você nome que escolheu.
+$ sqitch deploy # isso faz o deploy no banco
+
+
+
+Se for mexer no banco, faça, depois de configurar seu usuario do sqitch
+
+$ sqitch add 00X-foo-bar-sua-alteracao --requires 00X-1-alteracao anterior -n 'uma descricao'
+
+$ vim script/schema.dump.sh # altere o nome do banco
+$ git update-index --assume-unchanged script/schema.dump.sh # nao commite suas configurações!
+$ ./script/schema.dump.sh # execute
+
+
