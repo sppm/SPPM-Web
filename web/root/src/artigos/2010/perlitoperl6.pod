@@ -103,10 +103,10 @@ Exemplo: comando "for", estruturas de dados
 =begin pod:xhtml
 
 <center>
-<textarea id="s2" cols="50" rows="10">my $names = { 
-    "2010-09-01" =&gt; "Luis", 
-    "2010-09-02" =&gt; "Daniel", 
-    "2010-09-03" =&gt; "André" 
+<textarea id="s2" cols="50" rows="10">my $names = {
+    "2010-09-01" =&gt; "Luis",
+    "2010-09-02" =&gt; "Daniel",
+    "2010-09-03" =&gt; "André"
 };
 my $datas = $names.keys;
 say "Equinócio 2010:";
@@ -129,8 +129,8 @@ Exemplo: gramática e objeto "Match"
 <textarea id="s3" cols="50" rows="15">grammar Perlito::Grammar {
     token primeiro_nome { &lt;.word&gt;+ }
     token segundo_nome  { &lt;.word&gt;+ }
-    token nome { 
-        &lt;primeiro_nome&gt; \s+ &lt;segundo_nome&gt; 
+    token nome {
+        &lt;primeiro_nome&gt; \s+ &lt;segundo_nome&gt;
     }
 }
 
@@ -232,7 +232,7 @@ v6.pm "Perl6 em Perl5" disponível no CPAN: L<http://search.cpan.org/dist/v6>
 
 Perlito em Javascript: disponível em L<http://perlcabal.org/~fglock/perlito.js>. Esta é a versão utilizada nos exemplos deste artigo.
 
-=head2 AUTOR
+=head1 AUTHOR
 
 Flávio S. Glock <fglock@gmail.com>
 

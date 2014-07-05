@@ -1,6 +1,6 @@
 =pod
 
-=encoding utf8
+
 
 =head1 Os plugins do Catalyst
 
@@ -74,7 +74,7 @@ Catalyst::Plugin::Session, faríamos:
 
 	cpan Catalyst::Plugin::Session
 
-Para maiores detalhes de como usar o CPAN, consulte o L<http://www.perl.org.br/Artigos/ArtigoDanielMantovani2009x12x02> tutorial criado pelo Daniel Mantovani.
+Para maiores detalhes de como usar o CPAN, consulte o L<http://www.perl.org.br/Artigos/ArtigoDanielMantovani2009x12x02> tutorial criado pelo Daniel de Oliveira Mantovani.
 
 =head2 Configuração
 
@@ -102,7 +102,7 @@ Ainda no MyApp.pm, vamos configurar o parâmetro C<expires>:
    	 }
 	);
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Giuliani D. Sanches. <giulianisanches@gmail.com>
 

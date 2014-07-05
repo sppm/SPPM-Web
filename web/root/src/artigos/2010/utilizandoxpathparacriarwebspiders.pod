@@ -1,6 +1,6 @@
 =pod
 
-=encoding utf8
+
 
 =head1 Utilizando XPath para criar web spiders
 
@@ -424,7 +424,7 @@ Lembrando que TODOS os métodos do HTML::Element que você usava como o HTML::Tr
 
 Abraço!
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Andre Garcia Carneiro <andregarciacarneiro@gmail.com>
 
@@ -440,7 +440,7 @@ Andre Garcia Carneiro <andregarciacarneiro@gmail.com>
 
 =back
 
-=LICENÇA
+=head2 LICENÇA
 
 Você pode obter, alterar e republicar esse artigo sobre os mesmos termos da licença ARTISTIC2
 

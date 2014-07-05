@@ -1051,7 +1051,7 @@ B<5> : Programa para quebrar a criptografia utilizada em DVD's.
 
 ----
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Alceu Junior
 

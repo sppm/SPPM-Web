@@ -439,7 +439,7 @@ Para saber mais, leia o documento completo:
 
 =back
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Nelson Ferraz
 

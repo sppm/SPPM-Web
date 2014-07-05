@@ -44,7 +44,7 @@ relaE<ccedil>E<atilde>o a sua profissE<atilde>o.
 
 http://www.acm.org/serving/se/code.htm
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Nelson Ferraz
 

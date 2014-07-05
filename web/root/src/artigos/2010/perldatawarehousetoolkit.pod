@@ -184,7 +184,7 @@ Por exemplo:
     WHERE                       WHERE
         year=2010                   year=2010
     GROUP BY                    GROUP BY
-        brand                       brand 
+        brand                       brand
     ----------------------------------------------------------
     SELECT                      SELECT
         month,                      month,
@@ -196,15 +196,15 @@ Por exemplo:
         year=2010                   year=2010
     GROUP BY                    GROUP BY
         month,                      month,
-        brand                       brand 
+        brand                       brand
     ----------------------------------------------------------
 
 O Aggregate Navigator, que faz essa substituição, permitirá que os
 usuários continuem a usar a tabela base, e aumentará a performance
 do Data Warehouse de maneira transparente.
 
-=head1 AUTOR
+=head1 AUTHOR
 
-Nelson Ferraz, C<< <nferraz at gmail.com> >>
+Nelson Ferraz C<< <nferraz at gmail.com> >>
 
 

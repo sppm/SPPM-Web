@@ -146,7 +146,7 @@ vocE<ecirc> prestar.
 =head2 E mais importante que tudo: Entenda bem o seu modelo de
 negE<oacute>cio e o mercado onde vocE<ecirc> vai atuar
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Nelson Ferraz
 

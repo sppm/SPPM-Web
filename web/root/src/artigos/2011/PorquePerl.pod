@@ -211,6 +211,6 @@ para entrar de cabeça no hacking de dados públicos.
 
 Faça valer sua voz na democracia. Venha fazer parte da comunidade OpenData-BR!
 
-=head1 Autor
+=head1 AUTHOR
 
 Breno G. de Oliveira <garu@cpan.org>

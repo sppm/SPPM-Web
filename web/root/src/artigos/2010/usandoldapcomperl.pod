@@ -1,4 +1,4 @@
-=encoding utf8
+
 
 =head1 Usando LDAP com Perl
 
@@ -375,7 +375,7 @@ L<http://www.linuxjournal.com/article/7086>
 
 =over 4
 
-=item Daniel Mantovani
+=item Daniel de Oliveira Mantovani
 
 O nosso mascote-emo na L<São Paulo PM|http://sao-paulo.pm.org/>, por ter me
 atirado em direção a este artigo.
@@ -386,9 +386,9 @@ Velho amigo que me trouxe de volta para o Perl.
 
 =back
 
-=head2 Autor
+=head1 AUTHOR
 
-Alexei "Russo" Znamensky E<lt> russoz no cpan org E<gt>
+Alexei Znamensky "Russo" E<lt> russoz no cpan org E<gt>
 
 Blog: L<http://russoz.wordpress.com/>
 

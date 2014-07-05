@@ -1,6 +1,6 @@
 =pod
 
-=encoding utf8
+
 
 =head1 O email além do enviar e receber
 
@@ -195,7 +195,7 @@ Existem outras ferramentas qualificadas para esta tarefa. Também destaco o
 B<Amavisd-New>, vide apresentação para o B<YAPC::Brasil::2009>:
 L<http://www.slideshare.net/otaviof/extendendo-o-amavisd-new>
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Otavio Fernandes (otaviof) L<otaviof@gmail.com>
 

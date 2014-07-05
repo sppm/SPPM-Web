@@ -115,6 +115,11 @@ pessoal!
 
 =back
 
+=head1 AUTHOR
+
+Desconhecido
+
+
 =cut
 
 #Pod::HTML2Pod conversion notes:

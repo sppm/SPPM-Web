@@ -305,9 +305,9 @@ See L<http://en.wikipedia.org/wiki/Yeast>
 
 VersE<atilde>o 0.01
 
-=head1 AUTOR
+=head1 AUTHOR
 
-Monsenhor, C<< <ricardo.filipo at gmail.com> >>
+Monsenhor C<< <ricardo.filipo at gmail.com> >>
 
 =head1 SINOPSE
 

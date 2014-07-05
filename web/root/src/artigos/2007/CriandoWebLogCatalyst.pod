@@ -723,7 +723,7 @@ A respeito de quaisquer erros encontrados neste artigo, dE<uacute>vidas
 e consideraE<ccedil>E<otilde>es adicionais, nE<atilde>o hesite em
 contatar o autor.
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Eden Cardim
 

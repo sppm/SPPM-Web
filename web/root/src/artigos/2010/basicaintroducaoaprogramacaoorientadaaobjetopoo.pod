@@ -1,5 +1,5 @@
 
-=encoding utf8
+
 
 =head1 Básica Introdução à Programação Orientada a Objeto (POO)
 
@@ -102,9 +102,9 @@ e a herança é se baseia na manipulação do array "@ISA", existe também o mé
 
 Uma implementação simples da classe I<Ar> e uma subclasse derivada dela,
 I<Furacao>:
-      
-     		
-    
+
+
+
     #==============================================================================
     # Declaracao do nome da Classe
     #==============================================================================
@@ -262,7 +262,7 @@ http://perl.org.br/Perldoc/V500807/Perlreftut
 http://perl.org.br/Perldoc/V500807/Perlboot
 
 
-=head1 Autor
+=head1 AUTHOR
 
 Ronaldo Ferreira de Lima aka jimmy (jimmy dot tty at gmail dot com).
 

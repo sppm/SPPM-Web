@@ -236,7 +236,7 @@ http://sao-paulo.pm.org/papers/champs/cgi-app-paper/index.html
 
 =back
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Alceu Junior
 

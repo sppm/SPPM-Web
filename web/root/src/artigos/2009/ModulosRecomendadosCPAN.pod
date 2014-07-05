@@ -312,7 +312,7 @@ humanos. (Veja tambE<eacute>m: JSON)
 
 =back
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Nelson Ferraz
 

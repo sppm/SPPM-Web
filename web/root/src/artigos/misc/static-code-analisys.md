@@ -99,7 +99,7 @@ Curiosidade: `corelist` às vezes pode fazer o papel do `perlver`. Por exemplo, 
 
 ## Test::Mojibake
 
-[scan_mojibake](https://metacpan.org/module/scan_mojibake) ajuda a lidar com os erros de codificaÃ§Ã£o, reportando o uso indevido/incoerente de `use utf8` / `=encoding utf8`:
+[scan_mojibake](https://metacpan.org/module/scan_mojibake) ajuda a lidar com os erros de codificaÃ§Ã£o, reportando o uso indevido/incoerente de `use utf8` / ``:
 
     not ok 13 - Mojibake test for t/bad/bad-latin1.pl_
     #   Failed test 'Mojibake test for t/bad/bad-latin1.pl_'
@@ -141,7 +141,8 @@ E, claro, temos o [Test::Pod::Coverage](https://metacpan.org/module/Test::Pod::C
 
 [Dist::Zilla::PluginBundle::TestingMania](https://metacpan.org/module/Dist::Zilla::PluginBundle::TestingMania) junta alguns desses (e muitos outros) analisadores estáticos para a sua conveniência.
 
-## Autor
+## AUTHOR
+
 Stanislaw Pusep
 
  - [blogs.perl.org/users/stas](http://blogs.perl.org/users/stas/)

@@ -30,7 +30,7 @@ cabeE<ccedil>a, E<eacute> tambE<eacute>m a qualidade que o faz escrever
 programas que outras pessoas nE<atilde>o irE<atilde>o depois criticar.
 Assim, esta E<eacute> a Terceira Grande Virtude do Programador.
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Nelson Ferraz
 

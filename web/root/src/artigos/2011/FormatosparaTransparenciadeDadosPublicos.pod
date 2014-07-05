@@ -238,3 +238,7 @@ coleta de dados via web é fundamental para que esse processo possa
 ocorrer com a agilidade e eficiência necessárias.
 
 
+
+=head1 AUTHOR
+
+Thiago Rondon C<< <thiago.rondon@gmail.com> >>, trabalha atualmente na Aware.

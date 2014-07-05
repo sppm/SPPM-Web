@@ -191,7 +191,7 @@ love to hear your comments and opinions on the subject.
 
 =back
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Nelson Ferraz
 

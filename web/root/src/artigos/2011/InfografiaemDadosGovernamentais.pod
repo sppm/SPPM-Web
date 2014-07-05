@@ -118,11 +118,10 @@ Alguns algoritmos conhecidos que são utilizados para auxiliar na organização 
 
 O matemático Georgy Voronoy criou este tipo de diagrama para demonstrar o espaço métrico em regiões da imagem de acordo com a distância a determinados pontos, e o interessante que ele lhe dá um caminho seguro, gera uma rota equidistante dos objetos e uma ótima visualização em casos que são utilizados mapas, há um exemplo ótimo na L<Wikipedia|http://www.wikipedia.org> que diz:
 
-=over
 
 I<Imagine o seguinte problema: você recebe o mapa de uma metrópole. Neste mapa estão marcados os locais onde existem os vários postos de saúde espalhados pela metrópole. Sabe-se que há edifícios por toda a parte da metrópole. Deve-se determinar qual a área de cobertura de cada um dos postos de saúde, ou qual o conjunto de edifícios que será atendido por cada posto de saúde da metrópole. Naturalmente, bastaria descobrir os conjuntos de edifícios que estão mais próximos de cada posto de saúde que obteríamos uma solução para o problema.>
 
-=back
+
 
 Essa solução corresponde ao Diagrama de Voronoi.
 
@@ -236,15 +235,15 @@ Para isto é interessante que exista uma padronização relacionada ao tipo da m
 
 =over
 
-=back $ : Cifrão, valor monetário ;
+=item $ : Cifrão, valor monetário ;
 
-=back % : Porcentagem ;
+=item % : Porcentagem ;
 
-=back N : Quantidade, Medidas unitárias ;
+=item N : Quantidade, Medidas unitárias ;
 
-=back C : Classificação ;
+=item C : Classificação ;
 
-=back I : Índice .
+=item I : Índice .
 
 =back
 
@@ -290,15 +289,15 @@ Métricas de marketing, por Paul W. Farris & Neil T. Bendle & Phillip E. PFeifer
 
 Pela revisão do artigo, conversas e idéias:
 
-Alexei "russo" Znamensky
+Alexei Znamensky "Russo"
 
 Breno "garu" Oliveira.
 
 Todos os gráficos, foram retiradas do Wikipedia.
 
-=head1 Autor
+=head1 AUTHOR
 
-Thiago Rondon, <thiago.rondon no e-mail gratuito do google>
+Thiago Rondon <thiago.rondon no e-mail gratuito do google>
 
 =cut
 

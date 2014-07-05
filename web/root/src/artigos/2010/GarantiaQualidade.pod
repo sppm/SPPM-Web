@@ -390,7 +390,7 @@ Por fim, lembre-se, desenvolva testes "antes tarde do que nunca"!
 
 =back
 
-=head2 AUTOR
+=head1 AUTHOR
 
 Wallace Reis <wallace@reis.org.br>
 

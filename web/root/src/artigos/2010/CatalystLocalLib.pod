@@ -1,6 +1,6 @@
 =pod
 
-=encoding utf8
+
 
 =head1 Catalyst com local::lib
 
@@ -661,7 +661,7 @@ L<http://www.perlfoundation.org/perl5/index.cgi?recommended_cpan_modules>
 
 =cut
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Blabos de Blebe , C<< <blabos at cpan.org> >> trabalha na Ética Tecnologia e
 Desenvolvimento (L<< http://etica.net >>), vai pra casa mais cedo todos os

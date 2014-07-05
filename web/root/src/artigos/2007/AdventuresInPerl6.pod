@@ -64,7 +64,7 @@ can do
 
 Let me know if you have any ideas! : )
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Nelson Ferraz
 

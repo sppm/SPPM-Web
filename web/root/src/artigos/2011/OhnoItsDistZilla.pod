@@ -1,4 +1,4 @@
-=encoding utf8
+
 
 =head1 Oh no!! It's Dist::Zilla!!
 
@@ -539,9 +539,9 @@ Obrigado pelo olho clínico, revisando este artigo.
 
 =back
 
-=head2 Autor
+=head1 AUTHOR
 
-B<< Alexei "Russo" Znamensky E<lt> russoz no cpan org E<gt> >>
+B<< Alexei Znamensky "Russo" E<lt> russoz no cpan org E<gt> >>
 
 =over
 

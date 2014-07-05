@@ -1,6 +1,6 @@
 ﻿=pod
 
-=encoding utf8
+
 
 =head1 Autenticação em aplicações usando Catalyst
 
@@ -55,7 +55,7 @@ a identidade do usuário, geralmente comparando a informação provida por este 
 informação encontrada no C<Store>.
 Estes módulos são carregados em conjunto por meio de I<realms>, permitindo assim à aplicação
 ter múltiplos métodos de autenticação de usuários. Toda aplicação que realize autenticação
-deve ter ao menos um C<realm> que é o C<default>, mas pode-se ter quantos forem necessários. 
+deve ter ao menos um C<realm> que é o C<default>, mas pode-se ter quantos forem necessários.
 
 =head2 Configuração
 
@@ -202,7 +202,7 @@ e redirecionar o usuário para o caminho de I<login> ou algum outro.
 L<Catalyst Advent Calendar 2008-19|http://www.catalystframework.org/calendar/2008/19>, L<CatalystX::SimpleLogin>
 e L<Humane Login Screens|http://www.shadowcat.co.uk/blog/matt-s-trout/humane-login-screens/>.
 
-=head2 AUTOR
+=head1 AUTHOR
 
 Wallace Reis <wallace@reis.org.br>
 

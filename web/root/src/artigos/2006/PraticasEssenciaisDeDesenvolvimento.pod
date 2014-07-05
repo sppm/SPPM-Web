@@ -35,7 +35,7 @@ flags
 
 http://www.perl.com/pub/a/2005/07/14/bestpractices.html
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Joenio Costa
 

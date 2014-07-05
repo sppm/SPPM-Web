@@ -583,7 +583,7 @@ Suponha o seguinte schema:
 
 O seguinte comando shell é o suficiente para iniciar:
 
-    perl -MDBIx::Class::Schema::Loader=make_schema_at -le'make_schema_at("MySchema", { use_namespaces => 1, dump_directory => "./lib" }, 
+    perl -MDBIx::Class::Schema::Loader=make_schema_at -le'make_schema_at("MySchema", { use_namespaces => 1, dump_directory => "./lib" },
     ["dbi:Pg:dbname=equinocio_students", "edenc", ""])'
 
 A opção C<use_namespaces> indica que queremos prefixar nossas classes com
@@ -1261,7 +1261,7 @@ baseadas em C<DBIx::Class>, assim como algumas funcionalidades básicas de
 arquitetura e construção de consultas. Amanhã serão abordadas formas avançadas
 de consulta e escrita, além de técnicas de desenvolvimento e depuração.
 
-=head2 AUTOR
+=head1 AUTHOR
 
 Eden Cardim C<< <edencardim@gmail.com> >> é consultor de perl independente há 4 anos, trabalha com perl desde 1998 e é contribuidor dos projetos C<DBIx::Class>, C<Catalyst> e C<Reaction>, além de contribuidor do CPAN. Atualmente, presta serviço para a ShadowCat System Ltd.
 

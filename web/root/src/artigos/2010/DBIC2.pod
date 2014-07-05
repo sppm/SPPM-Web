@@ -1,8 +1,6 @@
-
 =pod
 
-=head1 Bancos de dados relacionais, orientação a objetos e DBIx::Class, parte
-2
+=head1 Bancos de dados relacionais, orientação a objetos e DBIx::Class, parte 2
 
 No artigo de ontem, falamos sobre conceitos básicos de camadas de acesso a
 dados e os problemas inerentes. Abordamos os conceitos básicos de
@@ -477,7 +475,7 @@ Nuba Princigalli, pela revisão dos artigos e bounce de idéias em geral.
 São Paulo Perl Mongers e Rio Perl Mongers pelos encontros sociais, eventos e
 fontes de procrastinação.
 
-=head2 AUTOR
+=head1 AUTHOR
 
 Eden Cardim <edencardim@gmail.com> é consultor de perl independente há 4 anos,
 trabalha com perl desde 1998 e é contribuidor dos projetos C<DBIx::Class>,

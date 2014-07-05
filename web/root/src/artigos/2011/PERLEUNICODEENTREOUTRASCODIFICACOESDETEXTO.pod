@@ -1,6 +1,6 @@
 =pod
 
-=encoding utf8
+
 
 =head1 PERL E UNICODE (ENTRE OUTRAS CODIFICAÇÕES DE TEXTO)
 
@@ -345,7 +345,7 @@ L<DBD::mysql> possui um mecanismo próprio para "conversar" em C<utf8>:
 
 A documentação em POD é codificada como C<latin1> por padrão. Se o seu código-fonte está em C<utf8>, precisa explicitar essa codificação também para seções POD:
 
- =encoding utf8
+
 
 Entretanto, é comum L<perldoc> ter problemas com documentação não-ASCII (por causa do L<ngroff> que tende a gerar aproximação ASCII dos caracteres).
 Se for o caso, C<perldoc -t> ajuda, apesar de perder "frescuras" da formatação.
@@ -506,7 +506,7 @@ L<The Absolute Minimum Every Software Developer Absolutely, Positively Must Know
 
 =back
 
-=head1 AUTOR
+=head1 AUTHOR
 
 Stanislaw Pusep L<stas@sysd.org|mailto:stas@sysd.org>
 
