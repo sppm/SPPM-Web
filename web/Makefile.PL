@@ -16,7 +16,7 @@ requires 'Catalyst::Action::RenderView';
 requires 'Moose';
 requires 'namespace::autoclean';
 requires 'Config::General';
-
+requires 'Catalyst::Model::DBIC::Schema';
 # basic deps:
 requires 'DateTime';
 requires 'FindBin';
