@@ -1,25 +1,23 @@
 
-<div class="row sppm-well bottom-separator">
-    <div class="col-md-6">
+<div class="row sppm-well separator">
+    <div class="col-md-12">
         <h2>Bem vindo à São Paulo Perl Mongers!</h2>
         <p>Neste site, você encontra informaçães sobre como se conectar aos Perl Mongers que estão em São Paulo e também os simpatizantes da nossa comunidade.</p>
         <p>Além disso, você também encontra artigos sobre Perl, Sockets, Regular Expressions, Programação Web, Testes de softwares, ética, CPAN, Perlbrew, Data cleasing, benchmarks e muito mais!</p>
     </div>
 
-    <div class="col-md-6">
-        <h2>Afinal, quem ou o que é a São Paulo Perl Mongers?</h2>
+    <div class="col-md-12">
+        <h2>Quem somos</h2>
         <p>Somos um grupo de pessoas dedicadas ao encorajamento de tudo o que estiver relacionado com o Perl em São Paulo e no mundo. Isto envolve ajudar uns aos outros, discutir qualquer assunto que pareça interessante para algum dos membros, <strong>partilhar informaçães sobre o Perl</strong>, sobre assuntos técnicos, políticos, culinários, empregos e tudo o mais que parecer partilhável, e <strong><s>ocasionalmente</s> algumas tulipas de boa cerveja</strong>.</p>
     </div>
-</div>
 
-<div class="row sppm-well bottom-separator">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <h2>Comunidade</h2>
         <p>Temos uma <a href="[%c.uri_for_action('/pages/show', ['lista'])%]">lista de discurssão</a> e ficamos online no <a href="[%c.uri_for_action('/pages/show', ['irc'])%]">IRC, no canal #sao-paulo.pm</a>.</p>
     </div>
 
-    <div class="col-md-6">
-        <h3>Tecnologias do novo website</h3>
+    <div class="col-md-12">
+        <h2>Tecnologias do novo website</h2>
         <p>Estou fazendo o novo site utilizando Catalyst, com XSlate para as templates e PostgreSQL como banco de dados.</p>
     </div>
 </div>

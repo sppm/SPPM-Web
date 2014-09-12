@@ -4,7 +4,7 @@
 BEGIN;
 
 -- sorry guys!
-drop table article;
+drop table if exists article;
 
 -- re-doing!
 create table article (

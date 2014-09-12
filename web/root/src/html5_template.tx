@@ -14,7 +14,7 @@
 
 [% CALL assets.include("css/bootstrap.min.css") %]
 [% CALL assets.include("css/bootstrap-theme.min.css") %]
-[% CALL assets.include("css/site-green.css") %]
+[% CALL assets.include("css/site-default.css") %]
 
 [% assets.export("css") | mark_raw %]
 

@@ -1,6 +1,6 @@
 body {
-    background-color: #001300;
-    color: green;
+    background-color: #eee;
+    color: #222;
 
 }
 
@@ -47,9 +47,16 @@ body {
 
 .sppm-well {
     padding: 15px;
-    background-color: rgba(0,50,0,0.4);
+    background-color: white; /* #ADD8E6 azul calcinha */
+    color: #222;
 }
 
 .bottom-separator {
+    margin-bottom: 15px;
+}
+
+
+.separator {
+    margin-top: 15px;
     margin-bottom: 15px;
 }
