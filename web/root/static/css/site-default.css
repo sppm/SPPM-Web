@@ -1,8 +1,11 @@
 body {
     background-color: #eee;
     color: #222;
-
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
 }
+
 
 #site-header {
     color: #EEE;
