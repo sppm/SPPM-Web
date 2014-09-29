@@ -1,16 +1,21 @@
+<div class="row sppm-well separator">
+    <div class="col-md-12">
 <h1>Quem somos nós ?</h1>
 
-Somos um grupo de profissionais empenhados no suporte e divulgação da linguagem Perl, e seus projetos, com membros residentes por todo o Brasil e Europa. São as contribuiçães voluntárias destes membros que transformaram a lista em uma referência mundial tanto no auxílio aos novatos, quanto em avanĉados tópicos de problemas da engenharia computacional, considerando nossa a cultura e a realidade mercadológica.
+<p>Somos um grupo de profissionais empenhados no suporte e divulgação da linguagem Perl, e seus projetos, com membros residentes por todo o Brasil e Europa. São as contribuiçães voluntárias destes membros que transformaram a lista em uma referência mundial tanto no auxílio aos novatos, quanto em avanĉados tópicos de problemas da engenharia computacional, considerando nossa a cultura e a realidade mercadológica.</p>
 
+</div></div>
+<div class="row sppm-well separator">
+    <div class="col-md-12">
 
 <h1>Quem participa ?</h1>
 
-A nossa comunidade possui cerca de 200 membros, veja abaixo algumas das pessoas que participam desta comunidade (utilizando a <a href="[%c.uri_for_action('/pages/show', ['lista'])%]">lista de discurssão</a>)
+<p>A nossa comunidade possui cerca de 200 membros, veja abaixo algumas das pessoas que participam desta comunidade (utilizando a <a href="[%c.uri_for_action('/pages/show', ['contato'])%]">lista de discurssão</a>)</p>
 
 <!-- Include the Google Friend Connect javascript library. -->
 <script type="text/javascript" src="http://www.google.com/friendconnect/script/friendconnect.js"></script>
 <!-- Define the div tag where the gadget will be inserted. -->
-<div id="div-7316380022155130652" style="width:276px;border:1px solid #cccccc;"></div>
+<div id="div-7316380022155130652" style="margin:0 auto; width:98%;border:1px solid #cccccc;"></div>
 <!-- Render the gadget into a div. -->
 <script type="text/javascript">
 var skin = {};
@@ -33,3 +38,5 @@ google.friendconnect.container.renderMembersGadget(
   skin);
 </script>
 
+
+</div></div>

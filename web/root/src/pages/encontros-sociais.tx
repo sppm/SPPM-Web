@@ -1,3 +1,6 @@
+<div class="row sppm-well separator">
+    <div class="col-md-12">
+
 <h1>Encontros Sociais</h1>
 
 <div class="whois">
@@ -14,7 +17,7 @@
 
     <h3>Quando eles acontecem? Como marcar um?</h3>
 
-    <p>Informe-se melhor pela <a href="/lista">lista de
+    <p>Informe-se melhor pela <a href="[%c.uri_for_action('/pages/show', ['contato'])%]">lista de
     discuss&atilde;o</a>. N&atilde;o h&aacute; uma
     frequ&ecirc;ncia definida, normalmente algu&eacute;m se
     pronuncia sobre o assunto e ent&atilde;o o lugar
@@ -49,5 +52,8 @@
         <li>19/03/2010 - O'Malleys</li>
         <li>24/03/2010 - Mulligans</li>
     </ul>
+</div>
+
+</div>
 </div>
 

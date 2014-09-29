@@ -9,7 +9,7 @@
         </p>
 
         <p>Para organizar um treinamento entre em contato na nossa
-        <a href="[%c.uri_for_action('/pages/show', ['lista'])%]">lista de discuss&atilde;o</a> com as
+        <a href="[%c.uri_for_action('/pages/show', ['contato'])%]">lista de discuss&atilde;o</a> com as
         seguintes informa&ccedil;&otilde;es:
         </p>
 

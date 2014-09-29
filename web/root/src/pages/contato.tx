@@ -1,12 +1,18 @@
 <div class="row sppm-well separator">
-    <h1>Contato com os membros da São Paulo Perl Mongers</h1>
 
-<p>Há basicamente duas maneiras comuns de entrar em contato com os membros, que são, o canal IRC, e a lista de e-mail:</p>
+    <div class="col-md-12">
+        <h1>Contato com os membros da São Paulo Perl Mongers</h1>
 
-<p>O ambiente da lista &eacute; descontra&iacute;do e de alto n&iacute;vel t&eacute;cnico. Nela &eacute; esperado que se use um bom Portugu&ecirc;s, respeito e educa&ccedil;&atilde;o para que a comunica&ccedil;&atilde;o aconte&ccedil;a da melhor forma poss&iacute;vel. Por favor n&atilde;o use "migux&ecirc;s" ou algo parecido. Quase todos os clientes de email, inclusive web, t&ecirc;m corretores ortogr&aacute;ficos.
-</p>
+        <p>Há basicamente duas maneiras comuns de entrar em contato com os membros, que são, o canal IRC, e a lista de e-mail:</p>
 
-<div class="row">
+        <p>O ambiente da lista &eacute; descontra&iacute;do e de alto n&iacute;vel t&eacute;cnico. Nela &eacute; esperado que se use um bom Portugu&ecirc;s, respeito e educa&ccedil;&atilde;o para que a comunica&ccedil;&atilde;o aconte&ccedil;a da melhor forma poss&iacute;vel. Por favor n&atilde;o use "migux&ecirc;s" ou algo parecido. Quase todos os clientes de email, inclusive web, t&ecirc;m corretores ortogr&aacute;ficos.
+        </p>
+    </div>
+</div>
+
+<div class="row sppm-well separator">
+
+
     <div class="col-md-6">
 
         <h2>IRC</h2>
@@ -79,20 +85,23 @@
 
     </div> [%# col6 %]
 
-
-</div>[%# row %]
-
 </div> [%# well %]
 
+
+
 <div class="row sppm-well separator">
-    <h1>Contato com o desenvolvedor do site</h1>
-    <p>O atual mantedor do website da São Paulo Perl Mongers é o <i>Renato Cron</i> que responde pelo e-mail <i>renatocron+sppm@gmail.com</i>.</p>
+    <div class="col-md-12">
 
-    <p>Dúvidas, sugestões, bugs e reclamações deste site, podem ser apontados criando-se um issue em:
+        <h1>Contato com o desenvolvedor do site</h1>
+        <p>O atual mantedor do website da São Paulo Perl Mongers é o <i>Renato Cron</i> que responde pelo e-mail <i>renatocron+sppm@gmail.com</i>.</p>
 
-    <a href="https://github.com/sppm/SPPM-Web">https://github.com/sppm/SPPM-Web</a>
+        <p>Dúvidas, sugestões, bugs e reclamações deste site, podem ser apontados criando-se um issue em:
 
-    </p>
-    <p>Este site foi feito com tempo e esforço de muitas pessoas. Eu, Renato CRON, estou apenas organizando novamente o site, para que a SPPM possa continuar a publicar seus artigos, equinocios e encontros sem maiores dificuldades.</p>
+        <a href="https://github.com/sppm/SPPM-Web">https://github.com/sppm/SPPM-Web</a>
+
+        </p>
+        <p>Este site foi feito com tempo e esforço de muitas pessoas. Eu, Renato CRON, estou apenas organizando novamente o site, para que a SPPM possa continuar a publicar seus artigos, equinocios e encontros sem maiores dificuldades.</p>
+
+    </div>
 
 </div>
