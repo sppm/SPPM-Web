@@ -9,20 +9,21 @@ body {
 
 #site-header {
     color: #EEE;
-    background-color: #00031C;
+    background-color: #BC0108;
 
     padding-bottom: 10px;
     padding-top: 10px;
 
-    border-bottom: 2px solid #999;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #site-header a {
-    color: #eee;
+    color: #fff;
     display: block;
 }
 #site-header a:hover {
-    color: white;
+    color: #eee;
 }
 
 #site-header nav ul {
@@ -48,11 +49,22 @@ body {
     padding: 0 12px;
 }
 
+.main-footer {
+    text-align: center;
+    font-size: 0.7em;
+    margin: 20px;
+}
+
 .sppm-well {
     padding: 15px;
     background-color: white; /* #ADD8E6 azul calcinha */
     color: #222;
     box-shadow: 2px 2px 3px 0px rgba(153, 153, 153, 0.4);
+}
+
+.sppm-well h1, .sppm-well h2 {
+    margin-top: 0;
+
 }
 
 .bottom-separator {

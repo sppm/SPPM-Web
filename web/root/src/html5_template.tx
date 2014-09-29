@@ -51,6 +51,11 @@
     [% INCLUDE $content_template  %]
     </div>
 </div>
+
+<footer class="text-center main-footer">
+    Copyleft São Paulo Perl Mongers.
+    <a href="https://github.com/sppm/SPPM-Web" target="_blank" rel="nofollow">Github</a>
+</footer>
 [% assets.export("js") | mark_raw %]
 </body>
 </html>
