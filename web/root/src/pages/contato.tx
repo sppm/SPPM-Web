@@ -13,57 +13,6 @@
 <div class="row sppm-well separator">
 
 
-    <div class="col-md-6">
-
-        <h2>IRC</h2>
-        <p>IRC, servidor irc.perl.org, no canal #sao-paulo.pm</p>
-        <p><a href="[%c.uri_for_action('/pages/show', ['irc'])%]">Acesse online via browser e mais informações sobre o IRC.</a></p>
-
-        <h2>Lista de e-mail SP-PM</h2>
-        <div class="whois">
-            <p>
-                A lista de email dos S&atilde;o Paulo Perl Mongers est&aacute; ativa desde 2004, e depois de todo esse tempo, o grupo tem algumas dicas de como se dar bem e aproveitar o m&aacute;ximo possivel das pessoas e do site da S&atilde;o Paulo Perl Mongers!
-            </p>
-            <p>Quando entrar na lista responda ao email de boas vindas se apresentando, conte-nos um pouco da sua experi&ecirc;ncia e suas expectativas. Voc&ecirc; pode se inscrever ou desinscrever da lista e acessar o hist&oacute;rico de mensagens nos links abaixo:
-            </p>
-        </div>
-
-        <div class="table-responsive">
-            <table class="text-center" border=0 width="100%">
-                <tr>
-                    <td colspan="5"><strong>Pesquisar na Lista usando o Google:</strong>
-                        <form method="get" action="http://www.google.com/search">
-                            <input type="text"   name="q" size="31" maxlength="255" value="" />
-                            <input type="submit" value="Google Search" />
-                            <input type="hidden" name="sitesearch"  value="mail.pm.org/pipermail/saopaulo-pm/" />
-                        </form></br>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td colspan="5"><strong><p>A lista pode ser visualizada em diferentes formatados, são eles:</p></strong>
-                </tr>
-                <tr style="font-size: 0.8em">
-                    <td width="20%" valign="top"><a href="http://mail.pm.org/mailman/listinfo/saopaulo-pm" target="_blank">Lista de Email</a><br>
-                    <small>Participe!</small></td>
-                    <td width="20%" valign="top"><a href="http://mail.pm.org/pipermail/saopaulo-pm/">Hist&oacute;rico</a><br>
-                    <small>Hist&oacute;rico de mensagens</small></td>
-                    <td width="20%" valign="top"><a href="http://dir.gmane.org/gmane.comp.lang.perl.perl-mongers.saopaulo">Gmane Lista</a><br>
-                    <small>Mais sobre a lista!</small></td>
-                    <td width="20%" valign="top"><a href="nntp://news.gmane.org/gmane.comp.lang.perl.perl-mongers.saopaulo">NNTP</a><br>
-                    <small>Network News Transfer Protocol</small></td>
-                    <td width="20%" valign="top"><a href="http://blog.gmane.org/gmane.comp.lang.perl.perl-mongers.saopaulo">Blog</a><br>
-                    <small>Blog da lista</small></td>
-                </tr>
-            </table>
-        </div>
-
-        <p><b>E ainda... no LinkedIn</b>, grupo <a href="http://www.linkedin.com/groups?about=&gid=64857&trk=anet_ug_grppro" target="_blank">S&atilde;o Paulo Perl Mongers</a></p>
-
-
-    </div>[%# col6 %]
-
-    <div class="col-md-6">
 
         <h2>Leituras & Perguntas</h2>
         <p>As pessoas da lista s&atilde;o, em sua maioria, entusiastas e profissionais em busca de <b>troca</b> de conhecimento. Lembre-se que ningu&eacute;m &eacute; <b>obrigado</b> a resolver os seus problemas, e que o respeito que voc&ecirc; demonstrar com os outros ser&aacute; crucial para determinar o respeito os outros dar&atilde;o a voc&ecirc;. Isso dito, antes de perguntar, recomendamos a leitura dos seguintes textos:</p>
@@ -83,7 +32,57 @@
         </ul>
         <p>Sugerimos aos iniciantes que leiam bastante. Leiam primeiro, perguntem depois - todo mundo come&ccedil;ou um dia sem saber nada, mas se voc&ecirc; quer que os outros te ajudem, mostre que est&aacute; disposto a se esfor&ccedil;ar para aprender.</p>
 
-    </div> [%# col6 %]
+</div>
+
+
+<div class="row sppm-well separator">
+
+        <p><b>IRC</b>, servidor irc.perl.org, no canal #sao-paulo.pm</p>
+        <p><a href="[%c.uri_for_action('/pages/show', ['irc'])%]">Acesse online via browser e mais informações sobre o IRC.</a></p>
+
+        <hr/>
+        <p><b>LinkedIn</b>, grupo <a href="http://www.linkedin.com/groups?about=&gid=64857&trk=anet_ug_grppro" target="_blank">S&atilde;o Paulo Perl Mongers</a></p>
+        <hr/>
+
+        <div class="whois">
+            <p>
+                <b>Lista de email</b> dos S&atilde;o Paulo Perl Mongers est&aacute; ativa desde 2004, e depois de todo esse tempo, o grupo tem algumas dicas de como se dar bem e aproveitar o m&aacute;ximo possivel das pessoas e do site da S&atilde;o Paulo Perl Mongers!
+            </p>
+            <p>Quando você <a href="http://mail.pm.org/mailman/listinfo/saopaulo-pm" target="_blank">entrar na lista</a>, por favor, responda ao email de boas vindas se apresentando. Conte um pouco da sua experi&ecirc;ncia e suas expectativas. Voc&ecirc; pode se inscrever ou desinscrever da lista e acessar o hist&oacute;rico de mensagens nos links abaixo:
+            </p>
+        </div>
+
+
+        <div class="table-responsive">
+            <table border=0 width="100%">
+
+                <tr style="font-size: 0.9em" class="text-center">
+                    <td width="20%" valign="top"><a href="http://mail.pm.org/mailman/listinfo/saopaulo-pm" target="_blank">Lista de Email</a><br>
+                    <small>Inscrição</small></td>
+                    <td width="20%" valign="top"><a href="http://mail.pm.org/pipermail/saopaulo-pm/">Hist&oacute;rico</a><br>
+                    <small>Hist&oacute;rico de mensagens</small></td>
+                    <td width="20%" valign="top"><a href="http://dir.gmane.org/gmane.comp.lang.perl.perl-mongers.saopaulo">Lista Gmane</a><br>
+                    <small>Mais sobre a lista!</small></td>
+                    <td width="20%" valign="top"><a href="nntp://news.gmane.org/gmane.comp.lang.perl.perl-mongers.saopaulo">Formato NNTP</a><br>
+                    <small>Network News Transfer Protocol</small></td>
+                    <td width="20%" valign="top"><a href="http://blog.gmane.org/gmane.comp.lang.perl.perl-mongers.saopaulo">Formato Blog</a><br>
+                    <small>Blog da lista</small></td>
+                </tr>
+                <tr style="font-size: 0.7em;">
+                    <td colspan="2">&nbsp;</td>
+                    <td colspan="3">
+                        <form method="get" action="http://www.google.com/search" style="text-align:right">
+                        <strong>Pesquisar na Lista usando o Google:</strong>
+                            <input type="text"   name="q" size="31" maxlength="255" value="" />
+                            <input type="submit" value="Google Search" />
+                            <input type="hidden" name="sitesearch"  value="mail.pm.org/pipermail/saopaulo-pm/" />
+                        </form></br>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
 
 </div> [%# well %]
 
