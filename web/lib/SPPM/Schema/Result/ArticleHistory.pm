@@ -1,12 +1,12 @@
 use utf8;
-package SPPM::Schema::Result::Article;
+package SPPM::Schema::Result::ArticleHistory;
 
 # Created by DBIx::Class::Schema::Loader
 # DO NOT MODIFY THE FIRST PART OF THIS FILE
 
 =head1 NAME
 
-SPPM::Schema::Result::Article
+SPPM::Schema::Result::ArticleHistory
 
 =cut
 
@@ -34,11 +34,11 @@ extends 'DBIx::Class::Core';
 
 __PACKAGE__->load_components("InflateColumn::DateTime", "TimeStamp", "PassphraseColumn");
 
-=head1 TABLE: C<article>
+=head1 TABLE: C<article_history>
 
 =cut
 
-__PACKAGE__->table("article");
+__PACKAGE__->table("article_history");
 
 =head1 ACCESSORS
 
@@ -47,13 +47,18 @@ __PACKAGE__->table("article");
   data_type: 'integer'
   is_auto_increment: 1
   is_nullable: 0
-  sequence: 'article_id_seq'
+  sequence: 'article_history_id_seq'
+
+=head2 article_id
+
+  data_type: 'integer'
+  is_nullable: 0
 
 =head2 title
 
-  data_type: 'varchar'
+  data_type: 'text'
   is_nullable: 0
-  size: 72
+  original: {data_type => "varchar"}
 
 =head2 uri_path
 
@@ -70,12 +75,6 @@ __PACKAGE__->table("article");
 =head2 author_hash
 
   data_type: 'varchar'
-  is_nullable: 1
-  size: 32
-
-=head2 collaborators
-
-  data_type: 'character varying[]'
   is_nullable: 1
   size: 32
 
@@ -123,16 +122,26 @@ __PACKAGE__->table("article");
 =head2 created_at
 
   data_type: 'timestamp'
-  default_value: current_timestamp
   is_nullable: 0
-  original: {default_value => \"now()"}
 
 =head2 content_ext
 
   data_type: 'varchar'
-  default_value: 'txt'
   is_nullable: 0
   size: 4
+
+=head2 removed_at
+
+  data_type: 'timestamp'
+  default_value: current_timestamp
+  is_nullable: 0
+  original: {default_value => \"now()"}
+
+=head2 removed_by_hash
+
+  data_type: 'varchar'
+  is_nullable: 0
+  size: 32
 
 =cut
 
@@ -142,10 +151,16 @@ __PACKAGE__->add_columns(
     data_type         => "integer",
     is_auto_increment => 1,
     is_nullable       => 0,
-    sequence          => "article_id_seq",
+    sequence          => "article_history_id_seq",
   },
+  "article_id",
+  { data_type => "integer", is_nullable => 0 },
   "title",
-  { data_type => "varchar", is_nullable => 0, size => 72 },
+  {
+    data_type   => "text",
+    is_nullable => 0,
+    original    => { data_type => "varchar" },
+  },
   "uri_path",
   {
     data_type   => "text",
@@ -160,8 +175,6 @@ __PACKAGE__->add_columns(
   },
   "author_hash",
   { data_type => "varchar", is_nullable => 1, size => 32 },
-  "collaborators",
-  { data_type => "character varying[]", is_nullable => 1, size => 32 },
   "sinopse",
   {
     data_type   => "text",
@@ -193,14 +206,18 @@ __PACKAGE__->add_columns(
   "published_at",
   { data_type => "timestamp", is_nullable => 1 },
   "created_at",
+  { data_type => "timestamp", is_nullable => 0 },
+  "content_ext",
+  { data_type => "varchar", is_nullable => 0, size => 4 },
+  "removed_at",
   {
     data_type     => "timestamp",
     default_value => \"current_timestamp",
     is_nullable   => 0,
     original      => { default_value => \"now()" },
   },
-  "content_ext",
-  { data_type => "varchar", default_value => "txt", is_nullable => 0, size => 4 },
+  "removed_by_hash",
+  { data_type => "varchar", is_nullable => 0, size => 32 },
 );
 
 =head1 PRIMARY KEY
@@ -215,23 +232,9 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key("id");
 
-=head1 UNIQUE CONSTRAINTS
-
-=head2 C<ix_article_uri_path>
-
-=over 4
-
-=item * L</uri_path>
-
-=back
-
-=cut
-
-__PACKAGE__->add_unique_constraint("ix_article_uri_path", ["uri_path"]);
-
 
 # Created by DBIx::Class::Schema::Loader v0.07042 @ 2014-12-22 04:36:09
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:nIvX22EhpGomikvi1d8zcg
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:2XFhupJSVsNaG9/4TOcDWw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

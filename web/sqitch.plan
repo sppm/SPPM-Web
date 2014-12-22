@@ -1,4 +1,4 @@
-%syntax-version=1.0.0-b2
+%syntax-version=1.0.0
 %project=sppm
 %uri=https://github.com/sppm/SPPM-Web/
 
@@ -6,3 +6,4 @@ appschema 2014-06-02T07:21:33Z cron <renato.cron@gmail.com> # tabela para os art
 001-article-table [appschema] 2014-06-09T01:11:45Z cron <renato.cron@gmail.com> # re-doing article table
 002-article-file-type.sql [001-article-table] 2014-06-09T03:51:33Z cron <renato.cron@gmail.com> # artitle file type
 003-article-history.sql [001-article-table] 2014-06-09T04:13:32Z cron <renato.cron@gmail.com> # arrumando um jeito de ter o historico e a FK fixa
+004-remodel.sql [003-article-history.sql] 2014-12-22T05:36:53Z cron <renato.cron@gmail.com> # arrumando um jeito de ter o historico mais facil

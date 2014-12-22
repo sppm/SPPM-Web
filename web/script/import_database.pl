@@ -30,7 +30,8 @@ foreach my $base_dir (("$root_src/artigos")){
         my $fname = $_;
 
         if ($fname !~ /.pod$/){
-            # print "$_ is not a .POD\n";
+             print "$dir/$_ is not a .POD\n";
+             exit;
             next;
         }
 
@@ -45,14 +46,15 @@ foreach my $base_dir (("$root_src/artigos")){
         my $title_b = $parser->title;
         $title_b =~ s/\s+$//;
 
+        $title =~ s/\s+$//;
+        #use DDP; p $parser->email;
+
         my $author = $parser->author;
 
         $author =~ s/\s+$//;
 
         if (!defined $author){
-
             die "not found author!";
-
         }
 
         print "\t", $title_b || $title, "\n";
@@ -62,8 +64,8 @@ foreach my $base_dir (("$root_src/artigos")){
         push @{$authors->{$author}}, "$root_src/artigos/$dir/$fname";
 
         if($title_b ne $title){
-  #          use DDP; p  $title;
-   #         p $title_b;
+            #use DDP; p  $title;
+            #p $title_b;
         }
         $tree->delete;
 
