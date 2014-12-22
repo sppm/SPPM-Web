@@ -27,14 +27,16 @@ foreach my $base_dir (("$root_src/artigos")){
         my $qdir = quotemeta($base_dir);
         $dir =~ s/$qdir//;
 
-        if ($_ !~ /.pod$/){
+        my $fname = $_;
+
+        if ($fname !~ /.pod$/){
             # print "$_ is not a .POD\n";
             next;
         }
 
-        print "root/artigos$dir/$_\n";
+        print "root/artigos$dir/$fname\n";
 
-        my ($artigo, $parser) = SPPM::Web::Model::Artigo->new->content( "$root_src/artigos/$dir/$_" );
+        my ($artigo, $parser) = SPPM::Web::Model::Artigo->new->content( "$root_src/artigos/$dir/$fname" );
 
         my $tree  = HTML::TreeBuilder::XPath->new_from_content($parser->asString);
 
@@ -57,7 +59,7 @@ foreach my $base_dir (("$root_src/artigos")){
         print "\t\t[$author]\n";
 
 
-        push @{$authors->{$author}}, $_;
+        push @{$authors->{$author}}, "$root_src/artigos/$dir/$fname";
 
         if($title_b ne $title){
   #          use DDP; p  $title;
@@ -73,7 +75,44 @@ foreach my $base_dir (("$root_src/artigos")){
 
 }
 
-use DDP; p $authors;
+use DDP; p [keys %$authors];
+
+my $name_to_gravatar = {
+    'Marcio Vitor De Matos' => '58dbbfa6bcf55eee7b12d512adbe9a61',
+    'Gabriel Andrade' => 'b54aed2483426894ec4ca220abdadc36',
+    'Renato CRON' => '13b2467128dda64a63f50860e191033b',
+    'Andre Garcia Carneiro' => '0650ada673b0b61a238687a3a4f935ea',
+    'Giuliani D. Sanches.' => '50815d79224b6891aec3d5b442f37558',
+    'Monsenhor' => 'd8e885611d1d12ec31aaaf1ac5a0765f',
+    'Hernan Lopes' => 'a6a667781baf5eec0126f4c7277acd6e',
+    'Nelson Ferraz' => '8f93fb445472595fa2bd8a7c3d781f93',
+    'Eden Cardim' => 'c5007e8e801065d90ca9e9c206a222bc',
+    'Stanislaw Pusep' => 'f93e90d4db9dc0eb3b5681c6fccfa0e2',
+    'Wallace Reis' => '2547197e5ddd5ab29a569943002dd7ee',
+    'Luis Motta' => '625c670068ccdf39ee487d1213c522be',
+    'HAILTON DAVID LEMOS' => '30aaecfc7490cd129b193945c897ba63',
+    'Thiago Rondon' => '871dcf0d5209649d772fc14377a020d3',
+    'Alexei Znamensky' => '672922f05e324482fa82e4013e3a453d',
+    'Otavio Fernandes' => '1365c8b3836eee4eaa57626acd1ad793',
+    'Daniel Ruoso' => '923d562209b7beb2522e2208cb8e3054',
+    'Ronaldo Ferreira de Lima aka jimmy' => 'eba21845a85538aa6e993d8322b7d3f1',
+    'Frederico Recsky' => 'abcb478efe13707c8719c72c4500c821',
+    'Marcio Ferreira' => 'ac08869c35a8c525cafb1c517c83f309',
+    'Blabos de Blebe' => '06ce0be1d92c8ad880cdbb3a7cf9c89b',
+    'Flávio S. Glock' => 'e54737686fab4426a0407a9620432b8c',
+    'Solli M. Honório' => 'e0ec011d1cd5bc232da524ec3e353cad',
+    'Daniel Vinciguerra' => '1fb6cf1869fd18b454f379814da98d90',
+    'Thiago Glauco' => 'f810c78e6a9fd2685ae07870b07e2382',
+    'Alceu Junior' => '79634884ebe3937fd20207f2aa6b3e67',
+    'Breno G. de Oliveira' => '85d70829278770da7b5a4faa9efe4657',
+    'Lindolfo Rodrigues' => 'c4eaae387543eb8602ebc9697abf65c6',
+    'José Eduardo Perotta de Almeida' => '1eca55de2cbcdff5735607cebbd4b6eb',
+    'Daniel de Oliveira Mantovani' => '0edd3573f84024f996e614e8445a0143',
+    'Joenio Costa' => '5aff57c7238795d3b159d493ab071d6c',
+    'Marco Aurelio' => '37fb4d13adf535a2f0a57e7ab7763144',
+    'David Dias' => '',
+};
+
 
 # copiados da arvore https://github.com/sppm/SPPM-Web/tree/b02f6b098690fc2ae192e25fc936280339d1ab23
 
