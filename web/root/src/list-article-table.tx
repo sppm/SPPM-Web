@@ -2,7 +2,7 @@
     <table class="table">
         <thead>
             <th>Título</th>
-            <th>Author</th>
+            <th>Autor</th>
             <th>Publicado em</th>
         </thead>
         <tbody>
