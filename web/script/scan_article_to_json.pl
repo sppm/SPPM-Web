@@ -98,18 +98,8 @@ sub content {
     };
 
     if ( $@ && $@ =~ /Malformed UTF-8 character/ ) {
-        close $fh;
-        open $fh, '<:encoding(iso-8859-1)', $file
-          or die "Failed to open $file: $!";
 
-        $parser = SPPM::Web::Pod->new(
-            StringMode   => 1,
-            FragmentOnly => 1,
-            MakeIndex    => 0,
-            TopLinks     => 0,
-        );
-
-        $parser->parse_from_filehandle($fh);
+        die "can't use no-utf8 character as input... $file\n";
     }
 
     close $fh;
@@ -148,10 +138,10 @@ use FindBin qw($Bin);
 use lib "$Bin/../lib";
 
 use Cpanel::JSON::XS;
-#use JSON::XS;
 use File::Slurp::Tiny 'read_file';
 use Digest::MD5 qw/md5_hex/;
 use open qw/:std :utf8/;
+use Encode qw/encode_utf8/;
 
 # root paths
 my $root_src = "$Bin/../root/src";
@@ -207,6 +197,7 @@ foreach my $base_dir ( ("$root_src/artigos") ) {
     find(
         sub {
             return if -d $File::Find::name;
+            #return unless $_ =~ /omparandotextosaproximadamente/;
 
             my $article_type = $base_dir =~ /artigos/ ? 'article' : 'equinox';
 
@@ -220,8 +211,10 @@ foreach my $base_dir ( ("$root_src/artigos") ) {
 
             my $jsonfile = "$json_src/$fname";
 
-            my $content = read_file($fullpath);
-            my $md5     = md5_hex($content);
+
+            my $content = read_file($fullpath, binmode => ':utf8');
+            my $md5 = eval{md5_hex(encode_utf8($content))} || die "$@ in '$fullpath'\n";
+
 
             return if -e $jsonfile && -e $jsonfile . '.md5' && $md5 eq read_file( $jsonfile . '.md5' ) && !($ARGV[0] && $ARGV[0] eq 'force');
 
@@ -265,10 +258,11 @@ foreach my $base_dir ( ("$root_src/artigos") ) {
 
             die $fullpath . "\t{$author} no author_hash found.\n" unless $author_hash;
 
-            my $old_uri_path = $article_type eq 'equinox' ? '/equinocio' . "$dir/$fname" : 'artigo' . "$dir/$fname";
+            my $old_uri_path = $article_type eq 'equinox' ? "equinocio$relpath" : "artigo$relpath";
             $old_uri_path =~ s/\.$ext//;
 
             my $uri_path = $t->translate($title);
+
 
             my $article = {
                 content      => $content,
@@ -280,11 +274,14 @@ foreach my $base_dir ( ("$root_src/artigos") ) {
                 article_type => $article_type,
                 author_hash  => $author_hash,
                 old_uri_path => $old_uri_path,
+
+                _author_name => $author
             };
+
 
             my $json = encode_json($article);
 
-            open my $fh, '>:utf8', $jsonfile;
+            open my $fh, '>:raw', $jsonfile;
             print $fh $json;
             close $fh;
 

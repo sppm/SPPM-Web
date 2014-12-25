@@ -68,5 +68,7 @@ CREATE TABLE author
     created_at timestamp without time zone NOT NULL
 );
 
+ALTER TABLE article
+   ALTER COLUMN title TYPE character varying(93);
 
 COMMIT;

@@ -47,7 +47,7 @@ um socket. Nesse teste, vamos executar o programa em C que irE<aacute>
 jogar o conteE<uacute>do do freeze para STDOUT que serE<aacute>
 entE<atilde>o lido pelo script Perl acima.
 
-=head2 Começando pelo perlguts
+=head2 ComeÃ§ando pelo perlguts
 
 A primeira coisa E<eacute> entender como o perl representa cada um dos
 tipos de variE<aacute>veis internamente. Por dentro, tudo acaba por ser
@@ -394,7 +394,7 @@ entE<atilde>o o cE<oacute>digo completo para o storable_freeze.
          PUSHMARK(SP);
          XPUSHs(newRV_inc((SV*)data));
          PUTBACK;
-         // chamar o método
+         // chamar o mÃ©todo
          call_pv("Storable::freeze",G_SCALAR);
          // Obter o retorno
          SPAGAIN;
