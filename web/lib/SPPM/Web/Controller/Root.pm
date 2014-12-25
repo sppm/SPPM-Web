@@ -43,6 +43,29 @@ sub index : Path : Args(0) {
     # nao tente fazer chain. serio. nao no index
     $self->root($c);
 
+    my @rows = $c->model('DB::Article')->search({
+        published => 1,
+        uri_path => [
+            'oh-no-it-s-dist-zilla',
+            'primeiros-passos-em-perl',
+
+            'testes-de-software-em-perl',
+            'como-se-tornar-um-hacker',
+            'usando-o-cpan',
+            'psgi-plack-bada-bing-bada-boom',
+            'dataflow-um-framework-para-fluxo-de-dados',
+            'benchmark',
+            'catalyst-com-local-lib',
+            'xslate-seu-proximo-sistema-de-templates'
+
+        ]
+    }, {
+        prefetch => 'author_hash',
+        order_by => [qw/me.title/]
+    })->all;
+
+    $c->stash->{articles} = \@rows;
+
     # nome do include.
     $c->stash->{content_template} = 'index.tx';
 }

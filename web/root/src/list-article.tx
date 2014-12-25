@@ -2,31 +2,7 @@
     <div class="col-md-12">
         <h1>Publicações [%IF author_hash%] de [% author.name %][%END%]</h1>
 
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <th>Título</th>
-            <th>Author</th>
-            <th>Publicado em</th>
-        </thead>
-        <tbody>
-        [% FOREACH p IN articles %]<tr>
-
-        <td class="[% p.title.length() > 50 ? 'small' : '' %]">
-            <a href="/pub/[%p.id%]/[%p.uri_path%]">
-            <img height=32 width=32 src="http://gravatar.com/avatar/[%p.author_hash.author_hash | uri %]?d=monsterid&size=32"/> [% p.title %]</a>
-        </td>
-        <td class="small">
-            <a href="/pub?author_hash=[%p.author_hash.author_hash%]">[%p.author_hash.name%]</a>
-        </td>
-        <td class="small">
-            [%p.article_type == 'article' ? 'Artigos' : 'Equinócio' %] / [% p.published_at.year() %]
-        </td>
-        </tr>
-        [% END %]
-        </tbody>
-    </table>
-</div>
+        [% INCLUDE 'list-article-table.tx' %]
 
         [%IF author_hash%] <a href="/pub">Voltar para lista completa</a> [%END%]
 

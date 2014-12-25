@@ -11,6 +11,18 @@
         <p>Somos um grupo de pessoas dedicadas ao encorajamento de tudo o que estiver relacionado com o Perl em São Paulo e no mundo. Isto envolve ajudar uns aos outros, discutir qualquer assunto que pareça interessante para algum dos membros, <strong>partilhar informaçães sobre o Perl</strong>, sobre assuntos técnicos, políticos, culinários, empregos e tudo o mais que parecer partilhável, e <strong><s>ocasionalmente</s> algumas tulipas de boa cerveja</strong>.</p>
     </div>
 </div>
+
+
+<div class="row sppm-well separator">
+    <div class="col-md-12">
+        <h2>Publicações</h2>
+        <p>Publicamos textos sobre perl e outras coisas também... Veja algums exemplos:</p>
+
+        [% INCLUDE 'list-article-table.tx' %]
+
+    </div>
+</div>
+
 <div class="row sppm-well separator">
     <div class="col-md-6">
         <h2>Comunidade</h2>
