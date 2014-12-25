@@ -48,11 +48,10 @@ sub index : Path : Args(0) {
 }
 
 sub default : Path {
-    my ( $self, $c ) = @_;
+    my ( $self, $c) = @_;
 
     # tenta verificar se a pagina não precisa de um redirect do site antigo
     $c->forward('Controller::Redirects', 'test_redirect');
-
 
     # nao tente fazer chain. serio. nao no default
     $self->root($c);

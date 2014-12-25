@@ -53,7 +53,7 @@ __PACKAGE__->table("article");
 
   data_type: 'varchar'
   is_nullable: 0
-  size: 72
+  size: 93
 
 =head2 uri_path
 
@@ -70,6 +70,7 @@ __PACKAGE__->table("article");
 =head2 author_hash
 
   data_type: 'varchar'
+  is_foreign_key: 1
   is_nullable: 1
   size: 32
 
@@ -145,7 +146,7 @@ __PACKAGE__->add_columns(
     sequence          => "article_id_seq",
   },
   "title",
-  { data_type => "varchar", is_nullable => 0, size => 72 },
+  { data_type => "varchar", is_nullable => 0, size => 93 },
   "uri_path",
   {
     data_type   => "text",
@@ -159,7 +160,7 @@ __PACKAGE__->add_columns(
     original    => { data_type => "varchar" },
   },
   "author_hash",
-  { data_type => "varchar", is_nullable => 1, size => 32 },
+  { data_type => "varchar", is_foreign_key => 1, is_nullable => 1, size => 32 },
   "collaborators",
   { data_type => "character varying[]", is_nullable => 1, size => 32 },
   "sinopse",
@@ -229,9 +230,31 @@ __PACKAGE__->set_primary_key("id");
 
 __PACKAGE__->add_unique_constraint("ix_article_uri_path", ["uri_path"]);
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2014-12-22 04:36:09
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:nIvX22EhpGomikvi1d8zcg
+=head2 author_hash
+
+Type: belongs_to
+
+Related object: L<SPPM::Schema::Result::Author>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "author_hash",
+  "SPPM::Schema::Result::Author",
+  { author_hash => "author_hash" },
+  {
+    is_deferrable => 0,
+    join_type     => "LEFT",
+    on_delete     => "NO ACTION",
+    on_update     => "NO ACTION",
+  },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2014-12-25 15:39:15
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:9Png0opPnT9XVihGummL/A
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

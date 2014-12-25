@@ -48,9 +48,6 @@ find(
 
         my $article = decode_json(read_file( $fullpath, binmode => ':raw' ) );
 
-        my $content      = delete $article->{content};
-        my $html_content = delete $article->{html_content};
-
         $article_rs->upsert($article);
 
     },

@@ -10,8 +10,17 @@ sub test_redirect: Private {
     my ($self, $c, $args) = @_;
 
     my $path = $c->req->uri->path;
-    use DDP; p $path;
 
+    my $article = $c->model('DB::Article')->search({
+        old_uri_path => substr($path, 1)
+    })->next;
+
+
+    if ($article){
+        my $x = $c->uri_for_action('/article/show', [$article->id, $article->uri_path]  );
+        $c->response->redirect( $x );
+        $c->detach;
+    }
 
 
 }

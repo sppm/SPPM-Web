@@ -86,9 +86,26 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key("author_hash");
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07042 @ 2014-12-22 04:36:09
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:GX1vuKZA611nU2J9jTSutQ
+=head2 articles
+
+Type: has_many
+
+Related object: L<SPPM::Schema::Result::Article>
+
+=cut
+
+__PACKAGE__->has_many(
+  "articles",
+  "SPPM::Schema::Result::Article",
+  { "foreign.author_hash" => "self.author_hash" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07042 @ 2014-12-25 15:39:15
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Qv/ZeRNq4wjfHU2KnFuUKA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

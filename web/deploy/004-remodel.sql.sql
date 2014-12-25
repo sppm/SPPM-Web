@@ -71,4 +71,7 @@ CREATE TABLE author
 ALTER TABLE article
    ALTER COLUMN title TYPE character varying(93);
 
+ALTER TABLE article
+  ADD FOREIGN KEY (author_hash) REFERENCES author (author_hash) ON UPDATE NO ACTION ON DELETE NO ACTION;
+
 COMMIT;
