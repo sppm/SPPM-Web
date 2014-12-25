@@ -16,7 +16,7 @@ sub object: Chained('base') PathPart('') CaptureArgs(2) {
 
     unless ($id && $id =~ /^[0-9]{1,11}$/){
         # 404
-        $c->forward('/default', [ 1 ]);
+        $c->forward('/default');
         $c->detach;
     }
 
@@ -28,7 +28,13 @@ sub object: Chained('base') PathPart('') CaptureArgs(2) {
 
     unless ($article){
         # 404
-        $c->forward('/default', [ 1 ]);
+        $c->forward('/default');
+        $c->detach;
+    }
+
+    if ($article->uri_path ne $page_name ){
+        my $x = $c->uri_for_action('/article/show', [$article->id, $article->uri_path]  );
+        $c->response->redirect( $x, 302 );
         $c->detach;
     }
 
