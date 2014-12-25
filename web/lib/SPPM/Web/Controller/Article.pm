@@ -50,6 +50,34 @@ sub show: Chained('object') PathPart('') Args(0) {
 
 }
 
+sub list: Chained('base') PathPart('') Args(0) {
+    my ($self, $c) = @_;
+
+    $c->stash->{author_hash} = exists $c->req->params->{author_hash} && $c->req->params->{author_hash}
+        ? $c->req->params->{author_hash}
+        : undef;
+
+    $c->stash->{author} = $c->model('DB::Author')->search({ author_hash => $c->stash->{author_hash} } )->next
+        if $c->stash->{author_hash};
+
+    my @rows = $c->model('DB::Article')->search({
+        published => 1,
+        (
+            $c->stash->{author_hash}
+            ? ('me.author_hash' => $c->stash->{author_hash})
+            : ()
+        )
+    }, {
+        prefetch => 'author_hash',
+        order_by => [qw/me.published_at me.created_at me.title/]
+    })->all;
+
+    $c->stash->{articles} = \@rows;
+
+
+    $c->stash->{content_template} = 'list-article.tx';
+}
+
 __PACKAGE__->meta->make_immutable;
 
 1;

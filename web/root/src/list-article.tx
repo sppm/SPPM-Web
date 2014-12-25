@@ -1,0 +1,24 @@
+<div class="row sppm-well separator">
+    <div class="col-md-12">
+        <h1>Publicações [%IF author_hash%] de [% author.name %][%END%]</h1>
+        <table class="table">
+
+        <thead>
+            <th>Título</th>
+            <th>Author</th>
+        </thead>
+        <tbody>
+        [% FOREACH p IN articles %]<tr>
+        <td>
+            <a href="/pub/[%p.id%]/[%p.uri_path%]"><img height=32 width=32 src="http://gravatar.com/avatar/[%p.author_hash.author_hash | uri %]?d=monsterid&size=32"/> [% p.title %]</a>
+        </td>
+        <td>
+            <a href="/pub?author_hash=[%p.author_hash.author_hash%]">[%p.author_hash.name%]</a>
+            <img height=32 width=32 src="http://gravatar.com/avatar/[%p.author_hash.author_hash | uri %]?d=monsterid&size=322&f=1"/>
+        </td>
+        </tr>[% END %]
+        </tbody>
+        </table>
+
+    </div>
+</div>
