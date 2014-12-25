@@ -4,8 +4,11 @@ perl:
 env:
   - PERL_CPANM_OPT="-v --mirror http://cpan.mirrors.travis-ci.org  --mirror http://cpan.cpantesters.org/ --mirror http://search.cpan.org/CPAN --cascade-search --notest --force --skip-satisfied --no-interactive"
 before_install:
-  - cpanm -n Module::Install Catalyst::Devel
+  - cpanm -n Module::Install Catalyst::Devel Text2URI File::Slurp::Tiny Log::Log4perl FindBin::libs
   - cd web
+  - cpanm -n --installdeps .
+  - createdb sppm_dev
+  - sqitch deploy
 notifications:
   irc:
     channels:
