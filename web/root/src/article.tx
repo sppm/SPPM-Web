@@ -5,7 +5,7 @@
     <div class="col-md-10">
         <h2>[% article.author_hash.name %]</h2>
         <blockquote>[% article.title  %]</blockquote>
-        <small>[%article.published_at || article.created_at%]</small>
+        <small>Publicado em [%(article.published_at || article.created_at).dmy('/')%]</small>
     </div>
 </div>
 

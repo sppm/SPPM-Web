@@ -1,24 +1,34 @@
 <div class="row sppm-well separator">
     <div class="col-md-12">
         <h1>Publicações [%IF author_hash%] de [% author.name %][%END%]</h1>
-        <table class="table">
 
+<div class="table-responsive">
+    <table class="table">
         <thead>
             <th>Título</th>
             <th>Author</th>
+            <th>Publicado em</th>
         </thead>
         <tbody>
         [% FOREACH p IN articles %]<tr>
-        <td>
-            <a href="/pub/[%p.id%]/[%p.uri_path%]"><img height=32 width=32 src="http://gravatar.com/avatar/[%p.author_hash.author_hash | uri %]?d=monsterid&size=32"/> [% p.title %]</a>
+
+        <td class="[% p.title.length() > 50 ? 'small' : '' %]">
+            <a href="/pub/[%p.id%]/[%p.uri_path%]">
+            <img height=32 width=32 src="http://gravatar.com/avatar/[%p.author_hash.author_hash | uri %]?d=monsterid&size=32"/> [% p.title %]</a>
         </td>
-        <td>
+        <td class="small">
             <a href="/pub?author_hash=[%p.author_hash.author_hash%]">[%p.author_hash.name%]</a>
-            <img height=32 width=32 src="http://gravatar.com/avatar/[%p.author_hash.author_hash | uri %]?d=monsterid&size=322&f=1"/>
         </td>
-        </tr>[% END %]
+        <td class="small">
+            [%p.article_type == 'article' ? 'Artigos' : 'Equinócio' %] / [% p.published_at.year() %]
+        </td>
+        </tr>
+        [% END %]
         </tbody>
-        </table>
+    </table>
+</div>
+
+        [%IF author_hash%] <a href="/pub">Voltar para lista completa</a> [%END%]
 
     </div>
 </div>
