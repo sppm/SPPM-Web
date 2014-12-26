@@ -2,7 +2,7 @@
 
 r1 - 15 Jan 2007 - NelsonFerraz
 
-=head1 Código de ética
+=head1 CE<oacute>digo de E<eacute>tica
 
 I<>
 
