@@ -2,7 +2,7 @@
 
 r3 - 20 Aug 2006 - JoenioCosta
 
-=head1 Recomendações para programação em Perl
+=head1 RecomendaE<ccedil>E<otilde>es para programaE<ccedil>E<atilde>o em Perl
 
 ----
 
@@ -113,7 +113,7 @@ funE<ccedil>E<atilde>o ("funcao()" ao invE<eacute>s de "funcao ()")
 =back
 
         @animais = ( 'cachorro', 'gato', 'avestruz',
-                     'urubu',    'leÃ£o', 'girafa'    );
+                     'urubu',    'leão', 'girafa'    );
 
 =over
 
@@ -135,20 +135,20 @@ mais legE<iacute>vel. Por exemplo:
 
 =back
 
-        open(my $fh, 'arq') or die "NÃ£o foi possÃ­vel abrir 'arq': $!";
+        open(my $fh, 'arq') or die "Não foi possível abrir 'arq': $!";
 
 E<eacute> melhor que
 
-        die "NÃ£o foi possÃ­vel abrir 'arquivo': $!" unless open(my $fh, 'arq');
+        die "Não foi possível abrir 'arquivo': $!" unless open(my $fh, 'arq');
 
 porque a segunda forma esconde o ponto principal da sentenE<ccedil>a em
 um modificador. Por outro lado
 
-         print "Iniciando anÃ¡lise\n" if $verbose;
+         print "Iniciando análise\n" if $verbose;
 
 E<eacute> melhor que
 
-         $verbose && print "Iniciando anÃ¡lise\n";
+         $verbose && print "Iniciando análise\n";
 
 porque o ponto principal nE<atilde>o E<eacute> se o usuE<aacute>rio
 estE<aacute> em modo verbose ou nE<atilde>o.
@@ -214,8 +214,8 @@ variE<aacute>veis:
 =back
 
       $ALL_CAPS_HERE   constantes (cuidado pois existem nomes reservados)
-      $Some_Caps_Here  variÃ¡veis globais
-      $no_caps_here    variÃ¡veis de escopo local ( my() ou local() )
+      $Some_Caps_Here  variáveis globais
+      $no_caps_here    variáveis de escopo local ( my() ou local() )
 
 Nomes de funE<ccedil>E<otilde>es e mE<eacute>todos normalmente ficam
 melhores sempre em letras minE<uacute>sculas.
@@ -435,7 +435,7 @@ exemplos:
       @bindirs = qw( /usr/bin /bin /usr/local/bin );
       for (@libdirs = @bindirs) { s/bin/lib/ }
       print "@libdirs\n";
-      # saÃ­da: "/usr/lib /lib /usr/local/lib"
+      # saída: "/usr/lib /lib /usr/local/lib"
 
 Para pegar o E<uacute>ltimo elemento de uma array, dE<ecirc>
 preferencia a $array-1 ao invE<eacute>s de $array$#array. Um bom efeito
@@ -529,13 +529,13 @@ paralelas. NE<atilde>o faE<ccedil>a isso:
 
 =back
 
-      $idade{"JoÃ£o"} = 23;
-      $pai{"JoÃ£o"}   = "Joaquim";
+      $idade{"João"} = 23;
+      $pai{"João"}   = "Joaquim";
 
 Quando vocE<ecirc> deveria fazer isso
 
-      $pessoas{"JoÃ£o"}{idade} = 23;
-      $pessoas{"JoÃ£o"}{pai}   = "Joaquim;
+      $pessoas{"João"}{idade} = 23;
+      $pessoas{"João"}{pai}   = "Joaquim;
 
 =over
 

@@ -2,7 +2,7 @@
 
 r2 - 19 Aug 2006 - JoenioCosta
 
-=head1 Expressões Regulares
+=head1 ExpressE<otilde>es Regulares
 
 I<>
 
@@ -138,18 +138,18 @@ expressE<atilde>o '[^0123456789]' ou '[^0-9]'.
        ^  ->  caracter que o segue inicia o elemento
        $  ->  caracter que o antecede finaliza o elemento
 
-       .   ->  caracter ÃÂÃÂÃÂÃÂ© um sÃÂÃÂÃÂÃÂ­mbolo qualquer (exceto nova linha)
+       .  ->  caracter é um símbolo qualquer (exceto nova linha)
 
-       |   ->  enumerador de alternativas
-      ()   ->  agrupador
-      []   ->  especificificador de classes
+       |  ->  enumerador de alternativas
+      ()  ->  agrupador
+      []  ->  especificificador de classes
 
-       *   ->  caracter ocorre 0 ou mais vezes
-       +   ->  caracter ocorre 1 ou mais vezes
-       ?   ->  caracter ocorre 1 ou 0 vezes
+       *  ->  caracter ocorre 0 ou mais vezes
+       +  ->  caracter ocorre 1 ou mais vezes
+       ?  ->  caracter ocorre 1 ou 0 vezes
      {n}  ->  caracter ocorre exatamente "n" vezes
     {n,}  ->  caracter ocorre pelo menos "n" vezes
-  {n,m} ->  caracter ocorre pelo menos "n" vezes e nÃÂÃÂÃÂÃÂ£o mais que "m" vezes
+   {n,m}  ->  caracter ocorre pelo menos "n" vezes e não mais que "m" vezes
 
 =head2 2.2. Complementares
 
@@ -167,16 +167,16 @@ podem ser escritos, como E<eacute> o caso da quebra de linha e da
 tabulaE<ccedil>E<atilde>o.
 
    \w  ->  [a-zA-Z_]
-   \W ->  [^a-zA-Z_]
+   \W  ->  [^a-zA-Z_]
    \s  ->  [ ]
    \S  ->  [^ ]
    \d  ->  [0-9], [0123456789] ou (0|1|2|3|4|5|6|7|8|9)
    \D  ->  [^0-9]
 
-   \t   ->  tabulaÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o
+   \t  ->  tabulação
    \n  ->  (LF ou NL) nova linha
-   \r   ->  (CR) retorno
-   \f   ->  (FF) form feed
+   \r  ->  (CR) retorno
+   \f  ->  (FF) form feed
    \e  ->  (ESC) escape
 
 =head2 2.3. O metacaracter especial '\'
@@ -234,13 +234,13 @@ serviE<ccedil>o:
 
   foreach $url (@ARGV) {
      if ($url =~ /^http:/) {
-        print "EndereÃÂÃÂÃÂÃÂ§o de um serviÃÂÃÂÃÂÃÂ§o WEB\n";
+        print "Endereço de um serviço WEB\n";
      }
      elsif ($url =~ /^https:/) {
-        print "EndereÃÂÃÂÃÂÃÂ§o de um serviÃÂÃÂÃÂÃÂ§o WEB seguro\n";
+        print "Endereço de um serviço WEB seguro\n";
      }
      elsif ($url =~ /^ftp:/) {
-        print "EndereÃÂÃÂÃÂÃÂ§o de um serviÃÂÃÂÃÂÃÂ§o FTP\n";
+        print "Endereço de um serviço FTP\n";
      }
   }
 
@@ -264,20 +264,20 @@ funcionalidade:
       if ($url =~ /^(.+):\/\/(.*)$/)
          print "-- $2: ";
          if ($1 eq 'http') {
-            print "endereÃÂÃÂÃÂÃÂ§o de serviÃÂÃÂÃÂÃÂ§o WEB\n";
+            print "endereço de serviço WEB\n";
          }
          elsif ($1 eq 'http') {
-            print "endereÃÂÃÂÃÂÃÂ§o de serviÃÂÃÂÃÂÃÂ§o WEB seguro\n";
+            print "endereço de serviço WEB seguro\n";
          }
          elsif ($1 eq 'ftp') {
-            print "endereÃÂÃÂÃÂÃÂ§o de serviÃÂÃÂÃÂÃÂ§o de FTP\n";
+            print "endereço de serviço de FTP\n";
          }
          else {
-            print "endereÃÂÃÂÃÂÃÂ§o de um serviÃÂÃÂÃÂÃÂ§o desconhecido\n";
+            print "endereço de um serviço desconhecido\n";
          }
       }
       else {
-         print "Url invÃÂÃÂÃÂÃÂ¡lida\n";
+         print "Url inválida\n";
       }
    }
 
@@ -292,10 +292,10 @@ HE<aacute> tambE<eacute>m uma outra composiE<ccedil>E<atilde>o, "s///,
 onde "s" significa "substitute". Ambas as composiE<ccedil>E<atilde>o
 suportam os modificadores abaixo:
 
-   i   ->  avalia desconsiderando maiÃÂÃÂÃÂÃÂºsculas e minÃÂÃÂÃÂÃÂºsculas
-   m ->  avalia considerando "string" com mais de uma linha
-   s  ->  avalia considerando "string" com uma ÃÂÃÂÃÂÃÂºnica linha
-   x  ->  avalia desconsiderando espaÃÂÃÂÃÂÃÂ§os e comentÃÂÃÂÃÂÃÂ¡rios
+   i  ->  avalia desconsiderando maiúsculas e minúsculas
+   m  ->  avalia considerando "string" com mais de uma linha
+   s  ->  avalia considerando "string" com uma única linha
+   x  ->  avalia desconsiderando espaços e comentários
    g  ->  avalia ou substitui (quando "s///") globalmente
 
 O operador "s///" tem um comportamento bastante diferenciado. Ele
@@ -310,8 +310,8 @@ sintE<aacute>tica desse operando:
 
 onde,
 
-      REX     ->  expressÃÂÃÂÃÂÃÂ£o regular
-      STRING  ->  um grupo de caracteres para substituiÃÂÃÂÃÂÃÂ§ÃÂÃÂÃÂÃÂ£o
+      REX     ->  expressão regular
+      STRING  ->  um grupo de caracteres para substituição
       imsxg   ->  modificadores
 
 Sua operaE<ccedil>E<atilde>o consiste em confrontar um elemento com uma
@@ -328,29 +328,29 @@ manipulaE<ccedil>E<atilde>o com "strings". Experimente!
 
    $elemento = '-a-A-a-A-a-A-a-A-a-A';
    $elmento =~ s/a/+/;
-   print "$elemento\n";            # ResultarÃÂÃÂÃÂÃÂ¡ em: -+-A-a-A-a-A-a-A-a-A
+   print "$elemento\n";            # Resultará em: -+-A-a-A-a-A-a-A-a-A
 
    $elemento = '-a-A-a-A-a-A-a-A-a-A';
    $elemento =~ s/a/+/g;
-   print "$elemento\n";            # ResultarÃÂÃÂÃÂÃÂ¡ em: -+-A-+-A-+-A-+-A-+-A
+   print "$elemento\n";            # Resultará em: -+-A-+-A-+-A-+-A-+-A
 
    $elemento = '-a-A-a-A-a-A-a-A-a-A';
    $elemento =~ s/a/+/gi;
-   print "$elemento\n";            # ResultarÃÂÃÂÃÂÃÂ¡ em: -+-+-+-+-+-+-+-+-+-+
+   print "$elemento\n";            # Resultará em: -+-+-+-+-+-+-+-+-+-+
 
    #
-   # Esse exemplo, ÃÂÃÂÃÂÃÂ© uma alternativa ao anterior
+   # Esse exemplo, é uma alternativa ao anterior
    #
    $elemento = '-a-A-a-A-a-A-a-A-a-A';
    $elemento =~ s/[aA]/+/g;
-   print "$elemento\n";            # ResultarÃÂÃÂÃÂÃÂ¡ em: -+-+-+-+-+-+-+-+-+-+
+   print "$elemento\n";            # Resultará em: -+-+-+-+-+-+-+-+-+-+
 
    #
    # Aplicando o metacaracter "()"
    #
    $elemento = '-a-A-a-A-a-A-a-A-a-A';
    $elemento =~ s/([aA])/($1)/g;
-   print "$elemento\n";            # ResultarÃÂÃÂÃÂÃÂ¡ em: -(a)-(A)-(a)-(A)-(a)-(A)
+   print "$elemento\n";            # Resultará em: -(a)-(A)-(a)-(A)-(a)-(A)
                                                    -(a)-(A)-(a)-(A)
 
 =head2 3.3. FunE<ccedil>E<otilde>es
@@ -375,7 +375,7 @@ regular.
 
 
    #
-   # Usando "grep" com uma expressÃÂÃÂÃÂÃÂ£o regular
+   # Usando "grep" com uma expressão regular
    #
    my @numeros = (0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
    my @numeros_pares = grep /[02468]$/,@numeros;

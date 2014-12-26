@@ -47,7 +47,7 @@ um socket. Nesse teste, vamos executar o programa em C que irE<aacute>
 jogar o conteE<uacute>do do freeze para STDOUT que serE<aacute>
 entE<atilde>o lido pelo script Perl acima.
 
-=head2 Começando pelo perlguts
+=head2 ComeE<ccedil>ando pelo perlguts
 
 A primeira coisa E<eacute> entender como o perl representa cada um dos
 tipos de variE<aacute>veis internamente. Por dentro, tudo acaba por ser
