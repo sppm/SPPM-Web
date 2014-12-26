@@ -289,6 +289,7 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
                 return;
             }
 
+
             die $fullpath . "\t{$author} no author_hash found.\n" unless $author_hash;
 
             my $old_uri_path = $article_type eq 'equinox' ? "equinocio$relpath" : "artigo$relpath";
@@ -296,6 +297,11 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
 
             my $uri_path = $t->translate($title);
 
+            if ($uri_path eq 'name' && $content =~ /Redis::Dump/){
+                # eh thiago zuero!!!
+                $title = 'Redis::Dump - Realizando "dump", backup e restore dados do seu redis';
+                $uri_path = $t->translate($title);
+            }
 
             my $article = {
                 content      => $content,
