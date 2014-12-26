@@ -54,10 +54,10 @@ vE<aacute>rios mE<eacute>todos de se criar um array, isto vai depender
 de sua "criatividade", mas dentre estes mE<eacute>todos vou utilizar a
 funE<ccedil>E<atilde>o qw//.
 
-     () - Significa que vocÃª esta atribuindo uma lista.
-     [] - Ã uma referÃªncia aos escalares.
-   qw// - Vai "quebrar" entre os espaÃ§os.
-     .. - Ã uma seqÃ¼Ãªncia de valores.
+     () - Significa que você esta atribuindo uma lista.
+     [] - É uma referência aos escalares.
+   qw// - Vai "quebrar" entre os espaços.
+     .. - É uma seqüência de valores.
 
 
 
@@ -149,8 +149,8 @@ Com este simples array podemos facilmente interpretar estruturas como
 listas e filas apenas usando algumas funE<ccedil>E<otilde>es que perl
 nos disponibiliza, entre elas:
 
-   unshift() - Adiciona no inÃ­cio.
-     shift() - Remove e retorna o elemento removido do inÃ­cio.
+   unshift() - Adiciona no início.
+     shift() - Remove e retorna o elemento removido do início.
       push() - Adiciona no final.
        pop() - Remove e retorna o elemento removido do final.
     splice() - Exclui um ou mais elementos.
@@ -158,21 +158,21 @@ nos disponibiliza, entre elas:
 
 
    # Unidimensional.
-   unshift(@uni, "ComeÃ§o");
-   unshift(@uni, "PrÃ³ximo", "Seguinte");
+   unshift(@uni, "Começo");
+   unshift(@uni, "Próximo", "Seguinte");
    push(@uni, "Sexto");
-   push(@uni, "SÃ©timo", "Oitavo");
+   push(@uni, "Sétimo", "Oitavo");
    my $primeiro = shift(@uni);
    my $ultimo   = pop(@uni);
-   splice(@uni, 3, 1); # Onde 3 Ã© o offset e 1 Ã© o tamanho.
+   splice(@uni, 3, 1); # Onde 3 é o offset e 1 é o tamanho.
 
 
 
    # Bidimensional.
    unshift(@bi, ["Primeiro", "Segundo", "Terceiro", "Quarto", "Quinto"]);
-   unshift(@{$bi[0]}, "ComeÃ§o", "PrÃ³ximo", "Seguinte");
+   unshift(@{$bi[0]}, "Começo", "Próximo", "Seguinte");
    push(@bi, ["Primeiro", "Segundo", "Terceiro", "Quarto", "Quinto"]);
-   push(@{$bi[0]}, "Sexto", "SÃ©timo", "Oitavo");
+   push(@{$bi[0]}, "Sexto", "Sétimo", "Oitavo");
    my $primeiro = shift(@{$bi[0]});
    my $ultimo   = pop(@{$bi[0]});
    splice(@{$bi[0]}, 3, 1);
@@ -182,10 +182,10 @@ nos disponibiliza, entre elas:
    # Tridimensional.
    unshift(@tri, [["Primeiro", "Segundo", "Terceiro", "Quarto", "Quinto"]]);
    unshift(@{$tri[0]}, ["Primeiro", "Segundo", "Terceiro", "Quarto"]);
-   unshift(@{$tri[0][0]}, "ComeÃ§o", "PrÃ³ximo", "Seguinte");
+   unshift(@{$tri[0][0]}, "Começo", "Próximo", "Seguinte");
    push(@tri, [["Primeiro", "Segundo", "Terceiro", "Quarto", "Quinto"]]);
    push(@{$tri[0]}, ["Primeiro", "Segundo", "Terceiro", "Quarto"]);
-   push(@{$tri[0][0]}, "Sexto", "SÃ©timo", "Oitavo");
+   push(@{$tri[0][0]}, "Sexto", "Sétimo", "Oitavo");
    my $primeiro = shift(@{$tri[0][0]});
    my $ultimo   = pop(@{$tri[0][0]});
 
@@ -308,10 +308,10 @@ string podendo utilizar aspas (") ou nE<atilde>o.
     print "$indice faz $uni_sons{$indice}.\n";
    }
 
-   my @indice = keys %uni_sons;    # Pegando o Ã­ndice.
+   my @indice = keys %uni_sons;    # Pegando o índice.
    my @valores = values %uni_sons; # Pegando os valores.
 
-   while (my ($indice, $valor) = each %uni_sons) { # Ãndice e valor.
+   while (my ($indice, $valor) = each %uni_sons) { # Índice e valor.
     print "$indice faz $valor.\n";
    }
 
@@ -332,11 +332,11 @@ string podendo utilizar aspas (") ou nE<atilde>o.
     }
    }
 
-   my @indice = keys %bi_sons;       # Pegando o Ã­ndice.
+   my @indice = keys %bi_sons;       # Pegando o índice.
    my @subindice = keys %{$bi_sons{E}};
    my @valores = values %{$bi_sons{E}}; # Pegando os valores.
 
-   for my $i (keys %bi_sons) { # Ãndice e valor.
+   for my $i (keys %bi_sons) { # Índice e valor.
     while (my ($indice, $valor) = each %{$bi_sons{$i}}) {
      print "$i $indice faz $valor.\n";
     }
@@ -363,10 +363,10 @@ string podendo utilizar aspas (") ou nE<atilde>o.
     }
    }
 
-   my @indice = keys %{$tri_sons{Entao}{a}};    # Pegando o Ã­ndice.
+   my @indice = keys %{$tri_sons{Entao}{a}};    # Pegando o índice.
    my @valores = values %{$tri_sons{Entao}{a}}; # Pegando os valores.
 
-   for my $i (keys %tri_sons) { # Ãndice e valor.
+   for my $i (keys %tri_sons) { # Índice e valor.
     for my $j (keys %{$tri_sons{$i}}) {
      while (my ($indice, $valor) = each %{$tri_sons{$i}{$j}}) {
       print "$i $j $indice faz $valor.\n";
