@@ -84,3 +84,38 @@ body {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.footer-banner {
+    background-color: white;
+    display:inline-block;
+    width: 402px;
+    padding: 15px
+}
+
+@media all and (max-width: 763px) {
+    body {
+        font-size: 13px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.7em;
+    }
+    .footer-banner {
+        width: auto;
+    }
+
+    .block-on-mobile {
+        display: block;
+    }
+    #site-header nav li {
+        display: block;
+        width: 100%;
+        font-size: 1.2em;
+        line-height: 1.4em;
+        border-left: none;
+        border-bottom: 4px solid #FFF;
+    }
+}

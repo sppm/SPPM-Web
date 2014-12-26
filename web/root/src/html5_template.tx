@@ -31,7 +31,7 @@
         </div>
         <div class="row">
             <div class="col-xs-12">
-                <nav>
+                <nav class="main-menu">
                     <ul>
                     <li><a href="[% c.uri_for('/')%]">Página inicial</a></li>
                     <li><a href="[%c.uri_for_action('/pages/show', ['quem-somos'])%]">Quem somos</a></li>

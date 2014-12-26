@@ -39,10 +39,10 @@
 <div class="row sppm-well bottom-separator">
     <div class="col-xs-12 text-center">
         <h2>Apoio</h2>
-        <div style="background-color: white; display:inline-block; width: 402px; padding: 15px">
-            <a href="http://www.pm.org"><img src="/static/img/pm.jpg"></a>
-            <a href="http://www.perl.org"><img src="/static/img/perl.org.png"></a>
-            <a href="http://creativecommons.org/licenses/by/3.0/"><img src="/static/img/cc.png"></a>
+        <div class="footer-banner">
+            <a class="block-on-mobile" href="http://www.pm.org"><img src="/static/img/pm.jpg"></a>
+            <a class="block-on-mobile" href="http://www.perl.org"><img src="/static/img/perl.org.png"></a>
+            <a class="block-on-mobile" href="http://creativecommons.org/licenses/by/3.0/"><img src="/static/img/cc.png"></a>
         </div>
     </div>
 </div>
