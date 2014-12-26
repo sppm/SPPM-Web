@@ -2,7 +2,7 @@
 
 r2 - 19 Aug 2006 - JoenioCosta
 
-=head1 Conceitos básicos sobre Sockets
+=head1 Conceitos bE<aacute>sicos sobre Sockets
 
 I<>
 
