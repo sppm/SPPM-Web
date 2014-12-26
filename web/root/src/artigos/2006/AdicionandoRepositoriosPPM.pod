@@ -2,7 +2,7 @@
 
 
 
-=head1 Adicionano repositório de modulos em seu PPM
+=head1 Adicionano repositE<oacute>rio de modulos em seu PPM
 
 NE<atilde>o achou certo mE<oacute>dulo em seu repositE<oacute>rio?
 Consulte outros...
@@ -22,7 +22,7 @@ apenas "ppm".
 
 O comando padrE<atilde>o para adicionar repositE<oacute>rios E<eacute>:
 
-     rep add NOME_DO_REPOSITÓRIO ENDEREÃÇO_DO_REPOSITÓRIO
+     rep add NOME_DO_REPOSITÓRIO ENDEREÇO_DO_REPOSITÓRIO
 
 =head2 2.2 Exemplos
 
