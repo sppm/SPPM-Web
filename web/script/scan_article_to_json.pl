@@ -301,7 +301,13 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
                 # eh thiago zuero!!!
                 $title = 'Redis::Dump - Realizando "dump", backup e restore dados do seu redis';
                 $uri_path = $t->translate($title);
+            }elsif ($uri_path eq 'name' && $content =~ /Statim/){
+                # eh thiago zuero!!!
+                $title = 'Statim - Servidor de série temporal determinística e estocástica';
+                $uri_path = $t->translate($title);
             }
+
+
 
             my $article = {
                 content      => $content,

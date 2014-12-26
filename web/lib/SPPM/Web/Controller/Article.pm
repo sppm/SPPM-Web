@@ -11,30 +11,25 @@ sub base: Chained('/root') PathPart('pub') CaptureArgs(0) {
 
 }
 
-sub object: Chained('base') PathPart('') CaptureArgs(2) {
-    my ($self, $c, $id, $page_name) = @_;
+sub object: Chained('base') PathPart('') CaptureArgs(1) {
+    my ($self, $c, $page_name) = @_;
 
-    unless ($id && $id =~ /^[0-9]{1,11}$/){
+    unless ($page_name){
         # 404
         $c->forward('/default');
         $c->detach;
     }
 
     my $article = $c->model('DB::Article')->search({
-        id => $id
+        uri_path => $page_name
     }, {
         prefetch => 'author_hash'
     })->next;
 
+
     unless ($article){
         # 404
         $c->forward('/default');
-        $c->detach;
-    }
-
-    if ($article->uri_path ne $page_name ){
-        my $x = $c->uri_for_action('/article/show', [$article->id, $article->uri_path]  );
-        $c->response->redirect( $x, 302 );
         $c->detach;
     }
 

@@ -17,7 +17,7 @@ sub test_redirect: Private {
 
 
     if ($article){
-        my $x = $c->uri_for_action('/article/show', [$article->id, $article->uri_path]  );
+        my $x = $c->uri_for_action('/article/show', [$article->uri_path]  );
         $c->response->redirect( $x, 301 );
         $c->detach;
     }
