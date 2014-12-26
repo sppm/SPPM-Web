@@ -2,7 +2,7 @@
 
 r2 - 19 Aug 2006 - JoenioCosta
 
-=head1 Técnicas de manipulação
+=head1 TE<eacute>cnicas de manipulaE<ccedil>E<atilde>o
 
 I<>
 
@@ -121,7 +121,7 @@ inteiro podendo ser positivo ou negativo.
 
    # Bidimensional.
    $bi[0][0];   # Acessando um elemento.
-   $bi[-1][-1]; # Acessando o Ãºltimo elemento.
+   $bi[-1][-1]; # Acessando o último elemento.
 
    for my $x (0..$#bi) { # Imprimindo todos os elementos.
     for my $y (0..$#{$bi[$x]}) {
@@ -133,7 +133,7 @@ inteiro podendo ser positivo ou negativo.
 
    # Tridimensional.
    $tri[0][0][0];    # Acessando um elemento.
-   $tri[-1][-1][-1]; # Acessando o Ãºltimo elemento.
+   $tri[-1][-1][-1]; # Acessando o último elemento.
 
    for my $x (0..$#tri) { # Imprimindo todos os elementos.
     for my $y (0..$#{$tri[$x]}) {
