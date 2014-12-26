@@ -2,7 +2,7 @@
 
 r10 - 17 Dec 2008 - JoenioCosta
 
-=head1 Módulos básicos que você precisa conhecer
+=head1 ME<oacute>dulos bE<aacute>sicos que vocE<ecirc> precisa conhecer
 
 I<>
 
