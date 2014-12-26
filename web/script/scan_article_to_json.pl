@@ -309,7 +309,6 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
                 # eh thiago zuero!!!
                 $title = 'Construindo uma aplicação desktop usando os módulos Tk e Moose';
                 $uri_path = $t->translate($title);
-                use DDP; p $title;
             }
 
 
