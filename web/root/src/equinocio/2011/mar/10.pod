@@ -238,3 +238,8 @@ coleta de dados via web é fundamental para que esse processo possa
 ocorrer com a agilidade e eficiência necessárias.
 
 
+=head1 autor
+
+Thiago Rondon
+
+=cut

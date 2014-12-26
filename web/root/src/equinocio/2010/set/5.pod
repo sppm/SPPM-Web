@@ -337,7 +337,8 @@ L<http://pt.wikipedia.org/wiki/Sistema_de_processamento_distribu%C3%ADdo>
 
 L<http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-895-theory-of-parallel-systems-sma-5509-fall-2003/>
 
-=head2 Autor
+=head1 Autor
 
 Daniel de Oliveira Mantovani L<daniel.oliveira.mantovani [a] gmail.com >
 
+=cut

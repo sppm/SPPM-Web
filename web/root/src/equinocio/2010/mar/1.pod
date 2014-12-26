@@ -30,7 +30,9 @@ comunidade da São Paulo Mongers e outros grupos, como a Rio-PM e Brasil-PM.
 
 Boa diversão, e aproveitem!
 
-I<Thiago Rondon>, B<São Paulo Perl Mongers>.
+=HEAD autor
+
+Thiago Rondon, B<São Paulo Perl Mongers>.
 
 =cut
 

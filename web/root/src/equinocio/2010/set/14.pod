@@ -55,7 +55,7 @@ Segue uma lista dos programas necessE<aacute>rios para
 execuE<ccedil>E<atilde>o dos exemplos constantes deste artigo:
 
 =over
- 
+
 =item jakarta-tomcat-5.0.27
 
 =item j2sdk-1_4_2_18-windows-i586-p.
@@ -80,7 +80,7 @@ execuE<ccedil>E<atilde>o dos exemplos constantes deste artigo:
 
 Instalar as ferramentas na seguinte ordem:
 
-=over 
+=over
 
 =item 1. j2sdk-1_4_2_18-windows-i586-p,
 
@@ -229,7 +229,7 @@ Para pesquisar os pacotes digite:
 	s nomedopacote
 
 Para instalar um determinado pacote digite:
-	
+
 	i nomedopacote
 
 Exemplo para pesquisar os pacotes:
@@ -355,7 +355,7 @@ criadas anteriormente e seguem abaixo:
 	$height = $height * 0.45;
 	my $yImage = 760;
 	my $xImage = 15;
-	
+
 	my $string = "q\n";
 	$string .= "$width 0 0 $height $xImage $yImage cm\n";
 	$string .= "/$intName Do\n";
@@ -438,7 +438,7 @@ estaremos trabalhando com Java.
 	my $string = "10 720 582 20 re\n";
 	$string .= "0.95 g \n";
 	$string .= "b\n";
-	
+
 	prAdd($string);
 	prEnd();
 
@@ -480,13 +480,15 @@ utilizar o Java, aguardem.
 
 =head1 AUTOR
 
+HAILTON DAVID LEMOS (hailton.david [a] gmail.com)
+
+
 =begin pod:xhtml
 
 <img src="/static/images/equinocio/2010/set/tomcat/image018.jpg">
 
 =end pod:xhtml
 
-B<HAILTON DAVID LEMOS >(hailton.david@gmail.com)
 
 TecnE<oacute>logo em Internet e Redes, Bacharel em
 AdministraE<ccedil>E<atilde>o de Empresas, Licenciando em

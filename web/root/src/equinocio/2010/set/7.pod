@@ -511,7 +511,9 @@ camada de criptografia decente.
 
 =head2 Autor
 
-Blabos de Blebe é programador desde 1999 e atualmente também aluno do curso de
+Blabos de Blebe
+
+é programador desde 1999 e atualmente também aluno do curso de
 Ciência da Computação no Centro Universitário da FEI em São Bernardo do Campo.
 </p>
 

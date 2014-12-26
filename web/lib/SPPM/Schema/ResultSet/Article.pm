@@ -25,6 +25,9 @@ sub upsert {
         });
     }
 
+    $article->{uri_path} =~ s/\.$//;
+    $article->{title} =~ s/\.$//;
+
     my $row = $self->search({ uri_path => $article->{uri_path} })->next;
 
     if ($article->{article_type} eq 'article'){

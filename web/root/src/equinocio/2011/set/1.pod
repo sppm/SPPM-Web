@@ -26,7 +26,7 @@ E como missão dada é missão cumprida, tenho a honra de anunciar os vencedores
 
 Na primeira categoria, a de Post mais acessado. Nesta a disputa foi pageview a pageview, com três posts batendo todos os records de visualização.
 
-Mas no topo das paradas de sucesso, e detendo B<O> record de audiência: Thiago Rondom com o post L<Publicidade de dados governamentais|http://sao-paulo.pm.org/equinocio/2011/mar/1>. Post tema do Equinócio e que abriu o evento. Parabéns!!!
+Mas no topo das paradas de sucesso, e detendo B<O> record de audiência: Thiago Rondon com o post L<Publicidade de dados governamentais|http://sao-paulo.pm.org/equinocio/2011/mar/1>. Post tema do Equinócio e que abriu o evento. Parabéns!!!
 
 =head3 Melhor Post
 
@@ -39,3 +39,10 @@ Tivemos pelo menos cinco posts que mereceram o título, mas vencendo por somente
 E neste Equinócio de Primavera eu, Blabos, vou patrocinar o B<2º Prêmio 'Cultus Cameli' de Literatura>, seguindo as mesmas regras que o email original do Solli (25/02/2011) na lista da São Paulo Perl Monges.
 
 Escrevam e divirtam-se.
+
+
+=head1 AUTOR
+
+Blabos
+
+=cut
