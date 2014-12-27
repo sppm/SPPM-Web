@@ -20,12 +20,17 @@ sub object: Chained('base') PathPart('') CaptureArgs(1) {
         $c->detach;
     }
 
-    my $article = $c->model('DB::Article')->search({
+    $page_name = lc $page_name;
+
+    my $rs = $c->model('DB::Article');
+
+    my $article = $rs->search({
         uri_path => $page_name
     }, {
         prefetch => 'author_hash'
     })->next;
 
+    $self->_deep_article_search( $c, $rs, $page_name ) unless $article;
 
     unless ($article){
         # 404
@@ -38,6 +43,37 @@ sub object: Chained('base') PathPart('') CaptureArgs(1) {
     $c->stash->{content_template} = 'article.tx';
 
     $c->stash->{title} = $article->title;
+
+}
+
+sub _deep_article_search {
+    my ($self, $c, $rs, $page_name) = @_;
+
+    my @list = split /-/, $page_name;
+    return unless @list;
+
+    # primeira tentativa:
+    # titulos digitados incompletos (no final apenas)
+    my $qtde = scalar @list;
+    my $run = 0;
+
+    while ($run < $qtde){
+        $run++;
+        my $start = join '-', @list[ 0 .. $qtde-$run];
+
+        my $article = $rs->search({
+            uri_path => { like => "$page_name%" }
+        }, {
+            columns => ['uri_path']
+        })->next;
+
+        if ($article){
+            my $x = $c->uri_for_action('/article/show', [$article->uri_path] );
+            $c->response->redirect( $x );
+            $c->detach;
+        }
+    }
+
 
 }
 
