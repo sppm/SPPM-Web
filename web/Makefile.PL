@@ -24,7 +24,7 @@ requires 'File::Basename';
 requires 'JSON::XS';
 
 # Database related
-requires 'DBD::Pg';
+requires 'DBD::Pg' => '3.4.2';
 requires 'DBIx::Class::PassphraseColumn';
 requires 'DBIx::Class::TimeStamp';
 requires 'DateTime::Format::Pg';
