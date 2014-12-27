@@ -70,6 +70,18 @@ sub upsert {
 
     }
 
+
+    if ($article->{html_content} && $article->{html_content} =~ /\bimg\b/i){
+
+        require Mojo::DOM;
+
+        my $dom = Mojo::DOM->new($article->{html_content});
+        $dom->find('img')->each(sub {
+            $_->{class} = exists $_->{class} ? $_->{class} . ' img-responsive' : 'img-responsive';
+        });
+        $article->{html_content} = "$dom";
+    }
+
     if (!$row){
         $row = $self->create( $article );
     }else{

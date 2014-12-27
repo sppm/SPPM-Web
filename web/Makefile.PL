@@ -47,6 +47,8 @@ requires 'Catalyst::Plugin::Assets';
 requires 'JavaScript::Minifier::XS';
 requires 'CSS::Minifier::XS';
 
+requires 'Mojo::DOM';
+
 # uma hora ou outra aparece um modulo falando que falta estes dois caras aqui:
 requires 'MooseX::MarkAsMethods';
 requires 'MooseX::NonMoose';
