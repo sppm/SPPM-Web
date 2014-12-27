@@ -18,11 +18,11 @@ PSGI significa "Perl web Server Gateway Interface". Um gateway atua como uma
 espécie de tradutor de informação para que dois ou mais programas usando
 protocolos diferentes consigam se comunicar.
 
-=begin html
+=begin pod:xhtml
 
-<img src="receiver-emitter.png"/>
+<img src="/static/images/equinocio/2011/set/receiver-emitter.png"/>
 
-=end html
+=end pod:xhtml
 
 Vale observar que o PSGI é apenas uma interface, um padrão para coordenar a
 "conversa" com todos os outros padrões.
@@ -93,11 +93,11 @@ através das suas abstrações.
 
 =head2 Afinal de contas, o que é esse tal de Plack?
 
-=begin html
+=begin pod:xhtml
 
-<img src="plack-architecture.png"/>
+<img src="/static/images/equinocio/2011/set/plack-architecture.png"/>
 
-=end html
+=end pod:xhtml
 
 O Plack é um toolkit que fornece ferramentas para implementação das pilha de
 aplicação do PSGI, e fornece também algumas implementações prontas. Como de
@@ -235,13 +235,13 @@ Vamos ativar outro middleware que mostra um painel de depuração bastante útil
       do 'app.psgi';
     };
 
-=begin html
+=begin pod:xhtml
 
-<img src="plack-ss1.png"/>
+<img src="/static/images/equinocio/2011/set/plack-ss1.png"/>
 
-<img src="plack-ss2.png"/>
+<img src="/static/images/equinocio/2011/set/plack-ss2.png"/>
 
-=end html
+=end pod:xhtml
 
 E ainda outro, que inclui um depurador interativo:
 
@@ -274,13 +274,13 @@ para que o console de depuração apareça:
       ];
     };
 
-=begin html
+=begin pod:xhtml
 
-<img src="plack-ss3.png"/>
-<img src="plack-ss4.png"/>
-<img src="plack-ss5.png"/>
+<img src="/static/images/equinocio/2011/set/plack-ss3.png"/>
+<img src="/static/images/equinocio/2011/set/plack-ss4.png"/>
+<img src="/static/images/equinocio/2011/set/plack-ss5.png"/>
 
-=end html
+=end pod:xhtml
 
 Relembrando que todos esses middlewares funcionam em qualquer aplicação
 compatível com PSGI.
