@@ -12,4 +12,4 @@ before_install:
 notifications:
   irc:
     channels:
-      - "irc.perl.org#sao-paulo.pm"
+      - "irc.perl.org#sao-paulo.pm.dev"

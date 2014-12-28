@@ -21,7 +21,6 @@ sub test_redirect: Private {
         $c->response->redirect( $x, 301 );
         $c->detach;
     }
-    use DDP; p $path;
 
     if (my ($name) = $path =~ /\/artigo\/\d{4}\/(.+)$/){
         $name = lc $name;
