@@ -21,7 +21,22 @@ sub test_redirect: Private {
         $c->response->redirect( $x, 301 );
         $c->detach;
     }
+    use DDP; p $path;
 
+    if (my ($name) = $path =~ /\/artigo\/\d{4}\/(.+)$/){
+        $name = lc $name;
+
+        my $article = $c->model('DB::Article')->search(
+            \[ 'replace(uri_path, \'-\',  \'\') = ?', $name ]
+        )->next;
+
+
+        if ($article){
+            my $x = $c->uri_for_action('/article/show', [$article->uri_path]  );
+            $c->response->redirect( $x, 301 );
+            $c->detach;
+        }
+    }
 
 }
 
