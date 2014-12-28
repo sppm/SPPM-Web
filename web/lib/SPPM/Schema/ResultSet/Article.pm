@@ -3,6 +3,7 @@ use namespace::autoclean;
 
 use utf8;
 use Moose;
+use Mojo::DOM;
 extends 'DBIx::Class::ResultSet';
 
 # this function does NOT take care of history
@@ -71,13 +72,30 @@ sub upsert {
     }
 
 
+    # responsive images
     if ($article->{html_content} && $article->{html_content} =~ /\bimg\b/i){
-
-        require Mojo::DOM;
-
         my $dom = Mojo::DOM->new($article->{html_content});
         $dom->find('img')->each(sub {
             $_->{class} = exists $_->{class} ? $_->{class} . ' img-responsive' : 'img-responsive';
+        });
+        $article->{html_content} = "$dom";
+    }
+
+    # colocar a tag <code>
+    if ($article->{html_content} && $article->{html_content} =~ /\bpre\b/i){
+        my $dom = Mojo::DOM->new($article->{html_content});
+        $dom->find('pre')->each(sub{
+            my $t = $_->text();
+            my $like_perl = $t =~ /(my|our|local)\s[\$\@\%]/ ||
+                $t =~ /(has ['"]|__PACKAGE__)/ ||
+                $t =~ /(package|use|require)\s((\w|::)+);/ ||
+                $t =~ /(sub)\b((\w|::)?+)/ ||
+                $t =~ /\$\w+\-\>/ ||
+                $t =~ /\$c->(model|controller|view)/ ||
+                ($t =~ /\b(if|else|while)\b/ && $t =~ /[\$\@\%]/);
+
+            $_->replace("<pre class=\"language-perl\"><code>$t</code></pre>") if $like_perl;
+            $_->replace("<pre class=\"language-bash\"><code>$t</code></pre>") if !$like_perl;
         });
         $article->{html_content} = "$dom";
     }
