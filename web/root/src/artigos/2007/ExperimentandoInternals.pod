@@ -390,11 +390,11 @@ entE<atilde>o o cE<oacute>digo completo para o storable_freeze.
          ENTER;
          SAVETMPS;
          STRLEN len;
-         // preparar os par�metros
+         // preparar os parâmetros
          PUSHMARK(SP);
          XPUSHs(newRV_inc((SV*)data));
          PUTBACK;
-         // chamar o método
+         // chamar o mÃ©todo
          call_pv("Storable::freeze",G_SCALAR);
          // Obter o retorno
          SPAGAIN;
