@@ -27,10 +27,7 @@
 <div class="row sppm-well separator">
     <div class="col-md-12">
         <h2>Publicações</h2>
-        <p>Publicamos textos sobre perl e outras coisas também... Veja algums exemplos:</p>
-
         [% INCLUDE 'list-article-table.tx' %]
-
         <a href="[%c.uri_for_action('/article/list')%]">Veja todas as Publicações aqui!</a>
     </div>
 </div>
