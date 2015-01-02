@@ -11,6 +11,11 @@ sub test_redirect: Private {
 
     my $path = $c->req->uri->path;
 
+    if ($path eq '/principal'){
+        $c->response->redirect( '/', 301 );
+        $c->detach;
+    }
+
     my $article = $c->model('DB::Article')->search({
         old_uri_path => substr($path, 1)
     })->next;
