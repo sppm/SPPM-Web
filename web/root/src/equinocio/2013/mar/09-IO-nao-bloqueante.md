@@ -280,7 +280,7 @@ Um outro exemplo, até mais interessante, seria construir um replicador de event
 
 O IO::Select é uma interface interessante e é built-in do perl desde a versão 5.00307, porém pode ser maçante utilizar o select de forma crua. No cpan podemos encontrar muitas opções como IO::Multiplex, que oferece a opção de criar uma classe ou objeto e seta-lo como callback de forma que podemos criar interfaces mais consistentes e escrevemos menos codigo. Por exemplo, utilizando IO::Multiplex precisamos basicamente escrever uma subrotina *mux_input* ao inves de escrever um script com 116 linhas (é um dos primeiros exemplos da documentação). Outro exemplo interessante é o Net::Server::NonBlocking.
 
-Existem outras opções de trabalhar com I/O não bloqueante em Perl, destacando-se Coro, POE e Any::Event, este ultimo oferece uma interface comum as demais implementações, todas as opções estão disponiveis no CPAN.
+Existem outras opções de trabalhar com I/O não bloqueante em Perl, destacando-se Coro, POE e Any::Event, este ultimo oferece uma interface comum as demais implementações, todas as opções estão disponíveis no CPAN.
 
 Se queremos trabalhar com muitos filehandles de forma eficiente, temos que fazer uso de uma interface eficiente e robusta, entretanto o fluxo de execução normal do nosso programa pode não ser obvio, por exemplo em sistemas baseados em callbacks pode ser dificil de testar adequadamente (ou nossos testes podem utilizar mocks da API mas apenas para os casos mais simples). E as vezes é tentador criar callbacks como subrotinas anônimas que retornam outras subrotinas anônimas e em um dado momento fica obscuro como testar ou como tratar de forma eficiente exceções dentro do nosso codigo.
 

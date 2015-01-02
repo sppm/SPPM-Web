@@ -2,7 +2,7 @@
     <div class="col-md-12">
 <h1>Quem somos nós ?</h1>
 
-<p>Somos um grupo de profissionais empenhados no suporte e divulgação da linguagem Perl, e seus projetos, com membros residentes por todo o Brasil e Europa. São as contribuiçães voluntárias destes membros que transformaram a lista em uma referência mundial tanto no auxílio aos novatos, quanto em avanĉados tópicos de problemas da engenharia computacional, considerando nossa a cultura e a realidade mercadológica.</p>
+<p>Somos um grupo de profissionais empenhados no suporte e divulgação da linguagem Perl, e seus projetos, com membros residentes por todo o Brasil e Europa. São as contribuições voluntárias destes membros que transformaram a lista em uma referência mundial tanto no auxílio aos novatos, quanto em avançados tópicos de problemas da engenharia computacional, considerando nossa a cultura e a realidade mercadológica.</p>
 
 
 
@@ -12,7 +12,7 @@
 
 <h1>Quem participa ?</h1>
 
-<p>A nossa comunidade possui cerca de 200 membros, utilizando a <a href="[%c.uri_for_action('/pages/show', ['contato'])%]">lista de discurssão e outros canais</a></p>
+<p>A nossa comunidade possui cerca de 200 membros, utilizando a <a href="[%c.uri_for_action('/pages/show', ['contato'])%]">lista de discussão e outros canais</a></p>
 
 [% FOREACH author_hash IN authors.keys() %]
     <img height=64 width=64 src="http://gravatar.com/avatar/[%author_hash | uri %]?d=monsterid&size=64" title="[%authors.$author_hash%]" alt="[%authors.$author_hash%]"/>

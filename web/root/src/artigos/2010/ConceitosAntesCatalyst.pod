@@ -81,7 +81,7 @@ Sim, esta E<eacute> a principal pergunta que vocE<ecirc> deve responder a si prE
 
 Para executar qualquer aplicativo web, devemos pensar em como vamos servir nossos usuE<aacute>rios, iremos discutir algumas estratE<eacute>gias aqui.
 
-O servidor Apache E<eacute> um dos mais utilizados pelo movimento de software-livre, ele E<eacute> executado por mais de 60% dos servidores web disponiveis na Internet. Vide L<http://www.apache.org>
+O servidor Apache E<eacute> um dos mais utilizados pelo movimento de software-livre, ele E<eacute> executado por mais de 60% dos servidores web disponíveis na Internet. Vide L<http://www.apache.org>
 
 Com ele podemos pensar em executar nossa aplicaE<ccedil>E<atilde>o dos seguintes modos:
 

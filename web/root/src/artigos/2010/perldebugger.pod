@@ -42,7 +42,7 @@ Um exemplo mais imediato é o seguinte:
 A ultima linha, o DB<1>: é o nosso prompt, onde <1> o numero da instrução
 de debugger que o usuario vai entrar.
 
-Todo o ambiente e namespace do programa ficam disponiveis no prompt, assim
+Todo o ambiente e namespace do programa ficam disponíveis no prompt, assim
 alguns comandos geram resultados interessantes, como:
 
 	DB<1>: p __PACKAGE__

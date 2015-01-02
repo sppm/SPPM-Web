@@ -49,7 +49,7 @@ Abaixo uma imagem do schema que iremos utilizar neste artigo, optei por utilizar
 =begin pod:xhtml
 
 <center>
-<img src="/static/images/equinocio/2010/set/cncpt292.gif"> 
+<img src="/static/images/equinocio/2010/set/cncpt292.gif">
 </center>
 
 =end pod:xhtml
@@ -128,31 +128,31 @@ MyDB/Schema/Result/JobHistory.pm
 	while (my $dep = $rs->next) {
 		print "Department " . $dep->department_name." City: " . $dep->locations->city.$/;
 	}
-	
+
 No bloco de cE<#243>digo acima nE<#243>s estamos fazendo um join da tabela Department com a tabela Locations, porE<#233>m se nE<#243>s setarmos DBIC_TRACE=1, perceberemos que nE<#243>s executamos a query nas duas tabelas porE<#233>m sE<#243> retornamos os dados da tabela Department, e ao acessarmos a coluna city da tabela Location, uma consulta E<#233> feita para cada linha retornada da tabela Department, e este realmente nE<#227>o E<#233> nosso objetivo:
 
 
-	SELECT me.department_id, me.department_name, me.manager_id, me.location_id 
-	FROM departments me 
-	JOIN locations locations ON locations.location_id = me.location_id 
-	WHERE ( locations.country_id = ? )  
+	SELECT me.department_id, me.department_name, me.manager_id, me.location_id
+	FROM departments me
+	JOIN locations locations ON locations.location_id = me.location_id
+	WHERE ( locations.country_id = ? )
 	ORDER BY department_name, locations.city
 	:'US'
-	
-	SELECT me.location_id, me.street_address, me.postal_code, me.city, me.state_province, me.country_id 
-	FROM locations me 
-	WHERE ( me.location_id = ? ) 
+
+	SELECT me.location_id, me.street_address, me.postal_code, me.city, me.state_province, me.country_id
+	FROM locations me
+	WHERE ( me.location_id = ? )
 	: '1700'
-	
-	SELECT me.location_id, me.street_address, me.postal_code, me.city, me.state_province, me.country_id 
-	FROM locations me 
-	WHERE ( me.location_id = ? ) 
+
+	SELECT me.location_id, me.street_address, me.postal_code, me.city, me.state_province, me.country_id
+	FROM locations me
+	WHERE ( me.location_id = ? )
 	: '1700'
-		
+
 	E assim em diante ...
 
-=head2 Prefetch Joins	
-	
+=head2 Prefetch Joins
+
 Para evitar situaE<#231>E<#245>es com a descrita acima, o DBIx::Class nos oferece os prefetch joins, que consultam os dados das tabelas relacionadas antecipadamente:
 
 	my $rs = $schema->resultset('Department')->search(
@@ -169,20 +169,20 @@ Para evitar situaE<#231>E<#245>es com a descrita acima, o DBIx::Class nos oferec
 	while (my $dep = $rs->next) {
 		print "Department #$i " . $dep->department_name." City: " . $dep->locations->city.$/;
 	}
-	
+
 Abaixo veja a E<#250>nica query gerada pelo bloco de cE<#243>digo acima:
-	
-	SELECT me.department_id, me.department_name, me.manager_id, me.location_id, locations.location_id, locations.street_address, locations.postal_code, 
-	locations.city, locations.state_province, locations.country_id 
-	FROM departments me 
-	JOIN locations locations ON locations.location_id = me.location_id 
+
+	SELECT me.department_id, me.department_name, me.manager_id, me.location_id, locations.location_id, locations.street_address, locations.postal_code,
+	locations.city, locations.state_province, locations.country_id
+	FROM departments me
+	JOIN locations locations ON locations.location_id = me.location_id
 	WHERE ( locations.country_id = ? )  ORDER BY department_name, locations.city
 	: 'US'
 
 =head2 Multiple joins
 
 O DBIx::Class tambE<#233>m nos permite joins mE<#250>ltiplos em vE<#225>rias tabelas, bastando passar uma arrayref ao invE<#233>s de um scalar como atributo no join:
-	
+
 	my $rs = $schema->resultset('Employee')->search(
 			{
 			  'salary' => {'>=', '100'},
@@ -190,9 +190,9 @@ O DBIx::Class tambE<#233>m nos permite joins mE<#250>ltiplos em vE<#225>rias tab
 			  'job.job_title' => 'Accountant',
 			},
 			{
-			  join => [qw/ department job /],  
+			  join => [qw/ department job /],
 			  prefetch => 'department',
-			  
+
 			  #prefetch => [qw/ department job /],
 
 			  order_by => [qw/department.department_name salary/],
@@ -201,10 +201,10 @@ O DBIx::Class tambE<#233>m nos permite joins mE<#250>ltiplos em vE<#225>rias tab
 
 Abaixo a query gerada pelo cE<#243>digo acima que pretende listar empregados com departament_name 'Finance', com job_title 'Accountant' e salary maior ou igual a 100:
 
-	SELECT me.employee_id, me.first_name, me.last_name, me.email, me.phone_number, me.hire_date, me.salary, me.commission_pct, me.manager_id, me.department_id, 
-	me.job_id, department.department_id, department.department_name, department.manager_id, department.location_id 
-	FROM employees me 
-	JOIN departments department ON department.department_id = me.department_id 
+	SELECT me.employee_id, me.first_name, me.last_name, me.email, me.phone_number, me.hire_date, me.salary, me.commission_pct, me.manager_id, me.department_id,
+	me.job_id, department.department_id, department.department_name, department.manager_id, department.location_id
+	FROM employees me
+	JOIN departments department ON department.department_id = me.department_id
 	JOIN jobs job ON job.job_id = me.job_id
 	WHERE ( ( department.department_name = ? AND job.job_title = ? AND salary >= ? ) )
 	ORDER BY department.department_name, salary
@@ -219,7 +219,7 @@ Suponhemos que nE<#243>s necessitemos fazer join entre mais que um relaciomento,
 				  'locations.country_id' => 'US',
 				  'salary' => {'>=', '100'},
 				  'jobhistorys.start_date' => {'>=', '01-JAN-80'},
-				  
+
 				},
 				{
 				  join => [
@@ -233,21 +233,21 @@ Suponhemos que nE<#243>s necessitemos fazer join entre mais que um relaciomento,
 				},
 			);
 	while (my $dep = $rs->next) {
-		print "Departamento: ".$dep->department->department_name." Nome " . $dep->first_name." Salary ".$dep->salary." Start date ".$dep->jobhistorys->start_date.$/;	 
-	}	
+		print "Departamento: ".$dep->department->department_name." Nome " . $dep->first_name." Salary ".$dep->salary." Start date ".$dep->jobhistorys->start_date.$/;
+	}
 
 Abaixo a query gerada que faz join nas tabelas jobhistory, departments e tambE<#233>m na locations, graE<#231>as a utilizaE<#231>E<#227>o do multistep join:
-	
+
 	SELECT me.employee_id, me.first_name, me.last_name, me.email, me.phone_number, m
 	e.hire_date, me.salary, me.commission_pct, me.manager_id, me.department_id, me.j
 	ob_id, department.department_id, department.department_name, department.manager_
 	id, department.location_id, jobhistorys.employee_id, jobhistorys.start_date, job
-	historys.end_date, jobhistorys.job_id, jobhistorys.department_id 
-	FROM employees me 
-	JOIN departments department ON department.department_id = me.department_id 
-	JOIN locations locations ON locations.location_id = department.location_id 
-	JOIN job_history jobhistorys ON jobhistorys.employee_id = me.employee_id 
-	WHERE ( ( jobhistorys.start_date >= ? AND locations.country_id = ? AND salary >= ? ) )  
+	historys.end_date, jobhistorys.job_id, jobhistorys.department_id
+	FROM employees me
+	JOIN departments department ON department.department_id = me.department_id
+	JOIN locations locations ON locations.location_id = department.location_id
+	JOIN job_history jobhistorys ON jobhistorys.employee_id = me.employee_id
+	WHERE ( ( jobhistorys.start_date >= ? AND locations.country_id = ? AND salary >= ? ) )
 	ORDER BY department.department_name, jobhistorys.start_date, salary: '01-JAN-80', 'US'	, '100'
 
 
@@ -258,8 +258,8 @@ NE<#243>s tambE<#233>m podemos usar dos relacionamentos para fazer pesquisas ent
 	my $rs = $schema->resultset('Department')->search(
 		{ department_name => { like => '%Account%' } }
 	  );
-	  
-	my @dep_employees = $rs->search_related('employees')->all;		
+
+	my @dep_employees = $rs->search_related('employees')->all;
 
 	foreach (@dep_employees)	{
 		print $_->first_name.$/;
@@ -267,9 +267,9 @@ NE<#243>s tambE<#233>m podemos usar dos relacionamentos para fazer pesquisas ent
 
 Abaixo a query gerada pelo cE<#243>digo acima:
 
-	SELECT employees.employee_id, employees.first_name, employees.last_name, employees.email, employees.phone_number, employees.hire_date, employees.salary, 
-	employe	es.commission_pct, employees.manager_id, employees.department_id, employees.job_id 
-	FROM departments me 
+	SELECT employees.employee_id, employees.first_name, employees.last_name, employees.email, employees.phone_number, employees.hire_date, employees.salary,
+	employe	es.commission_pct, employees.manager_id, employees.department_id, employees.job_id
+	FROM departments me
 	JOIN employees employees ON employees.department_id = me.department_id WHERE ( department_name LIKE ? ) : '%Account%'
 
 =head2 Criando registros relacionados
@@ -283,9 +283,9 @@ Abaixo a query gerada pelo cE<#243>digo acima:
 				  job_id => 'AC_MGR',
 				  email => 'mvitor@flynight.com',
 				  phone_number => '25115959',
-				  hire_date => '20=JAN-09', 
+				  hire_date => '20=JAN-09',
 				  commission_pct => '10',
-				  manager_id  => '100',		  
+				  manager_id  => '100',
 				},
 			);
 	$employee->insert;

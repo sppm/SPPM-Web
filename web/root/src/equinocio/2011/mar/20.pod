@@ -104,7 +104,7 @@ O resultdo do código será:
 
 =head1 Buscando informações.
 
-Com os dados disponiveis em RDF, agora precisamos de um padrão para buscar estes dados de forma esperta e uma das respostas para esta necessidade é a SPARQL que é uma linguagem de consulta. (TODO: Escrever um artigo sobre isto).
+Com os dados disponíveis em RDF, agora precisamos de um padrão para buscar estes dados de forma esperta e uma das respostas para esta necessidade é a SPARQL que é uma linguagem de consulta. (TODO: Escrever um artigo sobre isto).
 
 =head1 Conclusão
 

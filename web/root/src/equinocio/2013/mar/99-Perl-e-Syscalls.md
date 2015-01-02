@@ -1,4 +1,4 @@
-# Trabalhando com Perl e Chamadas de Sistema (Syscalls) 
+# Trabalhando com Perl e Chamadas de Sistema (Syscalls)
 
 ## Resumo
 
@@ -6,11 +6,11 @@ Em algum momento podemos precisar recorrer ao uso de chamadas de sistema (ou sys
 
 ## Introdução
 
-Nos modernos sistemas operacionais toda a tarefa de controle de processos, alocação de recursos e I/O é feita exclusivamente pelo sistema operacional e a interface com o Kernel para efetuar estas tarefas se chamam chamadas de sistema. Se formos pensar em como funciona a CPU do nosso computador, ela é um simples executador de tarefas: se eu passar um conjunto de tarefas que escreva em um arquivo, por exemplo, a CPU vai fazer independente disso ser permitido ou não. Isto no passado foi um grande desafio para suportar multiplos usuarios, por exemplo, por para conseguir detectar uma atividade de I/O de forma a suspender um processo e dar uma fatia de tempo da cpu a outro processo. 
+Nos modernos sistemas operacionais toda a tarefa de controle de processos, alocação de recursos e I/O é feita exclusivamente pelo sistema operacional e a interface com o Kernel para efetuar estas tarefas se chamam chamadas de sistema. Se formos pensar em como funciona a CPU do nosso computador, ela é um simples executador de tarefas: se eu passar um conjunto de tarefas que escreva em um arquivo, por exemplo, a CPU vai fazer independente disso ser permitido ou não. Isto no passado foi um grande desafio para suportar multiplos usuarios, por exemplo, por para conseguir detectar uma atividade de I/O de forma a suspender um processo e dar uma fatia de tempo da cpu a outro processo.
 
 Quem traz o conceitos como o de permissão de acesso a um determinado arquivo, por exemplo, é o sistema operacional. Como nós não podemos executar determinados tipos de tarefas diretamente o que nos resta é pedir, através de uma syscall, para que o Kernel faça uma determinada tarefa e vamos receber um status de sucesso ou erro de acordo com o contexto (checar permissões por exemplo). Isto só é possivel por que as modernas CPUs podem trabalhar em dois modos: o *real* (onde ela pode executar todas as instruções) e o *protegido* (onde só é possivel executar um subconjunto restrito de instruções).
 
-O Kernel do sistema operaciona, por exemplo, roda em modo real e, dessa forma, pode efetuar todas as tarefas necessarias para o funcionamento do sistema. Quando rodamos o programa de um usuario, por exemplo o editor de texto, este roda no modo protegido e só poderá fazer certas atividades através de uma chamada de sistema pois o mesmo roda em modo *protegido*. É tarefa do sistema operacional dividir o tempo da cpu entre varios processos (num pseudo-paralelismo) e controlar o estado da CPU afim de introduzir um isolamento real entre os diversos processos e os recursos controlados pelo sistema. Dessa forma dizemos que os programas rodam em *user land* enquanto que a real atividade de I/O executa em *kernel land*. 
+O Kernel do sistema operaciona, por exemplo, roda em modo real e, dessa forma, pode efetuar todas as tarefas necessarias para o funcionamento do sistema. Quando rodamos o programa de um usuario, por exemplo o editor de texto, este roda no modo protegido e só poderá fazer certas atividades através de uma chamada de sistema pois o mesmo roda em modo *protegido*. É tarefa do sistema operacional dividir o tempo da cpu entre varios processos (num pseudo-paralelismo) e controlar o estado da CPU afim de introduzir um isolamento real entre os diversos processos e os recursos controlados pelo sistema. Dessa forma dizemos que os programas rodam em *user land* enquanto que a real atividade de I/O executa em *kernel land*.
 
 Feita esta introdução, vamos analisar algumas syscalls mais interessantes e vamos fazer uso da subrotina built-in *syscall* do Perl.
 
@@ -24,14 +24,14 @@ O Linux, por exemplo, possui 139 chamadas de sistema diferente, onde podemos des
 * `sys_fork` - cria um processo filho
 * `sys_getpid` - retorna o pid do processo
 * `sys_read` - le dados a partir de um file descriptor
-* `sys_write` - escreve dados (semelhante ao sys_read) 
+* `sys_write` - escreve dados (semelhante ao sys_read)
 * `sys_open` - abre um arquivo ou dispositivo
 * `sys_close` - fecha um arquivo ou dispositivo
 * `sys_waitpid` - aguarda pelo termino de um determinado processo
 * `sys_mount` - monta um novo sistema de arquivos
 * `sys_umount` - desmonta um sistema de arquivos
 * `sys_getuid` - pega o identificador do usuario corrente (0 significa root)
-* `sys_kill` - envia um sinal para um determinado processo 
+* `sys_kill` - envia um sinal para um determinado processo
 
 Cada chamada de sistema espera um conjunto de parâmetros especificos para aquela atividade. O sys_fork, por exemplo, não requer nenhum parâmetro, por outro lado para ler um arquivo precisamos informar o número do file descriptor, um buffer e o tamanho máximo do buffer. O retorno da syscall também é importante: no caso do fork podemos distinguir entre o processo pai ou filho enquanto o read retorna o número de bytes lidos daquele file descriptor.
 
@@ -53,7 +53,7 @@ O número que devemos passar para a subrotina é o numero da syscall, definida n
 Podemos importar a lista de todas as chamadas de sistema através do programa h2ph
 
 	$ cp /usr/include/sys/syscall.h .
-	$ h2ph -d . syscall.h 
+	$ h2ph -d . syscall.h
 	syscall.h -> syscall.ph
 	$ head syscall.ph
 	require '_h2ph_pre.ph';
@@ -67,8 +67,8 @@ Podemos importar a lista de todas as chamadas de sistema através do programa h2
 		eval 'sub SYS_syscall () {0;}' unless defined(&SYS_syscall);
 		eval 'sub SYS_exit () {1;}' unless defined(&SYS_exit);
 		...
-		
-dessa forma, podem carregar uma lista das syscalls disponiveis e tornar o codigo um pouco mais legível (e até portavel)
+
+dessa forma, podem carregar uma lista das syscalls disponíveis e tornar o codigo um pouco mais legível (e até portavel)
 
 	use strict;
 	use warnings;

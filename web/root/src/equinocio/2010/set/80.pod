@@ -396,7 +396,7 @@ O RabbitMQ é uma excelente solução escrita em Erlang (para tentar combater o 
 
 A utilização dos módulos disponíveis para Perl são para lhe dar agilidade de desenvolvimento e recomendado para necessidades onde o envio de mensagens ou recebimentos não exigem alta perfomance.
 
-Para necessidades onde há uma alta utilização minha recomendação é a utilização de alguma linguagem funcional, como o erlang, no qual já há muitos exemplos de implementações disponiveis na rede.
+Para necessidades onde há uma alta utilização minha recomendação é a utilização de alguma linguagem funcional, como o erlang, no qual já há muitos exemplos de implementações disponíveis na rede.
 
 =head1 VEJA MAIS
 
