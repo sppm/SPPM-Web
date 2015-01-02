@@ -43,7 +43,7 @@ Já para gerar um XML a partir de um *hash*, é a coisa mais trivial
 Segue um padrão bastante comum ao trabalhar com os dados alheios em JSON:
 
     for my $addr (@{$json->{results}}) {
-        next if 
+        next if
             ref($addr->{types}) ne 'ARRAY' or
             ref($addr->{address_components}) ne 'ARRAY' or
             ref($addr->{geometry}) ne 'HASH' or
@@ -154,7 +154,7 @@ Uma parte bem legal e *eye-candy* fica por conta do `$doc->toString(1)`: o *pret
       </url>
     </urlset>
 
-Outra parte que se destaca menos, mas também muito importante: `lastmod => time` automagicamente vira `<lastmod>2013-03-03</lastmod>`.
+Outra parte que se destaca menos, mas também muito importante: `lastmod => time` automaticamente vira `<lastmod>2013-03-03</lastmod>`.
 Não chega a ser um [ORM], mas já ajuda!
 
 ## trang
@@ -185,7 +185,7 @@ Para o tal, temos a ferramenta [trang][trang]:
         }+
       }
 
-No exemplo acima, produzimos, automagicamente, um *schema* no formato [RELAX NG Compact](https://en.wikipedia.org/wiki/RELAX_NG#Compact_syntax)
+No exemplo acima, produzimos, automaticamente, um *schema* no formato [RELAX NG Compact](https://en.wikipedia.org/wiki/RELAX_NG#Compact_syntax)
 (mais amigável para os olhos humanos).
 [trang][trang] também gera XSD, que é o que precisamos para deixar o [XML::Compile][xmlcompile] feliz:
 
@@ -230,7 +230,7 @@ Então, o [XML::Rabbit][xmlrabbit] chega mais perto ainda:
         say $url->loc;
     }
 
-Aqui, meramente comunico a existência de tal módulo, pois o tutorial escrito [pelo próprio autor](https://metacpan.org/author/ROBINS), que ensina a implementar um [cliente para a API do Last::FM][lastfm], é insuperável.
+Aqui, meramente comúnico a existência de tal módulo, pois o tutorial escrito [pelo próprio autor](https://metacpan.org/author/ROBINS), que ensina a implementar um [cliente para a API do Last::FM][lastfm], é insuperável.
 Só destaco que vale a pena dar uma olhada na ferramenta [dump_xml_structure](https://metacpan.org/module/dump_xml_structure), que ajuda a analisar a estrutura do XML:
 
     $ dump_xml_structure sitemap.xml

@@ -183,7 +183,7 @@ Algumas funções úteis:
 
 Se C<$var> é um objeto, você pode chamar os métodos usando um ponto:
 
-  <: $var.metodo() :>
+  <: $var.método() :>
 
 =head3 Condicionais
 
@@ -237,7 +237,7 @@ Suponha o seguinte template I<myapp/base.tx>:
       Equinócio!
   : }
 
-  : block conteudo -> { } # sem conteúdo padrão
+  : block conteúdo -> { } # sem conteúdo padrão
 
 Podemos testar a renderização de nossa base através do programa C<xslate>,
 que vem junto com o módulo:
@@ -249,7 +249,7 @@ Mas nosso objetivo é extender a base em outros templates, por exemplo,
 I<myapp/foo.tx>:
 
   : cascade myapp::base
-  : around conteudo -> {
+  : around conteúdo -> {
       meu conteúdo bonitão!
   : }
 
@@ -270,11 +270,11 @@ extenderíamos um método no L<Moose>! Veja outro exemplo agora, I<myapp/bar.tx>
       ----------
   : }
 
-  : before conteudo -> {
+  : before conteúdo -> {
       Isso é renderizado ANTES do conteúdo!
   : }
 
-  : after conteudo -> {
+  : after conteúdo -> {
       E isso vem DEPOIS!
   : }
 

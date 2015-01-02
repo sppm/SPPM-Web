@@ -10,7 +10,7 @@ Este artigo tem como objetivo proporcionar um exemplo prático que envolva:
     - Exportar dados do site em arquivo formato ODF ( openoffice spreadsheets ).
 
 Para começar escolheremos um site como ponto de partida. Acesse a url escolhida para nosso artigo:
-http://www.portaltransparencia.gov.br/despesasdiarias/resultado?consulta=rapida&periodoInicio=01%2F01%2F2011&periodoFim=31%2F01%2F2011&fase=EMP&codigoOS=51000&codigoFavorecido=
+http://www.portaltransparencia.gov.br/despesasdiarias/resultado?consulta=rapida&periodoInicio=01%2F01%2F2011&periodoFim=31%2F01%2F2011&fase=EMP&códigoOS=51000&códigoFavorecido=
 Obs: para obter esta url, acessei o site http://www.portaltransparencia.gov.br/despesasdiarias e selecionei o período de 01/01/2011 a 31/01/2011, Empenho, Ministério do esporte > consultar.
 
 Esta é uma página do portal da transparência. O que vamos fazer agora é analisar alguns pontos importantes de uma página:
@@ -167,7 +167,7 @@ Este código tem por objetivo baixar todos os dados da página do ministério do
     $mech->agent_alias( 'Windows IE 6' );
     my $url = 'http://www.portaltransparencia.gov.br/despesasdiarias/resultado'.
         '?consulta=rapida&periodoInicio=01%2F01%2F2011&periodoFim=31%2F01%2F2011'.
-        '&fase=EMP&codigoOS=51000&codigoFavorecido=';
+        '&fase=EMP&códigoOS=51000&códigoFavorecido=';
     my @items = ();
     my $url_visited = {};
     scan_page( $url );

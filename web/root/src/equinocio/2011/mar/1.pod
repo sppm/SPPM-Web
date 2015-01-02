@@ -186,13 +186,13 @@ Qualquer pessoa na rede deverá ter acesso aos documentos sem discriminação de
 
 =head3 SEPARAR OS DADOS AO MÁXIMO
 
-Facilitar a utilização dos dados, também é fazer com que eles estejam ao máximo separados em arquivos distintos para facilitar o entendimento e analise da informação, ou seja as informações devem estar armazenadas em um arquivo da maior unidade possivel para análise, além de evitar resumos.
+Facilitar a utilização dos dados, também é fazer com que eles estejam ao máximo separados em arquivos distintos para facilitar o entendimento e analise da informação, ou seja as informações devem estar armazenadas em um arquivo da maior unidade possível para análise, além de evitar resumos.
 
 Aplicar a mistura de informações distintas pode ser uma opção interessante em um segundo plano, e para facilitar o entendimento de um determinado dado em um contexto diferente.
 
 =head3 RESPONSABILIDADE
 
-Promover a responsabiliade dentro dos vários departamentos do governo para que eles possam publicar estes dados com qualidade e da maneira mais rápida possivel, de forma segura para o governo e a sociedade.
+Promover a responsabiliade dentro dos vários departamentos do governo para que eles possam publicar estes dados com qualidade e da maneira mais rápida possível, de forma segura para o governo e a sociedade.
 
 =head3 RÁPIDA INTEGRAÇÃO
 
@@ -298,7 +298,7 @@ Tecnicamente é uma linguagem que se baseia em outras duas linguagens, a OIL e a
 
 Esta definição e toda abordagem ao redor do OWL pode oferecer uma mecanica para elaboração de vocabulários para que a web seja mais semántica aos softwares.
 
-Com ela é possivel facilitar a interpretação de dados por máquinas por linguagens como XML, RDF, RDFS, e etc que iremos ver mais alguns artigos no decorrer deste equinócio.
+Com ela é possível facilitar a interpretação de dados por máquinas por linguagens como XML, RDF, RDFS, e etc que iremos ver mais alguns artigos no decorrer deste equinócio.
 
 =head2 CONECTANDO DADOS
 

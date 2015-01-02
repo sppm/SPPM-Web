@@ -28,7 +28,7 @@ direta e bem estruturada possível.
 Para um exemplo simples, considere o excelente site do
 L<Insituto de Segurança Pública (ISP)|http://www.isp.rj.gov.br>
 do Estado do Rio de Janeiro, que tornou públicas as
-L<informações acerca de incidências criminais no Estado|http://www.isp.rj.gov.br/Conteudo.asp?ident=150>.
+L<informações acerca de incidências criminais no Estado|http://www.isp.rj.gov.br/conteúdo.asp?ident=150>.
 A iniciativa é fantástica, e com isso a Secretaria de Estado de Segurança espera
 "I<< assegurar o máximo de transparência e o amplo acesso às informações relativas a notificações criminais >>".
 

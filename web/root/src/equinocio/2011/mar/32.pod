@@ -28,7 +28,7 @@ primariamente visados foi o
 L<PortalTransparencia|http://www.portaltransparencia.gov.br/>, o site do
 governo federal para promover a transparE<#234>ncia nos dados do governo.
 
-Seguindo a metodologia opensource I<"release early, release often">, o
+Seguindo a métodologia opensource I<"release early, release often">, o
 projeto comeE<#231>ou a disponibilizar cE<#243>digo que, efetivamente, conseguia buscar
 dados. No entanto, esse cE<#243>digo inicialmente nE<#227>o fazia muitas provisE<#245>es
 para manutenE<#231>E<#227>o e extensE<#227>o no futuro.

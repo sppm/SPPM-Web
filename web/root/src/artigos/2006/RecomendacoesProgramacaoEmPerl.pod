@@ -282,11 +282,11 @@ devem ser importadas ou utilizadas como mE<eacute>todos da classe.
 
 Escreva mE<oacute>dulos que aceitam a forma
 
-        Modulo->funcao(@parametros);
+        Modulo->funcao(@parâmetros);
 
 Ao invE<eacute>s de
 
-        Modulo::funcao(@parametros);
+        Modulo::funcao(@parâmetros);
 
 =head2 Filosofia de desenvolvimento
 

@@ -11,9 +11,9 @@ A web pode ser considerada um local universal para armazenar documentos e isto s
 
 Utilizando a infra-estrutura da web, os dados podem ir crescendo desde que haja uma identificação esperta para isto e a melhor forma é utilizado o esquema que é ofercido pelas URIs, ou seja os nossos dados serão identificandos por endereços na web.
 
-RDF é um modelo padrão para troca de informações na WEB, isto significa que com este modelo é possivel facilitar tarefas como facilitar o merge de dados testando em schemas diferentes e como facilitar a evolução dos dados e esquemas.
+RDF é um modelo padrão para troca de informações na WEB, isto significa que com este modelo é possível facilitar tarefas como facilitar o merge de dados testando em schemas diferentes e como facilitar a evolução dos dados e esquemas.
 
-O RDF extende o modelo de estrutura de "ligação" (links) da Web para usar o relacionamento de documentos via nomes de URI's e interligar eles entre si, com este simples modelo é possivel criar estruturadas de dados que possam ser misturadas, compilados, interpretados e compartilhados através de diferentes tipos de aplicativos.
+O RDF extende o modelo de estrutura de "ligação" (links) da Web para usar o relacionamento de documentos via nomes de URI's e interligar eles entre si, com este simples modelo é possível criar estruturadas de dados que possam ser misturadas, compilados, interpretados e compartilhados através de diferentes tipos de aplicativos.
 
 O conceito essencial do RDF é a tripla, no qual definie o sujeito, a propriedade e o valor, que representam afirmações.
 

@@ -170,7 +170,7 @@ pode ser facilmente resolvido com o comando abaixo:
     echo 'export PERL_MM_USE_DEFAULT=1' >> ~/.bashrc
 
 Isso vai adicionar os comandos que exportam as variáveis de ambiente ao final
-do seu arquivo .bashrc, e então a cada login elas serão automagicamente
+do seu arquivo .bashrc, e então a cada login elas serão automaticamente
 exportadas.
 
 Force a re-execução do seu bashrc ou faça logout e login novamente
@@ -546,7 +546,7 @@ Muito útil para depuração.
 B<Catalyst::Plugin::ConfigLoader> - Suporte a vários formatos de arquivo de
 configuração.
 
-B<Catalyst::Plugin::Unicode> - Suporte transparente a Unicode (UTF8).
+B<Catalyst::Plugin::únicode> - Suporte transparente a únicode (UTF8).
 
 B<Catalyst::Plugin::Static::Simple> - Para servir páginas estáticas de forma
 simples.

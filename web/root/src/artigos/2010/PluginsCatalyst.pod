@@ -27,7 +27,7 @@ A implementação é muito simples. Seu plugin será inserido no topo da heranç
 da sua aplicação, acima do Catalyst inclusive. Com isso você pode alterar
 o ciclo de vida de uma requisição.
 
-O exemplo a seguir sobrescreve o metodo C<uri_for> para que ele emita um aviso
+O exemplo a seguir sobrescreve o método C<uri_for> para que ele emita um aviso
 toda a vez que for chamado sem um objeto Action como primeiro parâmetro.
 O nome da classe é propositadamente simples:
 

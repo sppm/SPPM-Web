@@ -85,7 +85,7 @@ dividimos o numero de trigram certos, pelo conjunto de todos os trigram
 únicos das suas palavras
 
 trigram certos:  {cam amp nas} = 3
-trigram unicos:  {cam amp mpi mpy pin pyn ina yna nas} = 9
+trigram únicos:  {cam amp mpi mpy pin pyn ina yna nas} = 9
 
 3/9 = 0,33
 

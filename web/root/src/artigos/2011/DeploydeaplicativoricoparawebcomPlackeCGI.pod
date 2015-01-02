@@ -4,9 +4,9 @@
 
 =head2 O que são Aplicativos Ricos?
 
-A grande rede mundial vem se modernizando cada vez mais e com isso possibilitando o avanço e surgimento de diversas tecnologias e metodologias.
+A grande rede mundial vem se modernizando cada vez mais e com isso possibilitando o avanço e surgimento de diversas tecnologias e métodologias.
 
-Graças ao aumento de velocidade de acesso à rede e a diminiuição de problemas como intermitência no sinal, foi possível aprimorar metodologias de desenvolvimento web
+Graças ao aumento de velocidade de acesso à rede e a diminiuição de problemas como intermitência no sinal, foi possível aprimorar métodologias de desenvolvimento web
 e trazer para esse ambiente, características até então somente presentes em aplicativos desktop. Então, eis surge um novo conceito para desenvolvimento web: RIA.
 
 RIA, da sigla em inglês Rich Internet Application, nada mais é que um aplicativo web com características de aplicativos desktop com interface. Um aplicativo RIA, tem
@@ -67,7 +67,7 @@ Então resumindo, com o Plack, pude constuir um aplicativo sem me preocupar com 
 
 =head2 Definindo o "aplicativo"
 
-O aplicativo tem como idéia principal mimificar um aplicativo do tipo Gerenciador de Arquivos
+O aplicativo tem como ideia principal mimificar um aplicativo do tipo Gerenciador de Arquivos
 
 Funções Principais:
 
@@ -100,7 +100,7 @@ correspondentes.
 	escolha o diretório C:\strawberry para a instalação do Strawberry Perl
 
 	# Linux, Unix, Mac
-	A maioria desses SOs ja vêm com perl instalado. Digite perl -v numa linha de comando para saber qual a versao do seu Perl
+	A maioria desses SOs já vêm com perl instalado. Digite perl -v numa linha de comando para saber qual a versao do seu Perl
 
 
 =head2 2º passo: Instalar os módulos Perl que utilizaremos em nossa aplicação
@@ -172,7 +172,7 @@ Abra seu editor de texto preferido e cole o seguinte código:
 		use warnings;
 		use strict;
 
-		# Importar modulos Plack
+		# Importar módulos Plack
 		use Plack::Builder;
 		use Plack::App::CGIBin;
 		use Plack::App::Directory;
@@ -218,7 +218,7 @@ Salve o arquivo com o nome de app.psgi no diretório D:\artigo\plack_conf\
 
 	3 - Digite o seguinte comando: plackup d:\artigo\plack_conf\app.psgi			=> dê enter
 
-	4 - Você verá no terminal escrito: HTTP::Server::PSGI: Accepting connections at http://0:5000/  => a partir deste momento, você ja pode acessar sua aplicação
+	4 - Você verá no terminal escrito: HTTP::Server::PSGI: Accepting connections at http://0:5000/  => a partir deste momento, você já pode acessar sua aplicação
 	pelo browser, digitando por exemplo a seguinte url: http://127.0.0.1:5000
 	Porém, nossa aplicação web ainda não foi construída, e logo, o plack não tem nada à servir para o browser.
 

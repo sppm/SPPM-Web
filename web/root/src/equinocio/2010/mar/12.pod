@@ -106,7 +106,7 @@ um objeto existente para fazer a associação com C<materia>.
      print 'Matérias estudadas por ' . $aluno->nome . ":\n";
      print $_->nome, "\n" for $aluno->materias->all;
 
-Para ter uma idéia melhor do que acontece por trás das cenas, pode-se ativar
+Para ter uma ideia melhor do que acontece por trás das cenas, pode-se ativar
 a variável de ambiente C<DBIC_TRACE>, que irá exibir o SQL gerado em C<STDERR>:
 
     DBIC_TRACE=1 perl -Ilib script/test2.pl
@@ -471,9 +471,9 @@ Happy Hacking!
 =head2 AGRADECIMENTO
 
 Thiago Rondon, que organizou o equinócio e conseguiu me convencer a passar
-horas escrevendo os artigos de ontem e hoje, além de contribuir com idéias e
+horas escrevendo os artigos de ontem e hoje, além de contribuir com ideias e
 revisões.
-Nuba Princigalli, pela revisão dos artigos e bounce de idéias em geral.
+Nuba Princigalli, pela revisão dos artigos e bounce de ideias em geral.
 São Paulo Perl Mongers e Rio Perl Mongers pelos encontros sociais, eventos e
 fontes de procrastinação.
 

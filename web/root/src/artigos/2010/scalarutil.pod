@@ -14,7 +14,7 @@ classe salvos em um escalar. Pessoalmente eu uso muito hashs encadeados, como se
 fosse uma struct em C ou uma arvore de dados.
 
 Normalmente um programa faz seguidas operações sobre um conjunto de dados, e as
-vezes é necessario se obter mais informações sobre aquele escalar armazenado
+vezes é necessário se obter mais informações sobre aquele escalar armazenado
 para se obter contexto. Como exemplo nós construiremos um array:
 
 	my @array = (
@@ -91,7 +91,7 @@ Temos:
 	>perl Scalar.pl
 	Foo
 
-Particularmente util quando se monta uma estrutura com varios objetos, quando
+Particularmente util quando se monta uma estrutura com vários objetos, quando
 não se sabe exatamente quais são objetos e destes quais são as respectivas
 classes.
 
@@ -129,7 +129,7 @@ Utilizando o mesmo loop que já mostrado acima, agora com a adição do valor:
 
 	  , v1.0
 
-Nós temos a saida:
+Nós temos a saída:
 
 	>perl Scalar.pl
 	24 is not version
@@ -141,7 +141,7 @@ Nós temos a saida:
 	 is version
 
 Util para verificar a versao de "alguma" coisa, embora no processo padrão de
-modulos da Perl já exista isso automatico. (Talvez usando essa função, eu não
+módulos da Perl já exista isso automatico. (Talvez usando essa função, eu não
 verifiquei como).
 
 =head3 Referencias fracas (Weaken references)
@@ -205,7 +205,7 @@ O que acontece é que o array é declarado dentro de um bloco, entre chaves
 
 Ao sair do bloco em uma situação "normal" a referencia @array some e em zero
 o contador limpa a memoria, quando declaramos uma referencia na linha posterior
-nós criamos outra entrada e assim o conteudo não é limpo. weaken faz com que
+nós criamos outra entrada e assim o conteúdo não é limpo. weaken faz com que
 aquela referencia não seja contada :).
 
 Voltando ao classico desse artigo, será que a referencia é fraca?
@@ -234,9 +234,9 @@ Espero que você não esteja usando barewords para abrir arquivos hein :).
 	  open DIR , "foo";
 
 Isso além de ser bem anos 90, não é muito flexivel. Lembre-se, escalar é seu
-amigo (open com 3 parametros também). No caso, no contexto onde temos ou
+amigo (open com 3 parâmetros também). No caso, no contexto onde temos ou
 recebemos um filehandle, como testa-lo? De fato se voce fez a chamada open você
-pode testar diretamente a saida dela, porém e se o programa já executou n
+pode testar diretamente a saída dela, porém e se o programa já executou n
 operações ou você recebeu o filehandle de "terceiros"?
 
 Novo exemplo:
@@ -277,8 +277,8 @@ escalar (ou qualquer coisa que possa ser modificada).
 	  print "\o/ Yes I can\n" if !readonly( $var );
 	  print "_ _! No, I can't\n" if readonly ( 0 );
 
-Um tanto obvia, apenas o codigo fonte da para perceber que o contexto de somente
-leitura é para quase temos constantes, se voce recebe como parametros:
+Um tanto obvia, apenas o código fonte da para perceber que o contexto de somente
+leitura é para quase temos constantes, se voce recebe como parâmetros:
 
 	  foo ( 42 );
 
@@ -342,7 +342,7 @@ ser util é se obter o endereço, seja la do que ele for da referencia:
 
 	  refaddr ( $ref );
 
-Trocando o blessed o exemplo acima por refaddr, temos a saida:
+Trocando o blessed o exemplo acima por refaddr, temos a saída:
 
 	> perl5.13.3 reftype.pl
 	normal:4303368376

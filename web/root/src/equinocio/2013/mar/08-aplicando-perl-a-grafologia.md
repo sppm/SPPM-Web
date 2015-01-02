@@ -97,7 +97,7 @@ Durante o processamento da imagem para extração dos padrões grafológicos sã
 
 
 
-A luminância é uma medida da densidade da intensidade de uma luz refletida numa dada direção, cuja unidade SI é a candela por metro quadrado (cd/m²). Descreve a quantidade de luz que atravessa ou é emitida de uma superfície em questão, e decai segundo um ângulo sólido.
+A luminância é uma medida da densidade da intensidade de uma luz refletida numa dada direção, cuja unidade SI é a candela por metro quadrado (cd/m²). Descreve a quantidade de luz que atravéssa ou é emitida de uma superfície em questão, e decai segundo um ângulo sólido.
 
 
 A refletância é a proporção entre o fluxo de radiação eletromagnética incidente numa superfície e o fluxo que é refletido.

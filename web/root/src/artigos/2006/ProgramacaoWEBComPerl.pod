@@ -47,7 +47,7 @@ comeE<ccedil>arE<aacute> perceber por que ela E<eacute> mais vantagosa.
 
 =over
 
-=item * Codigo com marcaE<ccedil>E<otilde>es
+=item * código com marcaE<ccedil>E<otilde>es
 
 =back
 

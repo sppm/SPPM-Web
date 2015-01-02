@@ -41,7 +41,7 @@ como responsE<aacute>veis via MS Outlook (1).
 Para dar conta disso tudo o programa utiliza o mE<oacute>dulo
 C<Win32::OLE> para acessar o MS Excel e o MS Outlook. Esse
 mE<oacute>dulo tem como requisito o MS Windows (versE<otilde>es 95 e
-posteriores, possivelmente) e do ActivePerl (ActivePerl 5.8.8;
+posteriores, possívelmente) e do ActivePerl (ActivePerl 5.8.8;
 versE<otilde>es diferentes podem tambE<eacute>m funcionar) instalados,
 alE<eacute>m desses dois programas que fazem parte do MS Office. O
 mE<oacute>dulo C<Class::Accessor> tambE<eacute>m deve estar

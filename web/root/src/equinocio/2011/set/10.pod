@@ -38,7 +38,7 @@ E se a sua estrutura de dados estiver associada a outros elementos?
 =end pod:xhtml
 
 
-A idéia por trás do Data::Printer é a de que a grande maioria dos
+A ideia por trás do Data::Printer é a de que a grande maioria dos
 desenvolvedores (pelo menos os que eu conheço) usa ferramentas como essa
 principalmente para ver o que está acontecendo dentro de suas variáveis e
 objetos, e não para serializar dados pra dentro e fora do Perl. Por isso,
@@ -198,7 +198,7 @@ vez de escrever no STDERR. Por exemplo:
 
     print p(@var);        # exibe no STDOUT
 
-    my $saida = p(@var);  # coloca string de dump em $saida
+    my $saída = p(@var);  # coloca string de dump em $saída
 
 Note que, dessa forma, o Data::Printer não colore a string e retorna apenas o
 texto - o que é útil para manipular a string sem se preocupar com os símbolos

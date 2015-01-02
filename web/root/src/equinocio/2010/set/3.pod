@@ -193,7 +193,7 @@ Isso também o torna extremamente rápido para encontrar o que você quer dentro
 
 =item	* Economia de espaço e legibilidade de código:
 
-Mesmo quem nunca 'bateu' o olho num código XPath, a primeira vista faz uma boa idéia do que está ocorrendo. Normalmente você utiliza apenas um método para chegar no que você quer, ou seja, o método 'findnodes'.
+Mesmo quem nunca 'bateu' o olho num código XPath, a primeira vista faz uma boa ideia do que está ocorrendo. Normalmente você utiliza apenas um método para chegar no que você quer, ou seja, o método 'findnodes'.
 
 =item 	* Facilidade de manutenção:
 
@@ -209,8 +209,8 @@ EXTREMAMENTE recomendável que você utilize o firebug, ou pode ter que usar óc
 O trecho do HTML que representa os links para os canais do UOL é o seguinte:
 
 	<div id="corpo">
-		<div id="conteudo">
-		<div id="modulos"><div class="content">
+		<div id="conteúdo">
+		<div id="módulos"><div class="content">
     		<div id="data-ultnot">
     			<div id="data"><script>var dia="21";dia=dia.replace(/^0/,'');(dia=="1")?dd="1&ordm;":dd=dia;d.write(dd);</script> de agosto de 2010</div>
     			<div id="topo-direita"><a href="http://click.uol.com.br/?rf=hu-visite-barrauol&u=http://barra.uol.com.br/">Barra UOL</a>&nbsp;|&nbsp;&nbsp;<a id="faca-sua-index.t-header" href=# onclick="defineindex.t(this);"><img src="http://h.imguol.com/h1/icone-uolindex.t.gif" width=14 height=14 border=0 align="absmiddle"> Faça do UOL a sua index.t page</a>&nbsp;|<a id="travarReload" href="javascript:void(0)" onclick="switchReload(this)"><span class='icone'></span>Parar de atualizar</a></div>
@@ -297,7 +297,7 @@ Aí o Mantovanni pode dizer: - Tem um caminho mais curto, NARF!
 
 É eu sei! Mas não tô aqui pra jogar 'XPATH GOLF' e preciso explicar alguns 'porques', por isso eu prefiro a primeira maneira, do que a segunda. Saibam que se trata da mesma coisa, semanticamente, ok?
 
-Por via de regra, utilize o caminho que o XPather ou outra ferramenta lhe der, e faça suas otimizações. Isso porque a idéia por trás disso é facilitar a vida de quem desenvolve utilizando XPath, e ferramentas não faltam para isso. Então 'EXPERIMENTA'!
+Por via de regra, utilize o caminho que o XPather ou outra ferramenta lhe der, e faça suas otimizações. Isso porque a ideia por trás disso é facilitar a vida de quem desenvolve utilizando XPath, e ferramentas não faltam para isso. Então 'EXPERIMENTA'!
 
 Mas vocês podem me perguntar, e esse predicado no ul?? [1], o que significa?
 

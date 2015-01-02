@@ -221,11 +221,11 @@ Norlmalmente com dados governamentais iremos discutir sobre metricas relacionado
 
 O imperativo numérico representa um desafio, pois há uma dificuldade tremenda em selecionar quais formulas para se utilizar para representar um montante de dados, principalmente na administração pública ou na economia, pois muitos dados podem estar incompletos e temos que trabalhar com informações aproximadas.
 
-Por isto em muitos casos é interessante utilizar uma metodologia de que você irá oferecer inicialmente várias métricas, para que você possa 'tringular' elas e criar estratégias e até métricas novas.
+Por isto em muitos casos é interessante utilizar uma métodologia de que você irá oferecer inicialmente várias métricas, para que você possa 'tringular' elas e criar estratégias e até métricas novas.
 
 O interessante da triangulação de métricas é que podemos usar umas para verificar o resultado das outras também, e com o tempo criar projeções mais inteligentes baseado em dados - métricas - aproximadas.
 
-Por isto escolher os números certos, pode ser possivel apenas com um determinado tempo, para você consiga provar os fenômenos praticos com os números escolhidos.
+Por isto escolher os números certos, pode ser possível apenas com um determinado tempo, para você consiga provar os fenômenos praticos com os números escolhidos.
 
 =head2 Padronizando as referências.
 
@@ -249,14 +249,14 @@ Para isto é interessante que exista uma padronização relacionado ao tipo da m
 
 =head1 Algoritmos
 
-Não há como citar algoritmos em especificos, pois existe a necessidade inicialmente de coletar os dados que você tem disponível, verificar se estes dados representam algum conceito ou algo da forma mais absoluta possivel - ou aproximada -.
+Não há como citar algoritmos em especificos, pois existe a necessidade inicialmente de coletar os dados que você tem disponível, verificar se estes dados representam algum conceito ou algo da forma mais absoluta possível - ou aproximada -.
 O segundo passo é organizar estes dados para que eles sejam compilados e processados em formas reduzidas.
 
 Dependendo da quantidade de dados envolvendo, há a necessidade de "transformar" estes dados em outro formato para que a manipulação seja mais rápida.
 
 =head1 Conclusão
 
-Este artigo tem como oferecer um levantamento em relação as idéias relacionadas a infografia, e quais os passos para conseguir enviar dados de forma dinâmica ou não relacionado a uma quantidade de dados.
+Este artigo tem como oferecer um levantamento em relação as ideias relacionadas a infografia, e quais os passos para conseguir enviar dados de forma dinâmica ou não relacionado a uma quantidade de dados.
 
 O trabalho não é só em ter os dados, mas organizar eles de forma que fique simples o trabalho do design de informação, além de que como foi abordado existe um interesse grande para que os dados sejam compartilhados, reutilizados e principalmente para que exista um ecosistema para formação de novas ideias baseado em um processo colaborativo.
 
@@ -264,9 +264,9 @@ O trabalho não é só em ter os dados, mas organizar eles de forma que fique si
 	e nós trocamos essas maçãs,
 	então eu e você ainda teremos uma maçã cada.
 
-	Mas se você tiver uma idéia e eu tiver uma idéia
-	e nós trocamos idéias,
-	então cada um de nós terá duas idéias."
+	Mas se você tiver uma ideia e eu tiver uma ideia
+	e nós trocamos ideias,
+	então cada um de nós terá duas ideias."
 
 	-- George Bernard Shaw (1856-1950)
 

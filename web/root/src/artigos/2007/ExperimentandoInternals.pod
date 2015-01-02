@@ -390,7 +390,7 @@ entE<atilde>o o cE<oacute>digo completo para o storable_freeze.
          ENTER;
          SAVETMPS;
          STRLEN len;
-         // preparar os parametros
+         // preparar os parâmetros
          PUSHMARK(SP);
          XPUSHs(newRV_inc((SV*)data));
          PUTBACK;

@@ -142,7 +142,7 @@ de notE<#237>cias no EquinE<#243>cio.
       is_nullable   => 0,
       size          => 4
     },
-    "conteudo",
+    "conteúdo",
     {
       data_type     => "text",
       default_value => undef,
@@ -215,7 +215,7 @@ de notE<#237>cias no EquinE<#243>cio.
     column_label => 'name'
   );
 
-  has_field conteudo => (
+  has_field conteúdo => (
     type             => 'TextArea',
     label            => 'ConteE<#250>do',
     required         => 1,
@@ -242,7 +242,7 @@ em C<unique_message> serE<#225> exibida.
 No campo I<categoria> definimos atravE<#233>s do atributo C<column_label> qual coluna
 do registro serE<#225> usada como I<label> no I<<select>> do formulE<#225>rio.
 
-JE<#225> o campo C<conteudo> possui o atributo C<required> setado, que faz com que o
+JE<#225> o campo C<conteúdo> possui o atributo C<required> setado, que faz com que o
 L<HTML::FormHandler> exiba a mensagem definida em C<required_message> se o campo for
 submetido vazio. Uma I<constraint> denominada C<TextoCurto> E<#233> declarada e aplicada
 ao valor submetido no campo, C<TextoCurto> E<#233> usado para restringir o tamanho do

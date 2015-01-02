@@ -513,7 +513,7 @@ Mas, é claro, cada caso é um caso, então não me responsabilizo se o seu SSD 
 
 Lembrando: L<AnyEvent> é uma API para I<frameworks> de loops de eventos.
 De forma alguma sequer um deles se encarrega em distribuir o processamento entre as várias CPUs que você tem!
-Traduzindo: se você tem um sistema com 8 núcleos, não espere que os seus programas que empreguem o paradigma assíncrono automagicamente passem a aproveitar os seus recursos de I<hardware>.
+Traduzindo: se você tem um sistema com 8 núcleos, não espere que os seus programas que empreguem o paradigma assíncrono automaticamente passem a aproveitar os seus recursos de I<hardware>.
 Para delegar o serviço pesado a outras CPUs, você ainda precisa de um C<fork()>.
 Recapitulando: se o seu problema é I/O, a sua solução é (provavelmente) L<AnyEvent>.
 E, se o seu problema é processamento, a solução é C<fork()> (L<threads> não é solução, é C<$problema ** 2>, I<sorry>).

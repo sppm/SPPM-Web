@@ -4,11 +4,11 @@
 
 
 Nesse artigo vou mostrar como é fácil fazer um Grid de L<DHTMLX|http://dhtmlx.com>, usando dois dos
-melhores modulos em B<Perl>.
+melhores módulos em B<Perl>.
 
 =head2 Instalação
 
-Instale os modulos abaixo:
+Instale os módulos abaixo:
 
    Catalyst::Devel
    Catalyst::Runtime
@@ -62,11 +62,11 @@ Criar a view com JSON:
 
 Criar o model com B<DBIx::Class>:
 
-   script/myapp_create.pl model DB DBIC::Schema MyApp::Schema \dbi:Pg:dbname=nome_do_banco usuario_postgre senha_postgre
+   script/myapp_create.pl model DB DBIC::Schema MyApp::Schema \dbi:Pg:dbname=nome_do_banco usuário_postgre senha_postgre
 
 Gerar as classes do schema:
 
-   dbicdump -o dump_directory=./lib \MyApp::Schema dbi:Pg:dbname=nome_do_banco usuario_postgre senha_postgre
+   dbicdump -o dump_directory=./lib \MyApp::Schema dbi:Pg:dbname=nome_do_banco usuário_postgre senha_postgre
 
 Agora vamos criar o controller com de nossa aplicação com nome Grid:
 

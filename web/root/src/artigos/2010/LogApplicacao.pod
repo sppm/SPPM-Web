@@ -29,7 +29,7 @@ somente o faz durante a análize de algum problema na aplicação.
 
 O primeiro desafio de um sistema de log consistente na aplicação é encontrar o
 verdadeiro consumidor (ou consumidor primário) dos logs. Por mais estranho
-que possa parecer num primeiro instante, o ambiente idéial é aquele que utiliza
+que possa parecer num primeiro instante, o ambiente ideial é aquele que utiliza
 sistema de monitoramento e análise de log como consumidor primário dos logs de
 uma aplicação.
 

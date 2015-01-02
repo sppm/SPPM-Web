@@ -43,35 +43,35 @@ soluE<ccedil>E<atilde>o dos problemas e nE<atilde>o muito como foi
 feito, a maioria E<eacute> assim. EntE<atilde>o a melhor alternativa
 para mostrar a Perl para eles E<eacute> resolver um problema inicial
 utilizando a perl. Simplesmente faE<ccedil>a e mostre funcionando e
-diga que usou a perl. E que foi rapido. Isso funcionou comigo, pois
+diga que usou a perl. E que foi rápido. Isso funcionou comigo, pois
 aticei a curiosidade de todos do meu setor quando resolvia pequenos
 problemas utilizando um laE<ccedil>o e um pequeno filtro com regex e
-gerando a saida na tela. Assim foi com um pequeno programa para
+gerando a saída na tela. Assim foi com um pequeno programa para
 diferenciar dois arquivos ".ini" do windows.
 
 O Problema:
 
-Tinhamos varios arquivos ".ini" e precisavamos compara-los, mas as tags
+tínhamos vários arquivos ".ini" e precisavamos compara-los, mas as tags
 eram totalmente desordenadas, assim dois arquivos sE<atilde>o
-diferentes, mas o conteudo logico E<eacute> o mesmo, pois as
+diferentes, mas o conteúdo logico E<eacute> o mesmo, pois as
 seE<ccedil>E<otilde>es estE<atilde>o desorganizadas.
 
 Por exemplo:
 
-conteudo do arquivo 1
+conteúdo do arquivo 1
 
  980c552b154bc7844e9489ebf912bbb4
  bbb
  ccc
 
-conteudo do arquivo 2
+conteúdo do arquivo 2
 
  bbb
  ccc
  980c552b154bc7844e9489ebf912bbb4
 
 Para nE<oacute>s, os arquivos sE<atilde>o iguais, mas todos os diffs
-testados apontam como sendo diferentes. Pois o conteudo interno das
+testados apontam como sendo diferentes. Pois o conteúdo interno das
 seE<ccedil>E<otilde>es tambE<eacute>m nE<atilde>o E<eacute> ordenado,
 pois sE<atilde>o gerados por processos automaticos.
 
@@ -88,7 +88,7 @@ vetores tinham o mesmo tamanho, e caso afirmativo comparava cada tag,
 com seu correspondente. Lia os valores internos das tags em outros dois
 vetores, ordenava efazia a mesma comparaE<ccedil>E<atilde>o.
 
-colar o codigo comentado
+colar o código comentado
 
 nota, na epoca nE<atilde>o usava hash, nem referencias, coisa que
 tornaria a tarefa muito mais simples. reescrever o programa comentar

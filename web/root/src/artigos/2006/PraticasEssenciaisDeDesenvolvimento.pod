@@ -10,9 +10,9 @@ Dez dicas essenciais de Damian Conway
 
 =item 1. Projete a interface do modulo antes de mais nada
 
-=item 2. Escreva os testes antes do codigo
+=item 2. Escreva os testes antes do código
 
-=item 3. Escreva documentacao padrao em formato POD para modulos e
+=item 3. Escreva documentacao padrao em formato POD para módulos e
 aplicacoes
 
 =item 4. Use um sistema de controle de revisoes
@@ -22,7 +22,7 @@ aplicacoes
 =item 6. Estabeleca um estilo de layout coerente, e automatize-o com
 perltidy
 
-=item 7. Comente o codigo a cada paragrafo
+=item 7. Comente o código a cada paragrafo
 
 =item 8. Use excecoes ao inves de retornar valores especiais ou setar
 flags

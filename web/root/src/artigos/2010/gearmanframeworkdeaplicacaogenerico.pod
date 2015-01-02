@@ -40,7 +40,7 @@ Uma boa maneira de ilustrar o funcionamento do framework,
 
 =end pod:xhtml
 
-A computação distribuida consiste em multiplos computadores autonomos se comunicando através
+A computação distribuida consiste em múltiplos computadores autonomos se comunicando através
 de uma conexão. Isso ajuda a resolver gargalos na sua aplicação por exemplo.
 
 Tanto o cliente como o trabalhor irão se conectar ao servidor, você pode ter
@@ -139,7 +139,7 @@ Agora que temos o Gearman compilado podemos instalar o bind feito em Perl, C<Gea
 
 Aqui, recomenda-se que você tenha pelo menos um conhecimento básico sobre o CPAN, se você
 não se sente confortável com o CPAN, recomenda-se,
-L<http://blog.blabos.org/2009/08/instalando-modulos-do-cpan-via-locallib/>
+L<http://blog.blabos.org/2009/08/instalando-módulos-do-cpan-via-locallib/>
 
 Bom, vamos instalar logo o C<Gearman::XS>, lembre-se que instalamos o Gearman no /opt/
 por tanto, precisamos dizer isso ao C<Gearman::XS>,

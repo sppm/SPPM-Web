@@ -168,7 +168,7 @@ VocE<ecirc> pode criar cenE<aacute>rios para descrever a evoluE<ccedil>E<atilde>
 
 =head1 Exemplos dos assuntos
 
-Os assuntos dos dados, podem ser vE<aacute>rios e impossivel de descrever todos eles, mas irei comentar alguns casos relativos a dados de interesse da sociedade em relaE<ccedil>E<atilde>o a organizaE<ccedil>E<atilde>o de si prE<oacute>pria.
+Os assuntos dos dados, podem ser vE<aacute>rios e impossível de descrever todos eles, mas irei comentar alguns casos relativos a dados de interesse da sociedade em relaE<ccedil>E<atilde>o a organizaE<ccedil>E<atilde>o de si prE<oacute>pria.
 
 =head2 Dados urbanos
 
@@ -205,11 +205,11 @@ Norlmalmente com dados governamentais iremos discutir sobre metricas relacionado
 
 O imperativo numE<eacute>rico representa um desafio, pois hE<aacute> uma dificuldade tremenda em selecionar quais formulas para se utilizar para representar um montante de dados, principalmente na administraE<ccedil>E<atilde>o pE<uacute>blica ou na economia, pois muitos dados podem estar incompletos e temos que trabalhar com informaE<ccedil>E<otilde>es aproximadas.
 
-Por isto em muitos casos E<eacute> interessante utilizar uma metodologia de que vocE<ecirc> irE<aacute> oferecer inicialmente vE<aacute>rias mE<eacute>tricas, para que vocE<ecirc> possa 'tringular' elas e criar estratE<eacute>gias e atE<eacute> mE<eacute>tricas novas.
+Por isto em muitos casos E<eacute> interessante utilizar uma métodologia de que vocE<ecirc> irE<aacute> oferecer inicialmente vE<aacute>rias mE<eacute>tricas, para que vocE<ecirc> possa 'tringular' elas e criar estratE<eacute>gias e atE<eacute> mE<eacute>tricas novas.
 
 O interessante da triangulaE<ccedil>E<atilde>o de mE<eacute>tricas E<eacute> que podemos usar umas para verificar o resultado das outras tambE<eacute>m, e com o tempo criar projeE<ccedil>E<otilde>es mais inteligentes baseado em dados - mE<eacute>tricas - aproximadas.
 
-Por isto escolher os nE<uacute>meros certos, pode ser possivel apenas com um determinado tempo, para vocE<ecirc> consiga provar os fenE<ocirc>menos praticos com os nE<uacute>meros escolhidos.
+Por isto escolher os nE<uacute>meros certos, pode ser possível apenas com um determinado tempo, para vocE<ecirc> consiga provar os fenE<ocirc>menos praticos com os nE<uacute>meros escolhidos.
 
 =head2 Padronizando as referE<ecirc>ncias.
 
@@ -233,7 +233,7 @@ Para isto E<eacute> interessante que exista uma padronizaE<ccedil>E<atilde>o rel
 
 =head1 Algoritimos
 
-NE<atilde>o hE<aacute> como citar algoritimos em especificos, pois existe a necessidade inicialmente de coletar os dados que vocE<ecirc> tem disponE<iacute>vel, verificar se estes dados representam algum conceito ou algo da forma mais absoluta possivel - ou aproximada -.
+NE<atilde>o hE<aacute> como citar algoritimos em especificos, pois existe a necessidade inicialmente de coletar os dados que vocE<ecirc> tem disponE<iacute>vel, verificar se estes dados representam algum conceito ou algo da forma mais absoluta possível - ou aproximada -.
 O segundo passo E<eacute> organizar estes dados para que eles sejam compilados e processados em formas reduzidas.
 
 Dependendo da quantidade de dados envolvendo, hE<aacute> a necessidade de "transformar" estes dados em outro formato para que a manipulaE<ccedil>E<atilde>o seja mais rE<aacute>pida.

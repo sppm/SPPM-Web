@@ -211,7 +211,7 @@ expressE<otilde>es regulares.
 
 =head2 3.1. Operadores BE<aacute>sicos
 
-As operaE<ccedil>E<otilde>es com expressE<otilde>es regulares baseam-se
+As operaE<ccedil>E<otilde>es com expressE<otilde>es regulares baseiam-se
 simplesmente em constatar ou verificar se um elemento (uma "string" de
 caracteres) pertence ou nE<atilde>o ao conjunto descrito por esta ou
 aquela expressE<atilde>o regular. Quando uma expressE<atilde>o

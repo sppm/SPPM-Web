@@ -79,9 +79,9 @@ Altere a configuração do seu nginx
 
     vim /etc/nginx/nginx.conf
 
-E insira o conteudo (altere SEU_USUARIO)
+E insira o conteúdo (altere SEU_usuário)
 
-    user SEU_USUARIO; #modifique aqui para o seu usuario
+    user SEU_usuário; #modifique aqui para o seu usuário
     worker_processes  1;
 
     error_log  /var/log/nginx/error.log;
@@ -117,7 +117,7 @@ Como vamos utilizar o varnish, ele precisa da porta 80 liberada, entao antes de 
 
     unlink /etc/nginx/sites-enabled/default
 
-Insira o conteudo ( altere o diretório do /static ):
+Insira o conteúdo ( altere o diretório do /static ):
 
    server {
       listen       8080;
@@ -127,7 +127,7 @@ Insira o conteudo ( altere o diretório do /static ):
       access_log  /var/log/nginx/appexample.com.br.access.log;
 
       location /static {
-        alias  /index.t/SEU-USUARIO-AQUI/sites/App-Example/root/static; #indica o dir dos arq static # ** ALTERE DE ACORDO COM SEU SISTEMA
+        alias  /index.t/SEU-usuário-AQUI/sites/App-Example/root/static; #indica o dir dos arq static # ** ALTERE DE ACORDO COM SEU SISTEMA
         expires 30d;        #indica ao varnish que os arquivos static expiram em 30 dias
       }
 

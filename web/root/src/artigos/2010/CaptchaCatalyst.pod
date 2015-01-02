@@ -130,7 +130,7 @@ O método que checa o captcha chama "checkcaptcha", veremos mais sobre ele quand
 	</html>
 
 
-Agora no segundo template, colocaremos uma variável chamada "just_check", se o captcha estiver correto ela será setada para "o usuario digitou certo"
+Agora no segundo template, colocaremos uma variável chamada "just_check", se o captcha estiver correto ela será setada para "o usuário digitou certo"
 caso contrário ela será setada para "o usuário digitou errado".
 
     user@host:~/MyCaptcha$ vim root/checkcaptcha.tt
@@ -172,7 +172,7 @@ vai estar com o que precisamos magicamente (O html que forma o form).
 Depois de ter o html com o form, o usuário vai digitar e enviar. Quando ele
 faz isso nós temos um retorno do reCaptcha; esse retorno é 1 se estiver certo.
 
-Quando se faz o $c->forwared('captcha_check') automagicamente o atributo
+Quando se faz o $c->forwared('captcha_check') automaticamente o atributo
 $c->stash->{recaptcha_ok} é atribuido para 1 se o usuário digitou o captcha
 corretamente, caso contrário ele não existe.
 

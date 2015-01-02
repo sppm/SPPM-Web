@@ -18,7 +18,7 @@ especifico para o uso com SQLite, isso é, ele foi concebido sub
 medida para ser utilizado com SQLite.
 
 Este módulo é super leve e tem excelente performance alem de
-abstrair a construçãoo das querys SQL ja voltadas ao SQLite, dando
+abstrair a construçãoo das querys SQL já voltadas ao SQLite, dando
 ao desenvolvedor mais tempo para pensar no que realmente interessa
 e não na implementação das suas consultas ao banco.
 
@@ -110,7 +110,7 @@ O ORLite cria objetos que representam as tabelas contidas na nossa base
 de dados e estes objetos por sua vez recebem atributos, os quais
 representam cada coluna de nossas tabelas.
 
-Agora vejamos como poderiamos obter um ou mais registros da nossa base de
+Agora vejamos como poderíamos obter um ou mais registros da nossa base de
 dados através dos métodos mágicos do ORLite.
 
 Exemplo 03:
@@ -143,7 +143,7 @@ Exemplo 04:
 
 Viu como é simples? Agora para concluir o artigo, vamos assumir que você
 precise fazer algumas consultas parametrizadas, que normalmente faria
-utilizando a clausula WHERE do SQL. Vamos ver como poderiamos fazer!
+utilizando a clausula WHERE do SQL. Vamos ver como poderíamos fazer!
 
 Exemplo 05:
 
@@ -163,7 +163,7 @@ necessidade de utilizar uma base de dados SQLite em seu sistema e pode
 economizar e muito o tempo de desenvolvimento dele.
 
 Bom concluimos aqui este artigo, que por ser de cunho introdutório, passa uma
-idéia simples do uso deste ótimo modulo para auxiliar-nos na manipulação de
+ideia simples do uso deste ótimo modulo para auxiliar-nos na manipulação de
 dados do SQLite. Mais informações podem ser encontradas nos links abaixo.
 
 Site Oficial SQLite: http://www.sqlite.org/

@@ -12,7 +12,7 @@ O L<Catalyst> E<eacute> um framework desenhado para trabalhar com o este tipo de
 
 	"Podemos enfrentar o nosso problema.
 	Podemos organizar os fatos como este que temos
-	com ordem e metodo."
+	com ordem e método."
 
 	-- Hercule Poirot (1934)
 
@@ -139,7 +139,7 @@ Toolkit (TT).
 Na TT, a template E<eacute> um arquivo texto que contE<eacute>m diretrizes
 especiais com demarcaE<ccedil>E<otilde>es, como por exemplo:
 
-    [% conteudo para o sistema de template processar %]
+    [% conteúdo para o sistema de template processar %]
 
 Abaixo um pequeno script Perl que utiliza a TT:
 

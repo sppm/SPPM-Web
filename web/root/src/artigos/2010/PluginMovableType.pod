@@ -1,6 +1,6 @@
 ﻿=pod
 
-=head1 Criando um plugin rapido para Movable Type
+=head1 Criando um plugin rápido para Movable Type
 
 Movable Type é um cms poderoso porém com uma curva de aprendizagem não linear, onde no começo é um pouco demorado conseguir sair do basico. Porém depois de dominar o basico é muito facil e poderoso fazer plugins. O que vamos fazer agora é um plugin para ler os dados do serviço Tumblr, através da interface XML do site.
 
@@ -18,11 +18,11 @@ tmpl/* 		# template
 
 Algumas praticas recomendadas ao se criar um plugin são: utilizar nome com letra inicial maiúscula e caso seja um nome composto separar por espaços, não utilizar MT (de movable type no nome), usar um nome que além de descritivo faça sentido no namespace de plugins. No caso nosso plugin chama-se Tumblr Feed, e utiliza como diretório mt/plugins/TumblrFeed.
 
-Ainda é necessario um Readme que se chama TumblrFeed-README.txt e a licença, que chama-se TumblrFeed-LICENSE.txt. Pode-se notar que o nome também é convencionado em Nome do diretório do plugin -README ou -LICENSE.txt.
+Ainda é necessário um Readme que se chama TumblrFeed-README.txt e a licença, que chama-se TumblrFeed-LICENSE.txt. Pode-se notar que o nome também é convencionado em Nome do diretório do plugin -README ou -LICENSE.txt.
 
 Por ultimo ainda temos que o plugin utiliza a mesma forma padrão do perl para construir-se, utilizando o ExtUtils::MakeMaker, assim temos um arquivo para preparar (Makefile.PL) e mais dois para configuração do pacote (MANIFEST e MANIFEST.skip).
 
-O arquivo MANIFEST.SKIP contém as diretivas de empacotamento. No arquivo Makefile.PL, temos as informações do plugin necessárias para a preparação do plugin, com seu nome, diretório e versão. Esse formato é comum a todos modulos "formais" da linguagem, e para mais detalhes deve se consultar a documentação do ExtUtils::MakeMaker.
+O arquivo MANIFEST.SKIP contém as diretivas de empacotamento. No arquivo Makefile.PL, temos as informações do plugin necessárias para a preparação do plugin, com seu nome, diretório e versão. Esse formato é comum a todos módulos "formais" da linguagem, e para mais detalhes deve se consultar a documentação do ExtUtils::MakeMaker.
 
 =head2 Arquivo de Configuração
 
@@ -77,9 +77,9 @@ O modulo WWW::Tumblr retorna o XML da api do Tumblr, que eu processei usando o m
 
 =head2 Instalando
 
-Apenas copie o plugin para o diretório plugins do movable type. Eventualmente quando seus plugins ficarem mais complexos, pode ser necessario colocar arquivos em outros locais, como mt-static (onde ficam arquivos estáticos, figuras ou css por exemplo). Existe um guia mais detalhado em http://tinyurl.com/easy-plugin-install, que cobre a instalação de plugins mais complexos.
+Apenas copie o plugin para o diretório plugins do movable type. Eventualmente quando seus plugins ficarem mais complexos, pode ser necessário colocar arquivos em outros locais, como mt-static (onde ficam arquivos estáticos, figuras ou css por exemplo). Existe um guia mais detalhado em http://tinyurl.com/easy-plugin-install, que cobre a instalação de plugins mais complexos.
 
-Eventualmente voce pode estar em um host compartilhado, e não tem controle total sobre os modulos instalados ou só tem acesso via ftp. Nestes casos voce pode colocar as dependencias de modulos em extlib/*. Isso funciona bem para modulos perl puros que voce não tem e não pode instalar no servidor.
+Eventualmente voce pode estar em um host compartilhado, e não tem controle total sobre os módulos instalados ou só tem acesso via ftp. Nestes casos voce pode colocar as dependencias de módulos em extlib/*. Isso funciona bem para módulos perl puros que voce não tem e não pode instalar no servidor.
 
 =head2 Usando
 
@@ -87,7 +87,7 @@ O ultimo passo é usar o modulo, para isso basta que voce edite o template de se
 
 =head2 A vida, o universo e tudo mais
 
-Esse plugin está rodando no meu blog, com os dados do meu Tumblr em http://fred.eti.br/beta/, eu o coloquei na sidebar (olhe nos templates) e ele tem um link com o tipo do post que eu fiz no Tumblr (foto, video ou texto). O código fonte é aberto e voce pode usar como base para seu plugin. Ao contrario do wordpress que tem um repositorio de plugins centralizado, o movable type tem seus plugins "espalhados por ai", mas de certa forma eles vem se juntando no github, aqui tem o link de varios plugins que podem ser úteis ou estudados:
+Esse plugin está rodando no meu blog, com os dados do meu Tumblr em http://fred.eti.br/beta/, eu o coloquei na sidebar (olhe nos templates) e ele tem um link com o tipo do post que eu fiz no Tumblr (foto, video ou texto). O código fonte é aberto e voce pode usar como base para seu plugin. Ao contrario do wordpress que tem um repositorio de plugins centralizado, o movable type tem seus plugins "espalhados por ai", mas de certa forma eles vem se juntando no github, aqui tem o link de vários plugins que podem ser úteis ou estudados:
 
 http://github.com/byrnereese/mt-plugin-imagecropper
 http://github.com/sixapart/mt-plugin-facebook-connect-commenters

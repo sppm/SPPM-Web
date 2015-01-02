@@ -5,11 +5,11 @@
 =head2 OpenData - O Começo e o Fim
 
 Tudo começou com um e-mail na L<lista da SP-PM|http://sao-paulo.pm.org/lista>,
-no qual se falou de "hackear" dados públicos. Logo isso evoluiu para a idéia
+no qual se falou de "hackear" dados públicos. Logo isso evoluiu para a ideia
 de produzir um framework para buscar e analisar dados públicos. Sem demora, o
 L<Thiago Rondon|http://www.maluco.com.br/blog/> montou um
 L<repositório no GitHub|https://github.com/maluco/OpenData-BR> e começou a
-rabiscar umas idéias de código. Em seguida nasceu o site do
+rabiscar umas ideias de código. Em seguida nasceu o site do
 L<OpenData-BR|http://www.opendatabr.org/>.
 
 O projeto ainda tem um status de I<work in progress>, mas as expectativas e as
@@ -17,18 +17,18 @@ perspectivas são muito animadoras, e espera-se que em breve o B<DataFlow>
 possa ser utilizado amplamente pelo B<OpenData-BR> para disponibilizar os
 dados públicos.
 
-=head2 Primeiras Idéias
+=head2 Primeiras ideias
 
 =head3 Buscar dados na web (scrape)
 
-A primeira idéia a ser implementada foi a lógica de buscar dados na web. Na
+A primeira ideia a ser implementada foi a lógica de buscar dados na web. Na
 lista, ou no canal #saopaulo.pm no irc.perl.org, surgiram as primeiras
 indicações de sites onde a informação estava disponibilizada. Um dos sites
 primariamente visados foi o
 L<PortalTransparencia|http://www.portaltransparencia.gov.br/>, o site do
 governo federal para promover a transparência nos dados do governo.
 
-Seguindo a metodologia opensource I<"release early, release often">, o
+Seguindo a métodologia opensource I<"release early, release often">, o
 projeto começou a disponibilizar código que, efetivamente, conseguia buscar
 dados. No entanto, esse código inicialmente não fazia muitas provisões
 para manutenção e extensão no futuro.
@@ -38,7 +38,7 @@ para manutenção e extensão no futuro.
 Surgiu então uma tentativa de modularizar melhor o B<OpenData-BR>, dividindo-o
 em 3 tipos de componentes:
 
-B<Extractors>: Extratores de dados. A idéia seria que todos os scrapers,
+B<Extractors>: Extratores de dados. A ideia seria que todos os scrapers,
 sejam web ou não, na forma que forem, seriam um tipo de Extractor.
 
 B<Transformers>: Robôs assassinos que se transformam em carros ou outras
@@ -58,9 +58,9 @@ do começo (extractors) ao meio (transformers), ao fim (loaders).
 Todos os componentes pareciam, de uma forma genérica, ter o mesmo
 comportamento: recebem algo na entrada, fazem alguma coisa com esses dados, e
 (eventualmente) disponibilizam esses dados em uma saída.
-Assim surgiu a idéia de fazer um sub-projeto de fluxo de dados.
+Assim surgiu a ideia de fazer um sub-projeto de fluxo de dados.
 
-Em meados de Dezembro de 2010, a primeira idéia foi codificada em termos de
+Em meados de Dezembro de 2010, a primeira ideia foi codificada em termos de
 "caixas", que teriam um entrada e uma saída - de uma forma bem genérica:
 "entra porquinho, sai salsicha".
 
@@ -480,7 +480,7 @@ as interfaces serão mantidas. Se houver interesse em usar o DataFlow, sugiro
 acompanhar de perto o desenvolvimento do mesmo para ficar a par de quaisquer
 mudanças.
 
-Já existem várias idéias de melhorias, como por exemplo:
+Já existem várias ideias de melhorias, como por exemplo:
 
 =over
 
@@ -507,7 +507,7 @@ Já existem várias idéias de melhorias, como por exemplo:
 
 =back
 
-Estas e outras idéias de melhorias estão no arquivo de
+Estas e outras ideias de melhorias estão no arquivo de
 L<TODO|https://github.com/russoz/DataFlow/blob/master/TODO> no repositório
 do projeto.
 
@@ -545,8 +545,8 @@ B<Hack de Dados Públicos>. Nelson, a culpa é toda sua. ;-)
 
 =item Thiago "Maluco" Rondon
 
-Por tirar o B<OpenData-BR> do plano das idéias e trazê-lo para a realidade.
-Pelos testes, idéias e discussões, muitas vezes em horários excusos.
+Por tirar o B<OpenData-BR> do plano das ideias e trazê-lo para a realidade.
+Pelos testes, ideias e discussões, muitas vezes em horários excusos.
 Muitos dos conceitos do L<DataFlow> germinaram a partir desses momentos.
 
 =item Blabos de Blebe

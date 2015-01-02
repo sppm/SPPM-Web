@@ -31,7 +31,7 @@ mE<oacute>dulo. Ao invE<eacute>s de gerar mensagens sob o ponto de
 vista do mE<oacute>dulo, como faria o die ("File not found at
 My::Fancy::Module line 42" -- o que E<eacute> verdadeiro, porE<eacute>m
 inE<uacute>til), as rotinas de Carp geram mensagens sob o ponto de
-vista de quem chamou o metodo ("File not found at script.pl line 10").
+vista de quem chamou o método ("File not found at script.pl line 10").
 
 DocumentaE<ccedil>E<atilde>o perldoc
 
@@ -196,7 +196,7 @@ quanto tempo seu programa levou para executar uma determinada tarefa:
 
   my $t0 = [gettimeofday];
 
-  # seu codigo aqui
+  # seu código aqui
 
   my $interval = tv_interval ( $t0 );
 

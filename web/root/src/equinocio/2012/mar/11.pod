@@ -62,7 +62,7 @@ servidor web.
 =item * Middleware
 
 Um middleware é uma aplicação PSGI que executa outra aplicação PSGI,
-possivelmente modificando o ambiente de execução antes da aplicação, ou
+possívelmente modificando o ambiente de execução antes da aplicação, ou
 modificando a resposta da aplicação. Isso também é conhecido como "Wrapper",
 que em português significa "embrulho", porque o middleware fica "envolto" da
 aplicação e decide o que entra e sai:
@@ -183,7 +183,7 @@ disponível no CPAN. Nesse caso iremos usar o Plack::Middleware::HTMLify.
 
 =head3 Plack::Builder
 
-Com a grande quantidade de middlewares disponíves, eventualmente vamos
+Com a grande quantidade de middlewares disponíveis, eventualmente vamos
 precisar de uma forma conveniente de "amarrar" todos eles juntos. O
 Plack::Builder é um módulo que fornece uma DSL para acoplar middlewares na
 sua aplicação. No nosso exemplo, vamos criar um segundo arquivo
@@ -200,7 +200,7 @@ Executamos com plackup:
 
   $ plackup app_html.psgi
 
-Agora, a página 'text/plain' que tinhamos antes, virou uma página
+Agora, a página 'text/plain' que tínhamos antes, virou uma página
 'text/html', devidamente formatada. O middleware conseguiu fazer isso porque
 ele tem acesso à resposta da nossa aplicação e ele sabe que é uma resposta
 no formato PSGI e por isso pode modificá-la da forma correta.

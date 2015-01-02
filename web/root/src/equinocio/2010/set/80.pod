@@ -221,7 +221,7 @@ Distribui a mensagem para todas as filas, qualquer rota será ignorada.
 
 =item Customizado
 
-E possivel criar exchanges customizados, como por exemplo baseado em informações de cabeçalhos.
+E possível criar exchanges customizados, como por exemplo baseado em informações de cabeçalhos.
 
 =back
 

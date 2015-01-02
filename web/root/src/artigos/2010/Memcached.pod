@@ -116,7 +116,7 @@ A estrutura para o fluxo de dados é um LRU (Least Recently Used), com a expira�
 
 =item Limites
 
-As chaves podem ter no máximo 250 caracteres e os valores 1 MB, pela razão de necessidade e velocidade no qual o algoritimo slab trabalha, ou seja como foi observado a memória é quebrada em varios I<slabs> que podem ter tamanhos diferentes.
+As chaves podem ter no máximo 250 caracteres e os valores 1 MB, pela razão de necessidade e velocidade no qual o algoritimo slab trabalha, ou seja como foi observado a memória é quebrada em vários I<slabs> que podem ter tamanhos diferentes.
 
 É interessante abstrair o motivo pelo qual o limite do valor é de 1 megabyte. Observe, se estamos conversando sobre uma página web e você esta tentando armazenar algo com grandes valores em um cache, algo provavelemnte esta errado.
 
@@ -153,7 +153,7 @@ Lembre-se: Você pode utilizar o memcached em outras situações, não apenas pa
 	}
 
 	# 3. [Conectar ao banco de dados]
-	# -- (codigo para conectar ao banco de dados) --
+	# -- (código para conectar ao banco de dados) --
 
 	# 4. [Buscar informação]
 	# -- (buscando inforamcao ($valor)) --

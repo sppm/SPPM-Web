@@ -31,7 +31,7 @@ Enquanto que os cérebros humanos são capazes de se adaptar a novos códigos de
 Vejam do que os primatas são capazes[2]:
 
     3ST3 P3QU3N0 T3XT0 53RV3 4P3N45 P4R4 M05TR4R C0M0 4
-    N0554 C4B3Ç4 C0N53GU3 F4Z3R C0I545 IMPR355I0N4NT35! 
+    N0554 C4B3Ç4 C0N53GU3 F4Z3R C0I545 IMPR355I0N4NT35!
     R3P4R3 NI550! N0 C0M3Ç0 35T4V4 M3I0 C0MPLIC4DO, M4S
     4G0R4 N35T4 LINH4 5U4 M3NT3 V4I D3CIFR4ND0 0 C0DIGO
     QU4S3 QU3 AUT0M4TIC4M3NT3 S3M PR3CI54R P3NS4R MUIT0
@@ -48,7 +48,7 @@ Vejam do que os primatas são capazes[2]:
     nós não lmeos cdaa ltrea szoinha, mas a plravaa cmoo um tdoo.
     Lgeal, não é msemo?
 
-Como humanos são bichos bem confusos e textos são representações de idéias, (in)felizmente elas não precisam estar necessariamente completas para que sejam ao menos parcialmente entendidas, e por consequência também os textos que as codificam. Por essas e outras, os computadores tem certa dificuldade em lidar conosco e as comparações caractere a caractere falham miseravelmente. Entra em cena a comparação parcial.
+Como humanos são bichos bem confusos e textos são representações de ideias, (in)felizmente elas não precisam estar necessariamente completas para que sejam ao menos parcialmente entendidas, e por consequência também os textos que as codificam. Por essas e outras, os computadores tem certa dificuldade em lidar conosco e as comparações caractere a caractere falham miseravelmente. Entra em cena a comparação parcial.
 
 Numa comparação parcial estamos interessados em saber o quão idênticas ou quão diferentes são duas strings e não somente se elas são completamente iguais ou diferentes.
 
@@ -74,14 +74,14 @@ Por último, o algoritmo dos n-gramas quebra as strings em tokens de comprimento
 
     'abacate' => 'aba', 'bac', 'aca', 'cat', 'ate';
     'abacaxi' => 'aba', 'bac', 'aca', 'cax', 'axi';
-    
+
     Total:      7   => 'aba', 'bac', 'aca', 'cat', 'ate', 'cax', 'axi';
     Comuns:     3   => 'aba', 'bac', 'aca';
     Semelhança: 3/7 => 42,86%;
-    
+
     'porta'   => 'por', 'ort', 'rta';
     'janela'  => 'jan', 'ane', 'nel', 'ela';
-    
+
     Total:      7
     Comuns:     0
     Semelhança: 0/7 => 0%
@@ -92,7 +92,7 @@ Note que cada algoritmo mede a semelhança ou a diferença de formas bastante di
 
 No CPAN[3] encontramos módulos que trabalham com cada um desses algoritmos aplicando um ou outra otimização e fornecendo variados conjuntos de APIs. Está além do escopo deste texto esgotar o assunto sobre suas APIs, portanto vamos a um breve overview:
 
-Do módulos que utilizam LCS podemos citar o L<Algorithm::LCS>[4] e o L<Algorithm::Diff>[5], entre outros. A idéia básica aqui é calcular o tamanho da maior substring em comum e comparar com as strings completas.
+Do módulos que utilizam LCS podemos citar o L<Algorithm::LCS>[4] e o L<Algorithm::Diff>[5], entre outros. A ideia básica aqui é calcular o tamanho da maior substring em comum e comparar com as strings completas.
 
     #!/usr/bin/env perl
 
@@ -143,21 +143,21 @@ Utilizando o método dos n-gramas temos o L<String::Trigram>[9], o L<Algorithm::
 Em especial o String::Trigram permite a comparação entre uma determinada string contra um dicionário. Com o auxílio de um cache interno, os n-grams do dicionário são calculados somente uma vez o que acelera as buscas. Veja um exemplo típico:
 
     #!/usr/bin/env perl
-    
+
     use Modern::Perl;
     use String::Trigram;
-    
+
     my @dict = qw(
      rato boi tigre
      coelho dragao serpente
      cavalo carneiro macaco
      galo cao porco
     );
-    
+
     my @words = qw(ratos drogao cavalo caval carneir camelo galinha);
-    
+
     my $min_sim = 0.20;
-    
+
     my $trig = String::Trigram->new(
        "cmpBase"        => \@dict,
        "minSim"         => $min_sim,
@@ -167,12 +167,12 @@ Em especial o String::Trigram permite a comparação entre uma determinada strin
        "ngram"          => 3,
        "debug"          => 0,
      );
-    
+
     foreach my $animal (@words) {
        my ( @best_matches, $sim );
-    
+
        $sim = $trig->getBestMatch( $animal, \@best_matches );
-    
+
        $sim = int( 0.5 + 100 * $sim );
        say "Similaridade entre $animal e $best_matches[0]: $sim%"
          if $sim >= $min_sim;
@@ -186,7 +186,7 @@ No CPAN há vários outros módulos que tratam do assunto e podem ser até melho
 
 A busca utilizado comparações parciais é uma área bem extensa, com estudos, algoritmos e artigos sendo sendo desenvolvidos e aplicações nas mais diversas áreas, desde correção ortográfica até engenharia genética. Ainda não existe uma solução universal que responda bem para todos os casos. Alguns algoritmos comportam-se melhores com certos tipos de dados do que com outros, portanto teste mais de um até encontrar um que atenda bem às suas necessidades.
 
-Este texto provavelmente possui muitos erros de digitação que pasarão (ou noã) despercebidos, mas os erros de concordância ou os de regência é mais fácil de pegar porque isso afeta a forma como a gente percebemos a idéia. Pense nisso!
+Este texto provavelmente possui muitos erros de digitação que pasarão (ou noã) despercebidos, mas os erros de concordância ou os de regência é mais fácil de pegar porque isso afeta a forma como a gente percebemos a ideia. Pense nisso!
 
 =head2 Apêndice I - BioPerl
 

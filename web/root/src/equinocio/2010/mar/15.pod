@@ -12,13 +12,13 @@ Pronto, antes das pessoas pensarem em padronizarem frameworks webs existia o CGI
 
 Com a evolução dos frontends CGI->Mod_perl->FastCGI também foi evoluindo a ideia de se fazer sites para a internet, você não precisa mais se preocupar com o frontend, mas só com o backend, acesso a banco, como as classes vão ficar divididas e etc, porém não é porque você não se preocupa mais com os frontends que eles não existem, eles existem, mas agora é quase transparente e você só ouve falar deles na hora de fazer o deploy do seu site.
 
-"Vou usar mod_perl ou FastCGI? ah, já que é só para mostrar a tela principal vou no CGI que é mais rapido pra configurar"
+"Vou usar mod_perl ou FastCGI? ah, já que é só para mostrar a tela principal vou no CGI que é mais rápido pra configurar"
 
-Para isso ser assim , os programadores de framework criaram uma "interface" para ficar transparente para você desenvolvedor, ou seja, você não tem que se preocupar com os headers do http, com o request do http, no maximo você pode querer modificar o content-type do conteudo que você está servindo.
+Para isso ser assim , os programadores de framework criaram uma "interface" para ficar transparente para você desenvolvedor, ou seja, você não tem que se preocupar com os headers do http, com o request do http, no maximo você pode querer modificar o content-type do conteúdo que você está servindo.
 
-Essa "interface" no Catalyst chama-se L<Catalyst::Engine>, além dele ter varios frontend disponíveis L<http://lmctfy.org/catalyst%20engine> ele melhorou a implementação de alguns, por exemplo, o frontend de CGI, poderia usar o CGI.pm, mas o CGI.pm é um codigo de 1995 que funciona tanto em Perl 5.004 como em Perl 5.10.1,e ele tem 7885 linhas de codigo, o Catalyst::Engine::CGI é escrito em Moose e tem 293 linhas de codigo, e faz a mesma coisa que o CGI.pm, outras otimizações são feitas nessa "inteface" de backend, acessando api's de baixo nivel para aumentar a perfomance do framework, Catalyst faz isso, Jifty, entre outros.
+Essa "interface" no Catalyst chama-se L<Catalyst::Engine>, além dele ter vários frontend disponíveis L<http://lmctfy.org/catalyst%20engine> ele melhorou a implementação de alguns, por exemplo, o frontend de CGI, poderia usar o CGI.pm, mas o CGI.pm é um código de 1995 que funciona tanto em Perl 5.004 como em Perl 5.10.1,e ele tem 7885 linhas de código, o Catalyst::Engine::CGI é escrito em Moose e tem 293 linhas de código, e faz a mesma coisa que o CGI.pm, outras otimizações são feitas nessa "inteface" de backend, acessando api's de baixo nivel para aumentar a perfomance do framework, Catalyst faz isso, Jifty, entre outros.
 
-O que estava acontecendo era que existiam esforços paralelos para o mesmo problema, tambem conhecido como codigo duplicado, pois todo framework novo acabava desenvolvendo sua propia "interface".
+O que estava acontecendo era que existiam esforços paralelos para o mesmo problema, também conhecido como código duplicado, pois todo framework novo acabava desenvolvendo sua propia "interface".
 
 Pensando nisso foi criado o  HTTP::Engine, que nada mais é que essa "interface" generica o suficiente para ser usada em qualquer framework, mas como o pessoal do Catalyst já tinha o seu C::Engine, eles nem precisaram se preocupar dado que ele já estava bastante estavel.
 
@@ -26,17 +26,17 @@ Então vamos lá, o fluxo de uma aplicação web no Catalyst é mais ou menos as
 
 MyApp -> Catalyst::Engine::FastCGI -> Apache servindo FastCGI
 
-Se você fez o seu proprio framework ( usando L<HTTP::Engine> por exemplo ) , o fluxo pode ser
+Se você fez o seu próprio framework ( usando L<HTTP::Engine> por exemplo ) , o fluxo pode ser
 
 MyApp -> LornLails -> HTTP::Engine::FastCGI -> Apache servindo FastCGI
 
 Agora, "back to the future"
 
-Lembram do Plack? então, esse artigo é sobre ele e o PSGI, lembrando que o PSGI é uma especificação e você não roda codigo em uma especificação, o Plack é a implementação dessa especificação ele implementa varios PSGI Server ( CGI, FastCGI, standalone server ).
+Lembram do Plack? então, esse artigo é sobre ele e o PSGI, lembrando que o PSGI é uma especificação e você não roda código em uma especificação, o Plack é a implementação dessa especificação ele implementa vários PSGI Server ( CGI, FastCGI, standalone server ).
 
 O Plack, faz a mesma coisa que o L<HTTP::Engine>
 
-"De novo esse caras do Perl re-escrevendo coisas que já existem? Alguem pense nas criancinhas elas precisam ser salvas..."
+"De novo esse caras do Perl re-escrevendo coisas que já existem? alguém pense nas criancinhas elas precisam ser salvas..."
 
 Calma, não é bem por ai a ideia do PSGI veio do Rack ( do Ruby ) e do WSGI ( do Python ), a sigla "GI" significa Gateway Interface, isso te lembra algo? vou dar uma dica a sigla do CGI é Common Gateway Interface, outra definição de PSGI é: uma especificação para webserver se comunicar com aplicaçoes web  ou seja uma interface entre os seus programas Perl, e os WebServers ( Apache, Nginx e afins ) o CGI faz a mesma coisa, só que para CGI scripts.
 
@@ -48,7 +48,7 @@ Aplicação Perl PSGI -> PSGI -> Apache
 
 Aplicação Perl PSGI -> PSGI -> NGINX
 
-Porque você usaria o PSGI? PSGI é muito rapido, fiquei sabendo essa semana que existe um branch no Catalyst para substituir o Catalyst::Engine pelo PSGI, o criador do PSGI /Plack Tatsuhiko Miyagawa já tinha uma preocupação com "api's não bloqueantes" contribuiu bastente com o L<AnyEvent> e L<POE>.
+Porque você usaria o PSGI? PSGI é muito rápido, fiquei sabendo essa semana que existe um branch no Catalyst para substituir o Catalyst::Engine pelo PSGI, o criador do PSGI /Plack Tatsuhiko Miyagawa já tinha uma preocupação com "api's não bloqueantes" contribuiu bastente com o L<AnyEvent> e L<POE>.
 
 A ideia dele vou "roubada" do Ruby/Python ( rack e WSGI respectivamente ) e dividir o HTTP::Engine em três partes:
 
@@ -65,7 +65,7 @@ Não se esquecam que o Plack é apenas UMA implementação dessa especificação
 		return [ $status, $header, $body ];
 	};
 
-Uma aplicação PSGI recebe uma referencia para o codigo que será executado, o $env ali o mesmo que era usado no CGI.pm.
+Uma aplicação PSGI recebe uma referencia para o código que será executado, o $env ali o mesmo que era usado no CGI.pm.
 
 O retorno é o status do HTTP ( 200, 302, 500 e etc ), headers do HTTP, e o a resposta em si.
 
@@ -75,7 +75,7 @@ A menos que você vá desenvolver um Framework ou um Middleware com o PSGI, voc�
 
 Aqui ficam as implementações dos servidores, Standalone HTTP ( o servidor de desenvovlimento que você roda na sua maquina para programar no catalyst é um Standalone HTTP ),FCGI, Apache2, Prefork, AnyEvent, Coro.
 
-De acordo dados do proprio desenvolvedor, os Plack::Server::* são bem rapidos :
+De acordo dados do próprio desenvolvedor, os Plack::Server::* são bem rápidos :
 
 5000 - Acessos por segundos
 
@@ -85,7 +85,7 @@ Nessa camada também fica os adaptadores para os frameworks, Catalyst, Maypole, 
 
 =head2 Utilitarios - Plack::*
 
-Esse namespace, foi reservado somente para aplicações usando Plack, como pode exemplo o L<plackup> usado para rodar seu codigo PSGI na linha de comando inspirado pelo rackup ( do Ruby )
+Esse namespace, foi reservado somente para aplicações usando Plack, como pode exemplo o L<plackup> usado para rodar seu código PSGI na linha de comando inspirado pelo rackup ( do Ruby )
 
 Você pode ver mais utilitarios aqui: L<http://lmctfy.org/plack::>
 
@@ -95,7 +95,7 @@ Você pode ver mais utilitarios aqui: L<http://lmctfy.org/plack::>
 
 Vamos começar bem simples, rodando o ambiente de desenvolvimento do Catalyst em PSGI usando o plackup:
 
-Cole o seguinte codigo no scripts/myapp_server.psgi
+Cole o seguinte código no scripts/myapp_server.psgi
 
 	use strict;
 	use MyApp;
@@ -127,7 +127,7 @@ Crie o arquivo app.psgi com o seguinte conteúdo:
     }
 };
 
-Para acessar basta ir no browser e digitar http://localhost:5000 ( porta default do Plack ) esse exemplo pode ser extendido para um Middleware, dado que o servidor roda pelo proprio plackup, e o é muito facil mudar o "Server". Se você quer servir o conteudo, usando FastCGI ao inves de Standalone HTTP, basta digitar:
+Para acessar basta ir no browser e digitar http://localhost:5000 ( porta default do Plack ) esse exemplo pode ser extendido para um Middleware, dado que o servidor roda pelo próprio plackup, e o é muito facil mudar o "Server". Se você quer servir o conteúdo, usando FastCGI ao inves de Standalone HTTP, basta digitar:
 
 	plackup -s FCGI --listen /tmp/fcgi.sock app.psgi
 

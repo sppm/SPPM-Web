@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-Statim, uma idéia para um servidor de série temporal determinística e estocástica.
+Statim, uma ideia para um servidor de série temporal determinística e estocástica.
 
 =cut
 
@@ -33,7 +33,7 @@ valores da série podem ser escritos através de uma função "y = f(tempo)", on
 há apenas o tempo como argumento, ou estocástica, quando a série envolve além
 do tempo, termos aleatórios, "y = f(tempo, ...)".
 
-A idéia principal é poder oferecer um design para promover a portabilidade e
+A ideia principal é poder oferecer um design para promover a portabilidade e
 reduzir o esforço na criação de aplicações em geral com o objetivo de gerenciar
 estatísticas de seus dados. Evitando em alguns casos por exemplo, o acesso
 direto a sua base de dados para realizar buscas por estatítiscas.
@@ -112,7 +112,7 @@ Para que o Statim fosse razoavelmente simples de ser utilizado, foi criado um pr
 
 A sintaxe definida para enviar os comandos, é definida:
 
-	(comando) [coleção de dados] [parametro:valor] [parametro:valor] [...]
+	(comando) [coleção de dados] [parâmetro:valor] [parâmetro:valor] [...]
 
 =head1 COMANDOS
 
@@ -126,8 +126,8 @@ você informa o nome do "collection", e os parâmetros.
 	add collection ts:1234567890 foo:1 bar:jaz
 	OK
 
-O parametro "ts" diz qual o "tempo" do dado informado, e ele sempre é referenciado
-pelo nome "ts" (timeseries) e o valor é baseado no "epoch time", se este parametro
+O parâmetro "ts" diz qual o "tempo" do dado informado, e ele sempre é referenciado
+pelo nome "ts" (timeseries) e o valor é baseado no "epoch time", se este parâmetro
 não for passado, ele assume que o o "tempo" é o do momento que o comando é enviado.
 
 =head2 Restaurar dados
@@ -138,7 +138,7 @@ o dado, por exemplo:
 	 get collection bar:jaz ts:123456780-1234567890 foo
 	 OK 1
 
-O único parametro que não vem com valor, é o "foo", por é justamente o valor dele
+O único parâmetro que não vem com valor, é o "foo", por é justamente o valor dele
 que estamos buscando (contador).
 
 O campos ts, pode ser representado por um único "epoch time", ou um intervalo entre
@@ -148,7 +148,7 @@ dois "tempos", para obter o total deles.
     get collection bar:* foo
     OK 1
 
-    # não declarar o sub-grupo, é o mesmo que passar o parametro "*"
+    # não declarar o sub-grupo, é o mesmo que passar o parâmetro "*"
     get collection foo
     OK 1
 
@@ -289,7 +289,7 @@ Acredito pelo o que já abordado aqui, o código é auto explicado. :-)
 
 =head1 DESENVOLVIMENTO
 
-O desenvolvimento esta ainda em fase de construção de idéias, e por isto se você se interessou, peço para que você baixe ele, teste e envie suas críticas e sugestões para lista da São Paulo Perl Mongers.
+O desenvolvimento esta ainda em fase de construção de ideias, e por isto se você se interessou, peço para que você baixe ele, teste e envie suas críticas e sugestões para lista da São Paulo Perl Mongers.
 
 O repositório do projeto é L<http://github.com/maluco/Statim>.
 

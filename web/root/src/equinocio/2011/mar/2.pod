@@ -101,7 +101,7 @@ para projetos em larga escala como o OpenData, e Perl provou ser uma
 =head2 Perl se destaca no tratamento de informações
 
 E "tratamento de informações" é o centro do OpenData. Perl possui suporte
-nativo a Unicode, manipulação eficiente de strings e o
+nativo a únicode, manipulação eficiente de strings e o
 L<mais poderoso sistema de expressões regulares da atualidade|http://perldoc.perl.org/perlre.html>.
 
 Como veremos ao longo deste equinócio, Perl oferece uma série

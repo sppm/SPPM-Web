@@ -111,7 +111,7 @@ Código:
 		lazy     => 1,
 		default  =>  sub {
 			ElasticSearch->new(
-				servers     => 'localhost:9200',    # aqui tambem pode receber
+				servers     => 'localhost:9200',    # aqui também pode receber
 				                                    # uma arrayref com todos os
 				                                    # servidores
 
@@ -216,7 +216,7 @@ Vamos criar um script em <catalyst root>/script/refresh_index.pl
 		my $result = $search->index_data(
 			index => 'books',
 			type => 'book_or_author',
-			# id   => $entry->id, porem sera necessario adicionar ele no index_data tambem
+			# id   => $entry->id, porem sera necessário adicionar ele no index_data também
 			data => {
 				title       => $entry->title,
 				author_list => $entry->author_list,

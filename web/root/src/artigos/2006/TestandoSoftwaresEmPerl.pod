@@ -57,7 +57,7 @@ Por exemplo:
         }
 
 Este E<eacute> apenas um exemplo simples, que pode ser executado pelo
-metodo runtests do modulo Test::Harness:
+método runtests do modulo Test::Harness:
 
         perl -MTest::Harness -e "runtests 'mytest.t'";
 
@@ -107,12 +107,12 @@ em contar o numero de testes:
         ok 2 - numeric strings should numerify in addition
         ok 3 - * quantifier should match zero elements
 
-Os comentarios nao sao obrigatorios, mas sao uteis para que o usuario
+Os comentarios nao sao obrigatorios, mas sao uteis para que o usuário
 final possa saber o que acontece.
 
 =head2 Testando mE<oacute>dulos
 
-Test::More tambem facilita o teste de mE<oacute>dulos. Vamos
+Test::More também facilita o teste de mE<oacute>dulos. Vamos
 comeE<ccedil>ar escrevendo um teste simples:
 
         use strict;

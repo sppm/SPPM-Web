@@ -41,13 +41,13 @@ O retorno deste acesso é no formato de dados JSON, como por exemplo acessar o e
 			"uf":"MS",
 			"longitude":"-53.70645",
 			"latitude":"-18.32452",
-			"codigo":"5000252"},
+			"código":"5000252"},
 		{
 			"cidade":"Amambaí",
 			"uf":"MS",
 			"longitude":"-55.22648",
 			"latitude":"-23.10452",
-			"codigo":"5000609"
+			"código":"5000609"
 		},
 			(...)
 		]

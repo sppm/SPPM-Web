@@ -150,7 +150,7 @@ valor (=) e comentários (#) se aplicam, mas você não precisa das tags:
 
    % foreach my $num ( 1..10 ) {
         <p>essa eh uma linha normal dentro do loop.<br />
-        essa tambem, e agora temos o numero ao quadrado:<br />
+        essa também, e agora temos o numero ao quadrado:<br />
    %=     $num ** 2
    %#   (essa linha eh um comentário e nao serah exibida)
         </p>
@@ -206,7 +206,7 @@ método entre a rota e o destino! Em nosso exemplo, em vez de:
 
    get '/' => 'index';
 
-poderiamos ter algo como:
+poderíamos ter algo como:
 
    get '/' => sub {
        my $self = shift;
@@ -310,7 +310,7 @@ Existem outras formas bacanas de personalizar rotas. Suponha a seguinte
 rota, por exemplo:
 
     get '/item/:id' => sub {
-        # ... conteudo qualquer
+        # ... conteúdo qualquer
     } => 'item';
 
 Podemos garantir que o parâmetro capturado case I<apenas> com valores
@@ -370,7 +370,7 @@ para ela, ou mesmo uma url externa:
 
     get '/teste' => sub {
         my $self = shift;
-        # ... nosso codigo ...
+        # ... nosso código ...
 
         $self->redirect_to('index');
     } => 'shazam';
@@ -645,8 +645,8 @@ definido para dar preferência ao outro idioma:
 
 </div>
 
-<p><a class="hover" onclick="switchExpand('mUnicode');" title="clique para expandir">Unicode</a></p>
-<div id="mUnicode">
+<p><a class="hover" onclick="switchExpand('múnicode');" title="clique para expandir">únicode</a></p>
+<div id="múnicode">
 
 =end pod:xhtml
 
@@ -841,7 +841,7 @@ function collapseAll(objs) {
     }
 }
 
-collapseAll(['mRedirect','mCookie','mSession','mFlash','mParam','mRender','mRes','mLogging','mI18n','mUnicode','mLadder','mWS','mTestes']);
+collapseAll(['mRedirect','mCookie','mSession','mFlash','mParam','mRender','mRes','mLogging','mI18n','múnicode','mLadder','mWS','mTestes']);
 //-->
 </script>
 

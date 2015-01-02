@@ -222,11 +222,11 @@ Normalmente com dados governamentais iremos discutir sobre métricas relacionada
 
 O imperativo numérico representa um desafio, pois há uma dificuldade tremenda em selecionar quais fórmulas utilizar para representar um montante de dados, principalmente na administração pública ou na economia, pois muitos dados podem estar incompletos e temos que trabalhar com informações aproximadas.
 
-Por isto em muitos casos é interessante utilizar uma metodologia de que você irá oferecer inicialmente várias métricas, para que você possa 'tringular' elas e criar estratégias e até métricas novas.
+Por isto em muitos casos é interessante utilizar uma métodologia de que você irá oferecer inicialmente várias métricas, para que você possa 'tringular' elas e criar estratégias e até métricas novas.
 
 O interessante da triangulação de métricas é que podemos usar umas para verificar o resultado das outras também, e com o tempo criar projeções mais inteligentes baseado em dados - métricas - aproximadas.
 
-Por isto escolher os números certos pode ser possivel apenas com um determinado tempo, para você consiga provar os fenômenos práticos com os números escolhidos.
+Por isto escolher os números certos pode ser possível apenas com um determinado tempo, para você consiga provar os fenômenos práticos com os números escolhidos.
 
 =head2 Padronizando as referências.
 
@@ -257,7 +257,7 @@ Dependendo da quantidade de dados envolvidos, há a necessidade de "transformar"
 
 =head1 Conclusão
 
-Este artigo tem como objetivo oferecer um levantamento em relação às idéias relacionadas a infografia, e quais os passos para conseguir enviar dados de forma dinâmica ou não relacionado a uma quantidade de dados.
+Este artigo tem como objetivo oferecer um levantamento em relação às ideias relacionadas a infografia, e quais os passos para conseguir enviar dados de forma dinâmica ou não relacionado a uma quantidade de dados.
 
 O trabalho não é só em ter os dados, mas organizar eles de forma que fique simples o trabalho do design de informação, além de que como foi abordado existe um interesse grande para que os dados sejam compartilhados, reutilizados e principalmente para que exista um ecosistema para formação de novas ideias baseado em um processo colaborativo.
 
@@ -265,9 +265,9 @@ O trabalho não é só em ter os dados, mas organizar eles de forma que fique si
 	e nós trocamos essas maçãs,
 	então eu e você ainda teremos uma maçã cada.
 
-	Mas se você tiver uma idéia e eu tiver uma idéia
-	e nós trocamos idéias,
-	então cada um de nós terá duas idéias."
+	Mas se você tiver uma ideia e eu tiver uma ideia
+	e nós trocamos ideias,
+	então cada um de nós terá duas ideias."
 
 	-- George Bernard Shaw (1856-1950)
 
@@ -288,7 +288,7 @@ Métricas de marketing, por Paul W. Farris & Neil T. Bendle & Phillip E. PFeifer
 
 =head1 Agradecimentos
 
-Pela revisão do artigo, conversas e idéias:
+Pela revisão do artigo, conversas e ideias:
 
 Alexei "russo" Znamensky
 

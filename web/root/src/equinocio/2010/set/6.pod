@@ -1,15 +1,15 @@
 =head1 Perl Debugger
 
 Como você procura erros em seu programa? A maioria absoluta dos programadores que
-eu conheço enche o codigo fonte de prints. Isso não é de todo mal, e funciona
-porém as vezes é necessario se debuggar algo bem mais complexo, no qual um
-print ou outras formas de colocar na saida os valores de variaveis não funcionam
+eu conheço enche o código fonte de prints. Isso não é de todo mal, e funciona
+porém as vezes é necessário se debuggar algo bem mais complexo, no qual um
+print ou outras formas de colocar na saída os valores de variaveis não funcionam
 de forma adequada.
 
 =head2 Utilizando
 
 Executar um programa utilizando o perl debugger é simples, basta utilizar
-o parametro -d na linha de comando:
+o parâmetro -d na linha de comando:
 
 	perl -d programa
 
@@ -40,7 +40,7 @@ Um exemplo mais imediato é o seguinte:
 	DB<1>:
 
 A ultima linha, o DB<1>: é o nosso prompt, onde <1> o numero da instrução
-de debugger que o usuario vai entrar.
+de debugger que o usuário vai entrar.
 
 Todo o ambiente e namespace do programa ficam disponíveis no prompt, assim
 alguns comandos geram resultados interessantes, como:
@@ -53,7 +53,7 @@ alguns comandos geram resultados interessantes, como:
 
 Acho que ficou claro que p é nosso print, ele funciona de forma quase identica
 a função print da perl. Mas nem sempre é a melhor escolha, no caso de estruturas
-complexas, temos o x, que usa o parametro no contexto de lista e imprime o
+complexas, temos o x, que usa o parâmetro no contexto de lista e imprime o
 resultado:
 
 	DB<3>: x @INC
@@ -70,7 +70,7 @@ resultado:
 	10  '/System/Library/Perl/Extras/5.10.0'
 	11  '.'
 
-Assim como o Data::Dumper, podemos ter uma saida mais formatada se passarmos
+Assim como o Data::Dumper, podemos ter uma saída mais formatada se passarmos
 uma referencia:
 
 	DB<4>: x \@INC
@@ -126,8 +126,8 @@ executado dentro dela, no qual eu utilizo a função step.
 
 Outra importante ferramenta de controle de fluxo são os breakpoints, nos
 quais você especificar em qual ponto do programa a execução deve parar.
-É possivel especificar o numero da linha do arquivo fonte atual em que se
-queria que o debugger pare, além de ser possivel também especificar o
+É possível especificar o numero da linha do arquivo fonte atual em que se
+queria que o debugger pare, além de ser possível também especificar o
 nome de uma subrotina, o nome da subrotina com todo o namespace e nome do
 arquivo com a linha que se quer parar.
 
@@ -195,13 +195,13 @@ W, seguido do nome da variavel:
 
 	W $foo
 
-Isso funciona com breakpoints tambem, B maisculo apaga um breakpoint, e B * assim
+Isso funciona com breakpoints também, B maisculo apaga um breakpoint, e B * assim
 como W * apaga todos.
 
 =head2 Alem do Basico
 
 Considero a informação passada acima o basico de perl debugger, porém algumas vezes
-temos problemas que não são faceis de se resolver no proprio corpo do programa, ou
+temos problemas que não são faceis de se resolver no próprio corpo do programa, ou
 podemos ter problemas de compilação em uma das bibliotecas.
 
 Um exemplo simples de se reproduzir, é se adicionar uma biblioteca não existente no
@@ -226,9 +226,9 @@ E ao se utilizar o debugger:
 	  use o inhibit_exit to avoid stopping after program termination,
 	  h q, h R or h o to get additional info.
 
-Isso é uma coisa interessante, pois em uma linguagem estritamente compilada seria necessario
-corrigir o erro de declaração para depois compilar e debuggar. Porém com perl é possivel
-debuggar antes da compilação da primeira declaração no seu codigo fonte, que no caso é nossa
+Isso é uma coisa interessante, pois em uma linguagem estritamente compilada seria necessário
+corrigir o erro de declaração para depois compilar e debuggar. Porém com perl é possível
+debuggar antes da compilação da primeira declaração no seu código fonte, que no caso é nossa
 declaração falsa de biblioteca.
 
 	BEGIN {

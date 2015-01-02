@@ -142,7 +142,7 @@ de notícias no Equinócio.
       is_nullable   => 0,
       size          => 4
     },
-    "conteudo",
+    "conteúdo",
     {
       data_type     => "text",
       default_value => undef,
@@ -215,7 +215,7 @@ de notícias no Equinócio.
     column_label => 'name'
   );
 
-  has_field conteudo => (
+  has_field conteúdo => (
     type             => 'TextArea',
     label            => 'Conteúdo',
     required         => 1,
@@ -242,7 +242,7 @@ em C<unique_message> será exibida.
 No campo I<categoria> definimos através do atributo C<column_label> qual coluna
 do registro será usada como I<label> no I<<select>> do formulário.
 
-Já o campo C<conteudo> possui o atributo C<required> setado, que faz com que o
+Já o campo C<conteúdo> possui o atributo C<required> setado, que faz com que o
 L<HTML::FormHandler> exiba a mensagem definida em C<required_message> se o campo for
 submetido vazio. Uma I<constraint> denominada C<TextoCurto> é declarada e aplicada
 ao valor submetido no campo, C<TextoCurto> é usado para restringir o tamanho do

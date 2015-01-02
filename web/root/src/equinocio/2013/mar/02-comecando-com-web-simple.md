@@ -6,7 +6,7 @@ Para quem não sabe, [Web::Simple](https://metacpan.org/module/Web::Simple), é 
 
 Ele é rápido e ele é pequeno, e funciona utilizando pĺack, assim como quase todos frameworks agora =)
 
-Se você ainda não sabe quando deve utilizar [Web::Simple](https://metacpan.org/module/Web::Simple) ou Catalyst, uma dica é: se não existem muitas regras[1] e você vai se virar com os modulos para conversar com as apis[2] faça com [Web::Simple](https://metacpan.org/module/Web::Simple).
+Se você ainda não sabe quando deve utilizar [Web::Simple](https://metacpan.org/module/Web::Simple) ou Catalyst, uma dica é: se não existem muitas regras[1] e você vai se virar com os módulos para conversar com as apis[2] faça com [Web::Simple](https://metacpan.org/module/Web::Simple).
 
 
 [1] "muitas regras" na verdade, é se você vai ter que escrever muitos dispatchers.
@@ -71,7 +71,7 @@ Volte para o terminal, e suba o starman:
 
     $ starman HelloWorld.psgi --workers 2
 
-Com esses parametros, o starman sobe a sua app na porta 5000 com bind para 0.0.0.0, usando 2 workers.
+Com esses parâmetros, o starman sobe a sua app na porta 5000 com bind para 0.0.0.0, usando 2 workers.
 
 Acesse [http://0.0.0.0:5000](http://0.0.0.0:5000 0.0.0.0:5000) e veja, seu Hello World! está na tela.
 
@@ -113,13 +113,13 @@ No caso , o PID do master é o 4080, o primeiro da lista. Envie um sinal de HUP 
 
 Agora se você acessar [http://0.0.0.0:5000](http://0.0.0.0:5000 0.0.0.0:5000) você irá ver `São Paulo Perl mongers` escrito corretamente. Se você remover o `use utf8`, junto com o Encode e o encode("utf8", ...) também vai funcionar **sem erro de encoding**, porém, o perl está apenas passando pra frente o que você escreveu, sem saber o que é, e o browser respeitando o que foi dito no header.
 
-A melhor forma é você saber qual o encoding é o seu conteudo e sempre tratar isso.
+A melhor forma é você saber qual o encoding é o seu conteúdo e sempre tratar isso.
 
 Agora que você já tem uma aplicação rodando, também sabe como reiniciar ela, vamos entender o que acontece no dispatcher.
 
 A primeira sub, disse apenas no seu atributo, que seu request era GET. Sem informar nada, entende-se que todas URLs digitadas serão afetadas. Portanto, [http://0.0.0.0:5000/foobar](http://0.0.0.0:5000/foobar /foobar) vai exibir o mesmo conteúdo.
 
-A outra sub, não disse nada, ou seja, ela é o jeito que o *Matt S Trout* criou para fazer o "not found", ou seja, esse metodo é executado quando nenhuma das outras regras se aplicarem.
+A outra sub, não disse nada, ou seja, ela é o jeito que o *Matt S Trout* criou para fazer o "not found", ou seja, esse método é executado quando nenhuma das outras regras se aplicarem.
 
 Para ver o 405 em ação, execute, se você tem curl instalado:
 
@@ -135,7 +135,7 @@ Web::Simple - especificações das regras do dispatcher
 -------------
 Regras foram retiradas com base na documentação do dia 26/02/2013.
 
-**Por metodo HTTP: **
+**Por método HTTP: **
 
 `sub (GET) {`
 match com base no METHOD do HTTP. Nesse caso, GET.
@@ -146,10 +146,10 @@ GET ou HEAD entrariam nessa regra.
 **Por caminho, o famoso *Path*:**
 
 `sub (/login) {`
-Uma sub com atributo começando com / significa uma regra por path. Nesse caso, o mais simples, o caminho inteiro é considerado. Ou seja, quando alguem acessar http://0.0.0.0:5000/login ele será executado.
+Uma sub com atributo começando com / significa uma regra por path. Nesse caso, o mais simples, o caminho inteiro é considerado. Ou seja, quando alguém acessar http://0.0.0.0:5000/login ele será executado.
 
 
-`sub (/user/*) {` aqui, parametros são **capturados** por posição. Cada `*` pode ser qualquer valor, edite seu arquivo para:
+`sub (/user/*) {` aqui, parâmetros são **capturados** por posição. Cada `*` pode ser qualquer valor, edite seu arquivo para:
 
     sub (/user/*) {
         my ($self, $user_id) = @_;
@@ -162,7 +162,7 @@ Faça o `kill -HUP` para reiniciar e depois acesse [http://0.0.0.0:5000/user/145
 
 Você pode juntar vários desses:
 
-`sub (/user/*/*) { my ($self, $user_1, $user_2) = @_;` e/ou dependendo e como vocẽ quer:
+`sub (/user/*/*) { my ($self, $user_1, $user_2) = @_;` e/ou dependendo e como você quer:
 
 `sub (/alguma-coisa/*/sua-outra-url/*) { my ($self, $alguma_1, $outra_2) = @_;`
 
@@ -198,7 +198,7 @@ Pronto! Agora supondo que você queria editar vários processos de uma vez, voc�
 
 E por último, mas não menos importante, existe a regra dos 3 pontinhos...
 
-`sub (/foo/...) {` Ela signfica, que "pode ter algo aqui, mas talvez não" e também te da uma chance de criar sub encadeadas recursivamente.
+`sub (/foo/...) {` Ela significa, que "pode ter algo aqui, mas talvez não" e também te da uma chance de criar sub encadeadas recursivamente.
 
     /foo         # não faz match
     /foo/        # faz o match e reseta o path para '/' para as proximas subs encadeadas
@@ -210,7 +210,7 @@ Perceba que /foo ficou de fora. Para incluir ele, você tem que fazer `sub (/foo
 
 Um uso bom, seria começar tudo com /... para e isso capturado como idioma do site. /pt/<resto do site> ou /en/<resto do site>.
 
-Esses dois códigos abaixos são equivalentes:
+Esses dois códigos abaixo são equivalentes:
 
     sub (/foo)   { 'I match /foo' },
     sub (/foo/...) {
@@ -229,7 +229,7 @@ e
 
 Então quando você utiliza `/foo...` você acessa o path '' utilizando `~`
 
-O segundo jeito de escrever é "melhor" pois permite que vocẽ possa escrever apenas uma vez o código que vai ser utilizado em todas as subs daquele escopo. Por exemplo, o resultset do DBIC.
+O segundo jeito de escrever é "melhor" pois permite que você possa escrever apenas uma vez o código que vai ser utilizado em todas as subs daquele escopo. Por exemplo, o resultset do DBIC.
 
     sub (/user...) {
         my $user_rs = $schema->resultset('User');
@@ -238,9 +238,9 @@ O segundo jeito de escrever é "melhor" pois permite que vocẽ possa escrever a
     }
 
 
-**Parametros com nomes**
+**parâmetros com nomes**
 
-As vezes, você pode querer receber os parametros em um **HASHREF** no lugar de recebelos em variaveis separadas.
+As vezes, você pode querer receber os parâmetros em um **HASHREF** no lugar de recebelos em variaveis separadas.
 
     sub (/*:one/*:two/*:three/*:four) {
         my ($self, $hash) = @_;
@@ -275,23 +275,23 @@ Eles podem ser capturados com:
     sub (?<param spec>) { # match URI query
     sub (%<param spec>) { # match body params
 
-É possivel capturar os parametros *encodados* via application/x-www-form-urlencoded ou multipart/form-data.
+É possível capturar os parâmetros *encodados* via application/x-www-form-urlencoded ou multipart/form-data.
 
 Existem várias maneiras de capturar:
 
-    param~        # parametro opcional
-    param=        # parametro requerido
-    @param~       # parametro opcional e multiplo
-    @param=       # parametro requerido e multiplo
+    param~        # parâmetro opcional
+    param=        # parâmetro requerido
+    @param~       # parâmetro opcional e multiplo
+    @param=       # parâmetro requerido e multiplo
     :param~       # opcional e vai para um hashref
     :param=       # requerido e vai para um hashref
     :@param~      # opcional e vão para uma arrayref dentro de um hashref
     :@param=      # requerido e vão para uma arrayref dentro do hashref
     *             # tudo vai para um hashref
-    @*            # todos os parametros que não foram capturados antes, vão para um hashref
+    @*            # todos os parâmetros que não foram capturados antes, vão para um hashref
 
-> Note que se você mandou caputrar um parametro como multiplo, você sempre vai recebe-lo via array, mesmo se for apenas um item ?foo.
-> No outro caso, se você mandou capturar apenas um, e o parametro aparece varias vezes, apenas a última vez é considerada.
+> Note que se você mandou caputrar um parâmetro como multiplo, você sempre vai recebe-lo via array, mesmo se for apenas um item ?foo.
+> No outro caso, se você mandou capturar apenas um, e o parâmetro aparece varias vezes, apenas a última vez é considerada.
 
 
 Exemplo de como receber o order-by e o numero da pagina pela URL:
@@ -302,7 +302,7 @@ Exemplo de como receber o order-by e o numero da pagina pela URL:
         ...
     }
 
-Exemplo de como receber todos os parametros para um hashref de arrayref:
+Exemplo de como receber todos os parâmetros para um hashref de arrayref:
 
     sub(?@*) {
         my ($self, $params) = @_;
@@ -331,9 +331,9 @@ Acessando [http://0.0.0.0:5000/qualquerurl?abc=23&34=3&foo=1&foo=2](http://0.0.0
 
 Os tres diferentes tipos de regras podem ser combinados usando `+`, os tipos são:
 
-- por metodo
+- por método
 - por path
-- parametros query/body (e/ou upload)
+- parâmetros query/body (e/ou upload)
 
 `sub (GET + /user/*) {` captura o /user/* apenas em requests GET
 

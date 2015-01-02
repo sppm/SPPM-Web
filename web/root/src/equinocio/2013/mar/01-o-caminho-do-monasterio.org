@@ -8,7 +8,7 @@ conteúdo relacionado a perl.
 ** Como funciona o equinócio?
 
 Um equinócio é um fenômeno astronômico que ocorre quando o sol está em
-zênite sobre a linha do equador. É um período que dura cerca de 20 dias, 
+zênite sobre a linha do equador. É um período que dura cerca de 20 dias,
 onde os dias e as noites tem aproximadamente a mesma
 duração. A cada meia-noite desse período publicamos um artigo
 relacionado a perl no site do São Paulo PM.
@@ -93,6 +93,6 @@ aprendizado. A São Paulo PM ganhou prêmios em dois eventos em 2012:
 
 Como todos usamos perl, o trabalho fica pronto rapidamente e sempre
 sobra tempo pra tomar uma boa cerveja durante os encontros sociais.
-Nesses encontros surgem muitas idéias de inovação tecnológica,
+Nesses encontros surgem muitas ideias de inovação tecnológica,
 empreendedorismo e módulos de CPAN, além de sempre ser divertido,
 compareça!

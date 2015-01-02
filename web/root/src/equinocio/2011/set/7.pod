@@ -48,7 +48,7 @@ Agora vamos criar os templates para poder apresentar nossa página em html:
     $ cd Blog-Tutorial
     $ mkdir -p root/src/template/standard
 
-e vamos criar um wrapper, o wrapper será o arquivo central de nosso template 'standard'. É atraves do wrapper que o conteúdo de seu site será apresentado.
+e vamos criar um wrapper, o wrapper será o arquivo central de nosso template 'standard'. É através do wrapper que o conteúdo de seu site será apresentado.
 
     $ vim root/src/template/standard/wrapper.tt2
 
@@ -60,7 +60,7 @@ e insira o conteúdo
         <head>
         </head>
         <body>
-            <div class="conteudo">
+            <div class="conteúdo">
             [% content %]
             </div>
         </body>
@@ -241,7 +241,7 @@ Ao mesmo tempo, analise a saída no terminal do seu servidor web de desenvolvime
 
 muito bacana este debug do catalyst, ele mostra claramente as variáveis e valores do request executado
 
-Se você quiser simular o GET request e ver a saída do log, você tambem pode fazer... acesse por exemplo, a url: http://localhost:3005/post?var1=foo&var2=bar&var3=bazzzz
+Se você quiser simular o GET request e ver a saída do log, você também pode fazer... acesse por exemplo, a url: http://localhost:3005/post?var1=foo&var2=bar&var3=bazzzz
 
 Veja o que ele mostrou no log de saída:
 
@@ -374,9 +374,9 @@ Agora, preencha o form e clique salvar e veja a saída no terminal:
 
 observe que o catalyst apresentou os "Query parameters" que estão na url, e apresentou os "Body parameters" que estão no corpo do seu POST form.
 
-ok, agora você aprendeu um pouco sobre como criar formulários utilizando formhandler e como o form é validado e como acessar os valores do request, e tambem como acessar os valores do form através do ->fif .. o ->fif é um hash do FormHandler com os valores do seu form... utilizamos ele na variável 'form_valores'
+ok, agora você aprendeu um pouco sobre como criar formulários utilizando formhandler e como o form é validado e como acessar os valores do request, e também como acessar os valores do form através do ->fif .. o ->fif é um hash do FormHandler com os valores do seu form... utilizamos ele na variável 'form_valores'
 
-Você tambem aprendeu a fazer IF no seu template... para saber mais sobre o template toolkit, acesse a documentação completa em http://template-toolkit.org/
+Você também aprendeu a fazer IF no seu template... para saber mais sobre o template toolkit, acesse a documentação completa em http://template-toolkit.org/
 
 Agora, vamos colocar um 'header'(cabeçalho) para nossa app
 
@@ -398,7 +398,7 @@ e vamos inserir este header em nosso wrapper para que ele seja processado e inse
 
 e inserir uma linha antes do [% content %], obtendo:
 
-    <div class="conteudo">
+    <div class="conteúdo">
         [% PROCESS 'header.tt2' %]
         [% content %]
     </div>
@@ -491,11 +491,11 @@ e agora vamos criar nossos models para nossa app.. vamos utilizar o dbic dump ( 
 
     $ cd Blog-Tutorial
 
-se você usa postgres com usuario MEU_USER.. substitua pelo seu username
+se você usa postgres com usuário MEU_USER.. substitua pelo seu username
 
     $ script/blog_tutorial_create.pl model DB DBIC::Schema Blog::Tutorial::DB create=static dbi:Pg:dbname=blog_tutorial MEU_USER passworrrddzz
 
-se você usa mysql com usuario MEU_USER.. substitua pelo seu username
+se você usa mysql com usuário MEU_USER.. substitua pelo seu username
 
     $ script/blog_tutorial_create.pl model DB DBIC::Schema Blog::Tutorial::DB create=static dbi:mysql:db=blog_tutorial MEU_USER passworrrddzz
 
@@ -740,7 +740,7 @@ e modifique seu 'use Catalyst qw/.../' obtendo:
     /;
     extends 'Catalyst';
 
-e tambem coloque nesse mesmo arquivo a configuração do plugin de autenticação.. ele vai nos ajudar a validar os logins/logouts... coloque a configuração a seguir logo antes da linha "__PACKAGE__->setup();", ficando com:
+e também coloque nesse mesmo arquivo a configuração do plugin de autenticação.. ele vai nos ajudar a validar os logins/logouts... coloque a configuração a seguir logo antes da linha "__PACKAGE__->setup();", ficando com:
 
     __PACKAGE__->config->{'Plugin::Authentication'} = {
         default => {

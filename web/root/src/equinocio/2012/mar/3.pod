@@ -199,8 +199,8 @@ ou "chocolate" (que foi? Estou com fome!).
 
 =head2 Compartilhando o mesmo perlbrew entre vários usuários
 
-A idéia original do perlbrew é permitir que cada usuário tenha suas próprias versões
-do perl instaladas. É possivel, no entanto, que você queira oferecer uma ou mais
+A ideia original do perlbrew é permitir que cada usuário tenha suas próprias versões
+do perl instaladas. É possível, no entanto, que você queira oferecer uma ou mais
 compilações específicas para serem compartilhadas entre usuários. Para isso, basta
 definir a variável de ambiente C<PERLBREW_ROOT> para o diretório desejado antes
 de rodar o instalador:
@@ -228,7 +228,7 @@ simples de se fazer isso é através da função C<autobundle> do CPAN:
 O comando pode demorar um pouco, mas no final vai retornar uma mensagem com algo como:
 
    Wrote bundle file
-       /index.t/usuario/.cpan/Bundle/Snapshot_2011_09_01_00.pm
+       /index.t/usuário/.cpan/Bundle/Snapshot_2011_09_01_00.pm
 
 Agora é só fazer um C<perlbrew switch> para a nova versão e instalar seu "bundle" de uma vez só:
 

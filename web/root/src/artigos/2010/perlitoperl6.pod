@@ -65,7 +65,7 @@ L<Perlito|http://perlito.org>, também conhecido como MiniPerl6.
 =head2 O que o Perlito tem de especial?
 
 Ao contrário de implementações mais robustas - e mais lentas - como o Rakudo, o Perlito não
-implementa todos os detalhes do Perl 6. Pelo contrário, a idéia do projeto é oferecer apenas
+implementa todos os detalhes do Perl 6. Pelo contrário, a ideia do projeto é oferecer apenas
 um "subconjunto útil" da linguagem, em um compilador pequeno e eficiente.
 
 Como resultado, o Perlito gera programas relativamente rápidos, e pode ser utilizado como

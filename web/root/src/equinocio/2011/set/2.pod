@@ -231,7 +231,7 @@ fazer com que o seu repositório git seja atualizado a cada release.
 =head2 Meta no Bundle
 
 Se você usa git e mantém os seus repositórios no github, então o plugin
-L<Dist::Zilla::Plugin::GithubMeta> irá preencher automagicamente as
+L<Dist::Zilla::Plugin::GithubMeta> irá preencher automaticamente as
 meta-informações da sua distribuição.
 
 =head2 Twittando do seu Bundle
@@ -242,7 +242,7 @@ L<http://twitter.com/> o release das novas versões da sua distribuição.
 =head2 POD no Bundle?
 
 O plugin L<Dist::Zilla::Plugin::PodWeaver> permite que vários pedaços do
-seu POD sejam gerados automagicamente, em conformidade com as boas práticas
+seu POD sejam gerados automaticamente, em conformidade com as boas práticas
 de documentação de Perl.
 
 =head2 Espiando o Dist::Zilla

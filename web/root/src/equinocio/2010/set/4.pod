@@ -1,6 +1,6 @@
 =head1 YAC (YACCMS (Yet Another Catalyst CMS))
 
-Neste ensaio procuramos apresentar o desenvolvimento inicial do YAC, o CMS mais simples possivel.
+Neste ensaio procuramos apresentar o desenvolvimento inicial do YAC, o CMS mais simples possível.
 
 Um CMS bE<aacute>sico e extensE<iacute>vel para a comunidade de desenvolvedores perl.  Ajude a realizar este trabalho!
 
@@ -245,7 +245,7 @@ Instanciar um Stack:
 
     my $coolStack = new YAC::Stack;
 
-Montar o Stack, editando url e conteudo
+Montar o Stack, editando url e conteúdo
 
     $coolStack->url ('my/coolStack');
     my $url = $coolStack->url();
@@ -446,7 +446,7 @@ Os stacks especiais implementados no core do YAC: Content, Control e Widget.
 
 =item Control
 
-O gerenciador de menus. Tem mais 2 metodos: url e name
+O gerenciador de menus. Tem mais 2 métodos: url e name
 
 =item Content
 

@@ -17,7 +17,7 @@ Iremos descrever aqui três características do REST.
 
 =item Recursos
 
-Os recursos individuais são identificados na requisição, como descrevendo elas nas URIs, um exemplo: http://meu.servidor/usuario/thiago.
+Os recursos individuais são identificados na requisição, como descrevendo elas nas URIs, um exemplo: http://meu.servidor/usuário/thiago.
 
 =item Ações
 

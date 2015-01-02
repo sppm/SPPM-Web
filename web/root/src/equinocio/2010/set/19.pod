@@ -35,7 +35,7 @@ O código é o seguinte:
 
 
 
-Com o código acima é possivel escrever que determinado objeto tem 2 centimetros utilizando a sintaxe
+Com o código acima é possível escrever que determinado objeto tem 2 centimetros utilizando a sintaxe
 C<$medida_em_pontos = 20/mm>.
 
 
@@ -64,7 +64,7 @@ Agora que já temos uma noção sobre este pacote, vamos a alguns exemplos.
 
 
 	use PDF::Reuse;                       # Mandatory
-	prFile('saida.pdf');                    # Mandatory, with or without a file name
+	prFile('saída.pdf');                    # Mandatory, with or without a file name
 	prText(250, 650, 'Hello World !');
 	prEnd();                              # Mandatory
 
@@ -76,7 +76,7 @@ Podemos alterar ele para imprimir essa o hello no centro de uma folha com 100/10
 
 	use PDF::Reuse;
 	use constant mm => 25.4 / 72;
-	prFile('saida.pdf');
+	prFile('saída.pdf');
 	prMbox( 0, 0, 100/mm, 100/mm );
 	prText((100/mm) / 2, (100/mm) / 2, 'Hello World !', 'center');
 	prEnd();
@@ -110,14 +110,14 @@ Entretanto, descobri que se utilizar prDoc ou prSinglePage, torna-se "impossíve
 A função prDoc, do mesmo jeito que a prSinglePage, não permite esticar ou posicionar o PDF, pois ela não inclui o PDF dentro de um objeto*
 
 
-*: nao li o codigo, é uma suposição, com grandes chances de estar certo!
+*: nao li o código, é uma suposição, com grandes chances de estar certo!
 
 
 Muitos exemplos do uso da biblioteca pode ser encontrado no próprio CPAN: L<PDF::Reuse::Tutorial>
 
 =head1 PDF::API2
 
-A L<PDF::API2> é uma boa biblioteca, com comandos fáceis e ja tem "tudo" pronto (rotate, translste...) porém é lenta.
+A L<PDF::API2> é uma boa biblioteca, com comandos fáceis e já tem "tudo" pronto (rotate, translste...) porém é lenta.
 Eu não usaria para um serviço web (nem mesmo 1 página), nem para fazer mais de 2 páginas em um código em produção.
 
 Porém, com base nela podemos turbina o L<PDF::Haru>, inicialmennte colocando suporte a códigos de barras e a matrizes sem dor de cabeça.
@@ -288,7 +288,7 @@ Lembre-se de ajustar o DPI da sua imagem.
 
 =head3 Textos justificados
 
-Com base na idéia/código do L<http://rick.measham.id.au/pdf-api2/>, montei outra classe para construir textos com e sem negritos, usando tags HTML (tipo o L<PDF::TextBlock>, mas sem o bug do center/right e com algumas coisas a mais, tipo o debug_rect ou o all_text)
+Com base na ideia/código do L<http://rick.measham.id.au/pdf-api2/>, montei outra classe para construir textos com e sem negritos, usando tags HTML (tipo o L<PDF::TextBlock>, mas sem o bug do center/right e com algumas coisas a mais, tipo o debug_rect ou o all_text)
 
 	new PDFRectText()->plot({
 		page => $page,
@@ -327,7 +327,7 @@ O all_text  faz com que se o texto sair da area definida por max_widht/max_heigh
 
 =head3 Barcodes
 
-Para utilizar os barcodes, usamos o metodo plot do PDFBarcode. Para trocar o tipo, e bem simples, basta alterar a chave "type"
+Para utilizar os barcodes, usamos o método plot do PDFBarcode. Para trocar o tipo, e bem simples, basta alterar a chave "type"
 
 	new PDFBarcode()->plot({
 		page => $page,

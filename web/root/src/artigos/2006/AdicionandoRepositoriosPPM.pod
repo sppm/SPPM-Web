@@ -2,7 +2,7 @@
 
 
 
-=head1 Adicionano repositE<oacute>rio de modulos em seu PPM
+=head1 Adicionando repositE<oacute>rio de módulos em seu PPM
 
 NE<atilde>o achou certo mE<oacute>dulo em seu repositE<oacute>rio?
 Consulte outros...

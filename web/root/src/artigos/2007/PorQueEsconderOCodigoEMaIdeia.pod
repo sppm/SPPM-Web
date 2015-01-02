@@ -114,7 +114,7 @@ motivaE<ccedil>E<atilde>o para roubar, ele vai fazE<ecirc>-lo. Nesses
 casos, E<eacute> mais barato remediar do que prevenir.
 
 =head2 Ninguem E<eacute> tE<atilde>o genial a ponto de escrever algo
-unico.
+único.
 
 VocE<ecirc> teve aquela sacada, e agora quer esconder dos outros
 programadores porque acredita que esta E<eacute> sua vantagem
