@@ -2,7 +2,7 @@
 
 =encoding utf8
 
-=head1 PERL E únicoDE (ENTRE OUTRAS CODIFICAÇÕES DE TEXTO)
+=head1 PERL E unicode (ENTRE OUTRAS CODIFICAÇÕES DE TEXTO)
 
 =cut
 
@@ -10,10 +10,10 @@
 
 Em primeiro lugar: qual é o objetivo desse artigo, já que a documentação oficial do Perl é acompanhada de L<perlunitut> e L<perlunifaq>?
 Simples: um amplo espectro de erros relacionados à codificação observados em nossos scripts, desde um inofensivo I<Wide character in print at ...> e até o enigmático I<Parsing of undecoded UTF-8 will give garbage when decoding entities at ...>.
-Se, por um lado, para quem quer que o tenha implementado, o suporte de únicode do Perl é trivial, para nós, reles mortais, aquelas linhas de código da documentação oficial mais parecem fórmulas mágicas que copiamos e colamos até que encontremos uma que dê um resultado aceitável no nosso caso específico (atire a primeira pedra...).
+Se, por um lado, para quem quer que o tenha implementado, o suporte de unicode do Perl é trivial, para nós, reles mortais, aquelas linhas de código da documentação oficial mais parecem fórmulas mágicas que copiamos e colamos até que encontremos uma que dê um resultado aceitável no nosso caso específico (atire a primeira pedra...).
 Não que isso seja um critério de complexidade, mas o fato do módulo L<Encode> ocupar mais de 10MB instalado já indica que aí tem coisa.
 
-Agora, cronologicamente: o suporte B<nativo> a únicode surgiu na versão 5.6 do Perl, lançada em meados de 2000. Passou por várias correções e refinamentos, sendo que eu, pessoalmente, só confiaria em únicode do Perl 5.10, lançado 7 anos (!) depois. Outra comparação duvidosa: PHP que, no momento da escrita desse artigo, está na versão 5.3.5, não possui suporte B<nativo> a únicode. E, convenhamos, a sua extensão C<mbstring> faz um excelente trabalho.
+Agora, cronologicamente: o suporte B<nativo> a unicode surgiu na versão 5.6 do Perl, lançada em meados de 2000. Passou por várias correções e refinamentos, sendo que eu, pessoalmente, só confiaria em unicode do Perl 5.10, lançado 7 anos (!) depois. Outra comparação duvidosa: PHP que, no momento da escrita desse artigo, está na versão 5.3.5, não possui suporte B<nativo> a unicode. E, convenhamos, a sua extensão C<mbstring> faz um excelente trabalho.
 
 Então por que toda essa confusão no Perl? Vamos por partes.
 
@@ -23,9 +23,9 @@ Então por que toda essa confusão no Perl? Vamos por partes.
 
 =item *
 
-B<únicode nada mais é do que usar 2 bytes no lugar de 1 só para representar texto, tendo assim um alfabeto de até 65,536 caracteres>
+B<unicode nada mais é do que usar 2 bytes no lugar de 1 só para representar texto, tendo assim um alfabeto de até 65,536 caracteres>
 
-B<FALSO>. Arrisco a dizer que essa é a origem de 49% da confusão ao redor do únicode. No momento, C<The únicode Standard 6.0> possui cerca de 109 mil caracteres.
+B<FALSO>. Arrisco a dizer que essa é a origem de 49% da confusão ao redor do unicode. No momento, C<The unicode Standard 6.0> possui cerca de 109 mil caracteres.
 Entretanto, de fato, o padrão C<UCS-2>, adotado no Windows NT, era quase exatamente isso: 2 bytes por caractere, com 63,488 possibilidades no total.
 Depois, no Windows 2000, passou-se a usar o C<UTF-16>, que B<na maioria> dos casos tinha 2 bytes por caractere, mas podia ter mais (assim como o C<utf8> I<aparenta> "representar os caracteres com acentos com 2 bytes").
 
@@ -100,24 +100,24 @@ B<Observação>: já C<iso-8859-1> e C<latin1>, são sinônimos.
 
 =item *
 
-B<únicode é a codificação que oferece maior compatibilidade>
+B<unicode é a codificação que oferece maior compatibilidade>
 
 B<VERDADEIRO>. Infelizmente (ou não), texto sem codificação não existe. Muitos chamam ASCII de "texto puro", talvez por ser uma das codificações mais antigas. Mas também temos o EBCDIC, e por que não código Morse?
 Nos tempos mais primórdios, o esforço era acomodar a maior quantidade possível de caracteres em 7 ou 8 bits, o que garantidamente resultava em colisões (ver o item anterior).
 
 =back
 
-=head1 O QUE É únicoDE, AFINAL?
+=head1 O QUE É unicode, AFINAL?
 
 Trocando em miúdos: um alfabeto ideal (no sentido platônico), com potencial para representar todo e qualquer sistema de escrita real ou fictício que já existiu ou virá a existir, desde o tibetano arcaico e até vogon.
-Para isso, foi reservado um índice não de 256 e nem de 65,536, mas de 2**31 posições (I<code points>). Dentro desse espaço, existe uma divisão por categorias e I<scripts>, além de um mapeamento de equivalência (por exemplo: únicode "sabe" que "©" é aproximadamente equivalente a "C", e "ö" é similar a "o").
-Porém, o mais importante a saber é que únicode ainda pode ser abstraído como um índice unidimensional: quem mexe com XML (e HTML) já viu I<entities> no formato C<&#8305;>, que renderiza como "E<#185>", e nada mais é do que o caractere únicode com índice decimal 8305, e, respectivamente, hexadecimal C<"\x{2071}">. Um formato padronizado, independente da linguagem (XML ou Perl, no caso) é C<U+2071>.
-Voltando ao Perl; este trata os dados textuais como únicode, e armazena internamente como C<utf8>.
+Para isso, foi reservado um índice não de 256 e nem de 65,536, mas de 2**31 posições (I<code points>). Dentro desse espaço, existe uma divisão por categorias e I<scripts>, além de um mapeamento de equivalência (por exemplo: unicode "sabe" que "©" é aproximadamente equivalente a "C", e "ö" é similar a "o").
+Porém, o mais importante a saber é que unicode ainda pode ser abstraído como um índice unidimensional: quem mexe com XML (e HTML) já viu I<entities> no formato C<&#8305;>, que renderiza como "E<#185>", e nada mais é do que o caractere unicode com índice decimal 8305, e, respectivamente, hexadecimal C<"\x{2071}">. Um formato padronizado, independente da linguagem (XML ou Perl, no caso) é C<U+2071>.
+Voltando ao Perl; este trata os dados textuais como unicode, e armazena internamente como C<utf8>.
 
 =head2 E O QUE É UTF-8?
 
-Cada caractere de únicode pode ter índice de até 31 bits, mas, historicamente, linguagens de programação e I<markup> usam apenas os primeiros 7 bits do ASCII, suficientes para representar os textos em inglês.
-Então, C<utf8> nada mais é do que uma codificação capaz de acomodar todos os 31 bits do únicode, porém mantendo o I<backward compatibility> com ASCII. Simplificando, funciona da seguinte forma
+Cada caractere de unicode pode ter índice de até 31 bits, mas, historicamente, linguagens de programação e I<markup> usam apenas os primeiros 7 bits do ASCII, suficientes para representar os textos em inglês.
+Então, C<utf8> nada mais é do que uma codificação capaz de acomodar todos os 31 bits do unicode, porém mantendo o I<backward compatibility> com ASCII. Simplificando, funciona da seguinte forma
 (sendo que "E<#185>" representa bit setado, "0" - não-setado, e "x" é o espaço reservado para o índice do caractere codificado):
 
   BYTE 1   BYTE 2   BYTE 3   BYTE 4   BYTE 5   BYTE 6
@@ -130,9 +130,9 @@ Então, C<utf8> nada mais é do que uma codificação capaz de acomodar todos os
  1111110x 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx 10xxxxxx
 
 Assim, se o índice do caractere a ser codificado couber em 7 bits, será utilizado apenas 1 byte, mantendo a compatibilidade com ASCII. Se couber em 13 bits, serão 2 bytes; 16 bits - 3 bytes; e assim por diante.
-Para dar uma pista de que o arquivo B<não é> ASCII, existe o BOM (I<Byte Order Mark>): sequência de 3 bytes C<(0xEF, 0xBB, 0xBF)> no começo do arquivo, no caso do C<utf8>. "Coincidentemente", essa sequência traduz para caractere únicode C<U+FEFF>, também conhecido como I<zero-width non-breaking space>.
+Para dar uma pista de que o arquivo B<não é> ASCII, existe o BOM (I<Byte Order Mark>): sequência de 3 bytes C<(0xEF, 0xBB, 0xBF)> no começo do arquivo, no caso do C<utf8>. "Coincidentemente", essa sequência traduz para caractere unicode C<U+FEFF>, também conhecido como I<zero-width non-breaking space>.
 
-B<OBSERVAÇÃO>: apesar do espaço reservado ser de 2**31, nem todos os índices decodificam para caracteres únicode válidos!!!
+B<OBSERVAÇÃO>: apesar do espaço reservado ser de 2**31, nem todos os índices decodificam para caracteres unicode válidos!!!
 
 Voltando ao exemplo anterior, o caractere C<U+2071> ("E<#185>"), representado em C<utf8>, é sequencia de bytes C<(0xE2, 0x81, 0xB1)>. Eis um aparente paradoxo: string "ímã" tem 3 caracteres, mas, codificada em C<utf8>, ocupa 5 bytes! Outro ponto importante é que C<utf8> é interpretável em uma só direção, já que é o primeiro byte da sequencia que determina o tamanho do bloco todo. Então, para que a coisa toda dê certo, e C<substr("ímã", 1, 1)> retorne "m", Perl armazena metadados juntamente com strings em C<utf8>. Vejamos:
 
@@ -163,11 +163,11 @@ Para comparação, se C<$str = "teste">, temos:
 
 Obviamente, este I<flag> de C<utf8> é legível e configurável a partir do código-fonte; apesar de L<perlunifaq> condenar isso (com razão ou não, não vem ao caso).
 
-Então, concluindo sobre a relação do Perl com C<utf8>. O Perl a partir da versão 5.8 armazena e trata strings únicode B<internamente> codificadas com C<utf8>. Entretanto, B<externamente>, o Perl, por default e visando I<backward compatibility>, emprega... C<latin1> no código-fonte e I<"literal bytes"> para I/O! Ou seja: é de se esperar encrenca em OS moderno, tal como Ubuntu, a menos que os devidos cuidados sejam tomados.
+Então, concluindo sobre a relação do Perl com C<utf8>. O Perl a partir da versão 5.8 armazena e trata strings unicode B<internamente> codificadas com C<utf8>. Entretanto, B<externamente>, o Perl, por default e visando I<backward compatibility>, emprega... C<latin1> no código-fonte e I<"literal bytes"> para I/O! Ou seja: é de se esperar encrenca em OS moderno, tal como Ubuntu, a menos que os devidos cuidados sejam tomados.
 
 =head1 CONVERSÃO DE CODIFICAÇÃO EM PERL
 
-Recapitulando: Perl, apesar de empregar únicode (e com grande êxito) e armazenar strings como C<utf8> internamente, é um tanto quanto inconsistente ao se comunicar com o "mundo exterior".
+Recapitulando: Perl, apesar de empregar unicode (e com grande êxito) e armazenar strings como C<utf8> internamente, é um tanto quanto inconsistente ao se comunicar com o "mundo exterior".
 O próprio interpretador espera que o código-fonte esteja em C<latin1>, a menos que seja empregado o pragma C<use utf8> (o que não implica que I/O deixe de ser visto como I<"literal bytes">!!!).
 Portanto, a codificação do texto precisa ser especificada explicitamente.
 
@@ -209,7 +209,7 @@ E, por fim, temos a clássica situação em que precisamos mexer com um código-
 
 =head2 Usando Encode
 
-Já que nem sempre é possível empregar PerlIO (por exemplo, o clássico erro I<Parsing of undecoded UTF-8 will give garbage when decoding entities at ...> se deve ao fato do L<LWP::UserAgent> pegar HTML como I<octets>, mas L<HTML::Parser> esperar como entrada únicode), pode-se usar o L<Encode> para fazer a conversão diretamente em memória, I<"ad hoc">.
+Já que nem sempre é possível empregar PerlIO (por exemplo, o clássico erro I<Parsing of undecoded UTF-8 will give garbage when decoding entities at ...> se deve ao fato do L<LWP::UserAgent> pegar HTML como I<octets>, mas L<HTML::Parser> esperar como entrada unicode), pode-se usar o L<Encode> para fazer a conversão diretamente em memória, I<"ad hoc">.
 Sabendo a codificação de uma string "crua", ela primeiro deve ser "únicodificada":
 
  $string = decode('iso-8859-1', $octets);
@@ -392,7 +392,7 @@ B<AVISO>: L<tidy> processa o documento inteiro na RAM; enquanto isso não afeta 
 
 =item *
 
-Um cuidado especial deve ser tomado com módulos que empregam L<XS|perlxs>; se são interfaces para bibliotecas não-únicode, existe uma boa chance de que retornem I<octets>.
+Um cuidado especial deve ser tomado com módulos que empregam L<XS|perlxs>; se são interfaces para bibliotecas não-unicode, existe uma boa chance de que retornem I<octets>.
 
 =back
 
@@ -402,7 +402,7 @@ Um cuidado especial deve ser tomado com módulos que empregam L<XS|perlxs>; se s
 
 =item *
 
-O script I<aparentar> não produzir erros relativos à codificação ainda não significa que está tratando todos os dados coerentemente, ou seja, em únicode.
+O script I<aparentar> não produzir erros relativos à codificação ainda não significa que está tratando todos os dados coerentemente, ou seja, em unicode.
 
 =item *
 
@@ -474,7 +474,7 @@ Então não citei codificações obscuras (como o C<EBCDIC> que tive oportunidad
 
 =item *
 
-L<perlúnicode>, L<perluniintro>, L<perlunitut> e L<perlunifaq>
+L<perlunicode>, L<perluniintro>, L<perlunitut> e L<perlunifaq>
 
 =item *
 
@@ -486,7 +486,7 @@ L<Encode>
 
 =item *
 
-L<Support únicode|http://xpoint.ru/know-how/Perl/Podderzhkaúnicode>
+L<Support unicode|http://xpoint.ru/know-how/Perl/Podderzhkaunicode>
 
 =item *
 
@@ -494,7 +494,7 @@ L<is_utf8 function, to detect valid UTF-8 text|http://www.php.net/manual/en/func
 
 =item *
 
-L<únicode UTF-8 encoding|http://index.t.tiscali.nl/t876506/utf8tbl.html>
+L<unicode UTF-8 encoding|http://index.t.tiscali.nl/t876506/utf8tbl.html>
 
 =item *
 
@@ -502,7 +502,7 @@ L<UTF8, MySQL, Perl and PHP (Phil Gyford's website)|http://www.gyford.com/phil/w
 
 =item *
 
-L<The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About únicode and Character Sets (No Excuses!)|http://www.joelonsoftware.com/articles/únicode.html>
+L<The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About unicode and Character Sets (No Excuses!)|http://www.joelonsoftware.com/articles/unicode.html>
 
 =back
 

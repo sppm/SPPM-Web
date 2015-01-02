@@ -32,7 +32,7 @@ Mas no topo das paradas de sucesso, e detendo B<O> record de audiência: Thiago 
 
 Na segunda e última categoria da noite, tivemos também uma disputa acirrada, que fez com que nossa Comissão de Notáveis levasse nada menos que seis meses para decidir.
 
-Tivemos pelo menos cinco posts que mereceram o título, mas vencendo por somente um voto de diferença, o post que virou referência no assunto na língua portuguesa, é com muita alegria que anunciamos que o vencedor da categoria Melhor Post do Equinócio de Outono do ano de 2011 vai para Stanislaw Pusep com o post L<Perl e únicode|http://sao-paulo.pm.org/equinocio/2011/mar/4>. Parabéns!!!
+Tivemos pelo menos cinco posts que mereceram o título, mas vencendo por somente um voto de diferença, o post que virou referência no assunto na língua portuguesa, é com muita alegria que anunciamos que o vencedor da categoria Melhor Post do Equinócio de Outono do ano de 2011 vai para Stanislaw Pusep com o post L<Perl e unicode|http://sao-paulo.pm.org/equinocio/2011/mar/4>. Parabéns!!!
 
 =head2 Nova Premiação
 

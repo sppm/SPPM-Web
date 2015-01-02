@@ -546,7 +546,7 @@ Muito útil para depuração.
 B<Catalyst::Plugin::ConfigLoader> - Suporte a vários formatos de arquivo de
 configuração.
 
-B<Catalyst::Plugin::únicode> - Suporte transparente a únicode (UTF8).
+B<Catalyst::Plugin::unicode> - Suporte transparente a unicode (UTF8).
 
 B<Catalyst::Plugin::Static::Simple> - Para servir páginas estáticas de forma
 simples.

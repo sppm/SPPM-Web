@@ -645,8 +645,8 @@ definido para dar preferência ao outro idioma:
 
 </div>
 
-<p><a class="hover" onclick="switchExpand('múnicode');" title="clique para expandir">únicode</a></p>
-<div id="múnicode">
+<p><a class="hover" onclick="switchExpand('municode');" title="clique para expandir">unicode</a></p>
+<div id="municode">
 
 =end pod:xhtml
 
@@ -841,7 +841,7 @@ function collapseAll(objs) {
     }
 }
 
-collapseAll(['mRedirect','mCookie','mSession','mFlash','mParam','mRender','mRes','mLogging','mI18n','múnicode','mLadder','mWS','mTestes']);
+collapseAll(['mRedirect','mCookie','mSession','mFlash','mParam','mRender','mRes','mLogging','mI18n','municode','mLadder','mWS','mTestes']);
 //-->
 </script>
 
