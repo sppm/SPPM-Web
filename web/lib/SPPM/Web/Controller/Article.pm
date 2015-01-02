@@ -100,7 +100,7 @@ sub list: Chained('base') PathPart('') Args(0) {
         )
     }, {
         prefetch => 'author_hash',
-        order_by => [qw/me.published_at me.created_at me.title/]
+        order_by => [ {-desc => 'me.published_at'}, qw/me.title/]
     })->all;
 
     $c->stash->{articles} = \@rows;
