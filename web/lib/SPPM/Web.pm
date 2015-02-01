@@ -37,6 +37,7 @@ our $VERSION = '0.01';
 
 __PACKAGE__->config(
     name => 'SPPM::Web',
+    UNICODE => 'UTF-8',
 
     'Plugin::Assets' => {
         path => "/static",
