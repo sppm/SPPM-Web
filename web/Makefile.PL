@@ -22,7 +22,8 @@ requires 'DateTime';
 requires 'FindBin';
 requires 'File::Basename';
 requires 'JSON::XS';
-
+requires 'Text2URI';
+requires 'File::Slurp::Tiny';
 # Database related
 requires 'DBD::Pg' => '3.4.2';
 requires 'DBIx::Class::PassphraseColumn';
