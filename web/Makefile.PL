@@ -24,6 +24,8 @@ requires 'File::Basename';
 requires 'JSON::XS';
 requires 'Text2URI';
 requires 'File::Slurp::Tiny';
+requires 'Log::Log4perl';
+requires 'FindBin::libs';
 # Database related
 requires 'DBD::Pg' => '3.4.2';
 requires 'DBIx::Class::PassphraseColumn';
