@@ -9,12 +9,12 @@ use Module::Install::Catalyst; # Complain loudly if you don't have
 name 'SPPM-Web';
 all_from 'lib/SPPM/Web.pm';
 
-requires 'Catalyst::Runtime' => '5.90051';
+requires 'Catalyst::Runtime' => '5.90082';
 requires 'Catalyst::Plugin::ConfigLoader';
 requires 'Catalyst::Plugin::Static::Simple';
 requires 'Catalyst::Action::RenderView';
-requires 'Moose';
-requires 'namespace::autoclean';
+requires 'Moose', '2.1403';
+requires 'namespace::autoclean', '0.24';
 requires 'Config::General';
 requires 'Catalyst::Model::DBIC::Schema';
 # basic deps:
@@ -39,7 +39,7 @@ requires 'Pod::Xhtml';
 requires 'Data::Printer';
 
 # view
-requires 'Catalyst::View::Xslate';
+requires 'Catalyst::View::Xslate', '0.00018';
 requires 'Text::Xslate::Bridge::TT2Like';
 
 # minify css/js
@@ -50,8 +50,8 @@ requires 'CSS::Minifier::XS';
 requires 'Mojo::DOM';
 
 # uma hora ou outra aparece um modulo falando que falta estes dois caras aqui:
-requires 'MooseX::MarkAsMethods';
-requires 'MooseX::NonMoose';
+requires 'MooseX::MarkAsMethods', '0.15';
+requires 'MooseX::NonMoose', '0.26';
 
 # tests
 test_requires 'Test::More' => '0.88';

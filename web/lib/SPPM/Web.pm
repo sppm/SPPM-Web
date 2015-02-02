@@ -2,7 +2,7 @@ package SPPM::Web;
 use Moose;
 use namespace::autoclean;
 
-use Catalyst::Runtime 5.80;
+use Catalyst::Runtime 5.90080;
 
 # Set flags and add plugins for the application.
 #
@@ -37,14 +37,12 @@ our $VERSION = '0.01';
 
 __PACKAGE__->config(
     name => 'SPPM::Web',
-    UNICODE => 'UTF-8',
 
     'Plugin::Assets' => {
         path => "/static",
         output_path => "built/",
         minify => 1,
     },
-
 
     # Disable deprecated behavior needed by old applications
     disable_component_resolution_regex_fallback => 1,

@@ -12,6 +12,10 @@ has '+path' => (
     builder => '_build_path',
 );
 
+has '+encode_body' => (
+    default => sub {'0'},
+);
+
 sub _build_path { return [ shift->_app->path_to('root', 'src') ] }
 
 has '+module' => (
@@ -19,6 +23,7 @@ has '+module' => (
         ['Text::Xslate::Bridge::TT2Like'];
     }
 );
+
 
 1;
 
