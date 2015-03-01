@@ -155,12 +155,9 @@ interessantes
 
 ----
 
-Criada por: f.recsky E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-Sexta-feira 20 of Janeiro, 2006 [02:09:36 UTC] por f.recsky
-
 =head1 AUTHOR
 
-Joenio Costa
+Frederico Recsky
 
 =cut
 

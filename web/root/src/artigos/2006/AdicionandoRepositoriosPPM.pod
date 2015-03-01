@@ -126,12 +126,10 @@ artigo meu...
 
 ----
 
-Criada por: JoaoGabriel? E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-Segunda-feira 30 of Janeiro, 2006 [20:58:52 UTC] por JoaoGabriel?
 
 =head1 AUTHOR
 
-Joenio Costa
+João Gabriel Casteluber Laass
 
 =cut
 

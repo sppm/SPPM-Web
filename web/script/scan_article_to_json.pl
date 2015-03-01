@@ -215,6 +215,9 @@ my $name_to_hash = {
     'Joenio Costa'                       => '5aff57c7238795d3b159d493ab071d6c',
     'Marco Aurelio'                      => '37fb4d13adf535a2f0a57e7ab7763144',
     'David Dias'                         => '? David Dias',
+    'Fabiano Reese Righetti' => 'd97d695c276763d2feb6658060c63c25',
+    'João Gabriel Casteluber Laass' => '5fe0bad364c0dbe001ffa96575ee903e',
+
     'Devin Austin' => '46bdf4a8585c541354da53e6f693a096',
     'Desconhecido'                       => $unknown,
 };

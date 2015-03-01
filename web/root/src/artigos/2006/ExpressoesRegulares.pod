@@ -421,12 +421,10 @@ na Perl.
 
 ----
 
-Criada por: frighetti E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-Segunda-feira 16 of Janeiro, 2006 [19:15:05 UTC] por frighetti
 
 =head1 AUTHOR
 
-Joenio Costa
+Fabiano Reese Righetti
 
 =cut
 

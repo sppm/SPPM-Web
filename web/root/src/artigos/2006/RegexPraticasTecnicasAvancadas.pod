@@ -822,12 +822,11 @@ story
 
 ----
 
-Criada por: frighetti E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-TerE<ccedil>a-feira 17 of Janeiro, 2006 [16:45:51 UTC] por frighetti
+
 
 =head1 AUTHOR
 
-David Dias
+Fabiano Reese Righetti
 
 =cut
 

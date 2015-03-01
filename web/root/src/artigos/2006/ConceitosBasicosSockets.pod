@@ -237,12 +237,10 @@ serE<aacute> fechada.
 
 ----
 
-Criada por: frighetti E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-TerE<ccedil>a-feira 17 of Janeiro, 2006 [00:34:09 UTC] por frighetti
 
 =head1 AUTHOR
 
-Joenio Costa
+Fabiano Reese Righetti
 
 =cut
 

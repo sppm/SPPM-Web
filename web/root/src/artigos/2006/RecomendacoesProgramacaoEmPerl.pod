@@ -582,12 +582,11 @@ que nE<atilde>o sE<atilde>o "saudE<aacute>veis" para o cE<oacute>digo.
 
 ----
 
-Criada por: frighetti E<uacute>ltima modificaE<ccedil>E<atilde>o em:
-Quinta-feira 26 of Janeiro, 2006 [18:29:37 UTC] por frighetti
+
 
 =head1 AUTHOR
 
-Joenio Costa
+Fabiano Reese Righetti
 
 =cut
 
