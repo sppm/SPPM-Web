@@ -24,6 +24,14 @@ has '+module' => (
     }
 );
 
+my @meses = qw/
+    Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro
+/;
+
+sub month_br {
+    my ($self, $c, $x) = @_;
+    return $meses[$x-1];
+}
 
 1;
 

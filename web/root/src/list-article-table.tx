@@ -16,7 +16,7 @@
             <a href="/pub?author_hash=[%p.author_hash.author_hash%]">[%p.author_hash.name%]</a>
         </td>
         <td class="small">
-            [%p.article_type == 'article' ? 'Artigos' : 'Equinócio' %] / [% p.published_at.year() %]
+            [%p.article_type == 'article' ? 'Artigos' : 'Equinócio' %] / [% month_br(p.published_at.month()) %] [% p.published_at.year() %]
         </td>
         </tr>
         [% END %]
