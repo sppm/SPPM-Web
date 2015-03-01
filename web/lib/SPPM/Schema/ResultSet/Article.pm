@@ -85,8 +85,9 @@ sub upsert {
         $dom->find('pre')->each(sub{
             my $t = $_->text();
 
-            if ($_->children->size == 1 && $_->children->type eq 'code'){
-                $t = $_->children->text;
+
+            if ($_->children->size == 1 && $_->children->first->tag eq 'code'){
+                $t = $_->children->first->text;
             }
 
             my $like_perl = $t =~ /(my|our|local)\s[\$\@\%]/ ||
