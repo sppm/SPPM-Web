@@ -348,7 +348,7 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
                 old_uri_path => $old_uri_path,
 
                 _author_name => do { my $x;
-                    for (sort {length $b cmp length $a} keys %$name_to_hash){
+                    for (sort {length $b <=> length $a} keys %$name_to_hash){
                         $x = $_, last if $name_to_hash->{$_} eq $author_hash;
                     }; $x;
                 }
