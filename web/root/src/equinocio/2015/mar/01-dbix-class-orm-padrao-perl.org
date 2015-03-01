@@ -1,0 +1,53 @@
+#+TITLE: DBIx:Class — O ORM padrão para Perl 5
+#+AUTHOR: Leonardo Ruoso
+#+EMAIL: leonardo@ruoso.com
+#+LANGUAGE: pt_BR
+#+DATE: 2015-03-01
+#+DESCRIPTION: A brief introduction to DBIx::Class
+#+KEYWORDS: DBIx::Class, Perl, ORM, RDBMS, Relational Database, MER, OOP
+
+* DBIx::Class  — Uma rápida introduçã ao ORM padrão para Perl
+
+** Introdução
+
+A DBIx::Class [fn: Acesse o módulo DBIx::Class através MetaCPAN ([[https://www.metacpan.org/pod/DBIx::Class]])] é o Object Relational Mapper ou ORM padrão para o Perl 5 e compõe a caixa de ferramentas básicas de todo usuário de Modern Perl[fn:: Modern Perl é um livro mandatório para novatos e veteranso na linguagem Perl. Acesse o conteúdo do livro no site [[http://modernperlbooks.com]]]. Provavelmente os dois principais motivos para o usuário de Perl adquirir fluência na DBIx::Class são ① Object Oriented Programming ou OOP[fn:: Se você está começando com Perl agora deve incorporar o Moose em sua caixa de ferramentas ([[https://www.metacpan.org/pod/Moose]]) e em especial deve dedicar algum tempo para entender o que são Roles ([[https://www.metacpan.org/pod/Moose::Role]])] é um paradígma amplamente aceito para desenvolvimento de software tanto no mercado (leia-se empregos) como na comunidade (leia-se CPAN) e ② grande parte das aplicações comerciais usam bancos de dados relacionais[fn:: O PostgreSQL ([[http://www.postgresql.org]]) é a melhor opção tanto para quem deseja aprender mais sobre SQL como para quem precisa de um servidor de banco de dados confiável e versátil] como principal mecanismo de persistência para objetos de entidade[fn:: Objetos de entidade encapsulam código e dados para elementos de negócio tais como estados e transações ou a representação de itens físicos como documentos, prédios, pessoas etc…].
+
+A DBIx::Class é um ORM especialmente versátil, pois de maneira oposta à maioria dos ORM disponíveis a DBIx::Class oferece xsuma abstração moderada [fn: Abstração moderada quando comparada à adotada por outros ORM como Hibernate ([[http://hibernate.org]]) ou Rose::DB::Object ([[https:://www.metacpan.org/pod/Rose::DB::Object]]), que não "esconde" do usuário sua natureza objeto-relacional, ou seja, que a camada inferior é um banco de dados relacional.
+
+A DBIx::Class inova ao oferecer o conceito de ResultSet[[fn:: Abordaremos o DBIx::Class::ResultSet ([[https://www.metacpan.org/pod/DBIx::Class::ResultSet]]) em detalhes no capítulo 7], um objeto representando um grupo ou coleção de registros, reduzindo os casos para escrita de código SQL literal —e o esforço adicional para transpor o resultado de consultas ad hoc para objetos[fn:: Ver também DBIx::Class::ResultSource::View ([[https://metacpan.org/pod/DBIx::Class::ResultSource::View]]) a ser usado no caso de consultas realmente complexas].
+
+Implementada como uma camada de abstração sobre a DBI[fn:: DBI ([[https://www.metacpan.org/pod/DBI]])] a DBIx::Class suporta os principais servidores de banco de dados disponíveis no mercado: PostgreSQL[fn:: Parece haver um consenso da comunidade quanto à recomendação de utilizar o PostgreSQL para novos projetos e eventualmente até para migrar projetos legados, exceto em situações específicas nas quais o DB2 ou o Oracle pode apresentar vantagens sensíveis, embora não sem um custo relevante associado] ([[https://metacpan.org/pod/DBD::Pg]]), SQLite ([[https://metacpan.org/pod/DBD::SQLite]]), DB2 ([[https://metacpan.org/pod/DBD::DB2]]), Oracle ([[https://metacpan.org/pod/DBD::Oracle]]), MySQL ([[https://metacpan.org/pod/DBD::mysql]]) etc..
+
+** Para que serve um ORM —Object Relational Mapper?
+
+ORM pode ser a contração de Object Relational Mapper ou Object Relational Mapping, a depender do autor. Dessa forma a DBIx::Class é um ORM —Object Relational Mapper— por ser um framework que implementa o design pattern ORM —Object Relational Mapping— e assim oferece ao usuário os recursos de persistência em bancos de dados relacionais, com recursos para mitigar as imprecisões no mapeamento objeto-relational.
+
+De forma bastante resumida a responsabilidade básica de um ORM consiste em persistir o estado de um conjunto de objetos, alterados durante uma transação, em um serviço externo —o servidor de banco de dados— usando SQL —a única linguagem de acesso a repositório de dados amplamente aceita e, naturalmente, de restaurar este estado no futoro.
+
+** O problema do casamento de impedências
+
+Embora ORM seja um excelente campo para um debate virtuoso e interessante relacionado principalmente às diferenças ontológicas ente a Teoria dos Conjuntos —para alguns uma teoria fundante dos RDBMS— e a Teoria dos Grafos —para alguns uma teoria fundante da OOP— a maioria de nós, usuários das linguagens de programação e seus ecossistemas, tende a perceber as diferenças de impedância entre OOP e RDBMS como um fato da vida e a buscar na solução de ORM esse casamento de impedências[fn:: [[http://www.agiledata.org/essays/impedanceMismatch.html]]], algo que a DBIx::Class faz bem justamente por não tentar esconder do usuário este fato [fn: Um psicanalista poderia afirmar que a DBIx::Class é um ORM maduro e confiável justamente por conhecer e aceitar bem suas próprias limitações].
+
+** Para instalar a DBIx::Class em seu computador
+
+A forma mais conveniente de instalar e manter atualizado sua instalação com a DBIx::Class e os drivers necessários ao banco de dados escolhido (DBD::*) é usar a solução de pacotes do seu sistema operacional ou distribuição, especialmente por conta da compatibilidade binária requerida entre os módulos DBD::* e a versão instalada do cliente de banco de dados.
+
+Em um sistema Debian ou derivado, você teria o seguinte exemplo:
+
+#+BEGIN_SRC shell
+aptitude install libdbix-class-perl libdbd-pg-perl
+#+END_SRC
+
+Ou em um sistema OS/X:
+
+#+BEGIN_SRC shell
+sudo port install p5-dbix-class p5-dbd-pg
+#+END_SRC
+
+Por fim, se você não tem acesso administrativo ao sistema operacional ou não utiliza o Perl do SO:
+
+#+BEGIN_SRC shell
+cpanm DBIx::Class DBD::Pg
+#+END_SRC
+
+Lembrando que antes de rodar o comando acima você deverá configurar a localização dos headers do cliente do banco de dados.

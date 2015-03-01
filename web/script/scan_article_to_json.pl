@@ -167,6 +167,7 @@ my $unknown = '0' x 32;
 
 my $name_to_hash = {
     'Tiago Peczenyj' => 'bb21b27fe43fac2f302cdf3bfc59a6e9',
+    'Leonardo Ruoso' => '1ddb83927a51446f8511dac1ed4be63f',
     'Gil Magno'             => '20e7932a295ef4dad65b34006b0afb07',
     'Lucas Tiago de Moraes' => '9b11b50fdf0727d61db237aa70a189e1',
     'Lucas Tiago de' => '9b11b50fdf0727d61db237aa70a189e1',
@@ -298,22 +299,40 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
 
                 my $oth    = Org::To::HTML->new( naked => 1 );
                 my $doc    = Org::Document->new( from_string => $content );
+
+                my (@settings) = grep { UNIVERSAL::isa( $_, 'Org::Element::Setting' ) }
+                    @{ $doc->children };
+                if (@settings){
+                    foreach (@settings){
+                        if (lc $_->name eq 'author'){
+                            $author = join ' ', @{$_->args};
+                        }
+                        if (lc $_->name eq 'title'){
+                            $title = join ' ', @{$_->args};
+                        }
+                        #($author) = split /\r?\n/, ($_->{children}[0]->as_string), 0 if ($x eq 'autor');
+                    }
+                }
+
                 my (@headlines) = grep { UNIVERSAL::isa( $_, 'Org::Element::Headline' ) }
                     @{ $doc->children };
+                unless ($title){
 
                     my $titlexs = $headlines[0];
                     $title = $titlexs->title->text;
-
+                }
+                unless ($author){
                     foreach (@headlines){
                         my $x = lc $_->title->text;
                         ($author) = split /\r?\n/, ($_->{children}[0]->as_string), 0 if ($x eq 'autor');
                     }
+                }
 
-                    if ( !defined $author ) {
-                        use DDP; p $doc;
-                        die "not found author on $fullpath\nscan aborted\n";
-                    }
-                    $html_content = $oth->export($doc);
+                if ( !defined $author ) {
+                    use DDP; p $doc;
+                    die "not found author on $fullpath\nscan aborted\n";
+                }
+                $html_content = $oth->export($doc);
 
             }elsif ($ext eq 'md') {
 
