@@ -32,6 +32,9 @@ my $schema = GET_SCHEMA;
 my $article_rs = $schema->resultset('Article');
 
 
+$article_rs->delete;
+$schema->resultset('Author')->delete;
+
 log_info 'looping', $json_src, 'dir...';
 
 find(

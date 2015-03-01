@@ -110,7 +110,7 @@ Fizemos exemplos com números apenas por conveniência, mas strings também pode
 #+BEGIN_EXAMPLE
 $endereco = any('brasildefato.com.br',
                 'rebelion.org',
-                'onebigtorrent.org,
+                'onebigtorrent.org',
                 'thepiratebay.se');
 print "há um bom endereço aqui"
   if 'brasildefato.com.br' eq $endereco;
@@ -118,4 +118,6 @@ print "há um bom endereço aqui"
 
 É um módulo muito útil. Mais documentação pode ser encontrada na página do [[https://metacpan.org/module/Perl6::Junction][Perl6::Junction]] no CPAN. E, para mais curiosidades, pode-se checar o módulo Quantum::Superpositions. O  [[https://metacpan.org/module/Perl6::Junction][Perl6::Junction]] é uma versão que contém apenas um subconjunto das funcionalidades do [[https://metacpan.org/module/Quantum::Superpositions][Quantum::Superpositions]], porém é um módulo mais rápido.
 
-Gil Magno <gilmagno@gmail.com>
+* Autor
+Gil Magno
+<gilmagno@gmail.com>

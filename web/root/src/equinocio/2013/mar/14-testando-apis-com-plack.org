@@ -22,14 +22,14 @@ Suponha, por exemplo, um cliente mínimo de API da wikipedia:
     handles => [qw(decode)],
     default => sub { JSON->new->utf8 }
   );
-  
+
   around get => sub {
     my $orig = shift;
     my $self = shift;
     my $res = $self->$orig(@_);
     return $self->decode( $res->content );
   };
-  
+
   sub query {
     my ( $self, $page, $prop ) = @_;
     my $url =
@@ -115,8 +115,8 @@ mas os arquivos gerados pelo cache podem ser armazenados no
 repositório, junto com o código. Se houver necessidade de atualizar os
 dados do serviço, basta remover os arquivos de cache e corrigir os
 valores esperados pelo código.
-** Autor
+* Autor
 Eden Cardim
 http://edencardim.me
-** Licensa
+* Licensa
 Beerware

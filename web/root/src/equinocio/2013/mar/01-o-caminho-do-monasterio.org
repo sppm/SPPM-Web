@@ -96,3 +96,6 @@ sobra tempo pra tomar uma boa cerveja durante os encontros sociais.
 Nesses encontros surgem muitas ideias de inovação tecnológica,
 empreendedorismo e módulos de CPAN, além de sempre ser divertido,
 compareça!
+
+* Autor
+Desconhecido

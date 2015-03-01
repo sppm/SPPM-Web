@@ -142,6 +142,11 @@ my $t = Text2URI->new;
 use FindBin qw($Bin);
 use lib "$Bin/../lib";
 
+use Org::Document;
+use Org::To::HTML;
+
+use Text::Markdown qw(markdown);
+
 use Cpanel::JSON::XS;
 use File::Slurp::Tiny 'read_file';
 use Digest::MD5 qw/md5_hex/;
@@ -161,6 +166,7 @@ my $unknown = '0' x 32;
 # hand-work hardcoded configs:
 
 my $name_to_hash = {
+    'Gil Magno'             => 'a52b32689dc8a1c5bd91f22cb1ac8f01',
     'Lucas Tiago de Moraes' => '9b11b50fdf0727d61db237aa70a189e1',
     'Lucas Tiago de' => '9b11b50fdf0727d61db237aa70a189e1',
     'Marcio Vitor De Matos'              => '58dbbfa6bcf55eee7b12d512adbe9a61',
@@ -241,8 +247,6 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
                 $jsonfile = "$json_src/$x-$fname";
             }
 
-
-
             my $content = read_file($fullpath, binmode => ':utf8');
             my $md5 = eval{md5_hex(encode_utf8($content))} || die "$@ in '$fullpath'\n";
 
@@ -272,14 +276,29 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
                     use DDP; p $parser;
                     die "not found author on $fullpath\nscan aborted\n";
                 }
-                $title =~ s/\s+$//;
 
-
-                $author =~ s/\s+$//;
-
-
-                $author_hash = $name_to_hash->{$author};
                 $tree->delete;
+
+            }elsif ($ext eq 'org') {
+
+                my $oth    = Org::To::HTML->new( naked => 1 );
+                my $doc    = Org::Document->new( from_string => $content );
+                my (@headlines) = grep { UNIVERSAL::isa( $_, 'Org::Element::Headline' ) }
+                    @{ $doc->children };
+
+                    my $titlexs = $headlines[0];
+                    $title = $titlexs->title->text;
+
+                    foreach (@headlines){
+                        my $x = lc $_->title->text;
+                        ($author) = split /\r?\n/, ($_->{children}[0]->as_string), 0 if ($x eq 'autor');
+                    }
+
+                    if ( !defined $author ) {
+                        use DDP; p $doc;
+                        die "not found author on $fullpath\nscan aborted\n";
+                    }
+                    $html_content = $oth->export($doc);
 
             }
             else {
@@ -289,6 +308,9 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
                 return;
             }
 
+            $title =~ s/\s+$//;
+            $author =~ s/\s+$//;
+            $author_hash = $name_to_hash->{$author};
 
             die $fullpath . "\t{$author} no author_hash found.\n" unless $author_hash;
 
@@ -325,7 +347,11 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
                 author_hash  => $author_hash,
                 old_uri_path => $old_uri_path,
 
-                _author_name => $author
+                _author_name => do { my $x;
+                    for (sort {length $b cmp length $a} keys %$name_to_hash){
+                        $x = $_, last if $name_to_hash->{$_} eq $author_hash;
+                    }; $x;
+                }
             };
 
 

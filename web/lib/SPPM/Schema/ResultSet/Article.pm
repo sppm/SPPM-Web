@@ -90,6 +90,7 @@ sub upsert {
                 $t =~ /(has ['"]|__PACKAGE__)/ ||
                 $t =~ /(package|use|require)\s((\w|::)+);/ ||
                 $t =~ /(sub)\b((\w|::)?+)/ ||
+                $t =~ /use\s(([\w:]+)(\sqw[\/(](.+)[\/)])?;)/ ||
                 $t =~ /\$\w+\-\>/ ||
                 $t =~ /\$c->(model|controller|view)/ ||
                 ($t =~ /\b(if|else|while)\b/ && $t =~ /[\$\@\%]/);
