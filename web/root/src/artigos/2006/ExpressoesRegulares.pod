@@ -424,7 +424,7 @@ na Perl.
 
 =head1 AUTHOR
 
-Fabiano Reese Righetti
+Ednardo dos Santos Lobo
 
 =cut
 

@@ -7,7 +7,7 @@ O sistema é totalmente escrito tem Perl e neste artigo veremos como clonar o pr
 
 O projeto, atualmente, esta no perfil do W3C Brasil no Github, que fica no endereço https://github.com/W3CBrasil/POFOMD. É dele que faremos o clone do projeto para usarmos neste artigo.
 
-Para fazer este clone, você deve ter o git instalado em sua máquina. Em máquinas debian-like você pode instalá-lo simplesmente digitando: 
+Para fazer este clone, você deve ter o git instalado em sua máquina. Em máquinas debian-like você pode instalá-lo simplesmente digitando:
 
     $ sudo apt-get install git
 
@@ -63,4 +63,9 @@ E o seu projeto já esta rodando localmente, pronto para receber as suas modific
 
 Let's Hack The Planet!
 
-Alê Borba <ale.alvesborba@gmail.com>
+
+## autor
+
+Alê Borba
+
+<ale.alvesborba@gmail.com>

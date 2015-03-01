@@ -41,8 +41,6 @@ sub upsert {
 
         if (my ($d, $m, $y) = $article->{content} =~ /(\d{2})\s+([A-Za-z]{3})\s+(\d{2,4})/ ){
 
-
-
             $m = ucfirst lc $m;
             if (exists $meses{$m}){
                 $m = $meses{$m};
@@ -86,6 +84,11 @@ sub upsert {
         my $dom = Mojo::DOM->new($article->{html_content});
         $dom->find('pre')->each(sub{
             my $t = $_->text();
+
+            if ($_->children->size == 1 && $_->children->type eq 'code'){
+                $t = $_->children->text;
+            }
+
             my $like_perl = $t =~ /(my|our|local)\s[\$\@\%]/ ||
                 $t =~ /(has ['"]|__PACKAGE__)/ ||
                 $t =~ /(package|use|require)\s((\w|::)+);/ ||
@@ -94,6 +97,7 @@ sub upsert {
                 $t =~ /\$\w+\-\>/ ||
                 $t =~ /\$c->(model|controller|view)/ ||
                 ($t =~ /\b(if|else|while)\b/ && $t =~ /[\$\@\%]/);
+
 
             $_->replace("<pre class=\"language-perl\"><code>$t</code></pre>") if $like_perl;
             $_->replace("<pre class=\"language-bash\"><code>$t</code></pre>") if !$like_perl;

@@ -27,6 +27,7 @@ para subir para testes, digite
 
 Com o debug ativado, o catalyst mostra quais são os *actions* que foram carregados, e quais são as classes e métodos que eles foram declarados.
 
+
     [debug] Loaded Private actions:
     .----------------------+--------------------------------------+--------------.
     | Private              | Class                                | Method       |
@@ -43,6 +44,7 @@ Com o debug ativado, o catalyst mostra quais são os *actions* que foram carrega
     | /                                   | /index                               |
     | /...                                | /default                             |
     '-------------------------------------+--------------------------------------'
+
 
 Veja que, existem duas partes separadas: uma com os *Private actions*, e outras com os *Path actions*.
 
@@ -570,10 +572,11 @@ Fim!
 
 Gostou? Tem alguma sugestão ou dúvida? Deixe nos comentários abaixo ou no twitter. Catalyst não é nenhum *bicho de 7 cabeças*, basta aprender cada pedaço por vez. *Chained actions* são utilizadas de monte e é necessário entende-las bem para não se confundir!
 
-AUTOR
------
+## AUTOR
 
-Renato CRON, [github.com/renatoaware](https://github.com/renatoaware/) / [github.com/renatocron](https://github.com/renatocron/) / [CPAN:RentoCRON](https://metacpan.org/author/RENTOCRON) / [@renato_cron](https://twitter.com/renato_cron)
+Renato CRON
+
+[github.com/renatoaware](https://github.com/renatoaware/) / [github.com/renatocron](https://github.com/renatocron/) / [CPAN:RentoCRON](https://metacpan.org/author/RENTOCRON) / [@renato_cron](https://twitter.com/renato_cron)
 
 Licença
 ------

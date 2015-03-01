@@ -166,7 +166,8 @@ my $unknown = '0' x 32;
 # hand-work hardcoded configs:
 
 my $name_to_hash = {
-    'Gil Magno'             => 'a52b32689dc8a1c5bd91f22cb1ac8f01',
+    'Tiago Peczenyj' => 'bb21b27fe43fac2f302cdf3bfc59a6e9',
+    'Gil Magno'             => '20e7932a295ef4dad65b34006b0afb07',
     'Lucas Tiago de Moraes' => '9b11b50fdf0727d61db237aa70a189e1',
     'Lucas Tiago de' => '9b11b50fdf0727d61db237aa70a189e1',
     'Marcio Vitor De Matos'              => '58dbbfa6bcf55eee7b12d512adbe9a61',
@@ -215,10 +216,19 @@ my $name_to_hash = {
     'Joenio Costa'                       => '5aff57c7238795d3b159d493ab071d6c',
     'Marco Aurelio'                      => '37fb4d13adf535a2f0a57e7ab7763144',
     'David Dias'                         => '? David Dias',
-    'Fabiano Reese Righetti' => 'd97d695c276763d2feb6658060c63c25',
-    'João Gabriel Casteluber Laass' => '5fe0bad364c0dbe001ffa96575ee903e',
-
+    'Fabiano Reese Righetti' => '9269557fbd6a7c2b3502b6cd332c9bdc',
     'Devin Austin' => '46bdf4a8585c541354da53e6f693a096',
+
+    'Ednardo dos Santos Lobo' => '6833f3bf4b4135ca2675c552803a706f',
+
+    'Pedro Henrique' => 'ce8694a83da7c39e9246e4cd9684b3b4',
+    'João Gabriel Casteluber Laass' => 'b67c4dcaa36d4eedf8e6b2d00e8c9f7c',
+
+    'Nilson Santos Figueiredo Júnior' => 'dd24e3d3953812ed79487b4af5ef7c03',
+
+    'Felipe da Veiga Leprevost' => '2ffca001dd9a4d9d7c7a34a0c20b4926',
+    'Alê Borba' => '96748be40ee52e8d4255ae9337849ffc',
+
     'Desconhecido'                       => $unknown,
 };
 
@@ -229,6 +239,7 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
             return if -d $File::Find::name;
             return if $File::Find::name =~ /\.assets/;
             return if $_ =~ /\.jpg/;
+            return if $_ =~ /\.disabled/;
 
             #return unless $_ =~ /omparandotextosaproximadamente/;
 
@@ -262,6 +273,7 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
             my $title;
 
             my ($ext) = $fname =~ /\.([a-z]{1,5})$/i;
+            use DDP; p $fname unless $ext;
             $ext = lc $ext;
 
             if ( $ext eq 'pod' ) {
@@ -302,6 +314,28 @@ foreach my $base_dir ( ("$root_src/artigos"), ("$root_src/equinocio") ) {
                         die "not found author on $fullpath\nscan aborted\n";
                     }
                     $html_content = $oth->export($doc);
+
+            }elsif ($ext eq 'md') {
+
+                $html_content = markdown $content;
+
+                my $tree = HTML::TreeBuilder::XPath->new_from_content($html_content);
+                my @nodes = (eval { $tree->findnodes('//h1') }, eval { $tree->findnodes('//h2') });
+
+                $title = eval { $tree->findnodes('//h1')->[0]->as_text };
+
+                foreach my $node (@nodes){
+                    my $x = lc $node->as_text;
+                    if ($x =~ /autor|author/){
+                        $author = $node->getNextSibling->as_text;
+                        ($author) = split /\r?\n/, $author, 0;
+                    }
+                }
+
+                if ( !defined $author ) {
+                    use DDP; p $content;
+                    die "not found author on $fullpath\nscan aborted\n";
+                }
 
             }
             else {

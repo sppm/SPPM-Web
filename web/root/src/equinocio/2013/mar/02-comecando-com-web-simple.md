@@ -354,10 +354,12 @@ O [Web::Simple](https://metacpan.org/module/Web::Simple) tem sistema de regras m
 
 Na versão que o [Pendant](https://github.com/edenc/Pendant) se encontrava no dia 26/02/2013, ele utilizava [Web::Simple](https://metacpan.org/module/Web::Simple) para traduzir arquivos de Markdown/POD/etc para HTML. Você pode ver isso [nesse tree do github](https://github.com/edenc/Pendant/blob/315c2c9ec7b83e1b3f9df3f4181d47453847e7eb/lib/Pendant.pm).
 
-AUTOR
------
+## AUTOR
 
-Renato CRON, [github.com/renatoaware](https://github.com/renatoaware/) / [github.com/renatocron](https://github.com/renatocron/) / [CPAN:RentoCRON](https://metacpan.org/author/RENTOCRON) / [@renato_cron](https://twitter.com/renato_cron)
+Renato CRON
+
+
+[github.com/renatoaware](https://github.com/renatoaware/) / [github.com/renatocron](https://github.com/renatocron/) / [CPAN:RentoCRON](https://metacpan.org/author/RENTOCRON) / [@renato_cron](https://twitter.com/renato_cron)
 
 Licença
 ------

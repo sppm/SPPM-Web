@@ -586,7 +586,7 @@ que nE<atilde>o sE<atilde>o "saudE<aacute>veis" para o cE<oacute>digo.
 
 =head1 AUTHOR
 
-Fabiano Reese Righetti
+Nilson Santos Figueiredo Júnior
 
 =cut
 

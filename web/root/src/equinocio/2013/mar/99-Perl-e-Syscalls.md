@@ -148,9 +148,12 @@ De posse da documentação oficial das chamadas de sistema do seu sistema operac
 
 É interessante perceber que Perl é uma linguagem de propósito geral, que suporta tanto uma abstração como orientação a objetos como oferece suporte a chamadas de sistema. Isso nos dá uma grande flexibilidade e podemos expandir o pequeno set de operações que a linguagem nos oferece indo trabalhar com algo especifico de uma familia de sistemas operacionais (sacrificando a portabilidade) mas que possa fazer sentido na resolução do nosso problema. De qualquer forma, minha preferência é sempre utilizar os built-ins do Perl, quando possível, por ser algo mais uniforme e cujo comportamento é descrito pela documentação da linguagem e não daquela particular chamada de sistema, naquele particular sistema operacional. Eu vejo esta possibilidade (de usar syscall) como algo especial e que merece ser testada de forma muito objetiva para evitar uma dor de cabeça (como trocar o número da syscall - nós vamos descobrir apenas quando o código executar).
 
-###AUTOR
+## AUTOR
 
-Tiago Peczenyj, [github.com/peczenyj](https://github.com/peczenyj/) / [pacman.blog.br](http://pacman.blog.br/) / [CPAN:PACMAN](https://metacpan.org/author/PACMAN) / [@pac_man](https://twitter.com/pac_man)
+Tiago Peczenyj
+
+
+[github.com/peczenyj](https://github.com/peczenyj/) / [pacman.blog.br](http://pacman.blog.br/) / [CPAN:PACMAN](https://metacpan.org/author/PACMAN) / [@pac_man](https://twitter.com/pac_man)
 
 ###Licença
 

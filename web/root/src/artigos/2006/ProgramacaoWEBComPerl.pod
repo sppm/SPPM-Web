@@ -457,7 +457,7 @@ paradigma 3.
 
 =head1 AUTHOR
 
-Fabiano Reese Righetti
+Ednardo dos Santos Lobo
 
 =cut
 

@@ -240,7 +240,7 @@ serE<aacute> fechada.
 
 =head1 AUTHOR
 
-Fabiano Reese Righetti
+Pedro Henrique
 
 =cut
 

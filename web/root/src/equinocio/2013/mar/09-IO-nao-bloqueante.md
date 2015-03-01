@@ -306,9 +306,12 @@ O capitulo 13 do livro 'Network Programming With Perl' do Lincoln D. Stein possu
 
 [Aqui](http://www.perlmonks.org/?node_id=881518) pode ser encontrado alguns detalhes e exemplos interessantes da implementação em perl do select.
 
-###AUTOR
+## AUTOR
 
-Tiago Peczenyj, [github.com/peczenyj](https://github.com/peczenyj/) / [pacman.blog.br](http://pacman.blog.br/) / [CPAN:PACMAN](https://metacpan.org/author/PACMAN) / [@pac_man](https://twitter.com/pac_man)
+Tiago Peczenyj
+
+
+[github.com/peczenyj](https://github.com/peczenyj/) / [pacman.blog.br](http://pacman.blog.br/) / [CPAN:PACMAN](https://metacpan.org/author/PACMAN) / [@pac_man](https://twitter.com/pac_man)
 
 ###Licença
 
