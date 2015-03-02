@@ -167,6 +167,7 @@ my $unknown = '0' x 32;
 
 my $name_to_hash = {
     'Tiago Peczenyj' => 'bb21b27fe43fac2f302cdf3bfc59a6e9',
+    'Paulo Henrique Rodrigues' => 'c079d2f524444934b57f95e80007e5ab',
     'Leonardo Ruoso' => '1ddb83927a51446f8511dac1ed4be63f',
     'Gil Magno'             => '20e7932a295ef4dad65b34006b0afb07',
     'Lucas Tiago de Moraes' => '9b11b50fdf0727d61db237aa70a189e1',

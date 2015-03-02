@@ -1,0 +1,215 @@
+=pod
+
+=encoding utf-8
+
+1 Mar 2015 -
+L<Paulo Henrique Rodrigues Pinheiro|http://www.linkedin.com/in/paulohrpinheiro>
+
+=head1 Suporte a Chamadas Nativas em Perl6
+
+I<Neste artigo será mostrado como integrar uma biblioteca C diretamente em Perl6.>
+
+
+=head2 O Problema
+
+Muitas bibliotecas escritas em C ou C++ estão consolidadas, até mesmo atingindo
+um altíssimo grau de segurança, maturidade e sofisticação, nos problemas em que
+se aplicam. Não é interessante resolver novamente os problemas que já estão
+contemplados por esses projetos, para termos as mesmas funcionalidades em Perl.
+Como exemplos, podemos citar bibliotecas de compactação como bzip ou gzip, ou
+bibliotecas gráficas como a QT, ou ainda drivers de bancos de dados (aqui é
+mais por conveniência do que por qualidade).
+
+
+=head2 A Solução
+
+A solução é utilizar essas bibliotecas tal qual são distribuídas. Assim,
+procede-se como em um programa C que precisa carregar dinamicamente uma
+biblioteca. Abrimos a biblioteca (o arquivo DLL ou so), e carregamos em memória
+o código necessário, e o tornamos disponível para nosso programa. Em Perl6,
+para o L<Rakudo Star|http://www.rakudo.org>, há um ótimo módulo que facilita
+todo esse processo: L<NativeCall module|https://github.com/jnthn/zavolaj>. Ele
+vem por padrão no Rakudo.
+
+
+=head2 Um exemplo
+
+Irei focar no Linux, e acredito ser difícil alguma máquina Linux estar sem
+sqlite3 instalado. Por isso vamos usá-lo em nossos exemplos. Vamos trabalhar
+com as funções que informam a versão da biblioteca: L<Run-Time Library Version
+Numbers|https://www.sqlite.org/c3ref/libversion.html>.
+
+ 1. [paulohrpinheiro@localhost perl6-native-calling-support]$ perl6
+ 2. > use NativeCall
+ 3. > sub sqlite3_libversion_number() returns Int is native('libsqlite3') { * }
+ 4. sub sqlite3_libversion_number( --> Int) { #`(Sub+{Native[Sub,Str]}|139826072374712) ... }
+ 5. > say sqlite3_libversion_number()
+ 6. 3008008
+ 7. >
+
+Linha a linha, temos o seguinte:
+
+=over
+
+=item 1
+
+Entre no shell interativo do perl6. Para testes rápidos, é melhor que escrever
+um programa, e economiza ponto e vírgula.
+
+=item 2
+
+Este é o módulo que faz todo o trabalho sujo pra você.
+
+=item 3
+
+Muita calma nessa hora! Esta linha diz algo assim: "eu quero usar a função
+I<sqlite3_libversion_number()>. Ela retorna um número inteiro, e está presente
+na biblioteca I<libsqlite3>". Importante ter em mente que o módulo I<NativeCall>
+localiza a biblioteca em seu sistema, você não precisa dizer onde ela está.
+
+=item 4
+
+Essa linha nos dá algumas informações internas.
+
+=item 5
+
+Chamamos direto do Perl a função em C da I<libsqlite3>.
+
+=item 6
+
+Temos o número da versão, que é um inteiro conforme declarado anteriormente.
+Veja na documentação os tipos existentes. O autor afirma que a quantidade de
+tipos pode aumentar ainda.
+
+=back
+
+Se você achar feio o nome nativo da função, poderá alterá-lo:
+
+ > our sub Sqlite3VersionNumber is symbol('sqlite3_libversion_number') returns Int is native('libsqlite3') { * }
+ sub Sqlite3VersionNumber( --> Int) { #`(Sub+{NativeCallSymbol[Str]}+{Native[Sub+{NativeCallSymbol[Str]},Str]}|140598248149192) ... }
+ > Sqlite3VersionNumber();
+ 3008008
+
+Isso aí em cima quer dizer: "Nossa função que chamaremos
+I<Sqlite3VersionNumber> é na verdade I<sqlite3_libversion_number>. Ela retorna
+um número inteiro e está na I<libsqlite3>".
+
+Também podemos receber um `char *`, com o tipo de dado `Str`:
+
+ > our sub Sqlite3LibVersion is symbol('sqlite3_libversion') returns Str is native('libsqlite3') { }
+ sub Sqlite3LibVersion( --> Str) { #`(Sub+{NativeCallSymbol[Str]}+{Native[Sub+{NativeCallSymbol[Str]},Str]}|140598245394280) ... }
+ > Sqlite3LibVersion()
+ 3.8.8
+
+
+=head2 Um exemplo mais prático
+
+Pode também ser preciso passar argumentos para algumas funções, alguns deles
+ponteiros, ou até mesmo ponteiros para ponteiros. Para exemplificar, vamos a um
+pequeno programa que cria uma tabela (executar uma consulta e pegar os
+resultados exige uma implementação maior que vai além dos objetivos desse
+texto):
+
+ A. use NativeCall;
+ B.
+ C. constant $LIBNAME = 'libsqlite3';
+ D.
+ E. sub sqlite3_open   (Str, CArray[OpaquePointer])                                     returns Int is native($LIBNAME) { * }
+ F. sub sqlite3_exec   (OpaquePointer, Str, OpaquePointer, OpaquePointer,OpaquePointer) returns Int is native($LIBNAME) { * }
+ G. sub sqlite3_errmsg (OpaquePointer)                                                  returns Str is native($LIBNAME) { * }
+ H. sub sqlite3_close  (OpaquePointer)                                                  returns Int is native($LIBNAME) { * }
+ I.
+ J. my @handler := CArray[OpaquePointer].new;
+ K. @handler[0]  = OpaquePointer;
+ L.
+ M. say sqlite3_open(@*ARGS[0], @handler);
+ N. say sqlite3_exec(@handler[0], "CREATE TABLE foo (bar NUMBER);", OpaquePointer, OpaquePointer, OpaquePointer);
+ O. say sqlite3_errmsg(@handler[0]);
+ P. say sqlite3_close(@handler[0]);
+
+
+Este código está disponível em:
+
+L<https://github.com/paulohrpinheiro/artigos/blob/master/perl6-native-calling-support.pl>.
+
+O importante aqui é a manipulação de ponteiros. Na linha I<E>, precisamos
+passar um ponteiro para ponteiro, o que traduzido no módulo I<NativeCall> fica
+como 'um array C contendo um ponteiro genérico'. Nas demais declarações, de
+I<F> a I<H>, temos indicações de ponteiro simples. Na linhas I<J> e I<K>, um
+truque achado no código do L<MiniDBI|https://github.com/mberends/MiniDBI>, que
+é indicado pelo autor do módulo como sendo a melhor forma de aprender a usar a
+I<NativeCall>.
+
+Das linhas I<M> até I<P> usamos a biblioteca diretamente de nosso programa
+Perl6. Na linha I<M> passamos o ponteiro para ponteiro. Na linha I<N>, além de
+passarmos um ponteiro para o handler SqLite3, há uma série de ponteiros NULL.
+Quando passa como parâmetro um tipo do módulo, você está passando um NULL para
+esse tipo. E nas linhas linhas I<O> e I<P> passamos um ponteiro simples para o
+handler.
+
+Executando o script Duas vezes, temos a seguinte saída:
+
+ [paulohrpinheiro@localhost artigos]$ perl6 perl6-native-calling-support.pl /tmp/monastery.db
+ 0
+ 0
+ not an error
+ 0
+ [paulohrpinheiro@localhost artigos]$ perl6 perl6-native-calling-support.pl /tmp/monastery.db
+ 0
+ 1
+ table foo already exists
+ 0
+ [paulohrpinheiro@localhost artigos]$
+
+
+Na primeira vez, sem erro, na segunda com erro, pois a tabela já existe, como
+podemos ver com os seguintes comandos:
+
+ [paulohrpinheiro@localhost artigos]$ sqlite3 /tmp/monastery.db
+ SQLite version 3.8.8 2015-01-16 12:08:06
+ Enter ".help" for usage hints.
+ sqlite> .schema
+ CREATE TABLE foo (bar NUMBER);
+ sqlite>
+
+=head2 Aplicação Prática
+
+Perl6 está em grande desenvolvimento, mas ainda precisa de um bom conjunto de
+módulos para ser realmente útil. Muitas bibliotecas ainda não estão integradas
+no Perl6. Se você estiver interessado em ajudar e ainda não encontrou o que
+fazer, eis uma lista de bibliotecas prioritárias a trabalhar (sqlite3 é uma):
+
+L<Most Wanted Native Bindings|https://github.com/perl6/perl6-most-wanted/blob/master/most-wanted/bindings.md>
+
+
+Para um uso maior, ainda há um tópico importante, manipulação de estruturas C
+nativas (I<struct>), que não foi coberto nesse texto. Se alguém quiser explorar
+esse tópico, todos nós agradecemos.
+
+=head2 Leia mais
+
+=over
+
+=item *
+
+L<Dynamic Linker|http://en.wikipedia.org/wiki/Dynamic_linker>
+
+=item *
+
+L<Calling native libraries from Perl6|https://perl6advent.wordpress.com/2010/12/15/day-15-calling-native-libraries-from-perl-6/>
+
+=item *
+
+L<How to create and distribute Perl 6 modules|http://doc.perl6.org/language/modules>
+
+=item *
+
+L<Day 15 – Bioinformatics and the joy of Perl 6|https://perl6advent.wordpress.com/2014/12/15/day-15-bioinformatics-and-the-joy-of-perl6/>
+
+=back
+
+=head1 AUTHOR
+
+L<Paulo Henrique Rodrigues Pinheiro|http://www.linkedin.com/in/paulohrpinheiro>
+
+=cut
