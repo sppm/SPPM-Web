@@ -67,6 +67,17 @@ sub upsert {
 
         $article->{published_at} .= '-01-01' if $article->{published_at} && $article->{published_at} !~ /-/;
 
+        # se existir uma data dentro do equinox...
+        if (my ($d, $m, $y) = $article->{content} =~ /(\d{1,2})\s+([A-Za-z]{3})\s+(\d{2,4})/ ){
+
+            $m = ucfirst lc $m;
+            if (exists $meses{$m}){
+                $m = $meses{$m};
+                $article->{published_at} = "$y-$m-$d";
+            }
+
+        }
+
     }
 
 

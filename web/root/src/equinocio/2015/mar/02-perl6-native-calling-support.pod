@@ -2,7 +2,7 @@
 
 =encoding utf-8
 
-1 Mar 2015 -
+2 Mar 2015 -
 L<Paulo Henrique Rodrigues Pinheiro|http://www.linkedin.com/in/paulohrpinheiro>
 
 =head1 Suporte a Chamadas Nativas em Perl6

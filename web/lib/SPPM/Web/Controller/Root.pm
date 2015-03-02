@@ -63,7 +63,23 @@ sub index : Path : Args(0) {
         order_by => [ qw/me.title/]
     })->all;
 
+
+
+
     $c->stash->{articles} = \@rows;
+
+    @rows = $c->model('DB::Article')->search({
+        published => 1,
+        published_at => {
+            '>=' => '2015-03-01',
+            '<=' => '2015-03-21'
+        },
+    }, {
+        prefetch => 'author_hash',
+        order_by => [ qw/me.published_at/]
+    })->all;
+
+    $c->stash->{equinox_articles} = \@rows;
 
     # nome do include.
     $c->stash->{content_template} = 'index.tx';
