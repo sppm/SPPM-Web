@@ -68,7 +68,7 @@ sub index : Path : Args(0) {
 
     $c->stash->{articles} = \@rows;
 
-    @rows = $c->model('DB::Article')->search({
+    my @rows2 = $c->model('DB::Article')->search({
         published => 1,
         published_at => {
             '>=' => '2015-03-01',
@@ -79,7 +79,7 @@ sub index : Path : Args(0) {
         order_by => [ qw/me.published_at/]
     })->all;
 
-    $c->stash->{equinox_articles} = \@rows;
+    $c->stash->{equinox_articles} = \@rows2;
 
     # nome do include.
     $c->stash->{content_template} = 'index.tx';
