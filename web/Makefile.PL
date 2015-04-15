@@ -36,7 +36,9 @@ requires 'App::Sqitch';
 # parsing de artigos
 requires 'HTML::TreeBuilder::XPath';
 requires 'Pod::Xhtml';
-
+requires 'Org::Document';
+requires 'Org::To::HTML';
+requires 'Text::Markdown';
 
 # not really dep, but good
 requires 'Data::Printer';
