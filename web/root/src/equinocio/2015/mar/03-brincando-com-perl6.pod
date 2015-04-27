@@ -1,0 +1,131 @@
+=pod
+
+=encoding utf-8
+
+22 Mar 2015 -
+L<Paulo Henrique Rodrigues Pinheiro|http://www.linkedin.com/in/paulohrpinheiro>
+
+=head1 Brincando com Perl6
+
+I<Neste artigo será comentado um pequeno texto publicado em >L<http://blogs.perl.org>I<.>
+
+
+=head2 O texto original
+
+O texto que me fez abrir um terminal e testar formas alternativas do que estava nele, foi esse:
+L<Tiny Games with Perl 6|http://blogs.perl.org/users/ovid/2015/03/tiny-games-with-perl-6.html>, de L<Curtis Poe|http://search.cpan.org/~ovid/>.
+
+O código que ele apresenta é simples, e muito animador para a adoção do Perl6:
+
+ [paulohrpinheiro@localhost ~]$ perl6 -e 'for ^6 { say ("⚀".."⚅").roll(3) }'
+ ⚄ ⚀ ⚂
+ ⚁ ⚁ ⚄
+ ⚃ ⚄ ⚂
+ ⚁ ⚅ ⚀
+ ⚀ ⚁ ⚀
+ ⚀ ⚀ ⚂
+
+
+Sinceramente, não entendi nada e então mudei os números pra ver o que dava:
+
+ [paulohrpinheiro@localhost ~]$ perl6 -e 'for ^8 { say ("⚀".."⚅").roll(5) }'
+ ⚄ ⚀ ⚀ ⚂ ⚀
+ ⚄ ⚃ ⚃ ⚀ ⚃
+ ⚅ ⚃ ⚅ ⚂ ⚀
+ ⚅ ⚅ ⚄ ⚂ ⚀
+ ⚁ ⚅ ⚁ ⚁ ⚃
+ ⚁ ⚄ ⚀ ⚃ ⚅
+ ⚃ ⚂ ⚂ ⚄ ⚀
+ ⚀ ⚅ ⚁ ⚁ ⚁
+
+
+Opa, será que é isso mesmo? aí decidi entrar no shell pra brincar:
+
+ [paulohrpinheiro@localhost ~]$ perl6
+ > for ^3 { say ("A".."Z").roll(5) }
+ B Q W R X
+ Z I K F Y
+ Q U I O X
+ > for ^3 { say ("A".."Z").roll(5) }
+ X Q I E E
+ D J I Q W
+ S C V U V
+ > for ^3 { say ("A".."Z").roll(5) }
+ A H L T I
+ P U L F Q
+ C R H D J
+
+Vamos aumentar os possíveis caracteres:
+
+ > for ^3 { say ("A".."z").roll(5) }
+ p ` x d v
+ J E a W j
+ e z e ` U
+ > for ^3 { say ("A".."z").roll(5) }
+ F p a ` H
+ ] u Z v z
+ u u ` i a
+ > for ^3 { say ("A".."z").roll(5) }
+ c b i g H
+ w E E d o
+ w s Z K s
+
+Então temos um gerador de senhas aleatório. Como gerar uma senha? Minhas tentativas:
+
+ > say ("A".."z").roll(8)
+ W V h U b s I V
+
+Não gostei desses espaços entre os caracteres, pois não dá pra copiar e colar. Mais uma tentativa:
+
+ > print ("A".."z").roll(8)
+ pSobmquY>
+
+Continua ainda muito chato, tem que marcar com cuidado pra copiar "no mouse". Vamos adicionar uma quebra de linha:
+
+ > print ("A".."z").roll(8) . "\n"
+ ===SORRY!=== Error while compiling <unknown file>
+ Unsupported use of . to concatenate strings; in Perl 6 please use ~
+ at <unknown file>:1
+ ------> print ("A".."z").roll(8) . ⏏"\n"
+
+Ainda por cima, nos ajuda a fazer a coisa certa. Vejamos:
+
+ > print ("A".."z").roll(8) ~ "\n"
+ y N a ^ z a s R
+ > say( ("A".."z").roll(8)) ~ "\n"
+ _ n l E c L I u
+
+Mas voltaram os velhos espaços entre os caracteres. Aí lembrei do velho truque, e vi que nesse artigo ele usa join:
+
+ > say join '',("A".."z").roll(8)
+ yWxhTCLt
+
+Ou então, em uma linha executável:
+
+ [paulohrpinheiro@localhost ~]$ perl6 -e 'say join "",("A".."z").roll(8)'
+ AgHY[Yuu
+
+
+=head2 Leia mais:
+
+=over
+
+=item *
+
+L<Documentação do Perl6|http://perl6.org/documentation/>
+
+=item *
+
+L<Sobre o roll|http://doc.perl6.org/routine/roll>
+
+=item *
+
+L<Operador ^|http://doc.perl6.org/routine/%5E>
+
+=back
+
+=head1 AUTHOR
+
+L<Paulo Henrique Rodrigues Pinheiro|http://www.linkedin.com/in/paulohrpinheiro>
+
+=cut
