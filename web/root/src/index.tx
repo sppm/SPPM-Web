@@ -9,48 +9,6 @@
 </div>
 [%END%]
 
-
-<style>.eqdark {background-color:black; color:#CFCFCF} .eqdark a,.eqdark a:visited,.eqdark a:hover {color: #7B80FD;font-weight: bold;} </style>
-<div class="row sppm-well separator eqdark">
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-2 text-center">
-                <img src="/static/img/equinocio-2015.png"/>
-            </div>
-            <div class="col-md-10">
-                <h2>Equinócio da Primavera 2015!</h2>
-                <p>Está no ar o equinócio da primavera! Veja as publicações até o momento:</p>
-            </div>
-        </div>
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Publicado em</th>
-                </thead>
-                <tbody>
-                [% FOREACH p IN equinox_articles %]<tr>
-
-                <td class="[% p.title.length() > 50 ? 'small' : '' %]">
-                    <a href="/pub/[%p.uri_path%]">
-                    <img height=32 width=32 src="http://gravatar.com/avatar/[%p.author_hash.author_hash | uri %]?d=monsterid&size=32"/> [% p.title %]</a>
-                </td>
-                <td class="small">
-                    <a href="/pub?author_hash=[%p.author_hash.author_hash%]">[%p.author_hash.name%]</a>
-                </td>
-                <td class="small">
-                    [% p.published_at.day() %] de [% month_br(p.published_at.month()) %] de [% p.published_at.year() %]
-                </td>
-                </tr>
-                [% END %]
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-
 <div class="row sppm-well separator">
     <div class="col-md-6">
         <h2>Bem vindo à São Paulo Perl Mongers!</h2>
