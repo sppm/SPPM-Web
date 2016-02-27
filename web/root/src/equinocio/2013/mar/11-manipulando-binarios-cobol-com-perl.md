@@ -4,7 +4,7 @@
 
 O mainframe usa codificação EBCDIC internamente é usado por grandes corporações ao redor do mundo, no dia a dia integrar esse tipo de sistema com a data warehouse envolve alguns desafios únicos.
 
-![](https://raw.github.com/sppm/equinocio/master/equinocio/2013/mar/.assets/img/imagem1.png)
+![](/root/static/images/equinocio/2013/cobol/imagem1.png)
 
 Nesse artigo será abordado como ler dados do binário COBOL.
 
@@ -20,7 +20,7 @@ O intuito desse artigo não é ensinar como programar em COBOL, é de apenas ens
 aquele dado. É necessário ter o que chamamos de **COBOL Copy Book**, que não é nada além de um texto que diz o tamanho de cada linha e o que os bytes representam.
 Dentro do binário COBOL não tem nada, além de dados sem sentido. Para que eles façam sentido é necessário um arquivo de "metainformação" dizendo o que cada posição representa.
 
-![](https://raw.github.com/sppm/equinocio/master/equinocio/2013/mar/.assets/img/imagem2.png)
+![](/root/static/images/equinocio/2013/cobol/imagem2.png)
 
 Por exemplo vamos criar um arquivo binário com as seguintes posições:
 
@@ -60,7 +60,7 @@ Porém no COBOL é comum comprimir os dados do tipo numérico pela metade (+1) u
 
 Se você estiver usando uma máquina byte addressable como a 80x86. Para representar o número zero por exemplo será necessário usar 8 bits *00000000*. Se você quiser manipular os bits individualmentes será necessário pegar um byte inteiro e fazer isso manualmente. Um Nibble é o conjunto de 4 bits, portanto um byte tem dois nibbles.
 
-![](https://raw.github.com/sppm/equinocio/master/equinocio/2013/mar/.assets/img/imagem3.png)
+![](/root/static/images/equinocio/2013/cobol/imagem3.png)
 
 Com 4 bits temos a possibilidade de fazer 16 diferentes combinações (2**4) e com 8 bits podemos ter 256 combinações (2**8) diferentes.
 

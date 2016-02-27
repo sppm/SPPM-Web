@@ -70,7 +70,7 @@ Você sabe por que o camelo como símbolo do Perl?  Ele não é gracioso, não �
 
 
 
-![Logo perl](.assets/img/artigos/grafologia/logo-perl.jpg "Logo perl")
+![Logo perl](/root/static/images/equinocio/2013/grafologia/logo-perl.jpg "Logo perl")
 
 Entretanto é bom salientar que a tecnologia A ou B não importa! Pois, se não tiver conhecimento e sabedoria para saber que tem rodar o parafuso 0.001mm à direita ou à esquerda, de nada vale apenas a tecnologia.
 Após esta introdução, vamos aplicar o Perl à Grafologia. Para tanto após coletar o texto a ser examinado o próximo passo é digitalizar este texto através de um scanner com resolução igual a 600 dpi, ou seja, 600 pontos por polegadas, e a partir desta imagem é de onde serão examinados os elementos gerais da escrita, objetivos e subjetivos.
@@ -126,7 +126,7 @@ Para executar todos estes cálculos é utilizado o padrão de cores CIE-XYZ, Com
 
 
 
-![Diagrama de cromaticidade do padrão CIE 1931 xy](.assets/img/artigos/grafologia/cromaticidade.jpg "Diagrama de cromaticidade do padrão CIE 1931 xy")
+![Diagrama de cromaticidade do padrão CIE 1931 xy](/root/static/images/equinocio/2013/grafologia/cromaticidade.jpg "Diagrama de cromaticidade do padrão CIE 1931 xy")
 > Diagrama de cromaticidade do padrão CIE 1931 xy
 
 
@@ -134,11 +134,11 @@ Para executar todos estes cálculos é utilizado o padrão de cores CIE-XYZ, Com
 Utilizando a biblioteca do Perl GD, que é uma biblioteca gráfica, e também Color::Similarity::HCL, que é uma biblioteca para trabalhar com cores, além das bibliotecas Math::Trig e Math::Round que são bibliotecas matemáticas,  para fazer os cálculos trigonométricos e estatísticos necessários  a partir da imagem coletada e processada, é possível fazer as identificações do padrões grafológicos de modo a auxiliar o profissional de Recursos Humanos no momento de selecionar o melhor profissional para um determinado cargo.
 Abaixo temos a escrita de uma criança de 6 anos e 3 meses do 1º ano, em que foi observado a ausência de margens superior e esquerda na folha de papel, ou na superfície onde se escreve.
 
-![Imagem original](.assets/img/artigos/grafologia/figura1.jpg "Imagem original")
+![Imagem original](/root/static/images/equinocio/2013/grafologia/figura1.jpg "Imagem original")
 > Figura 1: Imagem original
 
 
-![Imagem processada pelo programa Perl](.assets/img/artigos/grafologia/figura2.jpg "Imagem processada pelo programa Perl")
+![Imagem processada pelo programa Perl](/root/static/images/equinocio/2013/grafologia/figura2.jpg "Imagem processada pelo programa Perl")
 
 
 > Figura 2: Imagem processada pelo programa Perl
@@ -151,7 +151,7 @@ Após o processamento da imagem original, figura 1, é possível verificar como 
 Na figura 3, temos a letra M e a Letra A, em que o programa identificou que o traço que corta a letra A, é bastante superior e muito leve,  e o espaçamento entre as letras segue um padrão.
 
 
-![Analise das letras M e A.](.assets/img/artigos/grafologia/figura3.jpg "Analise das letras M e A.")
+![Analise das letras M e A.](/root/static/images/equinocio/2013/grafologia/figura3.jpg "Analise das letras M e A.")
 
 
 > Figura 3 - Analise das letras M e A.
@@ -162,19 +162,19 @@ Para fazer a analise e as transformações e retirada de elementos alheios a esc
 Nas figuras 4, 5 e 6 é mostrado os resultados obtidos por este processamento, em que foi utilizada a letra O.
 
 
-![Imagem original](.assets/img/artigos/grafologia/figura4.jpg "Imagem original")
+![Imagem original](/root/static/images/equinocio/2013/grafologia/figura4.jpg "Imagem original")
 
 > Figura 4. Imagem original
 
 
-![Imagem processada segundo o modelo YCbCr.](.assets/img/artigos/grafologia/figura5.jpg "Imagem processada segundo o modelo YCbCr.")
+![Imagem processada segundo o modelo YCbCr.](/root/static/images/equinocio/2013/grafologia/figura5.jpg "Imagem processada segundo o modelo YCbCr.")
 
 
 > Figura 5. Imagem processada segundo o modelo YCbCr.
 
 
 
-![Imagem final.](.assets/img/artigos/grafologia/figura6.jpg "Imagem final.")
+![Imagem final.](/root/static/images/equinocio/2013/grafologia/figura6.jpg "Imagem final.")
 
 
 > Figura 6. Imagem final.
@@ -194,24 +194,24 @@ Na figura 7 temos o texto original, na figura 8 uma parte do texto que foi extra
 
 Dentre alguma das informações extraídas da figura 10 tem-se o agrupamento e abertura da escrita, o predomínio das curvas e a não retirada do elemento escritor do papel no momento da escrita, demonstrando continuidade na escrita.
 
-![Imagem original](.assets/img/artigos/grafologia/figura7.jpg "Imagem original")
+![Imagem original](/root/static/images/equinocio/2013/grafologia/figura7.jpg "Imagem original")
 
 
 > Figura 7 - Imagem original
 
 
-![Imagem processada.](.assets/img/artigos/grafologia/figura8.jpg "Imagem processada.")
+![Imagem processada.](/root/static/images/equinocio/2013/grafologia/figura8.jpg "Imagem processada.")
 
 
 > Figura 8 - Imagem processada.
 
-![Imagem original.](.assets/img/artigos/grafologia/figura9.jpg "Imagem original.")
+![Imagem original.](/root/static/images/equinocio/2013/grafologia/figura9.jpg "Imagem original.")
 
 > Figura 9 - Imagem original.
 
 
 
-![Imagem processada para extração das características.](.assets/img/artigos/grafologia/figura10.jpg "Imagem processada para extração das características.")
+![Imagem processada para extração das características.](/root/static/images/equinocio/2013/grafologia/figura10.jpg "Imagem processada para extração das características.")
 
 
 > Figura 10 - Imagem processada para extração das características.
@@ -219,29 +219,29 @@ Dentre alguma das informações extraídas da figura 10 tem-se o agrupamento e a
 
 A próxima analise feita, detectou que o individuo é uma pessoa que assume riscos calculados, segue abaixo a sequencia da analise que vai da analise original, figura 11 até a imagem processada e de onde foram extraídos os padrões, figura  16.
 
-![Imagem original.](.assets/img/artigos/grafologia/figura11.jpg "Imagem original.")
+![Imagem original.](/root/static/images/equinocio/2013/grafologia/figura11.jpg "Imagem original.")
 
 
 > Figura 11 - Imagem original.
 
-![Imagem processada para tons de preto e branco.](.assets/img/artigos/grafologia/figura12.jpg "Imagem processada para tons de preto e branco.")
+![Imagem processada para tons de preto e branco.](/root/static/images/equinocio/2013/grafologia/figura12.jpg "Imagem processada para tons de preto e branco.")
 
 > Figura 12 - Imagem processada para tons de preto e branco.
 
-![Imagem processada para o padrão YCbCr](.assets/img/artigos/grafologia/figura13.jpg "Imagem processada para o padrão YCbCr.")
+![Imagem processada para o padrão YCbCr](/root/static/images/equinocio/2013/grafologia/figura13.jpg "Imagem processada para o padrão YCbCr.")
 
 > Figura 13 - Imagem processada para o padrão YCbCr
 
-![Letra P processada preto e branco](.assets/img/artigos/grafologia/figura14.jpg "Letra P processada preto e branco")
+![Letra P processada preto e branco](/root/static/images/equinocio/2013/grafologia/figura14.jpg "Letra P processada preto e branco")
 
 > Figura 14 - Letra P processada preto e branco
 
 
-![Letra P padrão YCbCr](.assets/img/artigos/grafologia/figura15.jpg "Letra P padrão YCbCr")
+![Letra P padrão YCbCr](/root/static/images/equinocio/2013/grafologia/figura15.jpg "Letra P padrão YCbCr")
 
 > Figura 15 - Letra P padrão YCbCr
 
-![Imagem processada para extração das características.](.assets/img/artigos/grafologia/figura16.jpg "Imagem processada para extração das características.")
+![Imagem processada para extração das características.](/root/static/images/equinocio/2013/grafologia/figura16.jpg "Imagem processada para extração das características.")
 
 > Figura 16 - Imagem processada para extração das características.
 
