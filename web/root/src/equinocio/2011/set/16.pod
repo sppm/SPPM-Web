@@ -128,7 +128,7 @@ Existem diversas maneiras para instalar módulos do cpan. Vou apresentar uma man
 
 1. Instale o perlbrew (siga as instruções na tela... mas é mais ou menos):
 
-    curl -L http://xrl.us/perlbrewinstall | bash
+    \curl -L https://install.perlbrew.pl | bash
     echo "source ~/perl5/perlbrew/etc/bashrc" >> ~/.bashrc
     source ~/perl5/perlbrew/etc/bashrc
     perl -v
