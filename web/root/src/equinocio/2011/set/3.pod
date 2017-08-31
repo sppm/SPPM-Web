@@ -72,7 +72,7 @@ de um sistema UNIX-like como Linux, BSD ou Mac OS X, e da shell "bash"
 
 Apenas copie e cole essa linha em seu terminal:
 
-   $ curl -L http://xrl.us/perlbrewinstall | bash
+   $ \curl -L https://install.perlbrew.pl | bash
 
 Depois, adicione o script de inicialização ao seu arquivo C<.bashrc>:
 
@@ -100,13 +100,13 @@ Você verá algo como:
 Isso indica que o único perl disponível é o do sistema (no meu caso, o
 5.10.1). Vamos instalar uma versão mais moderna!
 
-   $ perlbrew install perl-5.14.1
+   $ perlbrew install perl-5.20.3
 
 Note que alguns módulos/programas (como o L<Padre|http://padre.perlide.org>)
 precisam que o perl seja instalado com suporte a threads, e
 nesse caso você precisa passar essa opção na instalação:
 
-   $ perlbrew install perl-5.14.1 -D usethreads
+   $ perlbrew install perl-5.20.3 -D usethreads
 
 Agora é só ir tomar um café enquanto o perlbrew baixa e compila seu
 novo perl. A tarefa pode demorar de 5 a 20 minutos, então relaxe =)
@@ -119,20 +119,20 @@ Quando a instalação acabar, o comando C<perlbrew list> deverá mostrar
 seu novo perl disponível para uso:
 
    $ perlbrew list
-      perl-5.14.1
+      perl-5.20.3
     * /usr/bin/perl (5.10.1)
 
 
 O asterisco (C<*>) indica o perl ativo na shell atual. Para usar o novo
 perl, basta digitar:
 
-   $ perlbrew switch perl-5.14.1
+   $ perlbrew switch perl-5.20.3
 
-A partir de agora, seu usuário usará o perl 5.14.1, mesmo em outros terminais
+A partir de agora, seu usuário usará o perl 5.20.3, mesmo em outros terminais
 que você abrir. Experimente, digitando:
 
    $ perl -v
-   This is perl 5, version 14, subversion 1 (v5.14.1) built for x86_64-linux
+   This is perl 5, version 20, subversion 3 (v5.20.3) built for x86_64-linux
 
 Note que, feita a modificação, você poderá executar o comando C<cpan>
 (ou C<cpanp>, C<cpanm>, o que preferir) como seu próprio usuário, e os
@@ -156,15 +156,24 @@ comandos úteis:
 para instalação (com um C<i> do lado das que já foram instaladas).
 
    $ perlbrew available
-     perl-5.15.2
-   i perl-5.14.1
-     perl-5.12.4
-     perl-5.10.1
-     perl-5.8.9
-     perl-5.6.2
-     perl5.005_04
-     perl5.004_05
-     perl5.003_07
+      perl-5.27.3
+      perl-5.26.0
+      perl-5.24.2
+      perl-5.22.4
+    i perl-5.20.3
+      perl-5.18.4
+      perl-5.16.3
+      perl-5.14.4
+      perl-5.12.5
+      perl-5.10.1
+      perl-5.8.9
+      perl-5.6.2
+      perl5.005_04
+      perl5.004_05
+      cperl-5.27.1
+      cperl-5.26.1
+
+
 
 As versões listadas não são as únicas disponíveis, mas as últimas de cada tipo.
 Por exemplo, da série 12 do perl 5 (perl-5.12) apenas a 5.12.4 é exibida, mas
