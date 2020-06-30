@@ -64,6 +64,17 @@ sub index : Path : Args(0) {
     })->all;
 
 
+    push @rows, $c->model('DB::Article')->search({
+           published => 1,
+           uri_path => {
+             '!=' => 'primeiros-passos-em-perl',
+           },
+        
+    }, {
+        prefetch => 'author_hash',
+        order_by => \'random()',
+        rows => 8
+    })->all;
 
 
     $c->stash->{articles} = \@rows;
