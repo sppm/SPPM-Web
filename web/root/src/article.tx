@@ -3,8 +3,8 @@
         <img height=128 width=128 src="http://gravatar.com/avatar/[%article.author_hash.author_hash | uri %]?d=monsterid&size=128"/>
     </div>
     <div class="col-md-10">
-        <h2>[% article.author_hash.name %]</h2>
-        <blockquote>[% article.title  %]</blockquote>
+        <h2>[% article.title  %]</h2>
+        <blockquote>[% article.author_hash.name %]</blockquote>
         <small>Publicado em [%(article.published_at || article.created_at).dmy('/')%]</small>
     </div>
 </div>
