@@ -18,7 +18,7 @@
 
     <div class="col-md-6">
         <h2>Quem somos</h2>
-        <p>Somos um grupo de pessoas dedicadas ao encorajamento de tudo o que estiver relacionado com o Perl em São Paulo e no mundo. Isto envolve ajudar uns aos outros, discutir qualquer assunto que pareça interessante para algum dos membros, <strong>partilhar informações sobre o Perl</strong>, sobre assuntos técnicos, políticos, culinários, empregos e tudo o mais que parecer partilhável, e <strong><s>ocasionalmente</s> algumas tulipas de boa cerveja</strong>.</p>
+        <p>Somos um grupo de pessoas dedicadas ao encorajamento de tudo o que estiver relacionado com o Perl em São Paulo e no mundo. Isto envolve ajudar uns aos outros, discutir qualquer assunto que pareça interessante para algum dos membros, <strong>partilhar informações sobre o Perl</strong>, sobre assuntos técnicos, políticos, culinários, empregos e tudo o mais que parecer partilhável, e <strong>ocasionalmente se encontrar (menos na quarentena) para beber algumas tulipas de boa cerveja</strong>.</p>
     </div>
 </div>
 
@@ -42,6 +42,8 @@
     <div class="col-md-6">
         <h2>Tecnologias do novo website</h2>
         <p>Estou fazendo o novo site utilizando Catalyst, com XSlate para as templates e PostgreSQL como banco de dados.</p>
+        <p>UPDATE 2020! Estou pensando em formas de usar o Github para hospedar o site, autalizando a geração de todo o conteudo após o commit, assim as pessoas podem contriubir com os arquivos continau sendo via pull request, mas entrando automaticamente no ar após ser aceito.</p>
+        
     </div>
 </div>
 
