@@ -48,15 +48,6 @@ sub index : Path : Args(0) {
         uri_path => [
             'primeiros-passos-em-perl',
 
-            'perlbrew-instale-quantas-versoes-do-perl-5-quiser-sem-precisar-de-root',
-            'analise-das-tecnicas-para-abrir-e-ler-arquivos',
-            'como-se-tornar-um-hacker',
-            'psgi-plack-bada-bing-bada-boom',
-            'dataflow-um-framework-para-fluxo-de-dados',
-            'benchmark',
-            'catalyst-com-local-lib',
-            'xslate-seu-proximo-sistema-de-templates'
-
         ]
     }, {
         prefetch => 'author_hash',
