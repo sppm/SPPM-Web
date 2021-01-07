@@ -8,7 +8,7 @@
         <tbody>
         [% FOREACH p IN articles %]<tr>
 
-        <td class="[% p.title.length() > 50 ? 'small' : '' %]">
+        <td>
             <a href="/pub/[%p.uri_path%]">
             <img height=32 width=32 src="http://gravatar.com/avatar/[%p.author_hash.author_hash | uri %]?d=monsterid&size=32"/> [% p.title %]</a>
         </td>
