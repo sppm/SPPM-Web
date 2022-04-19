@@ -16,6 +16,7 @@ body {
     padding-top: 10px;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: linear-gradient(180deg, rgb(100 176 255) 0%, rgb(100 176 255 / 62%) 100%);
 }
 
 #site-header a {
