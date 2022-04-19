@@ -4,7 +4,7 @@ body {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
     text-align: justify;
-    
+    background: radial-gradient(circle, rgb(100 176 255) 0%, rgba(234,252,255,1) 100%);
 }
 
 
@@ -58,7 +58,7 @@ body {
 
 .sppm-well {
     padding: 15px;
-    background-color: #FFF; 
+    background-color: #FFF;
     color: #222;
     box-shadow: 2px 2px 3px 0px rgba(153, 153, 153, 0.4);
 }
